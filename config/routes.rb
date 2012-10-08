@@ -1,4 +1,6 @@
 CampusHunter::Application.routes.draw do
+  get "student/show"
+  resource StudentController;
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
