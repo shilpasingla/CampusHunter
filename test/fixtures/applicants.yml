@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Name: MyString
+  Score: 1
+  Branch: MyString
+  Role: MyString
+  CodePairing: MyString
+  PairingStatus: MyString
+  FirstTech: MyString
+  FirstStatus: MyString
+  SecondTech: MyString
+  Result: MyString
+  Comment: MyString
+
+two:
+  Name: MyString
+  Score: 1
+  Branch: MyString
+  Role: MyString
+  CodePairing: MyString
+  PairingStatus: MyString
+  FirstTech: MyString
+  FirstStatus: MyString
+  SecondTech: MyString
+  Result: MyString
+  Comment: MyString
