@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StdentControllerTest < ActionController::TestCase
+class ApplicantsControllerTest < ActionController::TestCase
   test "should get show" do
     get :show
     assert_response :success
