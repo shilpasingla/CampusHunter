@@ -1,23 +1,28 @@
-<h1>Applicant's Details</h1>
-<<<<<<< HEAD
-<table style="border:1px solid black;border-collapse:collapse;">
+<script>
+function search_for_applicant() {
+    var applicantName = document.getElementById('applicantSearch').value ;
 
-=======
-<table border="1">
+}
+ </script>
+<input type="search" id="applicantSearch" placeholder="Applicant's name">
+<input type="button" value="search" onclick="search_for_applicant()">
+<h1>Applicant's Details</h1>
+
+<table style="border:1px solid black;border-collapse:collapse;">
   <tr>
-    <th>Name</th>
-    <th>Score</th>
-    <th>Branch</th>
-    <th>Role</th>
-    <th>CodePairing</th>
-    <th>PairingStatus</th>
-    <th>FirstTech</th>
-    <th>FirstStatus</th>
-    <th>SecondTech</th>
-    <th>Result</th>
-    <th>Comment</th>
+    <th style="border:1px solid black;">Name</th>
+    <th style="border:1px solid black;">Score</th>
+    <th style="border:1px solid black;">Branch</th>
+    <th style="border:1px solid black;">Role</th>
+    <th style="border:1px solid black;">CodePairing</th>
+    <th style="border:1px solid black;">PairingStatus</th>
+    <th style="border:1px solid black;">FirstTech</th>
+    <th style="border:1px solid black;">FirstStatus</th>
+    <th style="border:1px solid black;">SecondTech</th>
+    <th style="border:1px solid black;">Result</th>
+    <th style="border:1px solid black;">Comment</th>
   </tr>
->>>>>>> 6e05fc1398a84a49baefd7b7577813b16ca9b903
+
   <% @applicant.each do |app|  %>
 
       <tr>
