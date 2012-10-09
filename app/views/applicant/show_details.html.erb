@@ -1,6 +1,18 @@
 <h1>Applicant's Details</h1>
 <table border="1">
-
+  <tr>
+    <th>Name</th>
+    <th>Score</th>
+    <th>Branch</th>
+    <th>Role</th>
+    <th>CodePairing</th>
+    <th>PairingStatus</th>
+    <th>FirstTech</th>
+    <th>FirstStatus</th>
+    <th>SecondTech</th>
+    <th>Result</th>
+    <th>Comment</th>
+  </tr>
   <% @applicant.each do |app|  %>
       <tr>
         <td><%= app.Name %></td>
