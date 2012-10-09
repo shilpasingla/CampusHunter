@@ -29,25 +29,4 @@ ActiveRecord::Schema.define(:version => 20121008100349) do
     t.datetime "updated_at",    :null => false
   end
 
-  create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.text     "text"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.text     "text"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "students", :force => true do |t|
-    t.string   "name"
-    t.string   "branch"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
 end
