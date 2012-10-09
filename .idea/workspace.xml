@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8200de0-1bf4-493d-a824-df074e2544a9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/CampusHunter.iml" afterPath="$PROJECT_DIR$/.idea/CampusHunter.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
     </list>
     <ignored path="CampusHunter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,7 +51,7 @@
       <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="30" selection-start="305" selection-end="305" vertical-scroll-proportion="0.28645834">
+            <state line="10" column="32" selection-start="274" selection-end="274" vertical-scroll-proportion="0.26041666">
               <folding />
             </state>
           </provider>
@@ -689,7 +686,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="30" selection-start="305" selection-end="305" vertical-scroll-proportion="0.28645834">
+        <state line="10" column="32" selection-start="274" selection-end="274" vertical-scroll-proportion="0.26041666">
           <folding />
         </state>
       </provider>
