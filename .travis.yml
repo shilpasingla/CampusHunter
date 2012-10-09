@@ -3,7 +3,3 @@ rvm:
   - "1.9.3"
   # uncomment this line if your project needs to run something other than `rake`:
 
-env:
-  - DB=sqlite
-script:
-  - bundle exec rake --trace db:migrate
