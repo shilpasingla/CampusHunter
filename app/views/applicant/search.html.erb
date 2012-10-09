@@ -1,0 +1,17 @@
+<% Applicants.search_applicants.each do |app|  %>
+
+    <tr>
+      <td style="border:1px solid black;"><%= app.Name %></td>
+      <td style="border:1px solid black;"><%= app.Score %></td>
+      <td style="border:1px solid black;"><%= app.Branch %> </td>
+      <td style="border:1px solid black;"><%= app.Role %> </td>
+      <td style="border:1px solid black;"><%= app.CodePairing %></td>
+      <td style="border:1px solid black;"><%= app.PairingStatus %> </td>
+      <td style="border:1px solid black;"><%= app.FirstTech %></td>
+      <td style="border:1px solid black;"><%= app.FirstStatus %></td>
+      <td style="border:1px solid black;"><%= app.SecondTech %></td>
+      <td style="border:1px solid black;"><%= app.Result %> </td>
+      <td style="border:1px solid black;"><%= app.Comment %></td>
+    </tr>
+
+<% end %>
