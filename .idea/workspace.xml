@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a8200de0-1bf4-493d-a824-df074e2544a9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/development.sqlite3" afterPath="$PROJECT_DIR$/db/development.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
     </list>
     <ignored path="CampusHunter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,7 +42,7 @@
       <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="21" selection-start="178" selection-end="178" vertical-scroll-proportion="0.3267974">
+            <state line="10" column="5" selection-start="178" selection-end="178" vertical-scroll-proportion="0.3267974">
               <folding />
             </state>
           </provider>
@@ -866,7 +863,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="21" selection-start="178" selection-end="178" vertical-scroll-proportion="0.3267974">
+        <state line="10" column="5" selection-start="178" selection-end="178" vertical-scroll-proportion="0.3267974">
           <folding />
         </state>
       </provider>
