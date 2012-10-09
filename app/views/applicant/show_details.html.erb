@@ -1,0 +1,22 @@
+<h1>Applicant#show_details</h1>
+<p>Details</p>
+<table border="1">
+
+  <% @applicant.each do |app|  %>
+      <tr>
+        <td><%= app.Name %></td>
+        <td><%= app.Score %></td>
+        <td><%= app.Branch %> </td>
+        <td><%= app.Role %> </td>
+        <td><%= app.CodePairing %></td>
+        <td><%= app.PairingStatus %> </td>
+        <td><%= app.FirstTech %></td>
+        <td><%= app.FirstStatus %></td>
+        <td><%= app.SecondTech %></td>
+        <td><%= app.Result %> </td>
+        <td><%= app.Comment %></td>
+      </tr>
+
+  <% end %>
+
+</table>

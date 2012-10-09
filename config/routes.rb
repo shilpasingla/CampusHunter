@@ -1,4 +1,6 @@
 CampusHunter::Application.routes.draw do
+  get "applicant/show_details"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
