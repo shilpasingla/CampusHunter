@@ -3,3 +3,5 @@ rvm:
   - "1.9.3"
   # uncomment this line if your project needs to run something other than `rake`:
 
+script:
+  - rake db:migrate
