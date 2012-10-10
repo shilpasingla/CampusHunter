@@ -7771,3 +7771,1559 @@ Connecting to database specified by database.yml
   [1m[36m (1.2ms)[0m  [1mCREATE TABLE "applicants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar(255), "Score" integer, "Branch" varchar(255), "Role" varchar(255), "CodePairing" varchar(255), "PairingStatus" varchar(255), "FirstTech" varchar(255), "FirstStatus" varchar(255), "SecondTech" varchar(255), "Result" varchar(255), "Comment" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
   [1m[35m (1.1ms)[0m  CREATE TABLE "college" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar(255), "NoOfApplicants" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 11:13:47 +0530
+Processing by CollegeController#new as HTML
+  Rendered college/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/applicant.css?body=1" for 127.0.0.1 at 2012-10-10 11:13:47 +0530
+Served asset /applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 11:13:47 +0530
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/stdent.css?body=1" for 127.0.0.1 at 2012-10-10 11:13:47 +0530
+Served asset /stdent.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.css?body=1" for 127.0.0.1 at 2012-10-10 11:13:47 +0530
+Served asset /search_applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 11:13:47 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 11:13:47 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.js?body=1" for 127.0.0.1 at 2012-10-10 11:13:47 +0530
+Served asset /applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.js?body=1" for 127.0.0.1 at 2012-10-10 11:13:47 +0530
+Served asset /search_applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.js?body=1" for 127.0.0.1 at 2012-10-10 11:13:47 +0530
+Served asset /stdent.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 11:13:47 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 11:17:35 +0530
+Processing by CollegeController#new as HTML
+  Rendered college/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 11:17:35 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.css?body=1" for 127.0.0.1 at 2012-10-10 11:17:35 +0530
+Served asset /applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.css?body=1" for 127.0.0.1 at 2012-10-10 11:17:35 +0530
+Served asset /stdent.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 11:17:35 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.css?body=1" for 127.0.0.1 at 2012-10-10 11:17:35 +0530
+Served asset /search_applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 11:17:35 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.js?body=1" for 127.0.0.1 at 2012-10-10 11:17:35 +0530
+Served asset /applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.js?body=1" for 127.0.0.1 at 2012-10-10 11:17:35 +0530
+Served asset /search_applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.js?body=1" for 127.0.0.1 at 2012-10-10 11:17:35 +0530
+Served asset /stdent.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 11:17:35 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 11:18:12 +0530
+Processing by CollegeController#new as HTML
+  Rendered college/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 11:18:12 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/applicant.css?body=1" for 127.0.0.1 at 2012-10-10 11:18:12 +0530
+Served asset /applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.css?body=1" for 127.0.0.1 at 2012-10-10 11:18:12 +0530
+Served asset /stdent.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.css?body=1" for 127.0.0.1 at 2012-10-10 11:18:12 +0530
+Served asset /search_applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 11:18:12 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.js?body=1" for 127.0.0.1 at 2012-10-10 11:18:12 +0530
+Served asset /applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.js?body=1" for 127.0.0.1 at 2012-10-10 11:18:12 +0530
+Served asset /search_applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 11:18:12 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 11:18:12 +0530
+Served asset /application.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/stdent.js?body=1" for 127.0.0.1 at 2012-10-10 11:18:12 +0530
+Served asset /stdent.js - 304 Not Modified (0ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 11:18:36 +0530
+Processing by CollegeController#new as HTML
+  Rendered college/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 11:18:36 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 11:18:36 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.css?body=1" for 127.0.0.1 at 2012-10-10 11:18:36 +0530
+Served asset /search_applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.css?body=1" for 127.0.0.1 at 2012-10-10 11:18:36 +0530
+Served asset /applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.css?body=1" for 127.0.0.1 at 2012-10-10 11:18:36 +0530
+Served asset /stdent.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 11:18:36 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.js?body=1" for 127.0.0.1 at 2012-10-10 11:18:36 +0530
+Served asset /applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.js?body=1" for 127.0.0.1 at 2012-10-10 11:18:36 +0530
+Served asset /search_applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.js?body=1" for 127.0.0.1 at 2012-10-10 11:18:36 +0530
+Served asset /stdent.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 11:18:36 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 11:22:12 +0530
+Processing by CollegeController#new as HTML
+  Rendered college/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 11:22:12 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.css?body=1" for 127.0.0.1 at 2012-10-10 11:22:12 +0530
+Served asset /applicant.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/stdent.css?body=1" for 127.0.0.1 at 2012-10-10 11:22:12 +0530
+Served asset /stdent.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 11:22:12 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 11:22:12 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.css?body=1" for 127.0.0.1 at 2012-10-10 11:22:12 +0530
+Served asset /search_applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.js?body=1" for 127.0.0.1 at 2012-10-10 11:22:12 +0530
+Served asset /applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.js?body=1" for 127.0.0.1 at 2012-10-10 11:22:12 +0530
+Served asset /search_applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.js?body=1" for 127.0.0.1 at 2012-10-10 11:22:12 +0530
+Served asset /stdent.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 11:22:12 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 11:25:42 +0530
+Processing by CollegeController#new as HTML
+  Rendered college/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 11:25:42 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.css?body=1" for 127.0.0.1 at 2012-10-10 11:25:42 +0530
+Served asset /stdent.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/search_applicant.css?body=1" for 127.0.0.1 at 2012-10-10 11:25:42 +0530
+Served asset /search_applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 11:25:42 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.css?body=1" for 127.0.0.1 at 2012-10-10 11:25:42 +0530
+Served asset /applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 11:25:42 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.js?body=1" for 127.0.0.1 at 2012-10-10 11:25:42 +0530
+Served asset /search_applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.js?body=1" for 127.0.0.1 at 2012-10-10 11:25:42 +0530
+Served asset /stdent.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 11:25:42 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.js?body=1" for 127.0.0.1 at 2012-10-10 11:25:42 +0530
+Served asset /applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 11:26:38 +0530
+Processing by CollegeController#new as HTML
+  Rendered college/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 7ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 11:26:38 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.css?body=1" for 127.0.0.1 at 2012-10-10 11:26:38 +0530
+Served asset /applicant.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/stdent.css?body=1" for 127.0.0.1 at 2012-10-10 11:26:38 +0530
+Served asset /stdent.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 11:26:38 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 11:26:38 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.css?body=1" for 127.0.0.1 at 2012-10-10 11:26:38 +0530
+Served asset /search_applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.js?body=1" for 127.0.0.1 at 2012-10-10 11:26:38 +0530
+Served asset /applicant.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_applicant.js?body=1" for 127.0.0.1 at 2012-10-10 11:26:38 +0530
+Served asset /search_applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.js?body=1" for 127.0.0.1 at 2012-10-10 11:26:38 +0530
+Served asset /stdent.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 11:26:38 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-10-10 12:02:38 +0530
+Served asset /rails.png - 200 OK (0ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 12:19:09 +0530
+Processing by CollegeController#new as HTML
+  Rendered college/new.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 517ms
+
+ActionView::Template::Error (undefined local variable or method `new' for #<#<Class:0x007f99e1ba97f8>:0x007f99e3eacb88>):
+    23: <input id="import" type="file" accept="*.csv,*.xls" value="Import" onchange="checkfile(this);">
+    24: <br/> <br/> <br/>
+    25: 
+    26: <input id="done" type="submit" value="Done" onclick="<% new %>">
+  app/views/college/new.html.erb:26:in `_app_views_college_new_html_erb___2175807502260818207_70149463690580'
+
+
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.4ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 12:19:53 +0530
+Processing by CollegeController#new as HTML
+  Rendered college/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 522ms
+
+ActionView::Template::Error (undefined method `new' for nil:NilClass):
+    23: <input id="import" type="file" accept="*.csv,*.xls" value="Import" onchange="checkfile(this);">
+    24: <br/> <br/> <br/>
+    25: 
+    26: <input id="done" type="submit" value="Done" onclick="<% @controller.new %>">
+  app/views/college/new.html.erb:26:in `_app_views_college_new_html_erb___2175807502260818207_70149464696380'
+
+
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.0ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 12:20:54 +0530
+Processing by CollegeController#new as HTML
+  Rendered college/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 554ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 12:20:54 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/applicant.css?body=1" for 127.0.0.1 at 2012-10-10 12:20:54 +0530
+Served asset /applicant.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 12:20:54 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 12:20:54 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.css?body=1" for 127.0.0.1 at 2012-10-10 12:20:54 +0530
+Served asset /stdent.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_applicant.css?body=1" for 127.0.0.1 at 2012-10-10 12:20:54 +0530
+Served asset /search_applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.js?body=1" for 127.0.0.1 at 2012-10-10 12:20:54 +0530
+Served asset /applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.js?body=1" for 127.0.0.1 at 2012-10-10 12:20:54 +0530
+Served asset /search_applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.js?body=1" for 127.0.0.1 at 2012-10-10 12:20:54 +0530
+Served asset /stdent.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 12:20:54 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 12:21:56 +0530
+Processing by CollegeController#new as HTML
+  Rendered college/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 510ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 12:21:57 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 12:21:57 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.css?body=1" for 127.0.0.1 at 2012-10-10 12:21:57 +0530
+Served asset /stdent.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.css?body=1" for 127.0.0.1 at 2012-10-10 12:21:57 +0530
+Served asset /search_applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 12:21:57 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.css?body=1" for 127.0.0.1 at 2012-10-10 12:21:57 +0530
+Served asset /applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.js?body=1" for 127.0.0.1 at 2012-10-10 12:21:57 +0530
+Served asset /applicant.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/search_applicant.js?body=1" for 127.0.0.1 at 2012-10-10 12:21:57 +0530
+Served asset /search_applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.js?body=1" for 127.0.0.1 at 2012-10-10 12:21:57 +0530
+Served asset /stdent.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 12:21:57 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 12:25:46 +0530
+
+SyntaxError (/Users/Shilpa/CampusHunter/app/controllers/college_controller.rb:6: syntax error, unexpected tLABEL
+    @rake_task = Rake:Task['load_csv_data']
+                      ^):
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__4400704084749134718__call__1659227669639086914__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.3ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 12:36:44 +0530
+
+SyntaxError (/Users/Shilpa/CampusHunter/app/controllers/college_controller.rb:6: syntax error, unexpected tLABEL
+    @rake_task = Rake:Task['load_csv_data'].invoke
+                      ^):
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__4400704084749134718__call__1659227669639086914__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.8ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 12:38:57 +0530
+
+SyntaxError (/Users/Shilpa/CampusHunter/app/controllers/college_controller.rb:6: syntax error, unexpected tLABEL
+    @rake_task = Rake:Task['load_csv_data'].invoke
+                      ^):
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__4400704084749134718__call__1659227669639086914__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.6ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 12:38:58 +0530
+
+SyntaxError (/Users/Shilpa/CampusHunter/app/controllers/college_controller.rb:6: syntax error, unexpected tLABEL
+    @rake_task = Rake:Task['load_csv_data'].invoke
+                      ^):
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__4400704084749134718__call__1659227669639086914__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 12:40:45 +0530
+
+SyntaxError (/Users/Shilpa/CampusHunter/app/controllers/college_controller.rb:6: syntax error, unexpected tLABEL
+    @rake_task = Rake:Task["load_csv_data"].invoke
+                      ^):
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__4400704084749134718__call__1659227669639086914__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.4ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 12:43:38 +0530
+
+SyntaxError (/Users/Shilpa/CampusHunter/app/controllers/college_controller.rb:6: syntax error, unexpected tLABEL
+    @rake_task = Rake:Task["db:load_csv_data"].invoke
+                      ^):
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__4400704084749134718__call__1659227669639086914__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.9ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 12:43:41 +0530
+
+SyntaxError (/Users/Shilpa/CampusHunter/app/controllers/college_controller.rb:6: syntax error, unexpected tLABEL
+    @rake_task = Rake:Task["db:load_csv_data"].invoke
+                      ^):
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__4400704084749134718__call__1659227669639086914__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.2ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 12:50:26 +0530
+Processing by CollegeController#new as HTML
+Completed 500 Internal Server Error in 0ms
+
+RuntimeError (Don't know how to build task 'db.load_csv_data'):
+  app/controllers/college_controller.rb:9:in `new'
+
+
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.6ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 12:53:59 +0530
+Processing by CollegeController#new as HTML
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "Computer"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Rajat Paul"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Sakshi"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Jaiparakash Yadav"], ["PairingStatus", nil], ["Result", nil], ["Role", nil], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Vijeta Marwah"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Vivek Dhakal"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "Computer"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Tabrej Alam"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", "1st round comments:ECE background, good logic, limited OO knowledge"], ["FirstStatus", "Puruse"], ["FirstTech", "Amit/Ashutosh"], ["Name", "Dipanshu Bhola"], ["PairingStatus", "pursue"], ["Result", "Pass"], ["Role", "Dev"], ["Score", nil], ["SecondTech", "Sudhir/Rajan"], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Akash Makkar"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Vishvendra Godara"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Shweta Singh"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "IT"], ["CodePairing", "Sudhir"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Rajan/Adoni"], ["Name", "Utkarsh Chauhan"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "Computer"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Parul Singhal"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "Computer"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Raman Malik"], ["PairingStatus", nil], ["Result", nil], ["Role", nil], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "Mechanical"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Diwakar Saduja"], ["PairingStatus", nil], ["Result", nil], ["Role", "All"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Anukul Anand"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "MBA"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Monika Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "311029"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Sorabh Chopra"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Vijay Kumar"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "311026"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Sourabh Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Vineet Garg"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "MBA"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Hitanshu Choudhry"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Sandeep Kumar"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Rajan/Amit"], ["Name", "Vaibhav Jain"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", "adoni & Pratima"], ["Name", "Gaurav Kumar Sharma"], ["PairingStatus", "Pursue"], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Pooja Kumari"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Mohit Gupta"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "311061"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Prince Doliyia"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Ritika Bala Bains"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Malika Gupta"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "Electrical Mtech"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Samikshya Mishra"], ["PairingStatus", nil], ["Result", nil], ["Role", nil], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Namita Sehgal"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Sangam Aggarwal"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Mahima Garg"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "410008"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Vrinda Babbar"], ["PairingStatus", nil], ["Result", nil], ["Role", nil], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (13.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", "Ashutosh"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Avinash/Pratima"], ["Name", "Ashutosh Gupta"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "CSE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Subhash Gangwal"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "Civil"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Anuj Khurana"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Tanuj Aggarwal"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", "Pratima"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Rajan/Adoni"], ["Name", "Abhay Kashyap"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Dipika Tanwar"], ["PairingStatus", nil], ["Result", nil], ["Role", nil], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", "Rajan"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Sudhir J/Ashu"], ["Name", "Ajay Kumar Yadav"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "CSE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Saumya Agarwal"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Gaurav Kumar Lohia "], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Sudhir/Raman"], ["Name", "Hitesh Goel"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", nil], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "MBA"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Anurag"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Praneeth Kumar Pedapati"], ["PairingStatus", nil], ["Result", nil], ["Role", "ALL"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Anita Sahu"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Sonika Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "MBA"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Rajat Aggarwal"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Rahul Pandey"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Stuti Goel "], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", "Sudhir"], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", "Pratima/Avinash"], ["Name", "Anshul Goyal"], ["PairingStatus", "pursue"], ["Result", "Pass"], ["Role", "DEV"], ["Score", nil], ["SecondTech", "Sudhir/Adoni"], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Rohit Chaudhary"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Anmol Bhatia"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "CSE"], ["CodePairing", nil], ["Comment", "1st round comments:Sharp mind, good logic, understands the work he has done, limited technical knowledge, stammering problem."], ["FirstStatus", "Pursue"], ["FirstTech", "Sudhir/Raman"], ["Name", "Vivek Yadav"], ["PairingStatus", "pursue"], ["Result", "Pass"], ["Role", "DEV"], ["Score", nil], ["SecondTech", "Rajan/ Ashu"], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Varun Mittal"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Rohit Saraf"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Rohit Kumar Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Manjeet Singh"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Tuhir-Subhra Das"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "MBA"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Akanksha Arora"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Divya Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Priyanka Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Amber Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Sampreet Kaur Bhatia"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Manisha Gandhi"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Megha Gusain"], ["PairingStatus", nil], ["Result", nil], ["Role", "ALL"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", "Sudhir"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Ashu/Adoni"], ["Name", "Nitesh Gupta"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "Mech"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Nirav Meghpura"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "CSE"], ["CodePairing", "Ashutosh"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Rajan/Adoni"], ["Name", "Ninika Sharma"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Saurabh Gupta"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Suraj Singla"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "CSE "], ["CodePairing", "Rajan"], ["Comment", nil], ["FirstStatus", "Pursue"], ["FirstTech", "Avinash/Pratima"], ["Name", "Aswin Shrestha "], ["PairingStatus", "pursue"], ["Result", "Pass"], ["Role", "DEV"], ["Score", nil], ["SecondTech", "Adoni/Ashu"], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Mansi Gupta"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "CSE"], ["CodePairing", "Rajan"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Avinash/Ashu"], ["Name", "Ajay Berwal "], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "ECE"], ["CodePairing", "Adoni"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Avinash/Pratima"], ["Name", "Anoop Kumar Dhiman"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "IT"], ["CodePairing", "Adoni"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Sudhir/Raman"], ["Name", "Gaurav 109173"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Shubham 109672"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "P Mohan Neelesh"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Neeraj Kumar Balyan"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Abhinav Kapoor"], ["PairingStatus", nil], ["Result", nil], ["Role", nil], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "CSE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Satish Kumar Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Priyanshu 109804"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", "Adoni"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Rajan/ Sudhir"], ["Name", "Akshay Mathur"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "CSE"], ["CodePairing", "Avinsah"], ["Comment", "Nitin"], ["FirstStatus", nil], ["FirstTech", "Ashu/Rajan"], ["Name", "Achyut Paudel"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", "Sudhir & Avinash"], ["created_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:23:59 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  Rendered college/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 298ms (Views: 5.2ms | ActiveRecord: 128.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 12:54:00 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.css?body=1" for 127.0.0.1 at 2012-10-10 12:54:00 +0530
+Served asset /search_applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.css?body=1" for 127.0.0.1 at 2012-10-10 12:54:00 +0530
+Served asset /applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.css?body=1" for 127.0.0.1 at 2012-10-10 12:54:00 +0530
+Served asset /stdent.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 12:54:00 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 12:54:00 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.js?body=1" for 127.0.0.1 at 2012-10-10 12:54:00 +0530
+Served asset /applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.js?body=1" for 127.0.0.1 at 2012-10-10 12:54:00 +0530
+Served asset /search_applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.js?body=1" for 127.0.0.1 at 2012-10-10 12:54:00 +0530
+Served asset /stdent.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 12:54:00 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 12:55:57 +0530
+Processing by CollegeController#new as HTML
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "Computer"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Rajat Paul"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Sakshi"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Jaiparakash Yadav"], ["PairingStatus", nil], ["Result", nil], ["Role", nil], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Vijeta Marwah"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Vivek Dhakal"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "Computer"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Tabrej Alam"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", "1st round comments:ECE background, good logic, limited OO knowledge"], ["FirstStatus", "Puruse"], ["FirstTech", "Amit/Ashutosh"], ["Name", "Dipanshu Bhola"], ["PairingStatus", "pursue"], ["Result", "Pass"], ["Role", "Dev"], ["Score", nil], ["SecondTech", "Sudhir/Rajan"], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Akash Makkar"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Vishvendra Godara"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Shweta Singh"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "IT"], ["CodePairing", "Sudhir"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Rajan/Adoni"], ["Name", "Utkarsh Chauhan"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "Computer"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Parul Singhal"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "Computer"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Raman Malik"], ["PairingStatus", nil], ["Result", nil], ["Role", nil], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "Mechanical"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Diwakar Saduja"], ["PairingStatus", nil], ["Result", nil], ["Role", "All"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Anukul Anand"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "MBA"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Monika Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "311029"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Sorabh Chopra"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Vijay Kumar"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "311026"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Sourabh Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Vineet Garg"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "MBA"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Hitanshu Choudhry"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Sandeep Kumar"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Rajan/Amit"], ["Name", "Vaibhav Jain"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", "adoni & Pratima"], ["Name", "Gaurav Kumar Sharma"], ["PairingStatus", "Pursue"], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Pooja Kumari"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Mohit Gupta"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "311061"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Prince Doliyia"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Ritika Bala Bains"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Malika Gupta"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "Electrical Mtech"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Samikshya Mishra"], ["PairingStatus", nil], ["Result", nil], ["Role", nil], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Namita Sehgal"], ["PairingStatus", nil], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Sangam Aggarwal"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Mahima Garg"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "410008"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Vrinda Babbar"], ["PairingStatus", nil], ["Result", nil], ["Role", nil], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", "Ashutosh"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Avinash/Pratima"], ["Name", "Ashutosh Gupta"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "Dev"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "CSE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Subhash Gangwal"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "Civil"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Anuj Khurana"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Tanuj Aggarwal"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", "Pratima"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Rajan/Adoni"], ["Name", "Abhay Kashyap"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Dipika Tanwar"], ["PairingStatus", nil], ["Result", nil], ["Role", nil], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", "Rajan"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Sudhir J/Ashu"], ["Name", "Ajay Kumar Yadav"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "CSE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Saumya Agarwal"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Gaurav Kumar Lohia "], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Sudhir/Raman"], ["Name", "Hitesh Goel"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", nil], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "MBA"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Anurag"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Praneeth Kumar Pedapati"], ["PairingStatus", nil], ["Result", nil], ["Role", "ALL"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Anita Sahu"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Sonika Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "MBA"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Rajat Aggarwal"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Rahul Pandey"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Stuti Goel "], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", "Sudhir"], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", "Pratima/Avinash"], ["Name", "Anshul Goyal"], ["PairingStatus", "pursue"], ["Result", "Pass"], ["Role", "DEV"], ["Score", nil], ["SecondTech", "Sudhir/Adoni"], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Rohit Chaudhary"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Anmol Bhatia"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:57 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "CSE"], ["CodePairing", nil], ["Comment", "1st round comments:Sharp mind, good logic, understands the work he has done, limited technical knowledge, stammering problem."], ["FirstStatus", "Pursue"], ["FirstTech", "Sudhir/Raman"], ["Name", "Vivek Yadav"], ["PairingStatus", "pursue"], ["Result", "Pass"], ["Role", "DEV"], ["Score", nil], ["SecondTech", "Rajan/ Ashu"], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Varun Mittal"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Rohit Saraf"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Rohit Kumar Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Manjeet Singh"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Tuhir-Subhra Das"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "MBA"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Akanksha Arora"], ["PairingStatus", nil], ["Result", nil], ["Role", "BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Divya Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Priyanka Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Amber Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Sampreet Kaur Bhatia"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Manisha Gandhi"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Megha Gusain"], ["PairingStatus", nil], ["Result", nil], ["Role", "ALL"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", "Sudhir"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Ashu/Adoni"], ["Name", "Nitesh Gupta"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "Mech"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Nirav Meghpura"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "CSE"], ["CodePairing", "Ashutosh"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Rajan/Adoni"], ["Name", "Ninika Sharma"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Saurabh Gupta"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Suraj Singla"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "CSE "], ["CodePairing", "Rajan"], ["Comment", nil], ["FirstStatus", "Pursue"], ["FirstTech", "Avinash/Pratima"], ["Name", "Aswin Shrestha "], ["PairingStatus", "pursue"], ["Result", "Pass"], ["Role", "DEV"], ["Score", nil], ["SecondTech", "Adoni/Ashu"], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Mansi Gupta"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "CSE"], ["CodePairing", "Rajan"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Avinash/Ashu"], ["Name", "Ajay Berwal "], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "ECE"], ["CodePairing", "Adoni"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Avinash/Pratima"], ["Name", "Anoop Kumar Dhiman"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "IT"], ["CodePairing", "Adoni"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Sudhir/Raman"], ["Name", "Gaurav 109173"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "ECE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Shubham 109672"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "P Mohan Neelesh"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Neeraj Kumar Balyan"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Abhinav Kapoor"], ["PairingStatus", nil], ["Result", nil], ["Role", nil], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "CSE"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Satish Kumar Sharma"], ["PairingStatus", nil], ["Result", nil], ["Role", "DEV BA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "IT"], ["CodePairing", nil], ["Comment", nil], ["FirstStatus", nil], ["FirstTech", nil], ["Name", "Priyanshu 109804"], ["PairingStatus", nil], ["Result", nil], ["Role", "QA"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", nil], ["CodePairing", "Adoni"], ["Comment", nil], ["FirstStatus", "Pass"], ["FirstTech", "Rajan/ Sudhir"], ["Name", "Akshay Mathur"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", nil], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Branch", "CSE"], ["CodePairing", "Avinsah"], ["Comment", "Nitin"], ["FirstStatus", nil], ["FirstTech", "Ashu/Rajan"], ["Name", "Achyut Paudel"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", "Sudhir & Avinash"], ["created_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00], ["updated_at", Wed, 10 Oct 2012 07:25:58 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered college/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 227ms (Views: 4.9ms | ActiveRecord: 109.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 12:55:58 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.css?body=1" for 127.0.0.1 at 2012-10-10 12:55:58 +0530
+Served asset /applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.css?body=1" for 127.0.0.1 at 2012-10-10 12:55:58 +0530
+Served asset /search_applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 12:55:58 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.css?body=1" for 127.0.0.1 at 2012-10-10 12:55:58 +0530
+Served asset /stdent.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 12:55:58 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.js?body=1" for 127.0.0.1 at 2012-10-10 12:55:58 +0530
+Served asset /applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.js?body=1" for 127.0.0.1 at 2012-10-10 12:55:58 +0530
+Served asset /stdent.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.js?body=1" for 127.0.0.1 at 2012-10-10 12:55:58 +0530
+Served asset /search_applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 12:55:58 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-10-10 13:13:43 +0530
+Served asset /rails.png - 200 OK (0ms)
