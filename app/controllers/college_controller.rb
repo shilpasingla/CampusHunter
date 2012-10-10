@@ -7,9 +7,11 @@ class CollegeController < ApplicationController
   def new
 
     Rake::Task["db:load_csv_data"].reenable
-    Rake::Task["db:load_csv_data"].invoke
+    Rake::Task["db:load_csv_data"].invoke('Sample.csv')
+
   end
 
+  helper_method :new
 
 private
 def require_login

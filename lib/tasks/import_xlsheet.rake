@@ -1,10 +1,10 @@
 namespace :db do
 
   desc "load user data from csv"
-  task :load_csv_data  => :environment do
+  task :load_csv_data, [:arg1] =>  :environment do|task,args|
     require 'CSV'
-
-    CSV.foreach("Sample.csv") do |row|
+     puts(args[:arg1])
+    CSV.foreach(args[:arg1]) do |row|
       Applicants.create(
           :Name => row[0],
           :Score => row[1],

@@ -6,10 +6,16 @@ CampusHunter::Application.routes.draw do
   get "sign_up" => "users#new" , :as => "sign_up"
   get "applicant/show_details"
   get "applicant/search"
+<<<<<<< HEAD
 
   root :to => "college#new"
   resources :users
   resources :sessions
+=======
+  get "college/new"
+
+  root :to => "college#new"
+>>>>>>> origin/master
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
