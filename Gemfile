@@ -7,6 +7,7 @@ gem 'rails', '3.2.8'
 
 gem 'sqlite3'
 
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
 gem 'rake' , '>=0.9.2.2'
 
