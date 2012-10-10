@@ -6,6 +6,7 @@
         if (validExts.indexOf(fileExt) < 0) {
             alert("Invalid file selected, valid files are of " +
                     validExts.toString() + " types.");
+            sender.value = '';
             return false;
         }
         else return true;
@@ -20,7 +21,11 @@
 <input id="no_of_applicants" type="text">
 <br/> <br/><br/>
 
+
+
+
 <input id="import" type="file" accept="*.csv,*.xls" value="Import" onchange="checkfile(this);">
 <br/> <br/> <br/>
 
 <input id="done" type="submit" value="Done" onclick="controller.send("new")">
+
