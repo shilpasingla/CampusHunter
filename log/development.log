@@ -7553,3 +7553,221 @@ Connecting to database specified by database.yml
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.2ms)[0m  INSERT INTO "applicants" ("Branch", "CodePairing", "Comment", "FirstStatus", "FirstTech", "Name", "PairingStatus", "Result", "Role", "Score", "SecondTech", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Branch", "CSE"], ["CodePairing", "Avinsah"], ["Comment", "Nitin"], ["FirstStatus", nil], ["FirstTech", "Ashu/Rajan"], ["Name", "Achyut Paudel"], ["PairingStatus", "pursue"], ["Result", nil], ["Role", "DEV"], ["Score", nil], ["SecondTech", "Sudhir & Avinash"], ["created_at", Tue, 09 Oct 2012 11:09:04 UTC +00:00], ["updated_at", Tue, 09 Oct 2012 11:09:04 UTC +00:00]]
   [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-10-10 10:41:02 +0530
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (3ms)
+
+
+Started GET "/applicant/new" for 127.0.0.1 at 2012-10-10 10:41:08 +0530
+
+ActionController::RoutingError (No route matches [GET] "/applicant/new"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.9ms)
+
+
+Started GET "/applicant/new" for 127.0.0.1 at 2012-10-10 10:41:55 +0530
+Processing by ApplicantController#new as HTML
+  Rendered applicant/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 60ms (Views: 59.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/applicant.css?body=1" for 127.0.0.1 at 2012-10-10 10:41:55 +0530
+Served asset /applicant.css - 200 OK (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 10:41:55 +0530
+Served asset /application.css - 200 OK (8ms)
+
+
+Started GET "/assets/search_applicant.css?body=1" for 127.0.0.1 at 2012-10-10 10:41:55 +0530
+Served asset /search_applicant.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 10:41:55 +0530
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 10:41:55 +0530
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/stdent.css?body=1" for 127.0.0.1 at 2012-10-10 10:41:55 +0530
+Served asset /stdent.css - 200 OK (1ms)
+
+
+Started GET "/assets/applicant.js?body=1" for 127.0.0.1 at 2012-10-10 10:41:55 +0530
+Served asset /applicant.js - 200 OK (2ms)
+
+
+Started GET "/assets/search_applicant.js?body=1" for 127.0.0.1 at 2012-10-10 10:41:55 +0530
+Served asset /search_applicant.js - 200 OK (1ms)
+
+
+Started GET "/assets/stdent.js?body=1" for 127.0.0.1 at 2012-10-10 10:41:55 +0530
+Served asset /stdent.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 10:41:55 +0530
+Served asset /application.js - 200 OK (7ms)
+
+
+Started GET "/applicant/new" for 127.0.0.1 at 2012-10-10 10:42:18 +0530
+Processing by ApplicantController#new as HTML
+  Rendered applicant/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/applicant.css?body=1" for 127.0.0.1 at 2012-10-10 10:42:18 +0530
+Served asset /applicant.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 10:42:18 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.css?body=1" for 127.0.0.1 at 2012-10-10 10:42:18 +0530
+Served asset /search_applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 10:42:18 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.css?body=1" for 127.0.0.1 at 2012-10-10 10:42:18 +0530
+Served asset /stdent.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 10:42:18 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.js?body=1" for 127.0.0.1 at 2012-10-10 10:42:18 +0530
+Served asset /applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.js?body=1" for 127.0.0.1 at 2012-10-10 10:42:18 +0530
+Served asset /search_applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.js?body=1" for 127.0.0.1 at 2012-10-10 10:42:18 +0530
+Served asset /stdent.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 10:42:18 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/applicant/new" for 127.0.0.1 at 2012-10-10 10:44:59 +0530
+
+ActionController::RoutingError (No route matches [GET] "/applicant/new"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Shilpa/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 10:45:08 +0530
+
+LoadError (Expected /Users/Shilpa/CampusHunter/app/controllers/college_controller.rb to define CollegeController):
+  app/controllers/college_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/Shilpa/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.4ms)
+
+
+Started GET "/college/new" for 127.0.0.1 at 2012-10-10 10:45:51 +0530
+Processing by CollegeController#new as HTML
+  Rendered college/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 10:45:51 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/applicant.css?body=1" for 127.0.0.1 at 2012-10-10 10:45:51 +0530
+Served asset /applicant.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/search_applicant.css?body=1" for 127.0.0.1 at 2012-10-10 10:45:51 +0530
+Served asset /search_applicant.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 10:45:51 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.css?body=1" for 127.0.0.1 at 2012-10-10 10:45:51 +0530
+Served asset /stdent.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 10:45:51 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/applicant.js?body=1" for 127.0.0.1 at 2012-10-10 10:45:51 +0530
+Served asset /applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_applicant.js?body=1" for 127.0.0.1 at 2012-10-10 10:45:51 +0530
+Served asset /search_applicant.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stdent.js?body=1" for 127.0.0.1 at 2012-10-10 10:45:51 +0530
+Served asset /stdent.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 10:45:51 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateApplicants (20121008100349)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("applicants")
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (2.9ms)[0m  DROP TABLE "applicants"
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "applicants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar(255), "Score" integer, "Branch" varchar(255), "Role" varchar(255), "CodePairing" varchar(255), "PairingStatus" varchar(255), "FirstTech" varchar(255), "FirstStatus" varchar(255), "SecondTech" varchar(255), "Result" varchar(255), "Comment" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "college" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar(255), "NoOfApplicants" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
