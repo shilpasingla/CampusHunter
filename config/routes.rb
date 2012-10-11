@@ -2,9 +2,9 @@ CampusHunter::Application.routes.draw do
 
   get "college/new"
   get "college/add_user"
-  get "sessions/new"
-  get "sessions/destroy"
-  get "users/new"
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "log_out" => "sessions#new", :as => "log_out"
+  get "sign_up" => "users#new", :as => "sign_up"
   get "applicant/show_details"
   get "applicant/search"
 
