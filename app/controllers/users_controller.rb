@@ -6,10 +6,20 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to "/college/new", :notice => "Signed Up!"
+      redirect_to "/college/new", :notice => "User Added!"
     else
       render "new"
     end
   end
+
+  private
+  def require_login
+    if session[:user_id] == nil
+      flash[:error] = "You must be logged in to access this section"
+      redirect_to "/sessions/new"
+    end
+  end
+
+  before_filter :require_login
 
 end

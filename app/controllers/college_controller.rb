@@ -1,8 +1,14 @@
 require 'rake'
+require 'users_controller'
 Rake::Task.clear
 CampusHunter::Application.load_tasks
 
 class CollegeController < ApplicationController
+
+  def add_user
+  redirect_to "/users/new"
+  end
+
 
   def new
 
