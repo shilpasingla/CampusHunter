@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-<<<<<<< HEAD
   protect_from_forgery
   helper_method :current_user
   private
@@ -16,9 +15,4 @@ class ApplicationController < ActionController::Base
   #end
   #
   #before_filter :require_login
-=======
-
-
-
->>>>>>> origin/master
 end
