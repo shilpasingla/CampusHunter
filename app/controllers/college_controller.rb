@@ -22,7 +22,7 @@ class CollegeController < ApplicationController
 private
 def require_login
   if session[:user_id] == nil
-    flash[:error] = "You must be logged in to access this section"
+    flash[:error] = "You must be logged in to access this page"
     redirect_to "/sessions/new"
   end
 end
