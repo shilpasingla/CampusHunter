@@ -1,7 +1,7 @@
 class ApplicantController < ApplicationController
 
   def show_details
-  @applicant = Applicants.all
+    @applicant = Applicants.all
   end
 
   def search

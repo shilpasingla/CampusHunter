@@ -6,7 +6,7 @@ CampusHunter::Application.load_tasks
 class CollegeController < ApplicationController
 
   def add_user
-  redirect_to "/users/new"
+    redirect_to "/users/new"
   end
 
 
@@ -19,13 +19,13 @@ class CollegeController < ApplicationController
 
   helper_method :new
 
-private
-def require_login
-  if session[:user_id] == nil
-    flash[:error] = "You must be logged in to access this page"
-    redirect_to "/sessions/new"
+  private
+  def require_login
+    if session[:user_id] == nil
+      flash[:error] = "You must be logged in to access this page"
+      redirect_to "/sessions/new"
+    end
   end
-end
 
-before_filter :require_login
+  before_filter :require_login
 end

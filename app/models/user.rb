@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   before_save :encrypt_password
 
-  def self.authenticate(email,password)
+  def self.authenticate(email, password)
     user = find_by_email(email)
     if user && user.password == BCrypt::Engine.hash_secret(password, user.password_salt)
       user
@@ -11,13 +11,14 @@ class User < ActiveRecord::Base
       nil
     end
   end
+
   validates :email, :password, :presence => true
-  validates :password, :confirmation => {:message => "and Password_confirmation should be same"}
+  validates :password, :confirmation => { :message => "and Password_confirmation should be same" }
   validates :email, :uniqueness => true
   validates :password, :length => { :in => 4..20 }
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
-    self.password = BCrypt::Engine.hash_secret(password, password_salt)
+    self.password      = BCrypt::Engine.hash_secret(password, password_salt)
   end
 end
