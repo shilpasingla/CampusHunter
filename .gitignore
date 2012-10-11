@@ -2,4 +2,4 @@
 tmp
 .idea/**/*.iml
 .idea/**/*.xml
-tmp/
+tmp/.idea/
