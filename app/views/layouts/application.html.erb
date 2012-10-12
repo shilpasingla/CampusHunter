@@ -12,6 +12,7 @@
 <% if current_user %>
    Logged in as <%= current_user.email %>
       <%= link_to "logout", log_out_path %>
+      <%= link_to "Add User", sign_up_path %>
   <% else %>
       <%= link_to "login",  log_in_path %>
   <% end %>

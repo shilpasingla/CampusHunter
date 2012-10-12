@@ -5,10 +5,6 @@ CampusHunter::Application.load_tasks
 
 class CollegeController < ApplicationController
 
-  def add_user
-    redirect_to "/users/new"
-  end
-
   def new
     Rake::Task["db:load_csv_data"].reenable
     Rake::Task["db:load_csv_data"].invoke('Sample.csv')
