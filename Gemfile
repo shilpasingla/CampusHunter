@@ -30,10 +30,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-platforms :ruby do
-  gem 'sqlite3'
-end
-
 platforms :jruby do
   gem 'jruby-openssl'
   gem 'activerecord-jdbcsqlite3-adapter'
