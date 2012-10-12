@@ -7,3 +7,7 @@ one:
 two:
   email: MyString
   password: MyString
+
+randomUser:
+  email: random
+  password: abcd

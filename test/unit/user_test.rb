@@ -26,4 +26,10 @@ class UserTest < ActiveSupport::TestCase
 
   end
 
+  test "Email should be unique"  do
+    user=User.new(email:"random",password:"abcd")
+    assert_equal(false,user.save)
+
+  end
+
 end
