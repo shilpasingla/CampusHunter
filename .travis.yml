@@ -4,4 +4,5 @@ rvm:
   # uncomment this line if your project needs to run something other than `rake`:
 
 script:
-  - bundle exec rake --trace
+  - rake db:migrate
+  - bundle exec rake  --trace
