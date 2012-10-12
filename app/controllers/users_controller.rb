@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def new
     @user = User.new
   end
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def require_login
     if session[:user_id] == nil
       flash[:error] = "You must be logged in to add a new user"

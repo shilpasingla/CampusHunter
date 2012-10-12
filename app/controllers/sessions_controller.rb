@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def new
   end
 
@@ -13,10 +14,8 @@ class SessionsController < ApplicationController
     end
   end
 
-
   def destroy
     session[:user_id] = nil
     redirect_to "/sessions/new", :notice => "Successfully logged out!"
   end
-
 end

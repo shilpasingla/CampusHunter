@@ -9,17 +9,15 @@ class CollegeController < ApplicationController
     redirect_to "/users/new"
   end
 
-
   def new
-
     Rake::Task["db:load_csv_data"].reenable
     Rake::Task["db:load_csv_data"].invoke('Sample.csv')
-
   end
 
   helper_method :new
 
   private
+
   def require_login
     if session[:user_id] == nil
       flash[:error] = "You must be logged in to access this page"
