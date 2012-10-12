@@ -3,3 +3,4 @@ tmp
 .idea/**/*.iml
 .idea/**/*.xml
 tmp/.idea/
+log/
