@@ -14,39 +14,39 @@ function search_for_applicant() {
  </p>
 
     <table style="border:1px solid black;border-collapse:collapse;">
+  <tr>
+    <th style="border:1px solid black;">Name</th>
+    <th style="border:1px solid black;">College</th>
+    <th style="border:1px solid black;">Score</th>
+    <th style="border:1px solid black;">Branch</th>
+    <th style="border:1px solid black;">Role</th>
+    <th style="border:1px solid black;">CodePairing</th>
+    <th style="border:1px solid black;">PairingStatus</th>
+    <th style="border:1px solid black;">FirstTech</th>
+    <th style="border:1px solid black;">FirstStatus</th>
+    <th style="border:1px solid black;">SecondTech</th>
+    <th style="border:1px solid black;">Result</th>
+    <th style="border:1px solid black;">Comment</th>
+  </tr>
+
+  <% @applicant.each do |app|  %>
+
       <tr>
-        <th style="border:1px solid black;">Name</th>
-        <th style="border:1px solid black;">Score</th>
-        <th style="border:1px solid black;">Branch</th>
-        <th style="border:1px solid black;">Role</th>
-        <th style="border:1px solid black;">CodePairing</th>
-        <th style="border:1px solid black;">PairingStatus</th>
-        <th style="border:1px solid black;">FirstTech</th>
-        <th style="border:1px solid black;">FirstStatus</th>
-        <th style="border:1px solid black;">SecondTech</th>
-        <th style="border:1px solid black;">Result</th>
-        <th style="border:1px solid black;">Comment</th>
+        <td style="border:1px solid black;"><%= app.Name %></td>
+        <td style="border:1px solid black;"><%= app.college %></td>
+        <td style="border:1px solid black;"><%= app.Score %></td>
+        <td style="border:1px solid black;"><%= app.Branch %> </td>
+        <td style="border:1px solid black;"><%= app.Role %> </td>
+        <td style="border:1px solid black;"><%= app.CodePairing %></td>
+        <td style="border:1px solid black;"><%= app.PairingStatus %> </td>
+        <td style="border:1px solid black;"><%= app.FirstTech %></td>
+        <td style="border:1px solid black;"><%= app.FirstStatus %></td>
+        <td style="border:1px solid black;"><%= app.SecondTech %></td>
+        <td style="border:1px solid black;"><%= app.Result %> </td>
+        <td style="border:1px solid black;"><%= app.Comment %></td>
       </tr>
 
-      <% @applicant.each do |app|  %>
+  <% end %>
 
-          <tr>
-            <td style="border:1px solid black;"><%= app.Name %></td>
-            <td style="border:1px solid black;"><%= app.Score %></td>
-            <td style="border:1px solid black;"><%= app.Branch %> </td>
-            <td style="border:1px solid black;"><%= app.Role %> </td>
-            <td style="border:1px solid black;"><%= app.CodePairing %></td>
-            <td style="border:1px solid black;"><%= app.PairingStatus %> </td>
-            <td style="border:1px solid black;"><%= app.FirstTech %></td>
-            <td style="border:1px solid black;"><%= app.FirstStatus %></td>
-            <td style="border:1px solid black;"><%= app.SecondTech %></td>
-            <td style="border:1px solid black;"><%= app.Result %> </td>
-            <td style="border:1px solid black;"><%= app.Comment %></td>
-          </tr>
-
-      <% end %>
-
-    </table>
-
-
+</table>
 <% end %>

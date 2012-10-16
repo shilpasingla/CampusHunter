@@ -12,19 +12,17 @@ class CollegeController < ApplicationController
   helper_method :new
 
   def create
-    @college = College.new(params[:college])
-    @college.save
-    Rake::Task["db:load_csv_data"].reenable
-    Rake::Task["db:load_csv_data"].invoke(params[:import])
-    redirect_to "/applicant/show_details/"
-  end
-
-  private
-  def require_login
-    if session[:user_id] == nil
-      flash[:error] = "You must be logged in to access this page"
-      redirect_to "/sessions/new"
+    if params[:import] == nil
+      flash[:error] = "Please select a csv file."
+      render 'college/new'
+    else
+      @college = College.new(params[:college])
+      @college.save
+      Rake::Task["db:load_csv_data"].reenable
+      Rake::Task["db:load_csv_data"].invoke(params[:import],params[:college][:name])
+      redirect_to "/applicant/show_details/"
     end
+
   end
 
   before_filter :require_login
