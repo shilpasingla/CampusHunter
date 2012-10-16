@@ -19,7 +19,7 @@ class CollegeController < ApplicationController
       @college = College.new(params[:college])
       @college.save
       Rake::Task["db:load_csv_data"].reenable
-      Rake::Task["db:load_csv_data"].invoke(params[:import])
+      Rake::Task["db:load_csv_data"].invoke(params[:import],params[:college][:name])
       redirect_to "/applicant/show_details/"
     end
 
