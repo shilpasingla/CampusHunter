@@ -1,11 +1,11 @@
 <script type="text/javascript" language="javascript">
     function checkfile(sender) {
-        var validExts = new Array(".xlsx", ".xls", ".csv");
+        var validExts = new Array(".csv");
         var fileExt = sender.value;
         fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
         if (validExts.indexOf(fileExt) < 0) {
-            alert("Invalid file selected, valid files are of " +
-                    validExts.toString() + " types.");
+            alert("Invalid file selected, only" +
+                    validExts.toString() + " files are accepted");
             sender.value = '';
             return false;
         }
@@ -22,5 +22,5 @@
     <br><br>
     <input id="import" type="file" name="import" onchange="checkfile(this)">
     <br><br>
-    <%= f.submit 'done' %>
+    <%= f.submit 'Done' %>
 <% end %>

@@ -6,8 +6,8 @@ CampusHunter::Application.routes.draw do
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "sign_up" => "users#new", :as => "sign_up"
   get "applicant/show_details"
+  post "applicant/show_details"
   get "applicant/search"
-
   root :to => "college#new"
   resources :users
   resources :sessions

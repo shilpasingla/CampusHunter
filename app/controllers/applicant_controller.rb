@@ -1,7 +1,8 @@
 class ApplicantController < ApplicationController
 
+
   def show_details
-    @applicant = Applicants.all
+    @applicant = Applicants.search(params[:search])
   end
 
   def search
