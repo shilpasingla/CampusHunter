@@ -25,9 +25,5 @@ class CollegeController < ApplicationController
 
   end
 
-  private
-
-
-
   before_filter :require_login
 end
