@@ -13,15 +13,6 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-
-  def require_login
-    if session[:user_id] == nil
-      flash[:error] = "You must be logged in to add a new user"
-      redirect_to "/sessions/new"
-    end
-  end
-
   before_filter :require_login
 
 end
