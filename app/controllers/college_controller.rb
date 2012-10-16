@@ -6,11 +6,18 @@ CampusHunter::Application.load_tasks
 class CollegeController < ApplicationController
 
   def new
-    Rake::Task["db:load_csv_data"].reenable
-    Rake::Task["db:load_csv_data"].invoke('Sample.csv')
+
   end
 
   helper_method :new
+
+  def create
+    @college = College.new(params[:college])
+    @college.save
+    Rake::Task["db:load_csv_data"].reenable
+    Rake::Task["db:load_csv_data"].invoke(params[:import])
+    redirect_to "/applicant/show_details/"
+  end
 
   private
 

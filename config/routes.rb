@@ -11,9 +11,10 @@ CampusHunter::Application.routes.draw do
   root :to => "college#new"
   resources :users
   resources :sessions
+  #resource :college
   get "college/new"
-
-  root :to => "college#new"
+  post "college/create"
+  #root :to => "college#new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

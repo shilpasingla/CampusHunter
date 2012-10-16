@@ -13,15 +13,14 @@
     }
 </script>
 
-<h1> College name</h1>
-<input id="college_name" type="text">
-<br/>
-<h1>No of Applicants</h1>
-<input id="no_of_applicants" type="text">
-<br/> <br/><br/>
-
-<input id="import" type="file" accept="*.csv,*.xls" value="Import" onchange="checkfile(this);">
-<br/> <br/> <br/>
-
-<input id="done" type="submit" value="Done" onclick="<% new -%>">
-
+<%= form_for :college , :url =>{ :action => :create}  do |f|%>
+    <p>College name</p>
+    <%= f.text_field :name %>
+    <br>
+    <p>Number of applicant</p>
+    <%= f.text_field :numberofapplicant %>
+    <br><br>
+    <input id="import" type="file" name="import" onchange="checkfile(this)">
+    <br><br>
+    <%= f.submit 'done' %>
+<% end %>
