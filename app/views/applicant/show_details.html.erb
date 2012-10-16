@@ -9,9 +9,12 @@ function search_for_applicant() {
 <p>
 <%= text_field_tag :search, params[:search] %>
 <%= submit_tag "Search", :name => nil %>
+</p>
 
 <h1>Applicant's Details</h1>
- </p>
+
+<p> Download :<%= link_to "csv" , url = "/applicant/show_details.csv"%></p>
+<br>
 
     <table style="border:1px solid black;border-collapse:collapse;">
   <tr>
