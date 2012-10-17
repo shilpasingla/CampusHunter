@@ -1,8 +1,9 @@
 <h1>Delete User</h1>
-<%= form_for :user, :url => {:action => :destroy} do |f| %>
+<%= form_for :user, :url => {:action => :del} do |f| %>
     <p>
-      <%= f.label :email %><br />
-      <%= f.text_field :email, params[:email] %>
+     <label>email</label>
+      <%= text_field :email, params[:email] %>
     </p>
-    <p class="button"><%= f.submit label='Delete' %></p>
+    <p class="button"><%= submit_tag "Delete" %></p>
+
 <% end %>

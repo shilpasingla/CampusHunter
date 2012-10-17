@@ -13,8 +13,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def del
+    @user = User.find_by_email(params[:email])
+    if @user.nil?
+      redirect_to "/college/new", :notice => "No such user exists!"
+    elsif @user.destroy
+      redirect_to "/college/new", :notice => "User Deleted!"
+    end
+  end
+
   def destroy
-    User.destroy(params[:email])
   end
 
   private
