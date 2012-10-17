@@ -6,18 +6,18 @@
     <table id="applicants" class="display">
 <thead> 
  <tr>
-    <th style="border:1px solid black;">Name</th>
-    <th style="border:1px solid black;">College</th>
-    <th style="border:1px solid black;">Score</th>
-    <th style="border:1px solid black;">Branch</th>
-    <th style="border:1px solid black;">Role</th>
-    <th style="border:1px solid black;">CodePairing</th>
-    <th style="border:1px solid black;">PairingStatus</th>
-    <th style="border:1px solid black;">FirstTech</th>
-    <th style="border:1px solid black;">FirstStatus</th>
-    <th style="border:1px solid black;">SecondTech</th>
-    <th style="border:1px solid black;">Result</th>
-    <th style="border:1px solid black;">Comment</th>
+    <th>Name</th>
+    <th>College</th>
+    <th>Score</th>
+    <th>Branch</th>
+    <th>Role</th>
+    <th>CodePairing</th>
+    <th>PairingStatus</th>
+    <th>FirstTech</th>
+    <th>FirstStatus</th>
+    <th>SecondTech</th>
+    <th>Result</th>
+    <th>Comment</th>
   </tr>
 </thead>
 
@@ -25,18 +25,18 @@
   <% @applicant.each do |app|  %>
 
       <tr>
-        <td style="border:1px solid black;"><%= app.Name %></td>
-        <td style="border:1px solid black;"><%= app.college %></td>
-        <td style="border:1px solid black;"><%= app.Score %></td>
-        <td style="border:1px solid black;"><%= app.Branch %> </td>
-        <td style="border:1px solid black;"><%= app.Role %> </td>
-        <td style="border:1px solid black;"><%= app.CodePairing %></td>
-        <td style="border:1px solid black;"><%= app.PairingStatus %> </td>
-        <td style="border:1px solid black;"><%= app.FirstTech %></td>
-        <td style="border:1px solid black;"><%= app.FirstStatus %></td>
-        <td style="border:1px solid black;"><%= app.SecondTech %></td>
-        <td style="border:1px solid black;"><%= app.Result %> </td>
-        <td style="border:1px solid black;"><%= app.Comment %></td>
+        <td><%= app.Name %></td>
+        <td><%= app.college %></td>
+        <td><%= app.Score %></td>
+        <td><%= app.Branch %> </td>
+        <td><%= app.Role %> </td>
+        <td><%= app.CodePairing %></td>
+        <td><%= app.PairingStatus %> </td>
+        <td><%= app.FirstTech %></td>
+        <td><%= app.FirstStatus %></td>
+        <td><%= app.SecondTech %></td>
+        <td><%= app.Result %> </td>
+        <td><%= app.Comment %></td>
       </tr>
 
   <% end %>
