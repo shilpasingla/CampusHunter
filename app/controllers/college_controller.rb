@@ -29,7 +29,7 @@ class CollegeController < ApplicationController
     @collegeAll = College.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render 'college/show'}
       format.json { render json: @collegeAll }
     end
   end

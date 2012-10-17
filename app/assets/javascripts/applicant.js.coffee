@@ -5,5 +5,8 @@ jQuery ->
      $('#applicants').dataTable( {
      "sPaginationType" : "full_numbers"
      bJQueryUI: true
+     "aoColumns": [{"bSearchable": true}, {"bSearchable": false}, {"bSearchable": false},
+       {"bSearchable": false}, {"bSearchable": false},  {"bSearchable": false}, {"bSearchable": false},
+       {"bSearchable": false}, {"bSearchable": false},  {"bSearchable": false}, {"bSearchable": false}, {"bSearchable": false}]
      })
 
