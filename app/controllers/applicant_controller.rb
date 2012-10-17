@@ -3,7 +3,7 @@ require 'csv'
 class ApplicantController < ApplicationController
 
   def show_details
-    @applicant = Applicants.search(params[:search])
+    @applicant = Applicants.search(params[:collegename])
     respond_to do |format|
       format.html
       format.csv {send_data @applicant.to_csv}
