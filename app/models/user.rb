@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.destroy(email)
+    #User.delete(:email => email)
+  end
+
   validates :email, :password, :presence => true
   validates :password, :confirmation => { :message => "and Password_confirmation should be same" }
   validates :email, :uniqueness => true
