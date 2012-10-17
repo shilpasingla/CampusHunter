@@ -25,5 +25,14 @@ class CollegeController < ApplicationController
 
   end
 
+  def show
+    @collegeAll = College.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @collegeAll }
+    end
+  end
+
   before_filter :require_login
 end

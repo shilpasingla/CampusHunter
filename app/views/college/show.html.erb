@@ -1,0 +1,24 @@
+<h1>Listing colleges</h1>
+
+<table id="applicants" class="display">
+  <thead>
+  <tr>
+    <th style="border:1px solid black;">Name</th>
+    <th style="border:1px solid black;">Number Of Applicants</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @collegeAll.each do |college|  %>
+
+      <tr>
+        <td style="border:1px solid black;"><%= college.name %></td>
+        <td style="border:1px solid black;"><%= college.numberofapplicant %></td>
+      </tr>
+
+  <% end %>
+  </tbody>
+</table>
+
+<%=  link_to "Add New College", new_college_path %>
