@@ -32,6 +32,8 @@ group :assets do
   gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 end
 
+gem 'jquery-ui-rails'
+
 platforms :jruby do
   gem 'jruby-openssl'
   gem 'activerecord-jdbcsqlite3-adapter'
