@@ -18,7 +18,6 @@ CampusHunter::Application.routes.draw do
   resources :users
   resources :sessions
   match "applicant/show_details/:collegename" => 'Applicant#show_details'
-  match "applicant/:collegename/show_details" => 'Applicant#show_details'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
