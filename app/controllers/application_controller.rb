@@ -17,4 +17,5 @@ class ApplicationController < ActionController::Base
       redirect_to :log_in
     end
   end
+
 end
