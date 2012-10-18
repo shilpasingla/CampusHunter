@@ -1,23 +1,35 @@
 CampusHunter::Application.routes.draw do
 
-  resources :college
-
-
-  get "college/new"
-  get "college/add_user"
-  get "college/show"
+  root :to => "college#show"
+  resources :sessions
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "sign_up" => "users#new", :as => "sign_up"
   get "delete_user" => "users#destroy", :as => "delete_user"
   post "users/del"
-  get "applicant/show_details"
-  post "applicant/show_details"
-  get "applicant/search"
-  root :to => "college#show"
-  resources :users
-  resources :sessions
+
+  resources :college
+
+  resources :applicant do
+    collection do
+      get 'show_details'
+      get 'search'
+      post 'show_details'
+    end
+  end
   match "applicant/show_details/:collegename" => 'Applicant#show_details'
+
+
+
+  #get "college/new"
+  #get "college/add_user"
+  #get "college/show"
+
+  #get "applicant/show_details"
+  #post "applicant/show_details"
+  #get "applicant/search"
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

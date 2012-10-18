@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   def require_login
     if session[:user_id] == nil
       flash[:error] = "You must be logged in to access this page"
-      redirect_to "/sessions/new"
+      redirect_to :log_in
     end
   end
 end
