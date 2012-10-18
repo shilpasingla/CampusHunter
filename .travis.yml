@@ -5,4 +5,4 @@ rvm:
 
 script:
   - rake db:migrate
-  - bundle exec bundle exec rake  --trace
+  - bundle exec rake  --trace
