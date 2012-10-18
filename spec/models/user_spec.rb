@@ -1,6 +1,5 @@
 require "rspec"
 require "spec_helper"
-require  "/Users/Shilpa/CampusHunter/app/models/user.rb"
 
 describe "validate" do
 
