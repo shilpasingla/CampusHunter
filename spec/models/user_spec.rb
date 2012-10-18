@@ -7,7 +7,7 @@ describe "validate" do
   it "should require an email" do
     #require 'pry'
     #binding.pry
-      User.new(email:" ").should_not be_valid
+      User.authenticate("test_user","abcd")
 
     end
 
