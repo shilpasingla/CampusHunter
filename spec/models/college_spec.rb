@@ -14,4 +14,8 @@ describe "validations" do
     College.new(name: "xyz", numberofapplicant: "400").should be_valid
   end
 
+  it"should not accept alphabets or symbols for no of applicants" do
+    College.new(name:"xyz",numberofapplicant:"a1a").should_not be_valid
+  end
+
 end
