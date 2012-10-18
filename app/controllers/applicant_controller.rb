@@ -6,7 +6,7 @@ class ApplicantController < ApplicationController
     @applicant = Applicants.search(params[:collegename])
     respond_to do |format|
       format.html
-      format.csv {send_data @applicant.to_csv}
+      format.csv {send_data @applicant.to_csv(params[:collegename])}
     end
   end
 
