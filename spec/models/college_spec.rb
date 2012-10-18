@@ -4,7 +4,6 @@ describe "validations" do
 
   it "should check presence of college name" do
    #college = College.new(name: " ").should_not raise_error
-    true.should == false
   end
 
   #it "should check presence of number of applicants" do
