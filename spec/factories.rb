@@ -13,5 +13,21 @@ FactoryGirl.define do
 
   end
 
+  factory :Applicants do
+    Branch "cse"
+    CodePairing "rashi"
+    Comment "good"
+    FirstStatus "pass"
+    FirstTech "Amit"
+    Name "shilpa"
+    PairingStatus "pass"
+    Result "pass"
+    Role "dev"
+    Score 12
+    SecondTech "pass"
+    college "Thapar"
+
+  end
+
 
 end

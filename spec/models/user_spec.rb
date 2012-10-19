@@ -39,9 +39,16 @@ describe "validations" do
     user.should_not be_valid
   end
 
-  #it "should authenticate a valid user" do
-  #  user = User.authenticate(@user_attr[:email],@user_attr[:password])
-  #  user.should_not be_nil
-  #end
+  it "should authenticate a valid user" do
+    User.create!(@user_attr)
+    user = User.authenticate(@user_attr[:email],@user_attr[:password])
+    user.should_not be_nil
+  end
+
+  it "should create a new instance of a user given valid attributes" do
+    user = User.new(@user_attr)
+    user.encrypt_password()
+    user.password.should_not == "abcd"
+  end
 
 end
