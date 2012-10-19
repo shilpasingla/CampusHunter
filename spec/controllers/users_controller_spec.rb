@@ -1,7 +1,7 @@
-require File.dirname(__FILE__) + '/../spec_helper'
-require File.dirname(__FILE__) + '/../../app/controllers/users_controller.rb'
+require "spec_helper"
+
 
 describe UsersController do
 
- end
+end
 
