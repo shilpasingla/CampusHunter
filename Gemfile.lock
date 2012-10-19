@@ -165,7 +165,7 @@ DEPENDENCIES
   activerecord-jdbcsqlite3-adapter
   bcrypt-ruby
   coffee-rails (~> 3.2.1)
-  factory_girl_rails
+  factory_girl_rails (~> 4.0)
   heroku
   jquery-datatables-rails!
   jquery-rails
