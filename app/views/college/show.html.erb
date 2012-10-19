@@ -3,8 +3,8 @@
 <table id="applicants" class="display">
   <thead>
   <tr>
-    <th style="border:1px solid black;">Name</th>
-    <th style="border:1px solid black;">Number Of Applicants</th>
+    <th>Name</th>
+    <th>Number Of Applicants</th>
 
   </tr>
   </thead>
@@ -15,10 +15,12 @@
       <tr>
         <td style="border:1px solid black;"><%= link_to college.name, url="/applicant/show/#{college.name}" %></td>
         <td style="border:1px solid black;"><%= college.numberofapplicant %></td>
+        <td><%= link_to college.name, url="/applicant/show_details/#{college.name}" %></td>
+        <td><%= college.numberofapplicant %></td>
       </tr>
 
   <% end %>
   </tbody>
 </table>
 
-<%=  link_to "Add New College", new_college_path %>
+<button type="btn" ><%=  link_to "Add New College", new_college_path %></button>

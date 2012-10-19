@@ -1,12 +1,12 @@
-$(document).ready(function(){
-    $('#applicants').dataTable( {
-     "sPaginationType" : "full_numbers",
-     bJQueryUI: true,
-     "aoColumns": [{"bSearchable": true}, {"bSearchable": false}, {"bSearchable": false},
-       {"bSearchable": false}, {"bSearchable": false},  {"bSearchable": false}, {"bSearchable": false},
-       {"bSearchable": false}, {"bSearchable": false},  {"bSearchable": false}, {"bSearchable": false}, {"bSearchable": false}]
-     });
-});
+//$(document).ready(function(){
+//    $('#applicants').dataTable( {
+//     "sPaginationType" : "full_numbers",
+//     bJQueryUI: true,
+//     "aoColumns": [{"bSearchable": true}, {"bSearchable": false}, {"bSearchable": false},
+//       {"bSearchable": false}, {"bSearchable": false},  {"bSearchable": false}, {"bSearchable": false},
+//       {"bSearchable": false}, {"bSearchable": false},  {"bSearchable": false}, {"bSearchable": false}, {"bSearchable": false}]
+//     });
+//});
 
 function autoSave(object){
     var value =object.value;
