@@ -2,12 +2,15 @@ require "spec_helper"
 
 describe "validate" do
 
-  it "should require an email" do
-    #require 'pry'
-    #binding.pry
-      User.authenticate("test_user","abcd")
+  it "should authenticate test user" do
+    user = User.new(email:"test_user",password:"abcd")
+    #user.save
+    require 'pry'
+    binding.pry
+    User.authenticate(user.email, user.password)
 
-    end
+  end
+
 
   end
 
