@@ -6,16 +6,21 @@ namespace :db do
     CSV.foreach(args[:file_name]) do |row|
       Applicants.create(
           :Name => row[0],
-          :Score => row[1],
-          :Branch => row[2],
-          :Role => row[3],
-          :CodePairing => row[4],
-          :PairingStatus => row[5],
-          :FirstTech => row[6],
-          :FirstStatus => row[7],
-          :SecondTech => row[8],
-          :Result => row[9],
-          :Comment => row[10],
+          :RollNo => row[1],
+          :Gender => row[2],
+          :EmailAdd => row[3],
+          :Qualification => row[4],
+          :Branch => row[5],
+          :Percentage => row[6],
+          :Score => "",
+          :CodePairing => "",
+          :PairingStatus =>"",
+          :SecondTech =>"",
+          :FirstTech => "",
+          :Role => "",
+          :FirstStatus => "",
+          :Result => "",
+          :Comment => "",
           :college => args[:college_name]
       )
     end

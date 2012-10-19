@@ -3,7 +3,8 @@ require "spec_helper"
 describe "validations" do
 
   it "should check presence of college name" do
-   College.new(name: " ").should_not be_valid           #use validates presence of
+   #College.new(name: " ").should_not be_valid           #use validates presence of
+    College.validates_presence_of(:name)
   end
 
   it "should check presence of number of applicants" do

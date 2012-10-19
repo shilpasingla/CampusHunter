@@ -7,6 +7,10 @@ class ApplicantController < ApplicationController
     @applicant = Applicants.search(params[:collegename])
   end
 
+  def show
+  @applicant = Applicants.search(params[:collegename])
+end
+
   def download
     respond_to do |format|
       format.csv {send_data Applicants.to_csv(params[:collegename])}
@@ -16,5 +20,4 @@ class ApplicantController < ApplicationController
   def auto_save
     Applicants.update( params[:id],:Score => "#{params[:score]}" )
   end
-
 end
