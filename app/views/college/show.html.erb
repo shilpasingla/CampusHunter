@@ -10,7 +10,7 @@
   </thead>
 
   <tbody>
-  <% @collegeAll.each do |college|  %>
+  <% @colleges.each do |college|  %>
 
       <tr>
         <td style="border:1px solid black;"><%= link_to college.name, url="/applicant/show_details/#{college.name}" %></td>

@@ -4,12 +4,12 @@ Rake::Task.clear
 CampusHunter::Application.load_tasks
 
 class CollegeController < ApplicationController
+  before_filter :require_login
+  helper_method :new
 
   def new
 
   end
-
-  helper_method :new
 
   def create
     if params[:import] == nil
@@ -26,13 +26,12 @@ class CollegeController < ApplicationController
   end
 
   def show
-    @collegeAll = College.all
+    @colleges = College.all
 
     respond_to do |format|
       format.html { render 'college/show'}
-      format.json { render json: @collegeAll }
+      format.json { render json: @colleges }
     end
   end
 
-  before_filter :require_login
 end
