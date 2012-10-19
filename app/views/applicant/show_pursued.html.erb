@@ -1,15 +1,4 @@
-<h1>Applicant's Details</h1>
-
-<p> Download :<%= link_to "csv" , url = "/applicant/download/#{@applicant[0].college}.csv"%></p>
-
-<%= form_tag( :action => "show_pursued" ) do %>
-    <p>
-      <%= label_tag(:cutoff, "CUTOFF") %>
-      <%= text_field_tag(:cutoff) %>
-      <%= submit_tag("ENTER") %>
-    </p>
-<% end %>
-<br>
+<h1>PURSUED APPLICANTS</h1>
 
 <table id="applicants"  class="display">
   <thead>

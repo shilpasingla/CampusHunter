@@ -14,6 +14,8 @@ CampusHunter::Application.routes.draw do
   resources :applicant do
     collection do
       get 'show_details'
+      post 'show_pursued'
+      get 'show_pursued'
       post 'show_details'
       post 'save'
       post "auto_save"
