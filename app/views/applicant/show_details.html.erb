@@ -1,44 +1,57 @@
+<script>
+    function autoSave(object){
+        var value =object.value;
+        var id = object.id;
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("POST","/applicant/auto_save",true);
+        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xmlhttp.send("score=" + value +"&"+ "id="+id);
+    }
+</script>
 <h1>Applicant's Details</h1>
 
-<p> Download :<%= link_to "csv" , url = "/applicant/show_details/#{@applicant[0].college}.csv"%></p>
+<p> Download :<%= link_to "csv" , url = "/applicant/download/#{@applicant[0].college}.csv"%></p>
 <br>
 
-    <table id="applicants" class="display">
-<thead> 
- <tr>
-    <th>Name</th>
-    <th>College</th>
-    <th>Score</th>
-    <th>Branch</th>
-    <th>Role</th>
-    <th>CodePairing</th>
-    <th>PairingStatus</th>
-    <th>FirstTech</th>
-    <th>FirstStatus</th>
-    <th>SecondTech</th>
-    <th>Result</th>
-    <th>Comment</th>
-  </tr>
-</thead>
-
-<tbody>
-  <% @applicant.each do |app|  %>
-
-      <tr>
-        <td><%= app.Name %></td>
-        <td><%= app.college %></td>
-        <td><%= app.Score %></td>
-        <td><%= app.Branch %> </td>
-        <td><%= app.Role %> </td>
-        <td><%= app.CodePairing %></td>
-        <td><%= app.PairingStatus %> </td>
-        <td><%= app.FirstTech %></td>
-        <td><%= app.FirstStatus %></td>
-        <td><%= app.SecondTech %></td>
-        <td><%= app.Result %> </td>
-        <td><%= app.Comment %></td>
+<table class="display">
+    <thead>
+     <tr>
+        <th>Name</th>
+        <th>College</th>
+        <th>Score</th>
+        <th>Branch</th>
+        <th>Role</th>
+        <th>CodePairing</th>
+        <th>PairingStatus</th>
+        <th>FirstTech</th>
+        <th>FirstStatus</th>
+        <th>SecondTech</th>
+        <th>Result</th>
+        <th>Comment</th>
       </tr>
+    </thead>
 
-  <% end %>
-</tbody>
+
+    <tbody>
+      <% @applicant.each do |app|  %>
+
+          <tr>
+            <td><%= app.Name %></td>
+            <td><%= app.college %></td>
+            <td><%= text_field :applicant ,:score, :value => app.Score, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= app.Branch %> </td>
+            <td><%= app.Role %> </td>
+            <td><%= app.CodePairing %></td>
+            <td><%= app.PairingStatus %> </td>
+            <td><%= app.FirstTech %></td>
+            <td><%= app.FirstStatus %></td>
+            <td><%= app.SecondTech %></td>
+            <td><%= app.Result %> </td>
+            <td><%= app.Comment %></td>
+          </tr>
+
+      <% end %>
+    </tbody>
+
+
 </table>

@@ -15,10 +15,10 @@ class Applicants < ActiveRecord::Base
   end
   end
 
-  def self.to_csv(collegeName)
+  def self.to_csv(college_name)
     CSV.generate do |csv|
       csv << column_names
-      search(collegeName).each do |applicant|
+      search(college_name).each do |applicant|
         csv << applicant.attributes.values_at(*column_names)
       end
     end
