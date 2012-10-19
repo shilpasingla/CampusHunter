@@ -1,22 +1,30 @@
 require "spec_helper"
+require "factory_girl"
+
 
 describe "validations" do
 
-  it "should check presence of college name" do
-   #College.new(name: " ").should_not be_valid           #use validates presence of
-    College.validates_presence_of(:name)
+  before(:each) do
+    @college_attr = FactoryGirl.attributes_for(:College)
   end
 
-  it "should check presence of number of applicants" do
-    College.new(numberofapplicant: " ").should_not be_valid    #use validates presence of
+  it "should create a new instance of a college given valid attributes" do
+    College.create!(@college_attr)
   end
 
-  it "should be valid in presence of name and numberofapplicants" do
-    College.new(name: "xyz", numberofapplicant: "400").should be_valid   #use factory girl instead of new
+  it "should not create a new instance of a college given empty college name" do
+    college = College.new(@college_attr.merge(:name => ""))
+    college.should_not be_valid
   end
 
-  it"should not accept alphabets or symbols for no of applicants" do
-    College.new(name:"xyz",numberofapplicant:"a1a").should_not be_valid
+  it "should not create a new instance of a college given empty number of applicant" do
+    college = College.new(@college_attr.merge(:numberofapplicant => ""))
+    college.should_not be_valid
+  end
+
+  it "should not create a new instance of a college given string value for number of applicant" do
+    college = College.new(@college_attr.merge(:numberofapplicant => "numberOfApplicant"))
+    college.should_not be_valid
   end
 
 end

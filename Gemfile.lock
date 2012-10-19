@@ -52,6 +52,11 @@ GEM
     excon (0.16.7)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (4.1.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.1.0)
+      factory_girl (~> 4.1.0)
+      railties (>= 3.0.0)
     heroku (2.32.14)
       heroku-api (~> 0.3.5)
       launchy (>= 0.3.2)
@@ -160,6 +165,7 @@ DEPENDENCIES
   activerecord-jdbcsqlite3-adapter
   bcrypt-ruby
   coffee-rails (~> 3.2.1)
+  factory_girl_rails (~> 4.0)
   heroku
   jquery-datatables-rails!
   jquery-rails

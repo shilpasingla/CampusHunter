@@ -25,4 +25,7 @@ class UsersController < ApplicationController
   def destroy
   end
 
+
+  before_filter :require_login
+
 end
