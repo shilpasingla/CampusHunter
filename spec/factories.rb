@@ -26,6 +26,11 @@ FactoryGirl.define do
     Score 12
     SecondTech "pass"
     college "Thapar"
+    RollNo 1
+    Gender "f"
+    EmailAdd "a@b.com"
+    Qualification "btech"
+    Percentage 90
 
   end
 
