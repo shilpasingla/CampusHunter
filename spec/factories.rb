@@ -6,4 +6,12 @@ FactoryGirl.define do
 
   end
 
+  factory :User do
+    email "test_user"
+    password "abcd"
+    password_confirmation "abcd"
+
+  end
+
+
 end
