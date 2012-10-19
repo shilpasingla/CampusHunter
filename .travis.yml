@@ -6,3 +6,4 @@ rvm:
 script:
   - rake db:migrate
   - bundle exec rake  --trace
+  - bundle exec rspec spec

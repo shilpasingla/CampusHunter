@@ -8,6 +8,7 @@ gem 'rails', '3.2.8'
 group :development, :test do
   gem 'sqlite3' , :require => 'sqlite3'
   gem 'heroku'
+  gem "rspec-rails", "~> 2.8"
 end
 
 group :production do
@@ -33,11 +34,13 @@ group :assets do
 end
 
 gem 'jquery-ui-rails'
-
+gem 'pry'
 platforms :jruby do
   gem 'jruby-openssl'
   gem 'activerecord-jdbcsqlite3-adapter'
 end
+
+gem "webrat"
 
 gem 'jquery-rails'
 
