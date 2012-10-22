@@ -7,20 +7,16 @@ class Applicants < ActiveRecord::Base
   validates :Name, :RollNo, :presence => true
   validates :Score, :numericality => {:less_than_or_equal_to => 12, :greater_than_or_equal_to => 0}, :allow_blank => true, :allow_nil => true
 
-  #def self.search(search)
-  #if search
-  #  where('college LIKE ?', "%#{search}%")
-  #else
-  #  scoped
-  #end
-  #end
-
   def self.get_pursued(cutoff,collegename)
-      if cutoff
+    if collegename
+    if cutoff
         where("Score >= #{cutoff} AND college = ? ","#{collegename}")
       else
+        where('college LIKE ?', "%#{collegename}%")
+      end
+    else
       scoped
-    end
+      end
   end
 
   def self.to_csv(college_name)
