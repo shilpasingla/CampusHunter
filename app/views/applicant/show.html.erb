@@ -2,47 +2,14 @@
 
 <p> Download :<%= link_to "csv" , url = "/applicant/download/#{@applicant[0].college}.csv"%></p>
 
-<%= form_tag( :action => "show_pursued" ) do %>
+<%= form_tag :action => 'show' do %>
     <p>
       <%= hidden_field_tag :collegename, params[:collegename] %>
       <%= label_tag(:cutoff, "CUTOFF") %>
       <%= text_field_tag(:cutoff) %>
       <%= submit_tag("ENTER") %>
     </p>
+
 <% end %>
+<div id="project"><%= render 'project' %></div>
 <br>
-
-<table id="applicants"  class="display">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Roll No</th>
-    <th>Gender</th>
-    <th>Email Address</th>
-    <th>Qualification</th>
-    <th>Specification</th>
-    <th>Percentage</th>
-    <th>Score</th>
-  </tr>
-  </thead>
-
-
-  <tbody>
-  <% @applicant.each do |app|  %>
-
-      <tr>
-        <td><%= app.Name %></td>
-        <td><%= app.RollNo %></td>
-        <td><%= app.Gender %> </td>
-        <td><%= app.EmailAdd %> </td>
-        <td><%= app.Qualification %></td>
-        <td><%= app.Branch %> </td>
-        <td><%= app.Percentage %></td>
-        <td><%= text_field :applicant ,:score, :value => app.Score, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-      </tr>
-
-  <% end %>
-  </tbody>
-
-
-</table>

@@ -15,3 +15,9 @@
 //= require twitter/bootstrap
 //= require dataTables/jquery.dataTables
 //= require_tree .
+$(function() {
+$('#applicant_cutoff').submit(function () {
+    $.get(this.action, $(this).serialize(), null, "script");
+    return false;
+});
+});

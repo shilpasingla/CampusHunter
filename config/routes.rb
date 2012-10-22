@@ -3,6 +3,7 @@ CampusHunter::Application.routes.draw do
   root :to => "college#show"
   resources :sessions
   resources :users
+
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
   resources :users
@@ -27,6 +28,7 @@ CampusHunter::Application.routes.draw do
   match "applicant/show_details/:collegename" => 'Applicant#show_details'
   match "applicant/download/:collegename" => 'Applicant#download'
   match "applicant/show/:collegename" => 'Applicant#show'
+  match "applicant/show/:collegename/:cutoff" => 'Applicant#show'
 
 
   #get "college/new"
