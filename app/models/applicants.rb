@@ -9,7 +9,7 @@ class Applicants < ActiveRecord::Base
 
   def self.get_pursued(cutoff,collegename)
     if collegename
-    if cutoff
+    if !cutoff.blank?
         where("Score >= #{cutoff} AND college = ? ","#{collegename}")
       else
         where('college LIKE ?', "%#{collegename}%")
