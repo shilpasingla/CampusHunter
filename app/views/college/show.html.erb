@@ -13,7 +13,7 @@
   <% @colleges.each do |college|  %>
 
       <tr>
-        <td><%= link_to college.name, url="/applicant/show_details/#{college.name}" %></td>
+        <td><%= link_to college.name, url="/applicant/show/#{college.name}" %></td>
         <td><%= college.numberofapplicant %></td>
       </tr>
 

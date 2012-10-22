@@ -17,7 +17,7 @@ class Applicants < ActiveRecord::Base
 
   def self.get_pursued(score,collegename)
       if score
-        where("Score >= #{score} AND college LIKE ?", "%#{collegename}%")
+        where("Score >= #{score} AND college = ? ","#{collegename}")
       else
       scoped
     end
