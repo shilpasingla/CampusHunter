@@ -1,10 +1,10 @@
 $(document).ready(function(){
-    $('#applicants').dataTable( {
+    $('#applicants2').dataTable( {
      "sPaginationType" : "full_numbers",
      bJQueryUI: true,
-     "aoColumns": [{"bSearchable": true}, {"bSearchable": false}, {"bSearchable": false},
+     "aoColumns": [{"bSearchable": true}, {"bSearchable": true}, {"bSearchable": false},
        {"bSearchable": false}, {"bSearchable": false},  {"bSearchable": false}, {"bSearchable": false},
-       {"bSearchable": false}, {"bSearchable": false},  {"bSearchable": false}, {"bSearchable": false}, {"bSearchable": false}]
+       {"bSearchable": false}]
      });
 });
 

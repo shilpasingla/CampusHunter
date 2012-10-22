@@ -25,7 +25,7 @@ describe "validations" do
   it "should return list of applicants for a college" do
     Smith = Applicants.create!(@applicants_attr.merge(:Name => "Smith",:college => "iit"))
     Arnav = Applicants.create!(@applicants_attr.merge(:Name => "Arnav",:college => "iit"))
-    Applicants.search("iit").should == [Smith,Arnav]
+    Applicants.get_pursued(0,"iit").should == [Smith,Arnav]
 
   end
 

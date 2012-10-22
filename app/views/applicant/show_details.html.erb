@@ -2,15 +2,6 @@
 
 <p> Download :<%= link_to "csv" , url = "/applicant/download/#{@applicant[0].college}.csv"%></p>
 
-<%= form_tag :url =>{ :action => :show_pursued} do %>
-    <p>
-    <%= label_tag(:cutoff, "CUTOFF") %>
-    <%= text_field_tag(:cutoff) %>
-    <%= submit_tag("ENTER") %>
-    </p>
-<% end %>
-<br>
-
 <table id="applicants"  class="display">
     <thead>
      <tr>

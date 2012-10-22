@@ -1,21 +1,15 @@
-
+require 'csv'
 
 class ApplicantController < ApplicationController
   before_filter :require_login
   @@college = ""
-
   def show_details
     @applicant = Applicants.search(params[:collegename])#, params[:cutoff])
   end
 
-
-  def show_pursued
-    @applicant = Applicants.get_pursued(params[:cutoff],@@college)
-  end
-
   def show
-  @applicant = Applicants.search(params[:collegename])
-    @@college = params[:collegename]
+    @applicant = Applicants.get_pursued(params[:cutoff],params[:collegename])
+  #@applicant = Applicants.search(params[:collegename])
 end
 
   def download
