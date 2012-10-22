@@ -4,36 +4,30 @@ require "factory_girl"
 describe SessionsController do
 
 
-  before(:each) do
-  @user_attr = FactoryGirl.attributes_for(:User)
-end
-
-
-
-
-  it "should redirect to login page when not logged in" do
+it "should redirect to login page when not logged in" do
     get :new
     assert_response :success
 
   end
 
   it "should re-render new template on failed save" do
-    User.any_instance.stub(:valid?).and_return(false)
-    post 'create'
+    User.should_receive(:authenticate).with("email","password").and_return(nil)
+    post 'create' ,{:email => "email", :password => "password"}
     response.should render_template('new')
   end
-  #
-  #it "should re-render new template on failed save" do
-  #
-  #
-  #
-  #  User.any_instance.stub(:valid?).and_return(true)
-  #  params[:email] = "test_user"
-  #  params[:password] = "abcd"
-  #  post :create, user: attributes_for(:User)
-  #  #post 'create'  , :email => "test_user",:password => "abcd"
-  #  #response.should redirect_to("college/new")
-  #  response.should redirect_to users_path(assigns :user)
-  #end
+
+
+
+  it "should redirect to show colleges page after valid authentication of a user" do
+    user = User.new
+    User.should_receive(:authenticate).with("email","password").and_return(user)
+    post :create ,{:email => "email", :password => "password"}
+    response.should redirect_to("/college/show_all")
+  end
+
+  it "should delete the given user" do
+    delete :destroy
+    response.should redirect_to("/sessions/new")
+  end
 
 end
