@@ -9,7 +9,7 @@ class ApplicantController < ApplicationController
 
 
   def show_pursued
-    @applicant = Applicants.get_pursued(params[:cutoff])
+    @applicant = Applicants.get_pursued(params[:cutoff],params[:collegename])
   end
 
   def show
