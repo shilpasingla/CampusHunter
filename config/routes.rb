@@ -5,6 +5,7 @@ CampusHunter::Application.routes.draw do
   resources :users
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
+  resources :users
   get "sign_up" => "users#new", :as => "sign_up"
   get "delete_user" => "users#destroy", :as => "delete_user"
   post "users/del"
