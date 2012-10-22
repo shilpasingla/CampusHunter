@@ -1,14 +1,15 @@
-require 'rake'
+#require 'rake'
 require 'users_controller'
-Rake::Task.clear
-CampusHunter::Application.load_tasks
+
+#Rake::Task.clear
+#CampusHunter::Application.load_tasks
 
 class CollegeController < ApplicationController
   before_filter :require_login
   helper_method :new
+  helper_method :load_csv_to_database
 
   def new
-
   end
 
   def create
@@ -18,12 +19,12 @@ class CollegeController < ApplicationController
     else
       @college = College.new(params[:college])
       @college.save
-      Rake::Task["db:load_csv_data"].reenable
-      Rake::Task["db:load_csv_data"].invoke(params[:import],params[:college][:name])
+      load_csv_to_database params[:import],params[:college][:name]
       redirect_to "/applicant/show/#{params[:college][:name]}"
     end
 
   end
+
 
   def show
     @colleges = College.all
@@ -34,4 +35,28 @@ class CollegeController < ApplicationController
     end
   end
 
+  private
+  def load_csv_to_database(file_name,college_name)
+    CSV.foreach(file_name) do |row|
+      Applicants.create(
+          :Name => row[0],
+          :RollNo => row[1],
+          :Gender => row[2],
+          :EmailAdd => row[3],
+          :Qualification => row[4],
+          :Branch => row[5],
+          :Percentage => row[6],
+          :Score => "",
+          :CodePairing => "",
+          :PairingStatus =>"",
+          :SecondTech =>"",
+          :FirstTech => "",
+          :Role => "",
+          :FirstStatus => "",
+          :Result => "",
+          :Comment => "",
+          :college => college_name
+      )
+    end# code here
+  end
 end
