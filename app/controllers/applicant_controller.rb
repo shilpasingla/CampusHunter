@@ -1,8 +1,9 @@
-require 'csv'
+
 
 class ApplicantController < ApplicationController
   before_filter :require_login
   @@college = ""
+
   def show_details
     @applicant = Applicants.search(params[:collegename])#, params[:cutoff])
   end
@@ -25,5 +26,6 @@ end
 
   def auto_save
     Applicants.update( params[:id],:Score => "#{params[:score]}" )
+    render :nothing => true
   end
 end

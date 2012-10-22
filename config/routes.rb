@@ -19,9 +19,10 @@ CampusHunter::Application.routes.draw do
       get 'show_pursued'
       post 'show_details'
       post 'save'
-      post "auto_save"
+      post 'auto_save'
       get 'show'
       post 'show'
+      get 'download'
     end
   end
   match "applicant/show_details/:collegename" => 'Applicant#show_details'
