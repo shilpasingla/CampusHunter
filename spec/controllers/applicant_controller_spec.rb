@@ -5,18 +5,12 @@ describe ApplicantController do
   it "should get list of applicants for a given college" do
 
    ApplicationController.any_instance.stub(:require_login).and_return(true)
+   Applicants.stub(:search).with("thapar")
    get :show_details , {:collegename => "thapar"}
    assert_response :success
 
   end
 
-  #it "should get list of applicants clearing cutoff" do
-  #
-  #  ApplicationController.any_instance.stub(:require_login).and_return(true)
-  #  get :show_pursued , {:cutoff => 2}
-  #  assert_response :success
-  #
-  #end
 
   it "should download csv sheet for a college" do
 
