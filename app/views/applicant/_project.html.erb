@@ -1,17 +1,3 @@
-<h1>Applicant's Details</h1>
-
-<p> Download :<%= link_to "csv" , url = "/applicant/download/#{@applicant[0].college}.csv"%></p>
-
-<%= form_tag( :action => "show_pursued" ) do %>
-    <p>
-      <%= hidden_field_tag :collegename, params[:collegename] %>
-      <%= label_tag(:cutoff, "CUTOFF") %>
-      <%= text_field_tag(:cutoff) %>
-      <%= submit_tag("ENTER") %>
-    </p>
-<% end %>
-<br>
-
 <table id="applicants"  class="display">
   <thead>
   <tr>
@@ -25,7 +11,6 @@
     <th>Score</th>
   </tr>
   </thead>
-
 
   <tbody>
   <% @applicant.each do |app|  %>
@@ -43,6 +28,5 @@
 
   <% end %>
   </tbody>
-
 
 </table>
