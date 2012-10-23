@@ -6,7 +6,7 @@
     <thead>
      <tr>
         <th>Name</th>
-        <th>College</th>
+        <th>RollNo</th>
         <th>Score</th>
         <th>Branch</th>
         <th>Role</th>
@@ -26,17 +26,17 @@
 
           <tr>
             <td><%= app.Name %></td>
-            <td><%= app.college %></td>
+            <td><%= app.RollNo %></td>
             <td><%= app.Score %></td>
             <td><%= app.Branch %> </td>
-            <td><%= app.Role %> </td>
-            <td><%= app.CodePairing %></td>
-            <td><%= app.PairingStatus %> </td>
-            <td><%= app.FirstTech %></td>
-            <td><%= app.FirstStatus %></td>
-            <td><%= app.SecondTech %></td>
-            <td><%= app.Result %> </td>
-            <td><%= app.Comment %></td>
+            <td><%= text_field :applicant ,:role, :value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= text_field :applicant ,:codePairing, :value => app.CodePairing, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= text_field :applicant ,:pairingStatus, :value => app.PairingStatus, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= text_field :applicant ,:firstTech, :value => app.FirstTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= text_field :applicant ,:firstStatus, :value => app.FirstStatus, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= text_field :applicant ,:secondTech, :value => app.SecondTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= text_field :applicant ,:result, :value => app.Result, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= text_field :applicant ,:comment, :value => app.Comment, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
           </tr>
 
       <% end %>

@@ -6,6 +6,15 @@ $(document).ready(function(){
        {"bSearchable": false}, {"bSearchable": false},  {"bSearchable": false}, {"bSearchable": false},
        {"bSearchable": false}]
      });
+
+    $('#applicants').dataTable( {
+        "sPaginationType" : "full_numbers",
+        bJQueryUI: true,
+        "aoColumns": [{"bSearchable": true}, {"bSearchable": true}, {"bSearchable": false},
+            {"bSearchable": false}, {"bSearchable": false},  {"bSearchable": false}, {"bSearchable": false},
+            {"bSearchable": false}]
+    });
+
 });
 
 function autoSave(object){
