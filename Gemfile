@@ -7,9 +7,9 @@ gem 'rails', '3.2.8'
 
 group :development, :test do
   gem 'sqlite3' , :require => 'sqlite3'
-  gem 'heroku'
   gem "rspec-rails", "~> 2.8"
 end
+gem 'heroku'
 
 group :production do
   gem 'pg'
