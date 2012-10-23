@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20121023103721) do
     t.integer  "numberofapplicant"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
-    t.integer  "cut_off"
+    t.integer  "cutoff"
   end
 
   create_table "users", :force => true do |t|
