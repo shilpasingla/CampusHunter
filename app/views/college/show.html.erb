@@ -5,7 +5,7 @@
   <tr>
     <th>Name</th>
     <th>Number Of Applicants</th>
-
+    <th>Cutoff</th>
   </tr>
   </thead>
 
@@ -15,6 +15,7 @@
       <tr>
         <td><%= link_to college.name, url="/applicant/show/#{college.name}" %></td>
         <td><%= college.numberofapplicant %></td>
+        <td><%= college.cutoff %></td>
       </tr>
 
   <% end %>
