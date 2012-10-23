@@ -17,7 +17,7 @@ class CollegeController < ApplicationController
       flash[:error] = "Please select a csv file."
       render 'college/new'
     else
-      @college = College.new(params[:college])
+      @college = College.new(:name => params[:name],:numberofapplicant => params[:numberofapplicant])
       @college.save
       load_csv_to_database params[:import],params[:name]
       redirect_to "/applicant/show/#{params[:name]}"
