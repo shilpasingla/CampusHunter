@@ -19,8 +19,8 @@ class CollegeController < ApplicationController
     else
       @college = College.new(params[:college])
       @college.save
-      load_csv_to_database params[:import],params[:college][:name]
-      redirect_to "/applicant/show/#{params[:college][:name]}"
+      load_csv_to_database params[:import],params[:name]
+      redirect_to "/applicant/show/#{params[:name]}"
     end
 
   end
@@ -36,9 +36,11 @@ class CollegeController < ApplicationController
   end
 
   private
+
   def load_csv_to_database(file_name,college_name)
-    CSV.foreach(file_name) do |row|
-      Applicants.create(
+
+    CSV.new( file_name.tempfile, :headers => true, :col_sep=> "," ).each do |row|
+      Applicants.create!(
           :Name => row[0],
           :RollNo => row[1],
           :Gender => row[2],
@@ -57,6 +59,6 @@ class CollegeController < ApplicationController
           :Comment => "",
           :college => college_name
       )
-    end# code here
+    end
   end
 end

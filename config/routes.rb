@@ -30,7 +30,7 @@ CampusHunter::Application.routes.draw do
   match "applicant/download/:collegename" => 'Applicant#download'
   match "applicant/show/:collegename" => 'Applicant#show'
   match "applicant/show/:collegename/:cutoff" => 'Applicant#show'
-
+  match "college/create" => 'College#create'
 
   #get "college/new"
   #get "college/add_user"

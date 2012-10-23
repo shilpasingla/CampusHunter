@@ -13,16 +13,19 @@
     }
 </script>
 
-<%= form_for :college , :url =>{ :action => :create}  do |f|%>
+
+
+    <form action="/college/create" id="college" name="college" method="post" enctype="multipart/form-data">
 
 
     <p>College name</p>
-    <%= f.text_field :name %>
+    <input type="text" name="name" id="name">
     <br>
     <p>Number of applicant</p>
-    <%= f.text_field :numberofapplicant %>
+      <input type="text" name="numberofapplicant" id="numberofapplicant">
     <br><br>
     <input id="import" type="file" name="import" onchange="checkfile(this)">
     <br><br>
-    <%= f.submit 'Done' %>
-<% end %>
+    <input type="submit">
+
+    </form>
