@@ -16,7 +16,7 @@ end
 
   def download
     respond_to do |format|
-      format.csv {send_data Applicants.to_csv(params[:collegename])}
+      format.csv {send_data Applicants.to_csv(params[:collegename],params[:cutoff])}
     end
   end
 

@@ -15,8 +15,8 @@ describe ApplicantController do
   it "should download csv sheet for a college" do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
-    Applicants.stub(:to_csv).with("thapar").as_null_object
-    get :download , {:format => :csv, :collegename => "thapar"}
+    Applicants.stub(:to_csv).with("thapar",6).as_null_object
+    get :download , {:format => :csv, :collegename => "thapar", :cutoff=> 6}
     assert_response :success
 
   end

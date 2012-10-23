@@ -19,10 +19,10 @@ class Applicants < ActiveRecord::Base
       end
   end
 
-  def self.to_csv(college_name)
+  def self.to_csv(college_name,cutoff)
     CSV.generate do |csv|
       csv << column_names
-      search(college_name).each do |applicant|
+      get_pursued(cutoff,college_name).each do |applicant|
         csv << applicant.attributes.values_at(*column_names)
       end
     end
