@@ -8,7 +8,7 @@
       <%= label_tag(:cutoff, "CUTOFF") %>
       <%= text_field_tag(:cutoff) %>
       <%= submit_tag("ENTER") %>
-      <%= link_to "Generate List", :controller => "applicant", :action => "show_details" %>
+      <%= link_to "Generate List", url = "/applicant/show_details/#{@applicant[0].college}" %>
     </p>
 <% end %>
 
