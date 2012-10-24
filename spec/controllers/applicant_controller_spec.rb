@@ -2,6 +2,11 @@ require "spec_helper"
 
 describe ApplicantController do
 
+
+  before(:each) do
+    @college_attr = FactoryGirl.attributes_for(:College)
+  end
+
   it "should get list of applicants for a given college" do
 
    ApplicationController.any_instance.stub(:require_login).and_return(true)
@@ -14,10 +19,10 @@ describe ApplicantController do
 
 
   it "should download csv sheet for a college" do
-
+    College.create!(@college_attr.merge(:name => "thapar"))
     ApplicationController.any_instance.stub(:require_login).and_return(true)
-    Applicants.stub(:to_csv).with("thapar",6).as_null_object
-    get :download , {:format => :csv, :collegename => "thapar", :cutoff=> 6}
+    Applicants.stub(:to_csv).with("thapar",3).as_null_object
+    get :download , {:format => :csv, :collegename => "thapar"}
     assert_response :success
 
   end
