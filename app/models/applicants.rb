@@ -11,7 +11,6 @@ class Applicants < ActiveRecord::Base
     if collegename
     if !cutoff.blank?
         cutoff = cutoff.to_i
-        (College.find_by_name(collegename)).update_column(:cutoff, cutoff)
         where("Score >= #{cutoff} AND college = ? ","#{collegename}")
       else
         where('college LIKE ?', "%#{collegename}%")

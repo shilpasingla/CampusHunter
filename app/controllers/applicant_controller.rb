@@ -8,7 +8,11 @@ class ApplicantController < ApplicationController
   end
 
   def show
-    @applicant = Applicants.get_pursued(params[:cutoff],params[:collegename])
+    @college = College.find_by_name(params[:collegename])
+    if(!params[:cutoff].blank?)
+    @college.update_column(:cutoff, params[:cutoff])
+    end
+    @applicant = Applicants.get_pursued(@college.cutoff,params[:collegename])
 end
 
   def download
