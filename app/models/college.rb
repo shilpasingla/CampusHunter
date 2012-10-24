@@ -7,7 +7,7 @@ class College < ActiveRecord::Base
       if !cutoff.blank?
         cutoff = cutoff.to_i
         #Applicants.where("applicants.Score >= '#{cutoff}' AND applicants.college = '#{self.name}'")
-        Applicants.where(:college => self.name, :Score => self.cutoff)
+        Applicants.where(Applicants.college => self.name, Applicants.Score => cutoff)
       else
         Applicants.find_all_by_college(self.name)
       end
