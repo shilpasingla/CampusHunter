@@ -1,10 +1,13 @@
 require 'csv'
 
 class ApplicantController < ApplicationController
+
   before_filter :require_login
+
   def show_details
-    cutoff = College.find_by_name(params[:collegename]).cutoff
-    @applicant = Applicants.get_pursued(cutoff, params[:collegename])
+    @college = College.find_by_name(params[:collegename])
+    @college.cutoff = params[:cutoff]
+    @applicant = @college.pursued(params[:cutoff])
   end
 
   def show
@@ -12,8 +15,8 @@ class ApplicantController < ApplicationController
     if(!params[:cutoff].blank?)
     @college.update_column(:cutoff, params[:cutoff])
     end
-    @applicant = Applicants.get_pursued(@college.cutoff,params[:collegename])
-end
+    @applicant = @college.pursued(@college.cutoff)
+  end
 
   def download
     respond_to do |format|
