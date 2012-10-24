@@ -2,8 +2,6 @@ require 'csv'
 
 class ApplicantController < ApplicationController
   before_filter :require_login
-  @@college = ""
-  @@cutoff = ""
   def show_details
     cutoff = College.find_by_name(params[:collegename]).cutoff
     @applicant = Applicants.get_pursued(cutoff, params[:collegename])
@@ -11,8 +9,6 @@ class ApplicantController < ApplicationController
 
   def show
     @applicant = Applicants.get_pursued(params[:cutoff],params[:collegename])
-    @@college = params[:collegename]
-    @@cutoff = params[:cutoff]
 end
 
   def download

@@ -3,6 +3,7 @@ FactoryGirl.define do
   factory :College do
     name "testCollege"
     numberofapplicant 5
+    cutoff 3
 
   end
 

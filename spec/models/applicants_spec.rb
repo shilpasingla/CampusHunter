@@ -6,6 +6,7 @@ describe "validations" do
 
   before(:each) do
     @applicants_attr = FactoryGirl.attributes_for(:Applicants)
+    @college_attr = FactoryGirl.attributes_for(:College)
   end
 
   it "should create a new instance of an Applicant given valid attributes" do
@@ -23,6 +24,8 @@ describe "validations" do
   end
 
   it "should return list of applicants for a college" do
+    College.stub(:update_column).with(:cutoff,0)
+    College.create!(@college_attr.merge(:name => "iit"))
     Smith = Applicants.create!(@applicants_attr.merge(:Name => "Smith",:college => "iit"))
     Arnav = Applicants.create!(@applicants_attr.merge(:Name => "Arnav",:college => "iit"))
     Applicants.get_pursued(0,"iit").should == [Smith,Arnav]
