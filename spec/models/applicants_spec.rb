@@ -28,7 +28,8 @@ describe "validations" do
     College.create!(@college_attr.merge(:name => "iit"))
     Smith = Applicants.create!(@applicants_attr.merge(:Name => "Smith",:college => "iit"))
     Arnav = Applicants.create!(@applicants_attr.merge(:Name => "Arnav",:college => "iit"))
-    Applicants.get_pursued(0,"iit").should == [Smith,Arnav]
+
+    College.find_by_name("iit").pursued(0).should == [Smith,Arnav]
 
   end
 
