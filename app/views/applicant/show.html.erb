@@ -6,7 +6,7 @@
       <%= label_tag(:cutoff, "CUTOFF") %>
       <%= text_field_tag(:cutoff) %>
       <%= submit_tag("ENTER") %>
-      <%= "Generate List" %>
+      <%=link_to "Generate List" , url = "/applicant/pursued/#{@applicant[0].college}"%>
     </p>
 <% end %>
 

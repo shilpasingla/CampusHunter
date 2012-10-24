@@ -15,10 +15,10 @@ CampusHunter::Application.routes.draw do
 
   resources :applicant do
     collection do
-      get 'show_details'
+      get 'pursued'
       post 'show_pursued'
       get 'show_pursued'
-      post 'show_details'
+      post 'pursued'
       post 'save'
       post 'auto_save'
       get 'show'
@@ -26,7 +26,7 @@ CampusHunter::Application.routes.draw do
       get 'download'
     end
   end
-  match "applicant/show_details/:collegename" => 'Applicant#show_details'
+  match "applicant/pursued/:collegename" => 'Applicant#pursued'
   match "applicant/download/:collegename" => 'Applicant#download'
   match "applicant/show/:collegename" => 'Applicant#show'
   match "applicant/show/:collegename/:cutoff" => 'Applicant#show'
@@ -36,8 +36,8 @@ CampusHunter::Application.routes.draw do
   #get "college/add_user"
   #get "college/show"
 
-  #get "applicant/show_details"
-  #post "applicant/show_details"
+  #get "applicant/pursued"
+  #post "applicant/pursued"
   #get "applicant/search"
 
 

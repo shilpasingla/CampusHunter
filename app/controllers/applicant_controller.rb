@@ -4,10 +4,9 @@ class ApplicantController < ApplicationController
 
   before_filter :require_login
 
-  def show_details
+  def pursued
     @college = College.find_by_name(params[:collegename])
-    @college.cutoff = params[:cutoff]
-    @applicant = @college.pursued(params[:cutoff])
+    @applicant = @college.pursued(@college.cutoff)
   end
 
   def show
