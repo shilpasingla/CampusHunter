@@ -10,6 +10,8 @@ class Applicants < ActiveRecord::Base
   def self.get_pursued(cutoff,collegename)
     if collegename
     if !cutoff.blank?
+        cutoff = cutoff.to_i
+        College.find_by_name(collegename).update_column(:cutoff, cutoff)
         where("Score >= #{cutoff} AND college = ? ","#{collegename}")
       else
         where('college LIKE ?', "%#{collegename}%")

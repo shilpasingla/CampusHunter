@@ -5,7 +5,8 @@ class ApplicantController < ApplicationController
   @@college = ""
   @@cutoff = ""
   def show_details
-    @applicant = Applicants.get_pursued(params[:cutoff], params[:collegename])
+    cutoff = College.find_by_name(params[:collegename]).cutoff
+    @applicant = Applicants.get_pursued(cutoff, params[:collegename])
   end
 
   def show
