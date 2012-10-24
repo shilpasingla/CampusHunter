@@ -9,15 +9,15 @@ class Applicants < ActiveRecord::Base
 
   def self.get_pursued(cutoff,collegename)
     if collegename
-    if !cutoff.blank?
+  unless cutoff.blank?
         cutoff = cutoff.to_i
-        where("Score >= #{cutoff} AND college = ? ","#{collegename}")
+        where("applicants.Score >= #{cutoff} AND applicants.college = ?","#{collegename}")
       else
         where('college LIKE ?', "%#{collegename}%")
       end
-    else
+  else
       scoped
-      end
+  end
   end
 
   def self.to_csv(college_name,cutoff)
