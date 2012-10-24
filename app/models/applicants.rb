@@ -11,7 +11,7 @@ class Applicants < ActiveRecord::Base
     if collegename
     if !cutoff.blank?
         cutoff = cutoff.to_i
-        where("Score >= #{cutoff} AND college = ? ","#{collegename}")
+        where("score >= #{cutoff} AND college = ? ","#{collegename}")
       else
         where('college LIKE ?', "%#{collegename}%")
       end
