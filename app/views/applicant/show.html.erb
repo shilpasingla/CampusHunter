@@ -35,7 +35,7 @@
       <td><%= app.Qualification %></td>
       <td><%= app.Branch %> </td>
       <td><%= app.Percentage %></td>
-      <td><%= text_field :applicant ,:score, :value => app.Score, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+      <td><%= text_field :applicant ,:score, :class => "Score",:value => app.Score, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
     </tr>
 
 <% end %>
