@@ -12,7 +12,7 @@ class ApplicantController < ApplicationController
 
   def show
     @college = College.find_by_name(params[:collegename])
-    if(!params[:cutoff].blank?)
+    if !params[:cutoff].blank?
       @college.update_column(:cutoff, params[:cutoff])
     end
       @applicant = @college.pursued(@college.cutoff)

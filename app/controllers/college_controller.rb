@@ -6,23 +6,31 @@ require 'users_controller'
 
 class CollegeController < ApplicationController
   before_filter :require_login
-  helper_method :new
+  #helper_method :new
   helper_method :load_csv_to_database
 
   def new
   end
 
   def create
+    #require "pry"
+    #binding.pry
     if params[:import] == nil
       flash[:error] = "Please select a csv file."
       render 'college/new'
-    else
-      @college = College.new(:name => params[:name],:numberofapplicant => params[:numberofapplicant])
-      @college.save
+
+    else if College.where(:name => params[:name]).count == 0
       load_csv_to_database params[:import],params[:name]
+      @college = College.new(:name => params[:name],:numberofapplicant => Applicants.where(:college => params[:name]).count)
+      @college.save
       redirect_to "/applicant/show/#{params[:name]}"
+
+    else
+      flash[:error] = "College name already exists"
+      render 'college/new'
     end
 
+    end
   end
 
 

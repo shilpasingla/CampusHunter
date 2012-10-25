@@ -13,7 +13,9 @@
     }
 </script>
 
-
+    <%=  link_to "Show Colleges List", {:controller => "college" , :action => "show"} %>
+     <br>
+    <br>
 
     <form action="/college/create" id="college" name="college" method="post" enctype="multipart/form-data">
 
@@ -21,9 +23,7 @@
     <p>College name</p>
     <input type="text" name="name" id="name">
     <br>
-    <p>Number of applicant</p>
-      <input type="text" name="numberofapplicant" id="numberofapplicant">
-    <br><br>
+    <br>
     <input id="import" type="file" name="import" onchange="checkfile(this)">
     <br><br>
     <input type="submit">
