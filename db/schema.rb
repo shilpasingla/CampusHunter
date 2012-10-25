@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121023103721) do
+ActiveRecord::Schema.define(:version => 20121025105600) do
 
   create_table "applicants", :force => true do |t|
     t.string   "Name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20121023103721) do
     t.string   "EmailAdd"
     t.string   "Qualification"
     t.float    "Percentage"
+    t.string   "PhoneNo"
   end
 
   create_table "colleges", :force => true do |t|

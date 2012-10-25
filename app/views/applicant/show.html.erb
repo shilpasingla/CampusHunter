@@ -6,7 +6,7 @@
       <%= label_tag(:cutoff, "CUTOFF") %>
       <%= text_field_tag(:cutoff) %>
       <%= submit_tag("ENTER") %>
-      <%=link_to "Generate List" , url = "/applicant/logic_pursued/#{@applicant[0].college}"%>
+      <%=link_to "Shortlist" , url = "/applicant/logic_pursued/#{@applicant[0].college}"%>
     </p>
 <% end %>
 
@@ -17,6 +17,7 @@
   <th>Roll No</th>
   <th>Gender</th>
   <th>Email Address</th>
+  <th>Phone Number</th>
   <th>Qualification</th>
   <th>Specification</th>
   <th>Percentage</th>
@@ -32,6 +33,7 @@
       <td><%= app.RollNo %></td>
       <td><%= app.Gender %> </td>
       <td><%= app.EmailAdd %> </td>
+      <td><%= app.PhoneNo %> </td>
       <td><%= app.Qualification %></td>
       <td><%= app.Branch %> </td>
       <td><%= app.Percentage %></td>

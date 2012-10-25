@@ -1,5 +1,6 @@
 <h1>Applicant's Details</h1>
-<p><%=link_to "Generate List" , url = "/applicant/final_pursued/#{@applicant[0].college}"%></p>
+<p><%=link_to "Shortlist" , url = "/applicant/final_pursued/#{@applicant[0].college}"%></p>
+<p> Download :<%= link_to "csv" , url = "/applicant/download/#{@applicant[0].college}.csv"%></p>
 
 <table id="applicants"  class="display">
   <thead>
