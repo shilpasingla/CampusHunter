@@ -3,7 +3,7 @@ $(document).ready(function(){
      "sPaginationType" : "full_numbers",
      bJQueryUI: true,
      "aoColumns": [{"bSearchable": true}, {"bSearchable": true}, {"bSearchable": false},
-       {"bSearchable": false}, {"bSearchable": false},  {"bSearchable": false}, {"bSearchable": false},
+       {"bSearchable": true}, {"bSearchable": false},  {"bSearchable": false}, {"bSearchable": false},
        {"bSearchable": false}]
      });
 
@@ -11,7 +11,7 @@ $(document).ready(function(){
         "sPaginationType" : "full_numbers",
         bJQueryUI: true,
         "aoColumns": [{"bSearchable": true}, {"bSearchable": true}, {"bSearchable": false},
-            {"bSearchable": false}, {"bSearchable": false},  {"bSearchable": false}, {"bSearchable": false},
+            {"bSearchable": true}, {"bSearchable": false},  {"bSearchable": false}, {"bSearchable": false},
             {"bSearchable": false}]
     });
 
