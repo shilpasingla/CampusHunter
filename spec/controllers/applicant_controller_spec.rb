@@ -12,7 +12,6 @@ describe ApplicantController do
 
    ApplicationController.any_instance.stub(:require_login).and_return(true)
    #Applicants.stub(:search).with("thapar")
-   Applicants.stub(:get_pursued).with(9,"thapar")
    get :show , { :collegename => "thapar" , :cutoff => 9}
    assert_response :success
 
@@ -21,7 +20,7 @@ describe ApplicantController do
 
   it "should download csv sheet for a college" do
     ApplicationController.any_instance.stub(:require_login).and_return(true)
-    Applicants.stub(:to_csv).with("thapar",3).as_null_object
+    #Applicants.stub(:to_csv).with("thapar",3).as_null_object
     get :download , {:format => :csv, :collegename => "thapar"}
     assert_response :success
 
@@ -35,6 +34,14 @@ describe ApplicantController do
     assert_response :success
   end
 
+  it "should render list of selected applicants" do
+
+    ApplicationController.any_instance.stub(:require_login).and_return(true)
+    College.stub(:find_by_name).with("AIT").and_return(College.new)
+    College.stub(:pursued).with("AIT").and_return(true)
+    get :show_selected ,{:cutoff => 3 , :college_name => "AIT"}
+    assert_response :success
+  end
 
 
 end

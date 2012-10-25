@@ -4,6 +4,7 @@ class ApplicantController < ApplicationController
 
   before_filter :require_login
 
+
   def pursued
     @college = College.find_by_name(params[:collegename])
     @applicant = @college.pursued(@college.cutoff)
@@ -12,9 +13,9 @@ class ApplicantController < ApplicationController
   def show
     @college = College.find_by_name(params[:collegename])
     if(!params[:cutoff].blank?)
-    @college.update_column(:cutoff, params[:cutoff])
+      @college.update_column(:cutoff, params[:cutoff])
     end
-    @applicant = @college.pursued(@college.cutoff)
+      @applicant = @college.pursued(@college.cutoff)
   end
 
   def download
@@ -25,7 +26,17 @@ class ApplicantController < ApplicationController
   end
 
   def auto_save
-    Applicants.update( params[:id],:Score => "#{params[:score]}" )
+    params[:applicant]
+    #require 'pry'
+    #binding.pry
+    Applicants.update( params[:id],:"#{params[:attribute]}" => "#{params[:score]}" )
     render :nothing => true
+  end
+
+  def show_selected
+    @college = College.find_by_name(params[:college_name])
+    @applicant = @college.pursued(params[:cutoff])
+    render :json => @applicant.to_json
+
   end
 end

@@ -29,14 +29,14 @@
             <td><%= app.RollNo %></td>
             <td><%= app.Score %></td>
             <td><%= app.Branch %> </td>
-            <td><%= text_field :applicant ,:role, :value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= text_field :applicant ,:codePairing, :value => app.CodePairing, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= text_field :applicant ,:pairingStatus, :value => app.PairingStatus, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= text_field :applicant ,:firstTech, :value => app.FirstTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= text_field :applicant ,:firstStatus, :value => app.FirstStatus, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= text_field :applicant ,:secondTech, :value => app.SecondTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= text_field :applicant ,:result, :value => app.Result, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= text_field :applicant ,:comment, :value => app.Comment, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= text_field :applicant ,:role, :class => "Role",:value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= text_field :applicant ,:codePairing,:class => "CodePairing", :value => app.CodePairing, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= text_field :applicant ,:pairingStatus, :class => "PairingStatus",:value => app.PairingStatus, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= text_field :applicant ,:firstTech, :class => "FirstTech",:value => app.FirstTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= text_field :applicant ,:firstStatus, :class => "FirstStatus",:value => app.FirstStatus, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= text_field :applicant ,:secondTech, :class => "SecondTech",:value => app.SecondTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= text_field :applicant ,:result, :class => "Result",:value => app.Result, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+            <td><%= text_field :applicant ,:comment, :class => "Comment",:value => app.Comment, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
           </tr>
 
       <% end %>
