@@ -6,6 +6,7 @@ describe "validations" do
 
   before(:each) do
     @college_attr = FactoryGirl.attributes_for(:College)
+    @applicants_attr = FactoryGirl.attributes_for(:Applicants)
   end
 
   it "should create a new instance of a college given valid attributes" do
@@ -25,6 +26,24 @@ describe "validations" do
   it "should not create a new instance of a college given string value for number of applicant" do
     college = College.new(@college_attr.merge(:numberofapplicant => "numberOfApplicant"))
     college.should_not be_valid
+  end
+
+  it "should give list of pursued applicants from pairing round" do
+    college = College.new(@college_attr)
+    Isha = Applicants.create!(@applicants_attr)
+    college.pairing_pursued().should == [Isha]
+  end
+
+  it "should give list of pursued applicants from first tech round" do
+    college = College.new(@college_attr)
+    Isha = Applicants.create!(@applicants_attr)
+    college.first_tech_pursued().should == [Isha]
+  end
+
+  it "should give list of pursued applicants from second tech round" do
+    college = College.new(@college_attr)
+    Isha = Applicants.create!(@applicants_attr)
+    college.final_pursued().should == [Isha]
   end
 
 end

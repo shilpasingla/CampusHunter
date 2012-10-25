@@ -1,0 +1,38 @@
+<h1>Applicant's Details</h1>
+<p><%=link_to "Generate List" , url = "/applicant/final_pursued/#{@applicant[0].college}"%></p>
+
+<table id="applicants"  class="display">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>RollNo</th>
+    <th>Score</th>
+    <th>Branch</th>
+    <th>Role</th>
+    <th>SecondTech</th>
+    <th>Result</th>
+    <th>Comment</th>
+  </tr>
+  </thead>
+
+
+  <tbody>
+  <% @applicant.each do |app|  %>
+
+      <tr>
+        <td><%= app.Name %></td>
+        <td><%= app.RollNo %></td>
+        <td><%= app.Score %></td>
+        <td><%= app.Branch %> </td>
+        <td><%= text_field :applicant ,:role, :class => "Role",:value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+        <td><%= text_field :applicant ,:secondTech, :class => "SecondTech",:value => app.SecondTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+        <td><%= text_field :applicant ,:result, :class => "Result",:value => app.Result, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+        <td><%= text_field :applicant ,:comment, :class => "Comment",:value => app.Comment, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+
+      </tr>
+
+  <% end %>
+  </tbody>
+
+
+</table>

@@ -7,11 +7,11 @@ class Applicants < ActiveRecord::Base
   validates :Name, :RollNo, :presence => true
   validates :Score, :numericality => {:less_than_or_equal_to => 12, :greater_than_or_equal_to => 0}, :allow_blank => true, :allow_nil => true
 
-  def self.to_csv(college_name,cutoff)
+  def self.to_csv(college_name)
     @college = College.find_by_name(college_name)
     CSV.generate do |csv|
       csv << column_names
-      @college.pursued(cutoff).each do |applicant|
+      @college.final_pursued().each do |applicant|
         csv << applicant.attributes.values_at(*column_names)
       end
     end
