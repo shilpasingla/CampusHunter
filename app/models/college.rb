@@ -3,7 +3,7 @@ class College < ActiveRecord::Base
   validates :numberofapplicant, :numericality => {:only_integer => true}
   validates :name, :numberofapplicant,:presence => true
 
-  def pursued(cutoff)
+  def logic_pursued(cutoff)
     @pur = []
       if !cutoff.blank?
         cutoff = cutoff.to_i
@@ -18,5 +18,18 @@ class College < ActiveRecord::Base
       end
     return @pur
   end
+
+  def first_tech_pursued()
+    Applicants.where(:college => self.name, :FirstStatus => "pursue")
+  end
+
+  def final_pursued()
+    Applicants.where(:college => self.name, :Result => "pursue")
+  end
+
+  def pairing_pursued()
+    Applicants.where(:college => self.name, :PairingStatus => "pursue")
+  end
+
 end
 

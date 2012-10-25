@@ -1,7 +1,7 @@
 FactoryGirl.define do
 
   factory :College do
-    name "testCollege"
+    name "Thapar"
     numberofapplicant 5
     cutoff 3
 
@@ -18,14 +18,14 @@ FactoryGirl.define do
     Branch "cse"
     CodePairing "rashi"
     Comment "good"
-    FirstStatus "pass"
+    FirstStatus "pursue"
     FirstTech "Amit"
     Name "shilpa"
-    PairingStatus "pass"
-    Result "pass"
+    PairingStatus "pursue"
+    Result "pursue"
     Role "dev"
     Score 12
-    SecondTech "pass"
+    SecondTech "ashu"
     college "Thapar"
     RollNo 1
     Gender "f"

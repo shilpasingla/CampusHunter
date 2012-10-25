@@ -1,6 +1,7 @@
 <h1>Applicant's Details</h1>
 
 <p> Download :<%= link_to "csv" , url = "/applicant/download/#{@applicant[0].college}.csv"%></p>
+<p><%=link_to "Generate List" , url = "/applicant/pairing_pursued/#{@applicant[0].college}"%></p>
 
 <table id="applicants"  class="display">
     <thead>
@@ -12,10 +13,6 @@
         <th>Role</th>
         <th>CodePairing</th>
         <th>PairingStatus</th>
-        <th>FirstTech</th>
-        <th>FirstStatus</th>
-        <th>SecondTech</th>
-        <th>Result</th>
         <th>Comment</th>
       </tr>
     </thead>
@@ -32,10 +29,6 @@
             <td><%= text_field :applicant ,:role, :class => "Role",:value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
             <td><%= text_field :applicant ,:codePairing,:class => "CodePairing", :value => app.CodePairing, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
             <td><%= text_field :applicant ,:pairingStatus, :class => "PairingStatus",:value => app.PairingStatus, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= text_field :applicant ,:firstTech, :class => "FirstTech",:value => app.FirstTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= text_field :applicant ,:firstStatus, :class => "FirstStatus",:value => app.FirstStatus, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= text_field :applicant ,:secondTech, :class => "SecondTech",:value => app.SecondTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= text_field :applicant ,:result, :class => "Result",:value => app.Result, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
             <td><%= text_field :applicant ,:comment, :class => "Comment",:value => app.Comment, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
           </tr>
 

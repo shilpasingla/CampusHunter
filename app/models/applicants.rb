@@ -11,7 +11,7 @@ class Applicants < ActiveRecord::Base
     @college = College.find_by_name(college_name)
     CSV.generate do |csv|
       csv << column_names
-      @college.pursued(cutoff).each do |applicant|
+      @college.logic_pursued(cutoff).each do |applicant|
         csv << applicant.attributes.values_at(*column_names)
       end
     end
