@@ -4,13 +4,22 @@ class College < ActiveRecord::Base
   validates :name, :numberofapplicant,:presence => true
 
   def pursued(cutoff)
+    @pur = []
       if !cutoff.blank?
         cutoff = cutoff.to_i
-        Applicants.where("applicants.Score >= '#{cutoff}' AND applicants.college = '#{self.name}'")
+
+        #Applicants.where("applicants.Score >= '#{cutoff}' AND applicants.college = '#{self.name}'")
         #Applicants.where(:college => self.name, :Score => cutoff)
+        @app = Applicants.find_all_by_college(self.name)
+        @app.each do|n|
+          if n.Score.to_i >= cutoff
+            @pur << n
+          end
+        end
       else
-        Applicants.find_all_by_college(self.name)
+        @pur = Applicants.find_all_by_college(self.name)
       end
+    return @pur
   end
 end
 
