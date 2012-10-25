@@ -4,7 +4,7 @@ $(document).ready(function(){
      bJQueryUI: true,
      "aoColumns": [{"bSearchable": true}, {"bSearchable": true}, {"bSearchable": false},
        {"bSearchable": true}, {"bSearchable": false},  {"bSearchable": false}, {"bSearchable": false},
-       {"bSearchable": false}]
+       {"bSearchable": false},{"bSearchable": false}]
      });
 
     $('#applicants').dataTable( {
