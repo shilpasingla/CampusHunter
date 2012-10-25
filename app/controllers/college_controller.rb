@@ -1,9 +1,3 @@
-#require 'rake'
-require 'users_controller'
-
-#Rake::Task.clear
-#CampusHunter::Application.load_tasks
-
 class CollegeController < ApplicationController
   before_filter :require_login
   #helper_method :new
