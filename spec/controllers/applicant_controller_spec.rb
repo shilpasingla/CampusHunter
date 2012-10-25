@@ -30,7 +30,7 @@ describe ApplicantController do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     Applicants.stub(:update).with("2",:Score =>"2").and_return(true)
-    post :auto_save , {:id => 2, :score => 2}
+    post :auto_save , {:id => 2, :score => 2 ,:attribute => "Score"}
     assert_response :success
   end
 
