@@ -22,14 +22,14 @@ class ApplicantController < ApplicationController
 
   def logic_pursued
     @college = College.find_by_name(params[:collegename])
+    if !params[:cutoff].blank?
+      @college.update_column(:cutoff, params[:cutoff])
+    end
     @applicant = @college.logic_pursued(@college.cutoff)
   end
 
   def show
     @college = College.find_by_name(params[:collegename])
-    if !params[:cutoff].blank?
-      @college.update_column(:cutoff, params[:cutoff])
-    end
       @applicant = @college.logic_pursued(@college.cutoff)
   end
 
