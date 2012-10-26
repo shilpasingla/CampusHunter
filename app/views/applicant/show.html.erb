@@ -6,42 +6,45 @@
       <%= label_tag(:cutoff, "CUTOFF") %>
       <%= text_field_tag(:cutoff) %>
       <%= submit_tag("ENTER") %>
-      <%=link_to "Shortlist" , url = "/applicant/logic_pursued/#{@college.name}"%>
+      <%= link_to "Shortlist", url = "/applicant/logic_pursued/#{@college.name}" %>
     </p>
 <% end %>
 
-<table id="applicants2"  class="display">
-<thead>
-<tr>
-  <th>Name</th>
-  <th>Roll No</th>
-  <th>Gender</th>
-  <th>Email Address</th>
-  <th>Phone Number</th>
-  <th>Qualification</th>
-  <th>Specification</th>
-  <th>Percentage</th>
-  <th>Score</th>
-</tr>
-</thead>
+<table id="applicants2" class="display">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Roll No</th>
+    <th>Gender</th>
+    <th>Email Address</th>
+    <th>Phone Number</th>
+    <th>Qualification</th>
+    <th>Specification</th>
+    <th>Percentage</th>
+    <th>Score</th>
+  </tr>
+  </thead>
 
-<tbody>
-<% @applicant.each do |app|  %>
+  <tbody>
+  <% @applicant.each do |app| %>
 
-    <tr>
-      <td><%= app.Name %></td>
-      <td><%= app.RollNo %></td>
-      <td><%= app.Gender %> </td>
-      <td><%= app.EmailAdd %> </td>
-      <td><%= app.PhoneNo %> </td>
-      <td><%= app.Qualification %></td>
-      <td><%= app.Branch %> </td>
-      <td><%= app.Percentage %></td>
-      <td><%= text_field :applicant ,:score, :class => "Score",:value => app.Score, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-    </tr>
+      <tr>
+        <td><%= app.Name %></td>
+        <td><%= app.RollNo %></td>
+        <td><%= app.Gender %> </td>
+        <td><%= app.EmailAdd %> </td>
+        <td><%= app.PhoneNo %> </td>
+        <td><%= app.Qualification %></td>
+        <td><%= app.Branch %> </td>
+        <td><%= app.Percentage %></td>
+        <td>
+          <%= text_field :applicant, :score, :class => "Score", :value => app.Score, :id => "#{app.id}",
+                         :onchange => "autoSave(this)", :maxlength => '2', :style => 'width: 80px; height: 15px;' %>
+        </td>
+      </tr>
 
-<% end %>
-</tbody>
+  <% end %>
+  </tbody>
 
 </table>
 <br>

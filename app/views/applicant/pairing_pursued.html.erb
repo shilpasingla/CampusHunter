@@ -1,9 +1,9 @@
 <h1>Pairing Pursues</h1>
 
-<p><%=link_to "Shortlist" , url = "/applicant/first_tech_pursued/#{@college.name}"%></p>
-<p> Download :<%= link_to "csv" , url = "/applicant/download/#{@college.name}.csv"%></p>
+<p><%= link_to "Shortlist", url = "/applicant/first_tech_pursued/#{@college.name}" %></p>
+<p> Download :<%= link_to "csv", url = "/applicant/download/#{@college.name}.csv" %></p>
 
-<table id="applicants"  class="display">
+<table id="applicants" class="display">
   <thead>
   <tr>
     <th>Name</th>
@@ -19,17 +19,25 @@
 
 
   <tbody>
-  <% @applicant.each do |app|  %>
+  <% @applicant.each do |app| %>
 
       <tr>
         <td><%= app.Name %></td>
         <td><%= app.RollNo %></td>
         <td><%= app.Score %></td>
         <td><%= app.Branch %> </td>
+<<<<<<< HEAD
         <td><%= text_field :applicant ,:role, :class => "Role",:value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
         <td><%= text_field :applicant ,:firstTech, :class => "FirstTech",:value => app.FirstTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-        <td><%= text_field :applicant ,:firstStatus, :class => "FirstStatus",:value => app.FirstStatus, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+        <td><%= radio_button_tag "#{app.id}",'pursue',true , :id=>"#{app.id}",:value => 'pursue',:class => "FirstStatus", :onchange => "autoSave(this)"%> pursue
+          <br><%= radio_button_tag "#{app.id}",'pass', true , :checked => 'true',:value => 'pass',:id=>"#{app.id}",:class => "FirstStatus"%> pass</td>
         <td><%= text_field :applicant ,:comment, :class => "Comment",:value => app.Comment, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+=======
+        <td><%= text_field :applicant, :role, :class => "Role", :value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+        <td><%= text_field :applicant, :firstTech, :class => "FirstTech", :value => app.FirstTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+        <td><%= text_field :applicant, :firstStatus, :class => "FirstStatus", :value => app.FirstStatus, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+        <td><%= text_field :applicant, :comment, :class => "Comment", :value => app.Comment, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+>>>>>>> origin/master
       </tr>
 
   <% end %>
