@@ -16,7 +16,7 @@
         <td><%= link_to college.name, url="/applicant/show/#{college.name}" %></td>
         <td><%= college.numberofapplicant %></td>
         <td><%= college.cutoff %></td>
-        <td><%= link_to "remove" , url="/college/delete/#{college.name}" %></td>
+        <td><%= link_to "remove" , url="/college/delete/#{college.name }" ,:confirm => "Are you sure you want to delete #{college.name}?"%></td>
       </tr>
   <% end %>
   </tbody>
