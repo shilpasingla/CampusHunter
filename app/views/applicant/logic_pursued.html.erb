@@ -1,39 +1,51 @@
 <h1>Logic Pursues</h1>
 
-<p><%=link_to "Shortlist" , url = "/applicant/pairing_pursued/#{@college.name}"%></p>
-<p> Download :<%= link_to "csv" , url = "/applicant/download/#{@college.name}.csv"%></p>
+<p><%= link_to "Shortlist", url = "/applicant/pairing_pursued/#{@college.name}" %></p>
+<p> Download :<%= link_to "csv", url = "/applicant/download/#{@college.name}.csv" %></p>
 
-<table id="applicants"  class="display">
-    <thead>
-     <tr>
-        <th>Name</th>
-        <th>RollNo</th>
-        <th>Score</th>
-        <th>Branch</th>
-        <th>Role</th>
-        <th>CodePairing</th>
-        <th>PairingStatus</th>
-        <th>Comment</th>
+<table id="applicants" class="display">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>RollNo</th>
+    <th>Score</th>
+    <th>Branch</th>
+    <th>Role</th>
+    <th>CodePairing</th>
+    <th>PairingStatus</th>
+    <th>Comment</th>
+  </tr>
+  </thead>
+
+
+  <tbody>
+  <% @applicant.each do |app| %>
+
+      <tr>
+        <td><%= app.Name %></td>
+        <td><%= app.RollNo %></td>
+        <td><%= app.Score %></td>
+        <td><%= app.Branch %> </td>
+        <td>
+          <%= text_field :applicant, :role, :class => "Role", :value => app.Role,
+                         :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
+        </td>
+        <td>
+          <%= text_field :applicant, :codePairing, :class => "CodePairing", :value => app.CodePairing,
+                         :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
+        </td>
+        <td>
+          <%= text_field :applicant, :pairingStatus, :class => "PairingStatus", :value => app.PairingStatus,
+                         :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
+        </td>
+        <td>
+          <%= text_field :applicant, :comment, :class => "Comment", :value => app.Comment,
+                         :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
+        </td>
       </tr>
-    </thead>
 
-
-    <tbody>
-      <% @applicant.each do |app|  %>
-
-          <tr>
-            <td><%= app.Name %></td>
-            <td><%= app.RollNo %></td>
-            <td><%= app.Score %></td>
-            <td><%= app.Branch %> </td>
-            <td><%= text_field :applicant ,:role, :class => "Role",:value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= text_field :applicant ,:codePairing,:class => "CodePairing", :value => app.CodePairing, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= text_field :applicant ,:pairingStatus, :class => "PairingStatus",:value => app.PairingStatus, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= text_field :applicant ,:comment, :class => "Comment",:value => app.Comment, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-          </tr>
-
-      <% end %>
-    </tbody>
+  <% end %>
+  </tbody>
 
 
 </table>
