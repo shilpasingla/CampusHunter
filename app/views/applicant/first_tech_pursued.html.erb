@@ -1,6 +1,6 @@
 <h1>Applicant's Details</h1>
-<p><%=link_to "Shortlist" , url = "/applicant/final_pursued/#{@applicant[0].college}"%></p>
-<p> Download :<%= link_to "csv" , url = "/applicant/download/#{@applicant[0].college}.csv"%></p>
+<p><%=link_to "Shortlist" , url = "/applicant/final_pursued/#{@college.name}"%></p>
+<p> Download :<%= link_to "csv" , url = "/applicant/download/#{@college.name}.csv"%></p>
 
 <table id="applicants"  class="display">
   <thead>

@@ -7,8 +7,6 @@ class CollegeController < ApplicationController
   end
 
   def create
-    #require "pry"
-    #binding.pry
     if params[:import] == nil
       flash[:error] = "Please select a csv file."
       render 'college/new'
