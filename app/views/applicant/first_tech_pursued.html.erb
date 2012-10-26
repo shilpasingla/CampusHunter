@@ -27,7 +27,8 @@
         <td><%= app.Branch %> </td>
         <td><%= text_field :applicant ,:role, :class => "Role",:value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
         <td><%= text_field :applicant ,:secondTech, :class => "SecondTech",:value => app.SecondTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-        <td><%= text_field :applicant ,:result, :class => "Result",:value => app.Result, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+        <td><%= radio_button_tag "#{app.id}",'pursue',true , :id=>"#{app.id}",:value => 'pursue',:class => "Result", :onchange => "autoSave(this)"%> pursue
+          <br><%= radio_button_tag "#{app.id}",'pass', true , :checked => 'true',:value => 'pass',:id=>"#{app.id}",:class => "Result"%> pass</td>
         <td><%= text_field :applicant ,:comment, :class => "Comment",:value => app.Comment, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
 
       </tr>
