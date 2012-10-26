@@ -34,39 +34,15 @@
           <%= text_field :applicant, :codePairing, :class => "CodePairing", :value => app.CodePairing,
                          :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
         </td>
-        <td>
-          <%= text_field :applicant, :pairingStatus, :class => "PairingStatus", :value => app.PairingStatus,
-                         :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
-        </td>
+        <td><%= radio_button_tag "#{app.id}",'pursue',true , :id=>"#{app.id}",:value => 'pursue',:class => "PairingStatus", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;'%> pursue
+          <br><%= radio_button_tag "#{app.id}",'pass', true,:value => 'pass',:id=>"#{app.id}",:class => "PairingStatus",:style => 'width: 80px; height: 15px;'%> pass</td>
         <td>
           <%= text_field :applicant, :comment, :class => "Comment", :value => app.Comment,
                          :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
         </td>
       </tr>
 
-<<<<<<< HEAD
 
-    <tbody>
-      <% @applicant.each do |app|  %>
-
-          <tr>
-            <td><%= app.Name %></td>
-            <td><%= app.RollNo %></td>
-            <td><%= app.Score %></td>
-            <td><%= app.Branch %> </td>
-            <td><%= text_field :applicant ,:role, :class => "Role",:value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= text_field :applicant ,:codePairing,:class => "CodePairing", :value => app.CodePairing, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-            <td><%= radio_button_tag "#{app.id}",'pursue',true , :id=>"#{app.id}",:value => 'pursue',:class => "PairingStatus", :onchange => "autoSave(this)"%> pursue
-            <br><%= radio_button_tag "#{app.id}",'pass', true,:value => 'pass',:id=>"#{app.id}",:class => "PairingStatus"%> pass</td>
-            <td><%= text_field :applicant ,:comment, :class => "Comment",:value => app.Comment, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-          </tr>
-
-      <% end %>
+    <%end%>
     </tbody>
-=======
-  <% end %>
-  </tbody>
->>>>>>> origin/master
-
-
 </table>
