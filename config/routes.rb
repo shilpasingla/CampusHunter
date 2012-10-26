@@ -11,7 +11,11 @@ CampusHunter::Application.routes.draw do
   get "delete_user" => "users#destroy", :as => "delete_user"
   post "users/del"
 
-  resources :college
+  resources :college do
+    collection do
+      get 'delete'
+    end
+  end
 
   resources :applicant do
     collection do
@@ -39,7 +43,7 @@ CampusHunter::Application.routes.draw do
   match "applicant/show/:collegename" => 'Applicant#show'
   match "applicant/show/:collegename/:cutoff" => 'Applicant#show'
   match "college/create" => 'College#create'
-
+  match "college/delete/:collegename" => 'College#delete'
 
   #get "college/new"
   #get "college/add_user"

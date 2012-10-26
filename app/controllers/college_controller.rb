@@ -35,6 +35,12 @@ class CollegeController < ApplicationController
     end
   end
 
+  def delete
+    Applicants.delete_all(:college => params[:collegename])
+    College.delete_all(:name => params[:collegename])
+    redirect_to '/college/show'
+  end
+
   private
 
   def load_csv_to_database(file_name,college_name)
