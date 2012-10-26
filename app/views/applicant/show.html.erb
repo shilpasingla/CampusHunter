@@ -5,11 +5,12 @@
     <%= hidden_field_tag :collegename, params[:collegename] %>
     <div style="float: left;">
 
-      CUTOFF:
-      <%= text_field_tag(:cutoff, nil, :style => 'width: 100px; height: 15px') %>
-      <%= submit_tag("Shortlist") %>
+      CUTOFF: &nbsp;
+      <%= text_field_tag(:cutoff, nil, :style => 'width: 100px; height: 15px; margin-bottom: 0px;  ') %>
+
     </div>
-    <div style=" float: right; font-size: 18px; font-weight: bolder;">
+    <div style=" float: right; padding-bottom: 10px; ">
+      <%= submit_tag("Shortlist Candidates", :class => "btn") %>
     </div>
 <% end %>
 
