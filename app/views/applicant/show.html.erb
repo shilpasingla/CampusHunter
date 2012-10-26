@@ -1,16 +1,15 @@
 <h2>Applicant's Details</h2>
 <br/>
 
-<%= form_tag :action => 'show' do %>
+<%= form_tag :action => 'logic_pursued' do %>
     <%= hidden_field_tag :collegename, params[:collegename] %>
     <div style="float: left;">
 
       CUTOFF:
       <%= text_field_tag(:cutoff, nil, :style => 'width: 100px; height: 15px') %>
-      <%= submit_tag("ENTER") %>
+      <%= submit_tag("Shortlist") %>
     </div>
     <div style=" float: right; font-size: 18px; font-weight: bolder;">
-      <%= link_to "Shortlist", url = "/applicant/logic_pursued/#{@college.name}", :style => "color: green;" %>
     </div>
 <% end %>
 
