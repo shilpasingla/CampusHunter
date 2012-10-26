@@ -21,7 +21,7 @@ $(document).ready(function(){
             var table = $('#applicants2').dataTable();
             table.fnClearTable();
             $.each(students ,function(i,val){
-                table.fnAddData([val.Name,val.RollNo,val.Gender,val.EmailAdd,val.Qualification,val.Branch,val.Percentage,val.Score])
+                table.fnAddData([val.Name,val.RollNo,val.Gender,val.EmailAdd,val.PhoneNo,val.Qualification,val.Branch,val.Percentage,val.Score])
             });
         });
     })
