@@ -18,11 +18,11 @@ FactoryGirl.define do
     Branch "cse"
     CodePairing "rashi"
     Comment "good"
-    FirstStatus "pursue"
+    FirstStatus true
     FirstTech "Amit"
     Name "shilpa"
-    PairingStatus "pursue"
-    Result "pursue"
+    PairingStatus true
+    Result true
     Role "dev"
     Score 12
     SecondTech "ashu"
