@@ -33,8 +33,9 @@
           <%= text_field :applicant, :codePairing, :class => "CodePairing", :value => app.CodePairing,
                          :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
         </td>
-        <td><%= radio_button_tag "#{app.id}",'pursue', true,:id=>"#{app.id}",:value => true,:class => "PairingStatus",:onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %> pursue
-          <br><%= radio_button_tag "#{app.id}",'pass', true,:value => false,:id=>"#{app.id}",:class => "PairingStatus",:style => 'width: 80px; height: 15px;'%> pass</td>
+
+        <td><%= radio_button_tag "#{app.id}",'pursue', (true || app.PairingStatus), :value => true,:class => "PairingStatus",:onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %> pursue
+          <br><%= radio_button_tag "#{app.id}",'pass',!(false || app.PairingStatus) , :value => false,:class => "PairingStatus",:style => 'width: 80px; height: 15px;'%> pass</td>
         <td>
           <%= text_field :applicant, :comment, :class => "Comment", :value => app.Comment,
                          :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
