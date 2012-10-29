@@ -28,6 +28,8 @@ $(document).ready(function(){
         });
     })
 
+
+
 });
 
 
@@ -46,6 +48,8 @@ function autoSave(object){
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.send("score=" + value +"&"+ "id="+id +"&" + "attribute=" + attribute);
 }
+
+
 //$("textbox id").onchange(function(){
 //    make an ajax post call;
 //
