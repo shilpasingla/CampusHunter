@@ -42,8 +42,6 @@ class ApplicantController < ApplicationController
 
   def auto_save
     params[:applicant]
-    #require 'pry'
-    #binding.pry
     Applicants.update( params[:id],:"#{params[:attribute]}" => "#{params[:score]}" )
     render :nothing => true
   end

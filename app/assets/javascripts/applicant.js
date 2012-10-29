@@ -15,6 +15,8 @@ $(document).ready(function(){
             {"bSearchable": false}]
     });
 
+
+
     $('#cutoff').keyup(function (data) {
         $.get("/applicant/show_selected",{cutoff : $(this).val() , college_name : $('#collegename').val() }, function (data) {
             var students = data
@@ -28,12 +30,19 @@ $(document).ready(function(){
 
 });
 
+
+
 function autoSave(object){
     var value =object.value;
     var id = object.id;
     xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST","/applicant/auto_save",true);
     attribute = object.className;
+    if(attribute == "PairingStatus")
+    {
+        object.checked = true;
+        //alert(object.checked);
+    }
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.send("score=" + value +"&"+ "id="+id +"&" + "attribute=" + attribute);
 }

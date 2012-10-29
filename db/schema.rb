@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121025105600) do
+ActiveRecord::Schema.define(:version => 20121026064300) do
 
   create_table "applicants", :force => true do |t|
     t.string   "Name"
@@ -19,14 +19,14 @@ ActiveRecord::Schema.define(:version => 20121025105600) do
     t.string   "Branch"
     t.string   "Role"
     t.string   "CodePairing"
-    t.string   "PairingStatus"
+    t.boolean  "PairingStatus", :limit => 255
     t.string   "FirstTech"
-    t.string   "FirstStatus"
+    t.boolean  "FirstStatus",   :limit => 255
     t.string   "SecondTech"
-    t.string   "Result"
+    t.boolean  "Result",        :limit => 255
     t.string   "Comment"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.string   "college"
     t.string   "RollNo"
     t.string   "Gender"
