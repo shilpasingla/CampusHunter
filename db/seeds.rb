@@ -6,4 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create!(:email => 'test_user',:password  =>'abcd')
+College.create!(:name => 'sample_college', :numberofapplicant => 30)
 

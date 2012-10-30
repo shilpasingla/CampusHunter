@@ -13,3 +13,6 @@ end
 Then /^It should direct me to the new college form/ do
   page.should have_content("College name")
 end
+When /^"(.*)" should not be present$/ do |arg|
+  page.should_not have_content(arg)
+end

@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
     else
 
       @message = "Invalid email or password"
+
       render 'new'
     end
   end

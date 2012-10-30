@@ -10,17 +10,23 @@ Then It should direct me to the new college form
 
 Scenario: Logout from the app
 Given I am on the "home" page
-And I click on "Logout"
+When I click on "Logout"
 Then I should be redirected to the "log_in" page
 
 Scenario: Add Another User
 Given I am on the "home" page
-And I click on "Add User"
+When I click on "Add User"
 Then I should be redirected to the "add user" page
 And "Add" message should flash
 
 Scenario: Delete User
 Given I am on the "home" page
-And I click on "Delete User"
+When I click on "Delete User"
 Then I should be redirected to the "delete user" page
 And "Delete User" message should flash
+
+Scenario: Remove an existing college
+Given I am on the "home" page
+When I click on "remove"
+Then I should be redirected to the "home" page
+And "sample_college" should not be present
