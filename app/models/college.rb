@@ -21,15 +21,15 @@ class College < ActiveRecord::Base
   end
 
   def first_tech_pursued()
-    Applicants.where(:college => self.name, :FirstStatus => "pursue")
+    Applicants.where(:college => self.name, :FirstStatus => true)
   end
 
   def final_pursued()
-    Applicants.where(:college => self.name, :Result => "pursue")
+    Applicants.where(:college => self.name, :Result => true)
   end
 
   def pairing_pursued()
-    Applicants.where(:college => self.name, :PairingStatus => "pursue")
+    Applicants.where(:college => self.name, :PairingStatus => true)
   end
 
 end

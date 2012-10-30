@@ -15,10 +15,17 @@ group :production do
   gem 'pg'
 end
 
-gem 'bcrypt-ruby', :require => 'bcrypt'
+group :test do
+  gem "factory_girl_rails" , "~> 4.0"
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
 
+gem 'bcrypt-ruby', :require => 'bcrypt'
+gem "haml", "~> 3.1.7"
 gem 'rake' , '>=0.9.2.2'
-gem "factory_girl_rails" , "~> 4.0"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
