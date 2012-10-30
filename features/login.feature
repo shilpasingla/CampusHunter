@@ -1,5 +1,5 @@
 #sign_up.feature
-Feature: Sign up
+Feature: Login
   As an unauthorized user
   I want to login with my details
   So that I can use the app
