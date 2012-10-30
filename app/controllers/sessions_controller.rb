@@ -10,9 +10,11 @@ class SessionsController < ApplicationController
       redirect_to "/college/show_all"
     else
 
-      flash.now.alert = "Invalid email or password"
-      require 'pry'
-      binding.pry
+      #flash.now.alert = "Invalid email or password"
+      @message = "Invalid email or password"
+      flash.now[:error] = "invalid"
+      #require 'pry'
+      #binding.pry
       render 'new'
     end
   end
