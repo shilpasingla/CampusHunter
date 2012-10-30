@@ -18,21 +18,21 @@
 <%= form_for :user, :url => {:action => :del} do |f| %>
     <div id="login-holder">
       <div id="logo-login">
-        <img style="width: 156px; height: 40px;" src="/assets/shared/logo.png" alt="Logo"/>
+        <a href="">
+          <img style="width: 156px; height: 40px;" src="/assets/shared/logo.png" alt="Logo"/>
+        </a>
       </div>
       <div class="clear"></div>
       <div id="loginbox">
         <div id="login-inner" style="width: 400px;">
-          <table border="0" cellpadding="0">
 
+          <table border="0" cellpadding="0">
             <tr>
               <th><%= f.label :email %></th>
               <td>
                 <%= text_field :email, params[:email], :class => "login-inp" %>
-
               </td>
             </tr>
-
             <tr>
               <th></th>
               <td>
