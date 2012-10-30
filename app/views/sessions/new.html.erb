@@ -1,14 +1,48 @@
-<h1>Log in</h1>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>CampusHunter - Login</title>
 
-<%= form_tag sessions_path, class: "form-horizontal" do  %>
-<p>
-  <%= label_tag :email %>
-  <%= text_field_tag :email, params[:email] %>
-</p>
-    <br/>
-<p>
-  <%= label_tag :password %>
-  <%= password_field_tag :password, params[:email] %>
-</p>
-<button type="submit" class="btn">Login</button>
+  <link rel="stylesheet" href="/assets/screen.css" type="text/css"/>
+  <script src="/assets/application.js" type="text/javascript"></script>
+</head>
+
+<body id="login-bg">
+<%= form_tag sessions_path do %>
+    <div id="login-holder">
+      <div id="logo-login">
+        <img style="width: 156px; height: 40px;" src="/assets/shared/logo.png" alt="Logo" />
+      </div>
+      <div class="clear"></div>
+      <div id="loginbox">
+        <div id="login-inner">
+          <table border="0" cellpadding="0">
+            <tr>
+              <th>Email</th>
+              <td>
+                <%= text_field_tag :email, params[:email], :class => "login-inp" %>
+              </td>
+            </tr>
+            <tr>
+              <th>Password</th>
+              <td>
+                <%= password_field_tag :password, params[:email], :class => "login-inp" %>
+              </td>
+            </tr>
+            <tr>
+              <th></th>
+              <td valign="top"><br/></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>
+                <button type="submit" class="submit-login" >Login</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
 <% end %>
+</body>
+</html>

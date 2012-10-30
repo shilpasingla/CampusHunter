@@ -1,0 +1,33 @@
+<table id="applicants2" class="display">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Roll No</th>
+    <th>Gender</th>
+    <th>Email Address</th>
+    <th>Qualification</th>
+    <th>Specification</th>
+    <th>Percentage</th>
+    <th>Score</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @applicant.each do |app| %>
+
+      <tr>
+        <td><%= app.Name %></td>
+        <td><%= app.RollNo %></td>
+        <td><%= app.Gender %> </td>
+        <td><%= app.EmailAdd %> </td>
+        <td><%= app.Qualification %></td>
+        <td><%= app.Branch %> </td>
+        <td><%= app.Percentage %></td>
+        <td><%= text_field :applicant, :score, :value => app.Score, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+      </tr>
+
+  <% end %>
+  </tbody>
+
+</table>
+<br>

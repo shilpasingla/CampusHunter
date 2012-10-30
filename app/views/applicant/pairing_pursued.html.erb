@@ -26,18 +26,11 @@
         <td><%= app.RollNo %></td>
         <td><%= app.Score %></td>
         <td><%= app.Branch %> </td>
-<<<<<<< HEAD
         <td><%= text_field :applicant ,:role, :class => "Role",:value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
         <td><%= text_field :applicant ,:firstTech, :class => "FirstTech",:value => app.FirstTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
         <td><%= radio_button_tag "#{app.id}",'pursue',true , :id=>"#{app.id}",:value => 'pursue',:class => "FirstStatus", :onchange => "autoSave(this)"%> pursue
           <br><%= radio_button_tag "#{app.id}",'pass', true , :checked => 'true',:value => 'pass',:id=>"#{app.id}",:class => "FirstStatus"%> pass</td>
         <td><%= text_field :applicant ,:comment, :class => "Comment",:value => app.Comment, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-=======
-        <td><%= text_field :applicant, :role, :class => "Role", :value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-        <td><%= text_field :applicant, :firstTech, :class => "FirstTech", :value => app.FirstTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-        <td><%= text_field :applicant, :firstStatus, :class => "FirstStatus", :value => app.FirstStatus, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-        <td><%= text_field :applicant, :comment, :class => "Comment", :value => app.Comment, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
->>>>>>> origin/master
       </tr>
 
   <% end %>
