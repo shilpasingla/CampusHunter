@@ -1,5 +1,16 @@
-Given /^I am on the login page/ do
-  visit "/sessions/new"
+Given /^I am on the "(.*)" page$/ do |page|
+  if(page != "log_in")
+    visit "/sessions/new"
+    fill_in 'email', :with => "test_user"
+    fill_in 'password', :with => "abcd"
+    click_button 'Login'
+  end
+  case page
+    when "log_in"
+      visit log_in_path
+    when "home"
+      visit root_path
+  end
 end
 
 When /^I fill in email with "(.*)"$/ do |arg2|
