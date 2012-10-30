@@ -29,10 +29,17 @@ Then /^I should be directed to the home page/ do
   page.should have_css('h1', :text => 'Listing colleges')
 end
 
-Then /^I should be redirected to login page/ do
-  get "/sessions/new"
+Then /^I should be redirected to the "(.*)" page/ do |page|
+  case page
+    when "log_in"
+      get log_in_path
+    when "home"
+      get root_path
+    when "add user"
+      get sign_up_path
+  end
 end
 
-Then /^"(.*)" message should flash/ do |error_msg|
-  page.should have_content(error_msg)
+Then /^"(.*)" message should flash/ do |msg|
+  page.should have_content(msg)
 end
