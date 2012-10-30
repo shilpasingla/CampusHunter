@@ -13,3 +13,7 @@ end
 Then /^It should direct me to the new college form/ do
   page.should have_content("College name")
 end
+
+Then /^It should direct me to the Login page$/ do
+  get "/sessions/new"
+end
