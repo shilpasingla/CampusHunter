@@ -37,6 +37,8 @@ Then /^I should be redirected to the "(.*)" page/ do |page|
       get root_path
     when "add user"
       get sign_up_path
+    when "delete user"
+      get delete_user_path
   end
 end
 

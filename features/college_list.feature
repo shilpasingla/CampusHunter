@@ -18,3 +18,9 @@ Given I am on the "home" page
 And I click on "Add User"
 Then I should be redirected to the "add user" page
 And "Add" message should flash
+
+Scenario: Delete User
+Given I am on the "home" page
+And I click on "Delete User"
+Then I should be redirected to the "delete user" page
+And "Delete User" message should flash
