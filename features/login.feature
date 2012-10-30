@@ -9,12 +9,12 @@ Feature: Login
     When I fill in email with "test_user"
     And I fill in password with "abcd"
     And Click "Login" button
-    Then I should be directed to the home page
+    Then I should be redirected to the "home" page
 
   Scenario: Should not be able to login
     Given I am on the "log_in" page
     When I fill in email with "test_user"
     And I fill in password with "wrongpass"
     And Click "Login" button
-    Then I should be redirected to login page
+    Then I should be redirected to the "log_in" page
     And "Invalid email or password" message should flash

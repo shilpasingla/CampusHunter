@@ -11,11 +11,11 @@ Then It should direct me to the new college form
 Scenario: Logout from the app
 Given I am on the "home" page
 And I click on "Logout"
-Then I should be redirected to login page
+Then I should be redirected to the "log_in" page
 And "Successfully logged out!" message should flash
 
-#Scenario: Add Another User
-#Given I am on the homepage
-#And I click on "Add User"
-#Then It should direct me to the Add User page
-#And "Successfully logged out!" message should flash
+Scenario: Add Another User
+Given I am on the "home" page
+And I click on "Add User"
+Then I should be redirected to the "add user" page
+And "Add User" message should flash
