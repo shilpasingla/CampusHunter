@@ -28,8 +28,9 @@
         <td><%= app.Branch %> </td>
         <td><%= text_field :applicant ,:role, :class => "Role",:value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
         <td><%= text_field :applicant ,:firstTech, :class => "FirstTech",:value => app.FirstTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-        <td><%= radio_button_tag "#{app.id}",'pursue',true , :id=>"#{app.id}",:value => true, :checked => "#{app.FirstStatus}",:class => "FirstStatus", :onchange => "autoSave(this)"%> pursue
-          <br><%= radio_button_tag "#{app.id}",'pass', true ,:value => false,:id=>"#{app.id}",:class => "FirstStatus"%> pass</td>
+        <td><%= radio_button_tag "#{app.id}",'pursue', (true || app.FirstStatus),:value => true,:class => "FirstStatus", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %> pursue
+          <br><%= radio_button_tag "#{app.id}",'pass',!(false || app.FirstStatus) , :value => false,:class => "FirstStatus",:onchange => "autoSave(this)",:style => 'width: 80px; height: 15px;'%> pass</td>
+
         <td><%= text_field :applicant ,:comment, :class => "Comment",:value => app.Comment, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
 
       </tr>

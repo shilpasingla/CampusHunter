@@ -16,7 +16,7 @@ group :production do
 end
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
-
+gem "haml", "~> 3.1.7"
 gem 'rake' , '>=0.9.2.2'
 gem "factory_girl_rails" , "~> 4.0"
 # Gems used only for assets and not required
