@@ -12,10 +12,9 @@ Scenario: Logout from the app
 Given I am on the "home" page
 And I click on "Logout"
 Then I should be redirected to the "log_in" page
-And "Successfully logged out!" message should flash
 
 Scenario: Add Another User
 Given I am on the "home" page
 And I click on "Add User"
 Then I should be redirected to the "add user" page
-And "Add User" message should flash
+And "Add" message should flash
