@@ -1,7 +1,7 @@
-Feature: List of Applicants
+Feature: List of Colleges
   As an unauthorized user
-  I want to click on a college name
-  So that I can view its list of applicants
+  I want to view the list of colleges
+  So that I can view its list of applicants and perform different tasks on them
 
 Scenario: View candidates of a particular college
 Given I am on the "home" page

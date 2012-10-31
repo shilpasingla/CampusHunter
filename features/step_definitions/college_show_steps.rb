@@ -1,11 +1,3 @@
-#Given /^I am on the homepage$/ do
-#  visit "/sessions/new"
-#  fill_in 'email', :with => "test_user"
-#  fill_in 'password', :with => "abcd"
-#  click_button 'Login'
-#  visit root_path
-#end
-
 When /^I click on "(.*)"$/ do |arg|
   click_link arg
 end
@@ -19,5 +11,4 @@ end
 Then /^I should be redirected to the applicants of "(.*)" page$/ do |collegename|
   path = "/applicant/show/"+collegename
   get path
-  save_and_open_page
 end
