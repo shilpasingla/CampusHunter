@@ -18,7 +18,7 @@ class CollegeController < ApplicationController
       redirect_to "/applicant/show/#{params[:name]}"
 
     else
-      flash[:error] = "College name already exists"
+      @message =  "College name already exists"
       render 'college/new'
     end
 
