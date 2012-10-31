@@ -49,7 +49,11 @@ class ApplicantController < ApplicationController
   def show_selected
     @college = College.find_by_name(params[:college_name])
     @applicant = @college.logic_pursued(params[:cutoff])
-    render :json => @applicant.to_json
+    render 'show.js.erb'
+  end
 
+  def search
+    @applicant =Applicants.where("Name like ? AND college like ?","%#{params[:search_name]}%","#{params[:college_name]}")
+    render 'show.js.erb'
   end
 end

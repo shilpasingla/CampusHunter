@@ -33,6 +33,7 @@ CampusHunter::Application.routes.draw do
       post 'show'
       get 'download'
       get 'show_selected'
+      get 'search'
     end
   end
   match "applicant/logic_pursued/:collegename" => 'Applicant#logic_pursued'

@@ -1,12 +1,16 @@
+
+
 <h2>Applicant's Details</h2>
+<%= javascript_include_tag "application" %>
+<!--<script src="/assets/javascripts/application.js?body=1" type="text/javascript"></script>-->
 <br/>
 
 <%= form_tag :action => 'logic_pursued' do %>
     <%= hidden_field_tag :collegename, params[:collegename] %>
     <div style="float: left;">
 
-      CUTOFF: &nbsp;
-      <%= text_field_tag(:cutoff, nil, :style => 'width: 100px; height: 15px; margin-bottom: 0px;  ') %>
+      <!--CUTOFF: &nbsp;-->
+      <%= text_field_tag :cutoff, nil, :id => "cutoff" ,:placeholder => "cutoff", :style => 'width: 100px; height: 15px; margin-bottom: 0px;  ' %>
 
     </div>
     <div style=" float: right; padding-bottom: 10px; ">
@@ -14,41 +18,6 @@
     </div>
 <% end %>
 
-<table id="applicants2" class="display">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Roll No</th>
-    <th>Gender</th>
-    <th>Email Address</th>
-    <th>Phone Number</th>
-    <th>Qualification</th>
-    <th>Specification</th>
-    <th>Percentage</th>
-    <th>Score</th>
-  </tr>
-  </thead>
+<%= search_field_tag "search" , nil,:placeholder => "search"%>
 
-  <tbody>
-  <% @applicant.each do |app| %>
-
-      <tr>
-        <td><%= app.Name %></td>
-        <td><%= app.RollNo %></td>
-        <td><%= app.Gender %> </td>
-        <td><%= app.EmailAdd %> </td>
-        <td><%= app.PhoneNo %> </td>
-        <td><%= app.Qualification %></td>
-        <td><%= app.Branch %> </td>
-        <td><%= app.Percentage %></td>
-        <td>
-          <%= text_field :applicant, :score, :class => "Score", :value => app.Score, :id => "#{app.id}",
-                         :onchange => "autoSave(this)", :maxlength => '2', :style => 'width: 80px; height: 15px;' %>
-        </td>
-      </tr>
-
-  <% end %>
-  </tbody>
-
-</table>
-<br>
+<div id="applicants"><%= render 'show_table' %></div>
