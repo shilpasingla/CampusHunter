@@ -1,14 +1,23 @@
 Given /^I am on the "(.*)" page of "(.*)"$/ do |page, collegename|
   path = page + collegename
-  visit "/applicant/show/sample_college"
+  visit "/sessions/new"
+  fill_in 'email', :with => "test_user"
+  fill_in 'password', :with => "abcd"
+  click_button 'Login'
+  visit path
+
 end
 When /^I fill in score of a student with "(.*)"$/ do |score|
-  fill_in '4', :with => score.to_i
+
+  fill_in '4', :with => score
+  fill_in '5', :with => score
+  save_and_open_page
 end
 When /^Reload the page$/ do
   visit "/applicant/show/sample_college"
+  save_and_open_page
 end
 Then /^I should get the updated score "(.*)"$/ do |score|
-  #page.should have_content()
+
   field_labeled('1').value.should =~ /#{score}/
 end

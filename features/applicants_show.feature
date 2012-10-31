@@ -4,7 +4,7 @@ Feature: List of Applicants
   So that I can edit their details and perform different tasks on them
 
 Scenario: Fill in the Score
-Given I am on the "applicant/show/" page of "sample_college"
+Given I am on the "/applicant/show/" page of "sample_college"
 When I fill in score of a student with "8"
 And Reload the page
 Then I should get the updated score "8"
