@@ -1,32 +1,7 @@
+<%= javascript_include_tag "application" %>
 <h1>Final Pursues</h1>
 
 <p> Download :<%= link_to "csv" , url = "/applicant/download/#{@college.name}.csv"%></p>
 
-<table id="applicants"  class="display">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>RollNo</th>
-    <th>Score</th>
-    <th>Branch</th>
-    <th>Role</th>
-  </tr>
-  </thead>
-
-
-  <tbody>
-  <% @applicant.each do |app|  %>
-
-      <tr>
-        <td><%= app.Name %></td>
-        <td><%= app.RollNo %></td>
-        <td><%= app.Score %></td>
-        <td><%= app.Branch %> </td>
-        <td><%= text_field :applicant ,:role, :class => "Role",:value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-      </tr>
-
-  <% end %>
-  </tbody>
-
-
-</table>
+<%= search_field_tag "search" , nil,:placeholder => "search",:partial => "final_pursued_table"%>
+<div id="applicants"><%= render 'final_pursued_table' %></div>

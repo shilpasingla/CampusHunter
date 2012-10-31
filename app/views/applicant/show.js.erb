@@ -1,1 +1,1 @@
-$("#applicants").html("<%= escape_javascript(render("show_table")) %>");
+$("#applicants").html("<%= escape_javascript(render("#{params[:partial]}")) %>");

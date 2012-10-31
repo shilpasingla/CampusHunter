@@ -1,12 +1,12 @@
 $(document).ready(function(){
 
     $('#cutoff').keyup(function (data) {
-        $.get("/applicant/show_selected",{cutoff : $(this).val() , college_name : $('#collegename').val() },null,"script");
+        $.get("/applicant/show_selected",{cutoff : $(this).val() , college_name : $('#collegename').val(),partial :$('#search').attr("partial") },null,"script");
         return false;
     });
 
     $('#search').keyup(function(){
-        $.get("/applicant/search",{search_name : $(this).val() , college_name : $('#collegename').val() },null,"script");
+        $.get("/applicant/search",{search_name : $(this).val() , college_name : $('#collegename').val(),partial :$('#search').attr("partial") },null,"script");
         return false;
     });
 

@@ -54,6 +54,6 @@ class ApplicantController < ApplicationController
 
   def search
     @applicant =Applicants.where("Name like ? AND college like ?","%#{params[:search_name]}%","#{params[:college_name]}")
-    render 'show.js.erb'
+    render "show.js.erb"
   end
 end
