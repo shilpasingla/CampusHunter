@@ -1,38 +1,51 @@
-<table id="applicants2" class="display" border="1">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Roll No</th>
-    <th>Gender</th>
-    <th>Email Address</th>
-    <th>Phone Number</th>
-    <th>Qualification</th>
-    <th>Specification</th>
-    <th>Percentage</th>
-    <th>Score</th>
-  </tr>
-  </thead>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
 
-  <tbody>
+  <tr>
+    <td id="tbl-border-left"></td>
+    <td>
+<div id="content-table-inner">
+
+  <!--  start table-content  -->
+  <div id="table-content">
+    <form id="mainform" action="">
+
+<table id="applicants2" class="display" border="0" width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <th class="table-header-repeat line-left "><a>Name</a></th>
+    <th class="table-header-repeat line-left"><a>Roll No</a></th>
+    <th class="table-header-repeat line-left"><a>Gender</a></th>
+    <th class="table-header-repeat line-left"><a>Email Address</a></th>
+    <th class="table-header-repeat line-left"><a>Phone Number</a></th>
+    <th class="table-header-repeat line-left"><a>Qualification</a></th>
+    <th class="table-header-repeat line-left"><a>Specification</a></th>
+    <th class="table-header-repeat line-left"><a>Percentage</a></th>
+    <th class="table-header-repeat line-left"><a>Score</a></th>
+  </tr>
+
   <% @applicant.each do |app| %>
 
       <tr>
         <td><%= app.Name %></td>
-        <td><%= app.RollNo %></td>
-        <td><%= app.Gender %> </td>
-        <td><%= app.EmailAdd %> </td>
-        <td><%= app.PhoneNo %> </td>
-        <td><%= app.Qualification %></td>
-        <td><%= app.Branch %> </td>
-        <td><%= app.Percentage %></td>
-        <td>
+        <td style="text-align: center;"><%= app.RollNo %></td>
+        <td style="text-align: center;"><%= app.Gender %> </td>
+        <td style="text-align: left;"><%= app.EmailAdd %> </td>
+        <td style="text-align: left;"><%= app.PhoneNo %> </td>
+        <td style="text-align: left;"><%= app.Qualification %></td>
+        <td style="text-align: left;"><%= app.Branch %> </td>
+        <td style="text-align: center;"><%= app.Percentage %></td>
+        <td style="text-align: center;">
           <%= text_field :applicant, :score, :class => "Score", :value => app.Score, :id => "#{app.id}",
                          :onchange => "autoSave(this)", :maxlength => '2', :style => 'width: 80px; height: 15px;' %>
         </td>
       </tr>
 
   <% end %>
-  </tbody>
 
 </table>
+        </form>
+    </div>
+  </div>
+      </td>
+    </tr>
+  </table>
 <br>
