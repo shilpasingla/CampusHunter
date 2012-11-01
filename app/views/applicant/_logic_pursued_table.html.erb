@@ -1,19 +1,31 @@
-<table id="applicants2" class="display">
-  <thead>
+
+
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
+
   <tr>
-    <th>Name</th>
-    <th>RollNo</th>
-    <th>Score</th>
-    <th>Branch</th>
-    <th>Role</th>
-    <th>CodePairing</th>
-    <th>PairingStatus</th>
-    <th>Comment</th>
+    <td id="tbl-border-left"></td>
+    <td>
+      <div id="content-table-inner">
+
+        <!--  start table-content  -->
+        <div id="table-content">
+          <form id="mainform" action="">
+
+
+
+<table id="applicants2" class="display" border="0" width="100%" cellpadding="0" cellspacing="0">
+
+  <tr>
+    <th class="table-header-repeat line-left " style="text-align: left;"><a>Name</a></th>
+    <th class="table-header-repeat line-left " style="text-align: left;"><a>RollNo</a></th>
+    <th class="table-header-repeat line-left " style="text-align: left;"><a>Score</a></th>
+    <th class="table-header-repeat line-left " style="text-align: left;"><a>Branch</a></th>
+    <th class="table-header-repeat line-left " style="text-align: left;"><a>Role</a></th>
+    <th class="table-header-repeat line-left " style="text-align: left;"><a>CodePairing</a></th>
+    <th class="table-header-repeat line-left " style="text-align: left;"><a>PairingStatus</a></th>
+    <th class="table-header-repeat line-left " style="text-align: left;"><a>Comment</a></th>
   </tr>
-  </thead>
 
-
-  <tbody>
   <% @applicant.each do |app| %>
 
       <tr>
@@ -30,8 +42,9 @@
                          :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
         </td>
 
-        <td><%= radio_button_tag "#{app.id}",'pursue', (true || app.PairingStatus),:value => true,:class => "PairingStatus", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %> pursue
+        <td><%= radio_button_tag "#{app.id}",'pursue', (true || app.PairingStatus),:value => true,:class => "PairingStatus", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;'%> pursue
           <br><%= radio_button_tag "#{app.id}",'pass',!(false || app.PairingStatus) , :value => false,:class => "PairingStatus",:onchange => "autoSave(this)",:style => 'width: 80px; height: 15px;'%> pass</td>
+
         <td>
           <%= text_field :applicant, :comment, :class => "Comment", :value => app.Comment,
                          :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
@@ -40,5 +53,12 @@
 
 
   <%end%>
-  </tbody>
 </table>
+          </form>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+<br>
+
