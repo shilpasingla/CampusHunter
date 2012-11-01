@@ -1,5 +1,5 @@
 <% content_for :title do %>
-    CampusHunter - List of Colleges
+    CampusHunter
 <% end %>
 
 <% content_for :scripts do %>
@@ -19,22 +19,21 @@
   <br><br>
   <%= form_tag :action => 'logic_pursued' do %>
       <%= hidden_field_tag :collegename, params[:collegename] %>
-      <div style="float: left;">
-
+      <div style="float: left; padding-bottom: 5px;;">
         CUTOFF: &nbsp;
         <%= text_field_tag(:cutoff, nil, :partial => "show_table", :style => 'width: 100px; height: 15px; margin-bottom: 0px;  ') %>
-
+        &nbsp; &nbsp;
+        <%= submit_tag("Shortlist Candidates", :class => "submit-shortList") %>
       </div>
 
-      <div style=" float: right; padding-bottom: 10px; ">
-        <%= submit_tag("Shortlist Candidates", :class => "btn") %>
+      <div style=" float: right; padding-right: 10px;;">
+        <%= search_field_tag "search", nil, :placeholder => "search", :partial => "show_table" %>
       </div>
 
   <% end %>
-
-  <%= search_field_tag "search", nil, :placeholder => "search", :partial => "show_table" %>
-
 </div>
+
+<div class="clear"></div>
 
 <table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
   <tr>
@@ -50,8 +49,8 @@
     <td>
       <div id="content-table-inner">
         <div id="applicants">
-        <%= render 'show_table' %>
-          </div>
+          <%= render 'show_table' %>
+        </div>
       </div>
       <table border="0" cellpadding="0" cellspacing="0" id="paging-table">
         <tr>
@@ -74,7 +73,6 @@
         </tr>
       </table>
       <div class="clear"></div>
-      </div>
     </td>
     <td id="tbl-border-right"></td>
   </tr>
