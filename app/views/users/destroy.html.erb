@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-<head>
-  <title>CampusHunter - Delete User</title>
+<% content_for :title do %>
+    CampusHunter - Delete User
+<% end %>
 
-  <link rel="stylesheet" href="/assets/screen.css" type="text/css"/>
-  <script src="/assets/application.js" type="text/javascript"></script>
 
-  <script type="text/javascript">
+<% content_for :scripts do %>
+    <script type="text/javascript">
 
-      function changeId() {
-          $('#loginbox').attr('id', 'signup');
-      }
-  </script>
-</head>
+        function changeId() {
+            $('#loginbox').attr('id', 'signup');
+        }
+    </script>
+<% end %>
+
 
 <body id="login-bg">
 <%= form_for :user, :url => {:action => :del} do |f| %>
@@ -44,8 +43,7 @@
       </div>
     </div>
 <% end %>
-</body>
-</html>
+
 
 
 
