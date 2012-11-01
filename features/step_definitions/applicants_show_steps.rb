@@ -9,8 +9,8 @@ Given /^I am on the "(.*)" page of "(.*)"$/ do |page, collegename|
 end
 When /^I fill in score of a student with "(.*)"$/ do |score|
 
-  fill_in '4', :with => score
-  fill_in '5', :with => score
+  fill_in '2', :with => score
+  fill_in '3', :with => '4'
 
 end
 When /^Reload the page$/ do
@@ -18,5 +18,5 @@ When /^Reload the page$/ do
 
 end
 Then /^I should get the updated score "(.*)"$/ do |score|
-  field_labeled('4').value.should =~ /#{score}/
+  field_labeled('2').value.should =~ /#{score}/
 end
