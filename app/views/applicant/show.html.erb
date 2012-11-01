@@ -1,122 +1,86 @@
+<% content_for :title do %>
+    CampusHunter - List of Colleges
+<% end %>
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-<head>
-  <%= javascript_include_tag "application" %>
-  <title>CampusHunter</title>
+<% content_for :scripts do %>
+    <%= javascript_include_tag "jquery.selectbox-0.5" %>
+    <%= javascript_include_tag "applicant" %>
 
-  <link rel="stylesheet" href="/assets/screen.css" type="text/css"/>
-  <link rel="stylesheet" href="/assets/pro_dropline_ie.css" type="text/css"/>
-  <script src="/assets/application.js" type="text/javascript"></script>
-  <script src="/jquery.selectbox-0.5.js" type="text/javascript"></script>
-</head>
 
-<body>
-<div id="page-top-outer">
-  <!-- Start: page-top -->
-  <div id="page-top">
+<% end %>
 
-    <!-- start logo -->
-    <div id="logo">
-      <a href="">
-        <img style="width: 156px; height: 40px;" src="/assets/shared/logo.png" alt="Logo"/>
-      </a>
-    </div>
-     </div></div>
-<div id="content-outer">
-  <!-- start content -->
-  <div id="content">
+<% content_for :styles do %>
+    <%= stylesheet_link_tag "pro_dropline_ie" %>
+    <%= stylesheet_link_tag "pro_dropline" %>
+<% end %>
 
-    <!--  start page-heading -->
-    <div id="page-heading">
-      <h1>Applicant's Details </h1>
-      <br><br>
-      <%= form_tag :action => 'logic_pursued' do %>
-          <%= hidden_field_tag :collegename, params[:collegename] %>
-          <div style="float: left;">
+<div id="page-heading">
+  <h1>Applicant's Details </h1>
+  <br><br>
+  <%= form_tag :action => 'logic_pursued' do %>
+      <%= hidden_field_tag :collegename, params[:collegename] %>
+      <div style="float: left;">
 
-            CUTOFF: &nbsp;
-            <%= text_field_tag(:cutoff, nil,:partial => "show_table", :style => 'width: 100px; height: 15px; margin-bottom: 0px;  ') %>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        CUTOFF: &nbsp;
+        <%= text_field_tag(:cutoff, nil, :partial => "show_table", :style => 'width: 100px; height: 15px; margin-bottom: 0px;  ') %>
 
+      </div>
+
+      <div style=" float: right; padding-bottom: 10px; ">
+        <%= submit_tag("Shortlist Candidates", :class => "btn") %>
+      </div>
+
+  <% end %>
+
+  <%= search_field_tag "search", nil, :placeholder => "search", :partial => "show_table" %>
+
+</div>
+
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
+  <tr>
+    <th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt=""/></th>
+    <th class="topleft"></th>
+    <td id="tbl-border-top">&nbsp;</td>
+    <th class="topright"></th>
+    <th rowspan="3" class="sized"><img src="images/shared/side_shadowright.jpg" width="20" height="300" alt=""/>
+    </th>
+  </tr>
+  <tr>
+    <td id="tbl-border-left"></td>
+    <td>
+      <div id="content-table-inner">
+        <div id="applicants">
+        <%= render 'show_table' %>
           </div>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0" id="paging-table">
+        <tr>
+          <td>
+            <a href="" class="page-far-left"></a>
+            <a href="" class="page-left"></a>
 
-          <div style=" float: right; padding-bottom: 10px; ">
-            <%= submit_tag("Shortlist Candidates", :class => "btn") %>
-          </div>
-
-      <% end %>
-
-      <%= search_field_tag "search" , nil,:placeholder => "search",:partial => "show_table"%>
-
-
-
-
-
-<div id="applicants"><%= render 'show_table' %></div>
-
-      </form>
-    </div>
-    <!--  end content-table  -->
-    <!--  start paging..................................................... -->
-    <table border="0" cellpadding="0" cellspacing="0" id="paging-table">
-      <tr>
-        <td>
-          <a href="" class="page-far-left"></a>
-          <a href="" class="page-left"></a>
-
-          <div id="page-info">Page <strong>1</strong> / 15</div>
-          <a href="" class="page-right"></a>
-          <a href="" class="page-far-right"></a>
-        </td>
-        <td>
-          <select class="styledselect_pages">
-            <option value="">Number of rows</option>
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-          </select>
-        </td>
-      </tr>
-    </table>
-    <!--  end paging................ -->
-
-    <div class="clear"></div>
-
-  </div>
-  <!--  end content-table-inner ............................................END  -->
-  </td>
-  <td id="tbl-border-right"></td>
+            <div id="page-info">Page <strong>1</strong> / 15</div>
+            <a href="" class="page-right"></a>
+            <a href="" class="page-far-right"></a>
+          </td>
+          <td>
+            <select class="styledselect_pages">
+              <option value="">Number of rows</option>
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <div class="clear"></div>
+      </div>
+    </td>
+    <td id="tbl-border-right"></td>
   </tr>
   <tr>
     <th class="sized bottomleft"></th>
     <td id="tbl-border-bottom">&nbsp;</td>
     <th class="sized bottomright"></th>
   </tr>
-  </table>
-  <div class="clear">&nbsp;</div>
-
-
-</div>
-<!--  end content -->
-<div class="clear">&nbsp;</div>
-</div>
-<!--  end content-outer........................................................END -->
-
-<div class="clear">&nbsp;</div>
-
-<!-- start footer -->
-<div id="footer">
-  <!--  start footer-left -->
-  <div id="footer-left">
-
-    &copy; Copyright ThoughtWorks Inc.. <span id="spanYear"></span> <a href="">www.thoughtworks.com</a>.
-    All rights reserved.
-  </div>
-  <!--  end footer-left -->
-  <div class="clear">&nbsp;</div>
-</div>
-<!-- end footer -->
-</body>
-</html>
-
+</table>
