@@ -28,9 +28,12 @@
         </td>
 
         <td>
-          <%= radio_button_tag "#{app.id}", 'pursue', (true || app.PairingStatus), :value => true, :class => "PairingStatus", :onchange => "autoSave(this)", :style => 'width: 20px;' %>
+          <%= radio_button_tag "#{app.id}", 'pursue', (true || app.PairingStatus), :value => true,
+                               :class => "PairingStatus", :onchange => "autoSave(this)", :style => 'width: 20px;' %>
           pursue
-          &nbsp; &nbsp; &nbsp; <%= radio_button_tag "#{app.id}", 'pass', !(false || app.PairingStatus), :value => false, :class => "PairingStatus", :onchange => "autoSave(this)", :style => 'width: 20px;' %>
+          &nbsp; &nbsp; &nbsp; <%= radio_button_tag "#{app.id}", 'pass', !(false || app.PairingStatus),
+                                                    :value => false, :class => "PairingStatus",
+                                                    :onchange => "autoSave(this)", :style => 'width: 20px;' %>
           pass
         </td>
 
