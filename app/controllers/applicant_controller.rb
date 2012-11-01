@@ -53,7 +53,20 @@ class ApplicantController < ApplicationController
   end
 
   def search
-    @applicant =Applicants.where("Name like ? AND college like ?","%#{params[:search_name]}%","#{params[:college_name]}")
+    @college = College.find_by_name(params[:collegename])
+    if params[:Final_Pursued]=="true"
+      @applicant = @college.pairing_pursued()
+      else if params[:First_Tech_Pursued] == "true"
+        @applicant = @college.first_tech_pursued()
+        else if params[:Pairing_Pursued] == "true"
+          @applicant = @college.pairing_pursued()
+          else
+            @applicant = @college.logic_pursued(@college.cutoff)
+        end
+      end
+    end
+
+    #@applicant =Applicants.where("Name like ? AND college like ? AND Score >= '3' ","%#{params[:search_name]}%","#{params[:college_name]}")
     render "show.js.erb"
   end
 end
