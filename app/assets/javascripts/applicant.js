@@ -6,7 +6,7 @@ $(document).ready(function(){
     });
 
     $('#search').keyup(function(){
-        $.get("/applicant/search",{search_name : $(this).val() , college_name : $('#collegename').val(),partial :$('#search').attr("partial") },null,"script");
+        $.get("/applicant/search",{search_name : $(this).val() , college_name :$('#search').attr("college_name"),partial :$('#search').attr("partial") },null,"script");
         return false;
     });
 
