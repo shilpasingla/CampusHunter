@@ -27,7 +27,7 @@
       </div>
 
       <div style=" float: right; padding-right: 10px;;">
-        <%= search_field_tag "search", nil, :placeholder => "search", :partial => "show_table" %>
+        <%= search_field_tag "search" , nil,:placeholder => "search",:partial => "show_table",:collegename => @college.name%>
       </div>
 
   <% end %>

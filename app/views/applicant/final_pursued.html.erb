@@ -53,7 +53,7 @@
       <div>
         <p style="display: inline-block; font-size: 15px;"><br><%= link_to "Download csv", url = "/applicant/download/#{@college.name}.csv" ,:id => "addNewCollege", :style => "color: #4b4b4b;"%></p>
         &nbsp;&nbsp; &nbsp;&nbsp;
-        <p style="display: inline-block; "><%= search_field_tag "search" , nil,:placeholder => "search",:partial => "logic_pursued_table"%> </p>
+        <p style="display: inline-block; "><%= search_field_tag "search" , nil,:placeholder => "search",:collegename => @college.name ,:partial => "final_pursued_table",:LogicPursued => "false",:ParingPursued=>"false" ,:FirstTechPursued =>"false",:FinalPursued =>"true"%> </p>
       </div>
 
 <div id="applicants"><%= render 'final_pursued_table' %></div>

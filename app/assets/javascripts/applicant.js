@@ -6,7 +6,7 @@ $(document).ready(function(){
     });
 
     $('#search').keyup(function(){
-        $.get("/applicant/search",{search_name : $(this).val() , college_name :$('#search').attr("college_name"),partial :$('#search').attr("partial") },null,"script");
+        $.get("/applicant/search",{search_name : $(this).val() , collegename :$('#search').attr("collegename"),partial :$('#search').attr("partial"),Logic_Pursued :$('#search').attr("LogicPursued"),Pairing_Pursued :$('#search').attr("ParingPursued"),First_Tech_Pursued :$('#search').attr("FirstTechPursued"),Final_Pursued :$('#search').attr("FinalPursued")},null,"script");
         return false;
     });
 
