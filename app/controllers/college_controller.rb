@@ -29,7 +29,7 @@ class CollegeController < ApplicationController
 
 
   def show
-    @colleges = College.all
+    @colleges = Kaminari.paginate_array(College.all).page(params[:page]).per(10)
 
     respond_to do |format|
       format.html { render 'college/show'}
