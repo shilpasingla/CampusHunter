@@ -18,18 +18,15 @@
                   $('.styledText').mouseover(function () {
                       $('#menuDiv').css("visibility", "visible");
                       $(this).css("color", "#b0c4de");
-
                   });
 
                   $('.styledText').mouseout(function () {
                       $('#menuDiv').css("visibility", "hidden");
                       $(this).css('color', '#ffffff');
-
                   });
 
                   $('#addNewCollege').mouseover(function () {
                       $(this).css("color", "#b0c4de");
-
                   });
 
                   $('#addNewCollege').mouseout(function () {
@@ -37,31 +34,21 @@
                   });
               }
       )
-
   </script>
-
 </head>
 
 <body>
 <div id="page-top-outer">
-
-  <!-- Start: page-top -->
   <div id="page-top">
-
-    <!-- start logo -->
     <div id="logo">
-      <a href="">
+      <a href="/college/show">
         <img style="width: 156px; height: 40px;" src="/assets/shared/logo.png" alt="Logo"/>
       </a>
     </div>
-    <!-- end logo -->
-
-    <!--  start top-search -->
     <div id="top-search">
       <table border="0" cellpadding="0" cellspacing="0">
         <tr>
           <td class="styledText">
-
             <% if current_user %>
                 <%= current_user.email %>
                 <div id="menuDiv" style="visibility: hidden;" class="menuItems">
@@ -69,60 +56,35 @@
                     <li tabindex="-1"><%= link_to "Add User", sign_up_path %></li>
                     <li tabindex="-1"><%= link_to "Delete User", delete_user_path %></li>
                     <li tabindex="-1"><%= link_to "Logout", log_out_path %></li>
-
                   </ul>
-
-
                 </div>
             <% else %>
                 Welcome
             <% end %>
-
           </td>
-
           <td>
-
           </td>
-
-
         </tr>
       </table>
     </div>
-    <!--  end top-search -->
     <div class="clear"></div>
-
   </div>
-  <!-- End: page-top -->
-
 </div>
-
 <div class="clear">&nbsp;</div>
-
-
 <div id="content-outer">
-  <!-- start content -->
   <div id="content">
-
     <%= yield %>
-
     <div class="clear">&nbsp;</div>
-
-
   </div>
-  <!--  end content -->
   <div class="clear">&nbsp;</div>
 </div>
-
-
 <div class="clear">&nbsp;</div>
 <div id="footer">
   <div id="footer-left">
-
     &copy; Copyright ThoughtWorks Inc.. <span id="spanYear"></span> <a href="">www.thoughtworks.com</a>.
     All rights reserved.
   </div>
   <div class="clear">&nbsp;</div>
 </div>
 </body>
-
 </html>

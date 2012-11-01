@@ -1,62 +1,61 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-<head>
-  <title>CampusHunter - Delete User</title>
+<% content_for :title do %>
+    CampusHunter - Add New College
+<% end %>
 
-  <link rel="stylesheet" href="/assets/screen.css" type="text/css"/>
-  <script src="/assets/application.js" type="text/javascript"></script>
+<% content_for :scripts do %>
 
-  <script type="text/javascript" language="javascript">
-      $(document).ready(
-              function () {
-      $('#listOfColleges').mouseover(function () {
-          $(this).css("color", "#b0c4de");
+    <script type="text/javascript" language="javascript">
+        $(document).ready(
+                function () {
+                    $('#listOfColleges').mouseover(function () {
+                        $(this).css("color", "#b0c4de");
 
-      });
+                    });
 
-      $('#listOfColleges').mouseout(function () {
-          $(this).css("color", "#4b4b4b");
-      });
-              })
+                    $('#listOfColleges').mouseout(function () {
+                        $(this).css("color", "#4b4b4b");
+                    });
+                })
 
-    function checkfile(sender) {
-        var validExts = new Array(".csv");
-        var fileExt = sender.value;
-        fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
-        if (validExts.indexOf(fileExt) < 0) {
-            alert("Invalid file selected, only" +
-                    validExts.toString() + " files are accepted");
-            sender.value = '';
-            return false;
+        function checkfile(sender) {
+            var validExts = new Array(".csv");
+            var fileExt = sender.value;
+            fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+            if (validExts.indexOf(fileExt) < 0) {
+                alert("Invalid file selected, only" +
+                        validExts.toString() + " files are accepted");
+                sender.value = '';
+                return false;
+            }
+            else return true;
         }
-        else return true;
-    }
-</script>
-     <body id="login-bg">
+    </script>
 
-     <form action="/college/create" id="college" name="college" method="post" enctype="multipart/form-data">
-      <div id="login-holder">
-        <div id="logo-login">
-          <div id="loginbox">
-           <div id="login-inner">
-             <div id="errorContainer" style="text-decoration-color: #ff0000; padding-bottom: 20px; color: #ff0000;">
-             <%= @message %>
-             </div>
-             <p>College name
-    <input type="text" name="name" id="name" style="width: 100px; height: 15px;" > </p>
-    <br>
-    <br>
-    <input id="import" type="file" name="import" onchange="checkfile(this)" >
-    <br><br><br>
-     <div style="text-align: center;">
-    <input type="submit" class="submit-login" value="Create" style="float: left;">
+ <% end %>
 
-     <a href="/college/show">       <input type="button" value="Cancel" class="submit-login" style="float: left; padding-top: 0px; ">   </a>
-  </div> </div>
+<form action="/college/create" id="college" name="college" method="post" enctype="multipart/form-data">
+  <div id="login-holder">
+    <div id="logo-login">
+      <div id="loginbox">
+        <div id="login-inner">
+          <div id="errorContainer" style="text-decoration-color: #ff0000; padding-bottom: 20px; color: #ff0000;">
+            <%= @message %>
           </div>
-   </div>
-   </div>
-    </form>
+          <p>College name
+            <input type="text" name="name" id="name" style="width: 100px; height: 15px;"></p>
+          <br>
+          <br>
+          <input id="import" type="file" name="import" onchange="checkfile(this)">
+          <br><br><br>
 
+          <div style="text-align: center;">
+            <input type="submit" class="submit-login" value="Create" style="float: left;">
 
-</body>
+            <a href="/college/show">
+              <input type="button" value="Cancel" class="submit-login" style="float: left; padding-top: 0px; "> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
