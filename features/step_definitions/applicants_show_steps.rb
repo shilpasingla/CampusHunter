@@ -5,18 +5,22 @@ Given /^I am on the "(.*)" page of "(.*)"$/ do |page, collegename|
   fill_in 'password', :with => "abcd"
   click_button 'Login'
   visit path
-
 end
+
 When /^I fill in score of a student with "(.*)"$/ do |score|
-
   fill_in '2', :with => score
-  fill_in '3', :with => '4'
-
+  fill_in '3', :with => '1'
 end
+
 When /^Reload the page$/ do
   visit "/applicant/show/sample_college"
-
 end
+
 Then /^I should get the updated score "(.*)"$/ do |score|
   field_labeled('2').value.should =~ /#{score}/
+end
+
+Then /^I should not see a field "(.*)"$/ do |name|
+  field = find_field(name)
+  field.present? == false
 end

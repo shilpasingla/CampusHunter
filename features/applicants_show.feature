@@ -15,3 +15,10 @@ Given I am on the "/applicant/show/" page of "sample_college"
 When I fill in score of a student with "8"
 And Click "Shortlist Candidates" button
 Then I should be redirected to the "logic pursued" page
+
+#Wrong test. Not working properly
+@selenium
+Scenario: Cutoff field
+Given I am on the "/applicant/show/" page of "sample_college"
+When I fill in "cutoff" with "8"
+Then I should not see a field "3"
