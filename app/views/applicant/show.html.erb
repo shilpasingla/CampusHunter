@@ -6,7 +6,6 @@
     <%= javascript_include_tag "jquery.selectbox-0.5" %>
     <%= javascript_include_tag "applicant" %>
 
-
 <% end %>
 
 <% content_for :styles do %>
@@ -27,7 +26,7 @@
       </div>
 
       <div style=" float: right; padding-right: 10px;;">
-        <%= search_field_tag "search" , nil,:placeholder => "search",:partial => "show_table",:collegename => @college.name%>
+        <%= search_field_tag "search", nil, :placeholder => "search", :partial => "show_table", :collegename => @college.name %>
       </div>
 
   <% end %>
@@ -37,12 +36,9 @@
 
 <table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
   <tr>
-    <th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt=""/></th>
     <th class="topleft"></th>
     <td id="tbl-border-top">&nbsp;</td>
     <th class="topright"></th>
-    <th rowspan="3" class="sized"><img src="images/shared/side_shadowright.jpg" width="20" height="300" alt=""/>
-    </th>
   </tr>
   <tr>
     <td id="tbl-border-left"></td>
