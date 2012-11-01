@@ -37,13 +37,14 @@
 
             CUTOFF: &nbsp;
             <%= text_field_tag(:cutoff, nil,:partial => "show_table", :style => 'width: 100px; height: 15px; margin-bottom: 0px;  ') %>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
           </div>
-          <div style=" float: right; padding-bottom: 10px; ">
-            
 
+          <div style=" float: right; padding-bottom: 10px; ">
             <%= submit_tag("Shortlist Candidates", :class => "btn") %>
           </div>
+
       <% end %>
 
       <%= search_field_tag "search" , nil,:placeholder => "search",:partial => "show_table"%>

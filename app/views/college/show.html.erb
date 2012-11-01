@@ -1,227 +1,96 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-<head>
-  <title>CampusHunter - Login</title>
+<% content_for :title do %>
+    CampusHunter - List of Colleges
+<% end %>
 
-  <link rel="stylesheet" href="/assets/screen.css" type="text/css"/>
-  <link rel="stylesheet" href="/assets/pro_dropline_ie.css" type="text/css"/>
-  <script src="/assets/application.js" type="text/javascript"></script>
-  <script src="/jquery.selectbox-0.5.js" type="text/javascript"></script>
 
-  <script type="text/javascript">
-      $(document).ready(
-              function () {
+<% content_for :scripts do %>
+    <%= javascript_include_tag "jquery.selectbox-0.5" %>
 
-                  $('.styledText').mouseover(function () {
-                      $('#menuDiv').css("visibility", "visible");
-                      $(this).css("color", "#b0c4de");
 
-                  });
+<% end %>
 
-                  $('.styledText').mouseout(function () {
-                      $('#menuDiv').css("visibility", "hidden");
-                      $(this).css('color', '#ffffff');
+<% content_for :styles do %>
+    <%= stylesheet_link_tag "pro_dropline_ie" %>
+    <%= stylesheet_link_tag "pro_dropline" %>
+<% end %>
 
-                  });
 
-                  $('#addNewCollege').mouseover(function () {
-                      $(this).css("color", "#b0c4de");
 
-                  });
+<!--  start page-heading -->
+<div id="page-heading">
+  <h1>Listing colleges
 
-                  $('#addNewCollege').mouseout(function () {
-                      $(this).css("color", "#4b4b4b");
-                  });
-              }
-      )
 
-  </script>
-</head>
-<body>
-<div id="page-top-outer">
-
-  <!-- Start: page-top -->
-  <div id="page-top">
-
-    <!-- start logo -->
-    <div id="logo">
-      <a href="">
-        <img style="width: 156px; height: 40px;" src="/assets/shared/logo.png" alt="Logo"/>
-      </a>
+    <div style="float: right;">
+      <h2>
+        <%= link_to "Add New College", new_college_path, :id => "addNewCollege", :style => "color: #4b4b4b;" %>
+      </h2>
     </div>
-    <!-- end logo -->
+  </h1>
+</div>
+<!-- end page-heading -->
 
-    <!--  start top-search -->
-    <div id="top-search">
-      <table border="0" cellpadding="0" cellspacing="0">
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
+  <tr>
+    <th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt=""/></th>
+    <th class="topleft"></th>
+    <td id="tbl-border-top">&nbsp;</td>
+    <th class="topright"></th>
+    <th rowspan="3" class="sized"><img src="images/shared/side_shadowright.jpg" width="20" height="300" alt=""/>
+    </th>
+  </tr>
+  <tr>
+    <td id="tbl-border-left"></td>
+    <td>
+      <div id="content-table-inner">
+        <table id="college" border="0" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <th class="table-header-repeat line-left"><a>Name</a></th>
+            <th class="table-header-repeat line-left"><a>Number Of Applicants</a></th>
+            <th class="table-header-repeat line-left"><a>Cutoff</a></th>
+            <th class="table-header-options line-left"><a>Options</a></th>
+          </tr>
+
+          <% @colleges.each do |college| %>
+              <tr>
+                <td><%= link_to college.name, url="/applicant/show/#{college.name}" %></td>
+                <td><%= college.numberofapplicant %></td>
+                <td><%= college.cutoff %></td>
+                <td><%= link_to "", url="/college/delete/#{college.name }", :class => "icon-2 info-tooltip",
+                                :confirm => "Are you sure you want to delete #{college.name}?", :id => "remove" %></td>
+              </tr>
+          <% end %>
+        </table>
+        </form>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0" id="paging-table">
         <tr>
-          <td class="styledText">
-
-            <% if current_user %>
-                <%= current_user.email %>
-                <div id="menuDiv" style="visibility: hidden;" class="menuItems">
-                  <ul>
-                    <li tabindex="-1"><%= link_to "Add User", sign_up_path %></li>
-                    <li tabindex="-1"><%= link_to "Delete User", delete_user_path %></li>
-                    <li tabindex="-1"><%= link_to "Logout", log_out_path %></li>
-
-                  </ul>
-
-
-                </div>
-            <% else %>
-                Welcome
-            <% end %>
-
-          </td>
-
           <td>
+            <a href="" class="page-far-left"></a>
+            <a href="" class="page-left"></a>
 
+            <div id="page-info">Page <strong>1</strong> / 15</div>
+            <a href="" class="page-right"></a>
+            <a href="" class="page-far-right"></a>
           </td>
-
-
+          <td>
+            <select class="styledselect_pages">
+              <option value="">Number of rows</option>
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+            </select>
+          </td>
         </tr>
       </table>
-    </div>
-    <!--  end top-search -->
-    <div class="clear"></div>
-
-  </div>
-  <!-- End: page-top -->
-
-</div>
-
-<div class="clear">&nbsp;</div>
-
-
-<!-- start content-outer ........................................................................................................................START -->
-<div id="content-outer">
-  <!-- start content -->
-  <div id="content">
-
-    <!--  start page-heading -->
-    <div id="page-heading">
-      <h1>Listing colleges
-
-
-        <div style="float: right;">
-          <h2>
-            <%= link_to "Add New College", new_college_path, :id => "addNewCollege", :style => "color: #4b4b4b;" %>
-          </h2>
-        </div>
-      </h1>
-    </div>
-    <!-- end page-heading -->
-
-    <table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
-      <tr>
-        <th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt=""/></th>
-        <th class="topleft"></th>
-        <td id="tbl-border-top">&nbsp;</td>
-        <th class="topright"></th>
-        <th rowspan="3" class="sized"><img src="images/shared/side_shadowright.jpg" width="20" height="300" alt=""/>
-        </th>
-      </tr>
-      <tr>
-        <td id="tbl-border-left"></td>
-        <td>
-          <!--  start content-table-inner ...................................................................... START -->
-          <div id="content-table-inner">
-
-            <!--  start table-content  -->
-            <div id="table-content">
-
-
-              <!--  start product-table ..................................................................................... -->
-              <form id="mainform" action="">
-
-
-                <table id="college" border="0" width="100%" cellpadding="0" cellspacing="0">
-
-                  <tr>
-                    <th class="table-header-repeat line-left"><a>Name</a></th>
-                    <th class="table-header-repeat line-left"><a>Number Of Applicants</a></th>
-                    <th class="table-header-repeat line-left"><a>Cutoff</a></th>
-                    <th class="table-header-options line-left"><a>Options</a></th>
-                  </tr>
-
-                  <% @colleges.each do |college| %>
-
-                      <tr>
-                        <td><%= link_to college.name, url="/applicant/show/#{college.name}" %></td>
-                        <td><%= college.numberofapplicant %></td>
-                        <td><%= college.cutoff %></td>
-                        <td><%= link_to "", url="/college/delete/#{college.name }", :class => "icon-2 info-tooltip",
-                                        :confirm => "Are you sure you want to delete #{college.name}?", :id => "remove" %></td>
-                      </tr>
-                  <% end %>
-
-                </table>
-
-
-                <!--  end product-table................................... -->
-              </form>
-            </div>
-            <!--  end content-table  -->
-            <!--  start paging..................................................... -->
-            <table border="0" cellpadding="0" cellspacing="0" id="paging-table">
-              <tr>
-                <td>
-                  <a href="" class="page-far-left"></a>
-                  <a href="" class="page-left"></a>
-
-                  <div id="page-info">Page <strong>1</strong> / 15</div>
-                  <a href="" class="page-right"></a>
-                  <a href="" class="page-far-right"></a>
-                </td>
-                <td>
-                  <select class="styledselect_pages">
-                    <option value="">Number of rows</option>
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
-                  </select>
-                </td>
-              </tr>
-            </table>
-            <!--  end paging................ -->
-
-            <div class="clear"></div>
-
-          </div>
-          <!--  end content-table-inner ............................................END  -->
-        </td>
-        <td id="tbl-border-right"></td>
-      </tr>
-      <tr>
-        <th class="sized bottomleft"></th>
-        <td id="tbl-border-bottom">&nbsp;</td>
-        <th class="sized bottomright"></th>
-      </tr>
-    </table>
-    <div class="clear">&nbsp;</div>
-
-
-  </div>
-  <!--  end content -->
-  <div class="clear">&nbsp;</div>
-</div>
-<!--  end content-outer........................................................END -->
-
-<div class="clear">&nbsp;</div>
-
-<!-- start footer -->
-<div id="footer">
-  <!--  start footer-left -->
-  <div id="footer-left">
-
-    &copy; Copyright ThoughtWorks Inc.. <span id="spanYear"></span> <a href="">www.thoughtworks.com</a>.
-    All rights reserved.
-  </div>
-  <!--  end footer-left -->
-  <div class="clear">&nbsp;</div>
-</div>
-<!-- end footer -->
-</body>
-</html>
-
+      <div class="clear"></div>
+      </div>
+    </td>
+    <td id="tbl-border-right"></td>
+  </tr>
+  <tr>
+    <th class="sized bottomleft"></th>
+    <td id="tbl-border-bottom">&nbsp;</td>
+    <th class="sized bottomright"></th>
+  </tr>
+</table>

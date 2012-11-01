@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-<head>
-  <title>CampusHunter - Login</title>
+<% content_for :title do %>
+    CampusHunter - Login
+<% end %>
 
-  <link rel="stylesheet" href="/assets/screen.css" type="text/css"/>
-  <script src="/assets/application.js" type="text/javascript"></script>
-</head>
-
-<body id="login-bg">
 <%= form_tag sessions_path do %>
     <div id="login-holder">
       <div id="logo-login">
-        <img style="width: 156px; height: 40px;" src="/assets/shared/logo.png" alt="Logo"/>
+        <%= image_tag "shared/logo.png", :size => "156*40",
+                      :alt => "CampusHunter" %>
       </div>
       <div class="clear"></div>
       <div id="loginbox">
@@ -48,5 +43,6 @@
       </div>
     </div>
 <% end %>
-</body>
-</html>
+
+
+

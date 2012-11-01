@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   end
 
   validates :email, :password, :presence => true
-  validates :password, :confirmation => { :message => "and Password_confirmation should be same" }
+  validates :password, :confirmation => { :message => "you entered do not match" }
   validates :email, :uniqueness => true
   validates :password, :length => { :in => 4..20 }
 
