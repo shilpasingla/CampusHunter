@@ -3,6 +3,7 @@ Feature: List of Applicants
   I want to view the list of applicants of a particular college
   So that I can edit their details and perform different tasks on them
 
+@selenium
 Scenario: Fill in the Score
 Given I am on the "/applicant/show/" page of "sample_college"
 When I fill in score of a student with "8"

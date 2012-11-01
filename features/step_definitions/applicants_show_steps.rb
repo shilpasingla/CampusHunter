@@ -11,13 +11,12 @@ When /^I fill in score of a student with "(.*)"$/ do |score|
 
   fill_in '4', :with => score
   fill_in '5', :with => score
-  save_and_open_page
+
 end
 When /^Reload the page$/ do
   visit "/applicant/show/sample_college"
-  save_and_open_page
+
 end
 Then /^I should get the updated score "(.*)"$/ do |score|
-
-  field_labeled('1').value.should =~ /#{score}/
+  field_labeled('4').value.should =~ /#{score}/
 end
