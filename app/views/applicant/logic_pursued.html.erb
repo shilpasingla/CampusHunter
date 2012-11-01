@@ -12,22 +12,23 @@
     <%= stylesheet_link_tag "pro_dropline" %>
 <% end %>
 
-<div id="page-heading">
+<div id="page-heading" xmlns="http://www.w3.org/1999/html">
   <h1>Logic Pursues </h1>
   <br/>
 
-  <div style="float: left; padding-bottom: 5px;">
-    <%= link_to "Download csv", url = "/applicant/download/#{@college.name}.csv", :id => "addNewCollege", :style => "color: #4b4b4b;" %>
-    &nbsp; &nbsp;
-    <%= link_to "Shortlist Candidates", url = "/applicant/pairing_pursued/#{@college.name}", :id => "addNewCollege", :style => "color: #4b4b4b;" %>
-  </div>
 
-  <div style=" float: right;">
-    <%= search_field_tag "search", nil, :placeholder => "search", :college_name => "#{@college.name}",
-                         :partial => "logic_pursued_table",
-                         :collegename => @college.name, :LogicPursued => "true",
-                         :ParingPursued => "false", :FirstTechPursued => "false", :FinalPursued => "false" %>
-  </div>
+  <p style="display: inline-block; font-size: 15px; float: left;">
+   <%= link_to "Download csv", url = "/applicant/download/#{@college.name}.csv", :id => "addNewCollege", :style => "color: #4b4b4b;" %>
+    &nbsp;&nbsp; &nbsp;&nbsp;
+  </p>
+
+  <p style="display: inline-block; float: left;"><%= button_to "Shortlist", {:action => "pairing_pursued" , :collegename => @college.name},:class => "submit-shortList" %>
+  </p>
+  <div style="float: right;">
+  <%= search_field_tag "search", nil, :placeholder => "search", :college_name => "#{@college.name}", :partial => "logic_pursued_table", :collegename => @college.name, :LogicPursued => "true", :ParingPursued => "false", :FirstTechPursued => "false", :FinalPursued => "false" %> </p>
+    </div>
+  <br>
+</div>
 
 </div>
 <div class="clear"></div>
