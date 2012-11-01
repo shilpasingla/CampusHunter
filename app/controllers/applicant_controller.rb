@@ -55,11 +55,11 @@ class ApplicantController < ApplicationController
   def search
     @college = College.find_by_name(params[:collegename])
     if params[:Final_Pursued]=="true"
-      @applicant =Applicants.where("Name like ? AND college like ? AND Result ='true' ","%#{params[:search_name]}%","#{params[:collegename]}")
+      @applicant =Applicants.where("Name like ? AND college like ? AND Result ='t' ","%#{params[:search_name]}%","#{params[:collegename]}")
       else if params[:First_Tech_Pursued] == "true"
-        @applicant =Applicants.where("Name like ? AND college like ? AND FirstStatus ='true' ","%#{params[:search_name]}%","#{params[:collegename]}")
+        @applicant =Applicants.where("Name like ? AND college like ? AND FirstStatus ='t' ","%#{params[:search_name]}%","#{params[:collegename]}")
           else if params[:Pairing_Pursued] == "true"
-            @applicant =Applicants.where("Name like ? AND college like ? AND PairingStatus = 'true' ","%#{params[:search_name]}%","#{params[:collegename]}")
+            @applicant =Applicants.where("Name like ? AND college like ? AND PairingStatus = 't' ","%#{params[:search_name]}%","#{params[:collegename]}")
             else if  params[:Logic_Pursued] =="true"
               @applicant =Applicants.where("Name like ? AND college like ? AND Score >= '#{@college.cutoff}' ","%#{params[:search_name]}%","#{params[:collegename]}")
           else
