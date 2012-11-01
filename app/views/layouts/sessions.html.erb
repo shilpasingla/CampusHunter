@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>
+    <%= yield :title %>
+  </title>
+
+  <%= stylesheet_link_tag "screen" %>
+  <%= javascript_include_tag "application" %>
+
+  <%= yield :scripts %>
+
+</head>
+
+<body id="login-bg">
+
+<%= yield %>
+
+</body>
+
+</html>
