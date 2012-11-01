@@ -1,6 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
 <%= javascript_include_tag "application" %>
-<h1>First Technical Round Pursues</h1>
-<p><%=link_to "Shortlist" , url = "/applicant/final_pursued/#{@college.name}"%></p>
-<p> Download :<%= link_to "csv" , url = "/applicant/download/#{@college.name}.csv"%></p>
-<%= search_field_tag "search" , nil,:placeholder => "search",:partial => "first_tech_pursued_table"%>
+  <%= javascript_include_tag "application" %>
+  <title>CampusHunter</title>
+
+  <link rel="stylesheet" href="/assets/screen.css" type="text/css"/>
+  <link rel="stylesheet" href="/assets/pro_dropline_ie.css" type="text/css"/>
+  <script src="/assets/application.js" type="text/javascript"></script>
+  <script src="/jquery.selectbox-0.5.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+      $(document).ready(
+              function () {
+
+
+                  $('#addNewCollege').mouseover(function () {
+                      $(this).css("color", "#b0c4de");
+
+                  });
+
+                  $('#addNewCollege').mouseout(function () {
+                      $(this).css("color", "#4b4b4b");
+                  });
+              }
+      )
+
+  </script>
+</head>
+
+<body>
+<div id="page-top-outer">
+  <!-- Start: page-top -->
+  <div id="page-top">
+
+    <!-- start logo -->
+    <div id="logo">
+      <a href="">
+        <img style="width: 156px; height: 40px;" src="/assets/shared/logo.png" alt="Logo"/>
+      </a>
+    </div>
+  </div></div>
+<div id="content-outer">
+  <!-- start content -->
+  <div id="content">
+
+    <!--  start page-heading -->
+    <div id="page-heading">
+
+<h1 style="display: inline-block;">First Technical Round Pursues</h1>
+      <br>
+      <br>
+
+      <div>
+        <p style="display: inline-block; font-size: 15px;"><br><%= link_to "Download csv", url = "/applicant/download/#{@college.name}.csv" ,:id => "addNewCollege", :style => "color: #4b4b4b;"%></p>
+        &nbsp;&nbsp; &nbsp;&nbsp;
+        <p style="display: inline-block; "><%= search_field_tag "search" , nil,:placeholder => "search",:partial => "logic_pursued_table"%> </p>
+        <p style="display: inline-block; float: right; font-size: 15px;"><%= link_to "Shortlist Candidates", url = "/applicant/final_pursued/#{@college.name}", :id => "addNewCollege", :style => "color: #4b4b4b;"%><br></p>
+      </div>
+
 <div id="applicants"><%= render 'first_tech_pursued_table' %></div>
+    </div>
+    <!--  end content-table  -->
+    <!--  start paging..................................................... -->
+    <table border="0" cellpadding="0" cellspacing="0" id="paging-table">
+      <tr>
+        <td>
+          <a href="" class="page-far-left"></a>
+          <a href="" class="page-left"></a>
+
+          <div id="page-info">Page <strong>1</strong> / 15</div>
+          <a href="" class="page-right"></a>
+          <a href="" class="page-far-right"></a>
+        </td>
+        <td>
+          <select class="styledselect_pages">
+            <option value="">Number of rows</option>
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <!--  end paging................ -->
+
+    <div class="clear"></div>
+
+  </div>
+  <!--  end content-table-inner ............................................END  -->
+  </td>
+  <td id="tbl-border-right"></td>
+  </tr>
+  <tr>
+    <th class="sized bottomleft"></th>
+    <td id="tbl-border-bottom">&nbsp;</td>
+    <th class="sized bottomright"></th>
+  </tr>
+  </table>
+  <div class="clear">&nbsp;</div>
+
+
+</div>
+<!--  end content -->
+<div class="clear">&nbsp;</div>
+</div>
+<!--  end content-outer........................................................END -->
+
+<div class="clear">&nbsp;</div>
+
+<!-- start footer -->
+<div id="footer">
+  <!--  start footer-left -->
+  <div id="footer-left">
+
+    &copy; Copyright ThoughtWorks Inc.. <span id="spanYear"></span> <a href="">www.thoughtworks.com</a>.
+    All rights reserved.
+  </div>
+  <!--  end footer-left -->
+  <div class="clear">&nbsp;</div>
+</div>
+<!-- end footer -->
+</body>
+</html>
+
