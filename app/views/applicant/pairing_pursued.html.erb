@@ -17,26 +17,25 @@
 <div id="page-heading">
 
   <h1 style="display: inline-block;">Pairing Pursues</h1>
-  <br/>
+  <br/> <br/>
 
-  <div>
-    <p style="display: inline-block; font-size: 15px;">
-      <br><%= link_to "Download csv", url = "/applicant/download/#{@college.name}.csv",
-                      :id => "addNewCollege",
-                      :style => "color: #4b4b4b;" %>
-    </p>
-    &nbsp;&nbsp; &nbsp;&nbsp;
-    <p style="display: inline-block; "><%= search_field_tag "search", nil, :placeholder => "search",
-                                                            :partial => "pairing_pursued_table",
-                                                            :collegename => @college.name,
-                                                            :LogicPursued => "false",
-                                                            :ParingPursued => "true",
-                                                            :FirstTechPursued => "false",
-                                                            :FinalPursued => "false" %> </p>
 
-    <p style="display: inline-block; float: right; font-size: 15px;">
-      <%= link_to "Shortlist Candidates", url = "/applicant/first_tech_pursued/#{@college.name}", :id => "addNewCollege", :style => "color: #4b4b4b;" %>
-      <br/></p>
+  <div style="float: left; padding-bottom: 5px;">
+    <%= link_to "Download csv", url = "/applicant/download/#{@college.name}.csv",
+                :id => "addNewCollege",
+                :style => "color: #4b4b4b;" %>
+    &nbsp; &nbsp;
+    <%= link_to "Shortlist Candidates", url = "/applicant/first_tech_pursued/#{@college.name}", :id => "addNewCollege", :style => "color: #4b4b4b;" %>
+  </div>
+
+  <div style=" float: right;">
+    <%= search_field_tag "search", nil, :placeholder => "search",
+                         :partial => "pairing_pursued_table",
+                         :collegename => @college.name,
+                         :LogicPursued => "false",
+                         :ParingPursued => "true",
+                         :FirstTechPursued => "false",
+                         :FinalPursued => "false" %>
   </div>
 
 </div>
