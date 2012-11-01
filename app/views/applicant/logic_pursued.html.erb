@@ -54,7 +54,7 @@
        <div>
       <p style="display: inline-block; font-size: 15px;"><br><%= link_to "Download csv", url = "/applicant/download/#{@college.name}.csv" ,:id => "addNewCollege", :style => "color: #4b4b4b;"%></p>
       &nbsp;&nbsp; &nbsp;&nbsp;
-      <p style="display: inline-block; "><%= search_field_tag "search" , nil,:placeholder => "search",:college_name => "#{@college.name}",:partial => "logic_pursued_table"%> </p>
+      <p style="display: inline-block; "><%= search_field_tag "search" , nil,:placeholder => "search",:college_name => "#{@college.name}",:partial => "logic_pursued_table",:collegename => @college.name, :LogicPursued => "true",:ParingPursued=>"false" ,:FirstTechPursued =>"false",:FinalPursued =>"false"%> </p>
       <p style="display: inline-block; float: right; font-size: 15px;"><%= link_to "Shortlist Candidates", url = "/applicant/pairing_pursued/#{@college.name}", :id => "addNewCollege", :style => "color: #4b4b4b;"%><br></p>
         </div>
       <div id="applicants"><%= render 'logic_pursued_table' %></div>
