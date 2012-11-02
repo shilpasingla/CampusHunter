@@ -6,7 +6,7 @@ Feature: List of pairing pursues
   Scenario: Fill in the First Tech Status
     Given I am on the "/applicant/pairing_pursued/" page of "sample_college"
     When Check the pursue box of a student
-    And I should be redirected to the "/applicant/pairing_pursued/sample_college" page
+    And I should be directed to the "Pairing Pursues" page
     Then I should get the updated radio button
 
   @selenium
@@ -14,13 +14,13 @@ Feature: List of pairing pursues
     Given I am on the "/applicant/pairing_pursued/" page of "sample_college"
     When Check the pursue box of a student
     And Click "Shortlist" button
-    Then I should be redirected to the "/applicant/first_tech_pursued/sample_college" page
+    Then I should be directed to the "First Technical Round Pursues" page
     And Should contain "2"
 
   Scenario: Fill in the Result
     Given I am on the "/applicant/first_tech_pursued/" page of "sample_college"
     When Check the pursue box of a student
-    And I should be redirected to the "/applicant/first_tech_pursued/sample_college" page
+    And I should be directed to the "First Technical Round Pursues" page
     Then I should get the updated radio button
 
   @selenium
@@ -28,5 +28,5 @@ Feature: List of pairing pursues
     Given I am on the "/applicant/first_tech_pursued/" page of "sample_college"
     When Check the pursue box of a student
     And Click "Shortlist" button
-    Then I should be redirected to the "/applicant/final_pursued/sample_college" page
+    Then I should be directed to the "Final Pursues" page
     And Should contain "2"
