@@ -63,7 +63,7 @@ class ApplicantController < ApplicationController
             else if  params[:Logic_Pursued] =="true"
               @applicant =Kaminari.paginate_array(Applicants.where("Name like ? AND college like ? AND Score >= '#{@college.cutoff}' ","%#{params[:search_name]}%","#{params[:collegename]}")).page(params[:page]).per(20)
           else
-            @applicant =Kaminari.paginate_array(Applicants.where("Name like ? AND college like ?","%#{params[:search_name]}%","#{params[:collegename]}")).page([:params]).per(20)
+            @applicant =Kaminari.paginate_array(Applicants.where("Name like ? AND college like ?","%#{params[:search_name]}%","#{params[:collegename]}")).page(params[:page]).per(20)
           end
         end
       end
