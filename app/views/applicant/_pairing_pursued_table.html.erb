@@ -22,11 +22,11 @@
                                            :onchange => "autoSave(this)" %></td>
                         <td><%= text_field :applicant, :firstTech, :class => "FirstTech", :value => app.FirstTech, :id => "#{app.id}",
                                            :onchange => "autoSave(this)" %></td>
-                        <td><%= radio_button_tag "#{app.id}", 'pursue', (true || app.FirstStatus), :value => true,
+                        <td><%= radio_button_tag "#{app.id}", 'pursue', (app.FirstStatus), :value => true,
                                                  :class => "FirstStatus", :onchange => "autoSave(this)",
                                                  :style => 'width: 20px;' %>
                           pursue
-                          <%= radio_button_tag "#{app.id}", 'pass', !(false || app.FirstStatus), :value => false,
+                          <%= radio_button_tag "#{app.id}", 'pass', !(app.FirstStatus), :value => false,
                                                :class => "FirstStatus", :onchange => "autoSave(this)",
                                                :style => 'width: 20px;' %>
                           pass
