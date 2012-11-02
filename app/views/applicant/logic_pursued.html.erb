@@ -21,15 +21,11 @@
    <%= link_to "Download csv", url = "/applicant/download/#{@college.name}.csv", :id => "addNewCollege", :style => "color: #4b4b4b;" %>
     &nbsp;&nbsp; &nbsp;&nbsp;
   </p>
+  <a href="/applicant/pairing_pursued/<%="#{@college.name}"%>" ><input type="button" value="Shortlist" class="submit-shortList"> </a>
 
-  <p style="display: inline-block; float: left;"><%= button_to "Shortlist", {:action => "pairing_pursued" , :collegename => @college.name},:class => "submit-shortList" %>
-  </p>
-  <div style="float: right;">
-  <%= search_field_tag "search", nil, :placeholder => "search", :college_name => "#{@college.name}", :partial => "logic_pursued_table", :collegename => @college.name, :LogicPursued => "true", :ParingPursued => "false", :FirstTechPursued => "false", :FinalPursued => "false" %> </p>
+  <div style="float: right;padding-bottom: 0px;">
+  <%= search_field_tag "search", nil, :placeholder => "search", :college_name => "#{@college.name}", :partial => "logic_pursued_table", :collegename => @college.name, :LogicPursued => "true", :ParingPursued => "false", :FirstTechPursued => "false", :FinalPursued => "false" %>
     </div>
-  <br>
-</div>
-
 </div>
 <div class="clear"></div>
 <table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">

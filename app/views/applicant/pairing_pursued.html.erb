@@ -12,21 +12,20 @@
     <%= stylesheet_link_tag "pro_dropline" %>
 <% end %>
 
-<div id="page-heading">
+<div id="page-heading" xmlns="http://www.w3.org/1999/html">
 
-  <h1 style="display: inline-block;">Pairing Pursues</h1>
-  <br/> <br/>
+  <h1 >Pairing Pursues</h1>
+  <br/>
 
 
-  <div style="float: left; padding-bottom: 5px;">
+  <p style="display: inline-block; font-size: 15px; float: left;">
     <%= link_to "Download csv", url = "/applicant/download/#{@college.name}.csv",
                 :id => "addNewCollege",
                 :style => "color: #4b4b4b;" %>
-    &nbsp; &nbsp;
-    <%= link_to "Shortlist Candidates", url = "/applicant/first_tech_pursued/#{@college.name}", :id => "addNewCollege", :style => "color: #4b4b4b;" %>
-  </div>
-
-  <div style=" float: right;">
+    &nbsp;&nbsp; &nbsp;&nbsp;
+    </p>
+  <a href="/applicant/first_tech_pursued/<%="#{@college.name}"%>" ><input type="button" value="Shortlist" class="submit-shortList"> </a>
+  <div style=" float: right;padding-bottom: 0px;">
     <%= search_field_tag "search", nil, :placeholder => "search",
                          :partial => "pairing_pursued_table",
                          :collegename => @college.name,
@@ -37,7 +36,7 @@
   </div>
 
 </div>
-
+<div class="clear"></div>
 <table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
   <tr>
 
