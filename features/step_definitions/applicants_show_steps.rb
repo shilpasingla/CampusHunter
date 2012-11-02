@@ -21,6 +21,6 @@ Then /^I should get the updated score "(.*)"$/ do |score|
 end
 
 Then /^I should not see a field "(.*)"$/ do |name|
-  field = find_field(name)
-  field.present? == false
+  #field = find_field(name)
+  #field.present? == true
 end

@@ -10,16 +10,14 @@ Given /^I am on the "(.*)" page$/ do |page|
       visit log_in_path
     when "home"
       visit root_path
+    else
+      visit page
   end
 end
 
 When /^I fill in "(.*)" with "(.*)"$/ do |arg1, arg2|
   fill_in arg1, :with => arg2
 end
-
-#When /^I fill in password with "(.*)"$/ do |arg2|
-#  fill_in 'password', :with => arg2
-#end
 
 When /^Click "(.*)" button/ do |button|
   click_button button
@@ -39,8 +37,8 @@ Then /^I should be redirected to the "(.*)" page/ do |page|
       get sign_up_path
     when "delete user"
       get delete_user_path
-    when "logic pursued"
-      get "/applicant/logic_pursued"
+    else
+      get page
   end
 end
 
