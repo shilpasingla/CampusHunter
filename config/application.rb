@@ -55,6 +55,7 @@ module CampusHunter
     config.assets.precompile += %w(*.js *.css)
     config.serve_static_assets = true
 
+
     # Enable the asset pipeline
     config.assets.enabled = true
 
