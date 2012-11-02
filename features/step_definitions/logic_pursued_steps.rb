@@ -7,3 +7,7 @@ Then /^I should get the updated radio button$/ do
     field_checked.should be_true
   end
 end
+Then /^Should contain "(.*)"$/ do |arg|
+  field = find_field(arg)
+  field.should be_present
+end
