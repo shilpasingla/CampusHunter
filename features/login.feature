@@ -9,7 +9,7 @@ Feature: Login
     When I fill in "email" with "test_user"
     And I fill in "password" with "abcd"
     And Click "Login" button
-    Then I should be redirected to the "home" page
+    Then I should be directed to the "Listing colleges" page
 
   Scenario: Should not be able to login
     Given I am on the "log_in" page
