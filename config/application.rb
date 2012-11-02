@@ -52,7 +52,7 @@ module CampusHunter
     # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
     # parameters by using an attr_accessible or attr_protected declaration.
     config.active_record.whitelist_attributes = true
-    config.assets.precompile += %w(screen.css jquery.selectbox-0.5.js)
+    config.assets.compile = true
 
     # Enable the asset pipeline
     config.assets.enabled = true
