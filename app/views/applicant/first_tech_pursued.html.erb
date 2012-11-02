@@ -1,80 +1,80 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<% content_for :title do %>
+    CampusHunter - First Tech Pursues
+<% end %>
+
+<% content_for :scripts do %>
+    <%= javascript_include_tag "jquery.selectbox-0.5" %>
+    <%= javascript_include_tag "applicant" %>
+<% end %>
+
+<% content_for :styles do %>
+    <%= stylesheet_link_tag "pro_dropline_ie" %>
+    <%= stylesheet_link_tag "pro_dropline" %>
+<% end %>
+
+<div id="page-heading" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
 
-<body>
-
-<div id="content-outer">
-  <!-- start content -->
-  <div id="content">
-
-    <!--  start page-heading -->
-    <div id="page-heading">
-
-<h1 style="display: inline-block;">First Technical Round Pursues</h1>
+<h1 >First Technical Round Pursues</h1>
       <br>
-      <br>
 
-      <div>
-        <p style="display: inline-block; font-size: 15px;"><br><%= link_to "Download csv", url = "/applicant/download/#{@college.name}.csv" ,:id => "addNewCollege", :style => "color: #4b4b4b;"%></p>
+
+      <p style="display: inline-block; font-size: 15px; float: left;">
+        <%= link_to "Download csv", url = "/applicant/download/#{@college.name}.csv" ,:id => "addNewCollege", :style => "color: #4b4b4b;"%>
         &nbsp;&nbsp; &nbsp;&nbsp;
-        <p style="display: inline-block; "><%= search_field_tag "search" , nil,:placeholder => "search",:partial => "first_tech_pursued_table",:LogicPursued => "false",:ParingPursued=>"false",:collegename => @college.name ,:FirstTechPursued =>"true",:FinalPursued =>"false"%> </p>
-        <p style="display: inline-block; float: right; font-size: 15px;"><%= link_to "Shortlist Candidates", url = "/applicant/final_pursued/#{@college.name}", :id => "addNewCollege", :style => "color: #4b4b4b;"%><br></p>
+  </p>
+  <a href="/applicant/final_pursued/<%="#{@college.name}"%>" ><input type="button" value="Shortlist" class="submit-shortList"> </a>
+  <div style=" float: right;padding-bottom: 0px;">
+  <%= search_field_tag "search" , nil,:placeholder => "search",:partial => "first_tech_pursued_table",:LogicPursued => "false",:ParingPursued=>"false",:collegename => @college.name ,:FirstTechPursued =>"true",:FinalPursued =>"false"%>
+   </div>
+       </div>
+<div class="clear"></div>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
+  <tr>
+
+    <th class="topleft"></th>
+    <td id="tbl-border-top">&nbsp;</td>
+    <th class="topright"></th>
+
+  </tr>
+  <tr>
+    <td id="tbl-border-left"></td>
+    <td>
+      <div id="content-table-inner">
+        <div id="applicants">
+          <%= render 'first_tech_pursued_table' %>
+        </div>
       </div>
+      <table border="0" cellpadding="0" cellspacing="0" id="paging-table">
+        <tr>
+          <td>
+            <a href="" class="page-far-left"></a>
+            <a href="" class="page-left"></a>
 
-<div id="applicants"><%= render 'first_tech_pursued_table' %></div>
-    </div>
-    <!--  end content-table  -->
-    <!--  start paging..................................................... -->
-    <table border="0" cellpadding="0" cellspacing="0" id="paging-table">
-      <tr>
-        <td>
-          <a href="" class="page-far-left"></a>
-          <a href="" class="page-left"></a>
-
-          <div id="page-info">Page <strong>1</strong> / 15</div>
-          <a href="" class="page-right"></a>
-          <a href="" class="page-far-right"></a>
-        </td>
-        <td>
-          <select class="styledselect_pages">
-            <option value="">Number of rows</option>
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-          </select>
-        </td>
-      </tr>
-    </table>
-    <!--  end paging................ -->
-
-    <div class="clear"></div>
-
-  </div>
-  <!--  end content-table-inner ............................................END  -->
-  </td>
-  <td id="tbl-border-right"></td>
+            <div id="page-info">Page <strong>1</strong> / 15</div>
+            <a href="" class="page-right"></a>
+            <a href="" class="page-far-right"></a>
+          </td>
+          <td>
+            <select class="styledselect_pages">
+              <option value="">Number of rows</option>
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <div class="clear"></div>
+    </td>
+    <td id="tbl-border-right"></td>
   </tr>
   <tr>
     <th class="sized bottomleft"></th>
     <td id="tbl-border-bottom">&nbsp;</td>
     <th class="sized bottomright"></th>
   </tr>
-  </table>
-  <div class="clear">&nbsp;</div>
+</table>
 
 
-</div>
-<!--  end content -->
-<div class="clear">&nbsp;</div>
-</div>
-<!--  end content-outer........................................................END -->
-
-<div class="clear">&nbsp;</div>
-
-<!-- start footer -->
-
-<!-- end footer -->
-</body>
-</html>
 
