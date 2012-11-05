@@ -15,16 +15,12 @@ Given /^I am on the "(.*)" page$/ do |page|
   end
 end
 
-When /^I fill in "(.*)" with "(.*)"$/ do |arg1, arg2|
-  fill_in arg1, :with => arg2
-end
-
-When /^Click "(.*)" button/ do |button|
-  click_button button
-end
-
 Then /^I should be directed to the home page/ do
   page.should have_css('h1', :text => 'Listing colleges')
+end
+
+Then /^I should be directed to the "(.*)" page$/ do |arg|
+  page.should have_content(arg)
 end
 
 Then /^I should be redirected to the "(.*)" page/ do |page|
@@ -42,6 +38,24 @@ Then /^I should be redirected to the "(.*)" page/ do |page|
   end
 end
 
-Then /^"(.*)" message should flash/ do |msg|
-  page.should have_content(msg)
+Then /^It should direct me to the new college form/ do
+  page.should have_content("College name")
+end
+
+Then /^I should be redirected to the applicants of "(.*)" page$/ do |collegename|
+  path = "/applicant/show/"+collegename
+  get path
+end
+
+Given /^I am on the "(.*)" page of "(.*)"$/ do |page, collegename|
+  path = page + collegename
+  visit "/sessions/new"
+  fill_in 'email', :with => "test_user"
+  fill_in 'password', :with => "abcd"
+  click_button 'Login'
+  visit path
+end
+
+When /^Reload the page$/ do
+  visit "/applicant/show/sample_college"
 end
