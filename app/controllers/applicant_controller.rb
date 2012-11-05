@@ -5,9 +5,9 @@ class ApplicantController < ApplicationController
   before_filter :require_login
 
 
-  def first_tech_pursued
+  def secondTech
     @college = College.find_by_name(params[:collegename])
-    @applicant = Kaminari.paginate_array(@college.first_tech_pursued()).page(params[:page]).per(20)
+    @applicant = Kaminari.paginate_array(@college.secondTech()).page(params[:page]).per(20)
   end
 
   def final_pursued
@@ -15,22 +15,22 @@ class ApplicantController < ApplicationController
     @applicant = Kaminari.paginate_array(@college.final_pursued()).page(params[:page]).per(20)
   end
 
-  def pairing_pursued
+  def firstTech
     @college = College.find_by_name(params[:collegename])
-    @applicant = Kaminari.paginate_array(@college.pairing_pursued()).page(params[:page]).per(20)
+    @applicant = Kaminari.paginate_array(@college.firstTech()).page(params[:page]).per(20)
   end
 
-  def logic_pursued
+  def codePairing
     @college = College.find_by_name(params[:collegename])
     if !params[:cutoff].blank?
       @college.update_column(:cutoff, params[:cutoff])
     end
-    @applicant = Kaminari.paginate_array(@college.logic_pursued(@college.cutoff)).page(params[:page]).per(20)
+    @applicant = Kaminari.paginate_array(@college.codePairing(@college.cutoff)).page(params[:page]).per(20)
   end
 
   def show
     @college = College.find_by_name(params[:collegename])
-      @applicant = Kaminari.paginate_array(@college.logic_pursued(@college.cutoff)).page(params[:page]).per(20)
+      @applicant = Kaminari.paginate_array(@college.codePairing(@college.cutoff)).page(params[:page]).per(20)
   end
 
   def download
@@ -48,7 +48,7 @@ class ApplicantController < ApplicationController
 
   def show_selected
     @college = College.find_by_name(params[:college_name])
-    @applicant = Kaminari.paginate_array(@college.logic_pursued(params[:cutoff])).page(params[:page]).per(20)
+    @applicant = Kaminari.paginate_array(@college.codePairing(params[:cutoff])).page(params[:page]).per(20)
     render 'show.js.erb'
   end
 
