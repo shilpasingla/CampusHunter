@@ -7,12 +7,19 @@ class Applicants < ActiveRecord::Base
   validates :Name, :RollNo, :presence => true
   validates :Score, :numericality => {:less_than_or_equal_to => 12, :greater_than_or_equal_to => 0}, :allow_blank => true, :allow_nil => true
 
-  def self.to_csv(college_name,cutoff)
+  def self.to_csv(college_name,cutoff,round)
     @college = College.find_by_name(college_name)
     CSV.generate do |csv|
+      if(round == "CodePairing")
+        csv << column_names
+        @college.logic_pursued(cutoff).each do |applicant|
+          csv << applicant.attributes.values_at(*column_names)
+          end
+      else
       csv << %W[Name RollNo]
       @college.logic_pursued(cutoff).each do |applicant|
         csv << applicant.attributes.values_at(column_names[1], column_names[15])
+      end
       end
       end
   end

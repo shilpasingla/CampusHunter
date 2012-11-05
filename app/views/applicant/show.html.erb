@@ -11,6 +11,7 @@
         CUTOFF: &nbsp;
         <%= text_field_tag(:cutoff, nil, :partial => "show_table",
                            :style => 'width: 100px; height: 15px; margin-bottom: 0px;  ') %>
+        <%= hidden_field_tag :round, "CodePairing" %>
         &nbsp; &nbsp;
         <%= submit_tag("Shortlist", :class => "submit-shortList") %>
       </div>

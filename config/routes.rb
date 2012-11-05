@@ -40,7 +40,7 @@ CampusHunter::Application.routes.draw do
   match "applicant/pairing_pursued/:collegename" => 'Applicant#pairing_pursued'
   match "applicant/first_tech_pursued/:collegename" => 'Applicant#first_tech_pursued'
   match "applicant/final_pursued/:collegename" => 'Applicant#final_pursued'
-  match "applicant/download/:collegename" => 'Applicant#download'
+  match "applicant/download/:round/:collegename/" => 'Applicant#download'
   match "applicant/show/:collegename" => 'Applicant#show'
   match "applicant/show/:collegename/:cutoff" => 'Applicant#show'
   match "college/create" => 'College#create'
