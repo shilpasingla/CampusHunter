@@ -6,6 +6,8 @@
     <th  class="table-header-repeat line-left " style="text-align: left;"><a>Score</a></th>
     <th  class="table-header-repeat line-left " style="text-align: left;"><a>Branch</a></th>
     <th  class="table-header-repeat line-left " style="text-align: left;"><a>Role</a></th>
+    <th class="table-header-repeat line-left " style="text-align: left;"><a>CodePairing</a></th>
+    <th class="table-header-repeat line-left " style="text-align: left;"><a>FirstTech</a></th>
     <th  class="table-header-repeat line-left " style="text-align: left;"><a>SecondTech</a></th>
     <th  class="table-header-repeat line-left " style="text-align: left;"><a>Result</a></th>
     <th  class="table-header-repeat line-left " style="text-align: left;"><a>Comment</a></th>
@@ -20,6 +22,12 @@
         <td><%= app.Score %></td>
         <td><%= app.Branch %> </td>
         <td><%= text_field :applicant ,:role, :class => "Role",:value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+        <td>
+          <%= text_field :applicant, :codePairing, :class => "CodePairing", :value => app.CodePairing,
+                         :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
+        </td>
+        <td><%= text_field :applicant, :firstTech, :class => "FirstTech", :value => app.FirstTech, :id => "#{app.id}",
+                           :onchange => "autoSave(this)" %></td>
         <td><%= text_field :applicant ,:secondTech, :class => "SecondTech",:value => app.SecondTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
         <td><%= radio_button_tag "#{app.id}",'pursue', (app.Result),:value => true,:class => "Result", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %> pursue
           <br><%= radio_button_tag "#{app.id}",'pass',!(app.Result) , :value => false,:class => "Result",:onchange => "autoSave(this)",:style => 'width: 80px; height: 15px;'%> pass</td>
