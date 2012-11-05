@@ -16,9 +16,9 @@
 <div id="page-heading">
   <h1>Applicant's Details </h1>
   <br><br>
-  <%= form_tag( {:action => 'logic_pursued'},{:method => 'get'})  do %>
+  <%= form_tag({:action => 'logic_pursued'}, {:method => 'get'}) do %>
       <%= hidden_field_tag :collegename, params[:collegename] %>
-      <div style="float: left; padding-bottom: 5px;;">
+      <div style="float: left; padding-bottom: 5px;">
         CUTOFF: &nbsp;
         <%= text_field_tag(:cutoff, nil, :partial => "show_table", :style => 'width: 100px; height: 15px; margin-bottom: 0px;  ') %>
         &nbsp; &nbsp;
