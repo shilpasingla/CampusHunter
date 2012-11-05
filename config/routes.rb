@@ -19,14 +19,14 @@ CampusHunter::Application.routes.draw do
 
   resources :applicant do
     collection do
-      get 'logic_pursued'
-      get 'pairing_pursued'
-      post 'pairing_pursued'
-      get 'first_tech_pursued'
-      post 'first_tech_pursued'
+      get 'codePairing'
+      get 'firstTech'
+      post 'firstTech'
+      get 'secondTech'
+      post 'secondTech'
       get 'final_pursued'
       post 'final_pursued'
-      post 'logic_pursued'
+      post 'codePairing'
       post 'save'
       post 'auto_save'
       get 'show'
@@ -36,9 +36,9 @@ CampusHunter::Application.routes.draw do
       get 'search'
     end
   end
-  match "applicant/logic_pursued/:collegename" => 'Applicant#logic_pursued'
-  match "applicant/pairing_pursued/:collegename" => 'Applicant#pairing_pursued'
-  match "applicant/first_tech_pursued/:collegename" => 'Applicant#first_tech_pursued'
+  match "applicant/codePairing/:collegename" => 'Applicant#codePairing'
+  match "applicant/firstTech/:collegename" => 'Applicant#firstTech'
+  match "applicant/secondTech/:collegename" => 'Applicant#secondTech'
   match "applicant/final_pursued/:collegename" => 'Applicant#final_pursued'
   match "applicant/download/:round/:collegename/" => 'Applicant#download'
   match "applicant/show/:collegename" => 'Applicant#show'
@@ -50,8 +50,8 @@ CampusHunter::Application.routes.draw do
   #get "college/add_user"
   #get "college/show"
 
-  #get "applicant/logic_pursued"
-  #post "applicant/logic_pursued"
+  #get "applicant/codePairing"
+  #post "applicant/codePairing"
   #get "applicant/search"
 
 

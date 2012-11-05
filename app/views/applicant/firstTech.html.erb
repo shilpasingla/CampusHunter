@@ -1,27 +1,29 @@
 <% content_for :title do %>
-    Logic Pursues
+    CampusHunter - First Technical
 <% end %>
 
 <div id="page-heading" xmlns="http://www.w3.org/1999/html">
-  <h1>Logic Pursues </h1>
-  <br/> <br/>
+  <h1>First Technical</h1>
+  <br/><br/>
 
-  <div style="float: left; padding-bottom: 5px;">
-    <a href="/applicant/download/<%= "#{params[:round]}" %>/<%= "#{@college.name}" %>.csv/">
-      <input type="button" value="Download csv" class="submit-shortList">
-    </a>
-    &nbsp;&nbsp;
-    <a href="/applicant/pairing_pursued/<%= "#{@college.name}" %>">
-      <input type="button" value="Shortlist" class="submit-shortList">
-    </a>
-  </div>
+  <%= form_tag({:action => 'secondTech'}, {:method => 'get'}) do %>
+      <div style="float: left; padding-bottom: 5px;">
+        <%= hidden_field_tag :collegename, params[:collegename] %>
+        <%= hidden_field_tag :round, "SecondTech" %>
+        <a href="/applicant/download/<%= "#{params[:round]}" %>/<%= "#{@college.name}" %>.csv">
+          <input type="button" value="Download csv" class="submit-shortList">
+        </a>
+        &nbsp; &nbsp;
+        <%= submit_tag("Shortlist", :class => "submit-shortList") %>
+      </div>
+  <% end %>
+
   <div style=" float: right;">
     <%= search_field_tag "search", nil, :placeholder => "search",
-                         :college_name => "#{@college.name}",
-                         :partial => "logic_pursued_table",
+                         :partial => "pairing_pursued_table",
                          :collegename => @college.name,
-                         :LogicPursued => "true",
-                         :ParingPursued => "false",
+                         :LogicPursued => "false",
+                         :ParingPursued => "true",
                          :FirstTechPursued => "false",
                          :FinalPursued => "false" %>
   </div>
@@ -33,17 +35,18 @@
     <th class="topleft"></th>
     <td id="tbl-border-top">&nbsp;</td>
     <th class="topright"></th>
+
   </tr>
   <tr>
     <td id="tbl-border-left"></td>
     <td>
       <div id="content-table-inner">
         <div id="applicants">
-          <%= render 'logic_pursued_table' %>
+          <%= render 'firstTech_table' %>
         </div>
       </div>
 
- <div class="clear"></div>
+      <div class="clear"></div>
     </td>
     <td id="tbl-border-right"></td>
   </tr>
@@ -53,13 +56,6 @@
     <th class="sized bottomright"></th>
   </tr>
 </table>
-
-
-
-
-
-
-
 
 
 

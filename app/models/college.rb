@@ -4,7 +4,7 @@ class College < ActiveRecord::Base
   validates :name, :numberofapplicant,:presence => true
   validates :name, :uniqueness => true
 
-  def logic_pursued(cutoff)
+  def codePairing(cutoff)
     @pur = []
       if !cutoff.blank?
         cutoff = cutoff.to_i
@@ -20,7 +20,7 @@ class College < ActiveRecord::Base
     return @pur
   end
 
-  def first_tech_pursued()
+  def secondTech()
     Applicants.where(:college => self.name, :FirstStatus => true)
   end
 
@@ -28,7 +28,7 @@ class College < ActiveRecord::Base
     Applicants.where(:college => self.name, :Result => true)
   end
 
-  def pairing_pursued()
+  def firstTech()
     Applicants.where(:college => self.name, :PairingStatus => true)
   end
 

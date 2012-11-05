@@ -37,7 +37,7 @@ describe ApplicantController do
   it "should render list of selected applicants from logic test" do
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     College.stub(:find_by_name).with("AIT").and_return(College.new)
-    College.stub(:logic_pursued).with("AIT").and_return(true)
+    College.stub(:codePairing).with("AIT").and_return(true)
     get :show_selected ,{:cutoff => 3 , :college_name => "AIT"}
     assert_response :success
   end
@@ -45,16 +45,16 @@ describe ApplicantController do
   it "should render list of selected applicants from code pairing" do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
-    College.stub(:pairing_pursued)
-    get :pairing_pursued,{:collegename => "thapar"}
+    College.stub(:firstTech)
+    get :firstTech,{:collegename => "thapar"}
     assert_response :success
   end
 
   it "should render list of selected applicants from first technical" do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
-    College.stub(:first_tech_pursued)
-    get :pairing_pursued,{:collegename => "thapar"}
+    College.stub(:secondTech)
+    get :firstTech,{:collegename => "thapar"}
     assert_response :success
   end
 
@@ -62,7 +62,7 @@ describe ApplicantController do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     College.stub(:second_tech_pursued)
-    get :pairing_pursued,{:collegename => "thapar"}
+    get :firstTech,{:collegename => "thapar"}
     assert_response :success
   end
 

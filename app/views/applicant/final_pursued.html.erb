@@ -1,5 +1,5 @@
 <% content_for :title do %>
-    CampusHunter - First Tech Pursues
+    CampusHunter - Final Pursues
 <% end %>
 
 <div id="page-heading" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
@@ -7,7 +7,7 @@
   <br/><br/>
 
   <div style="float: left; padding-bottom: 5px;">
-    <a href="/applicant/download/<%= "#{@college.name}" %>.csv">
+    <a href="/applicant/download/<%= "#{params[:round]}" %>/<%= "#{@college.name}" %>.csv">
       <input type="button" value="Download csv" class="submit-shortList">
     </a>
 
