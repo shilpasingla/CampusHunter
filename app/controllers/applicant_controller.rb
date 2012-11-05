@@ -7,7 +7,7 @@ class ApplicantController < ApplicationController
 
   def first_tech_pursued
     @college = College.find_by_name(params[:collegename])
-    @applicant = Kaminari.paginate_array(@college.first_tech_pursued()).page(params[:page]).per(200)
+    @applicant = Kaminari.paginate_array(@college.first_tech_pursued()).page(params[:page]).per(20)
   end
 
   def final_pursued
