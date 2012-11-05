@@ -48,32 +48,33 @@
     <div id="logo">
       <a href="/college/show">
         <img style="width: 156px; height: 40px;" src="/assets/shared/logo.png" alt="Logo"/>
-      </a>  rrr
+      </a>
     </div>
-    <div id="top-search">
-      <table border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td class="styledText">
-            <% if current_user %>
-                <%= current_user.email %>
-                <div id="menuDiv" style="visibility: hidden;" class="menuItems">
-                  <ul>
-                    <li tabindex="-1"><%= link_to "Add User", sign_up_path %></li>
-                    <li tabindex="-1"><%= link_to "Delete User", delete_user_path %></li>
-                    <li tabindex="-1"><%= link_to "Logout", log_out_path %></li>
-                  </ul>
-                </div>
-            <% else %>
-                Welcome
-            <% end %>
-          </td>
-          <td>
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div class="clear"></div>
   </div>
+  <div id="top-search">
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="styledText">
+          <% if current_user %>
+              <%= current_user.email %>
+              <div id="menuDiv" style="visibility: hidden;" class="menuItems">
+                <ul>
+                  <li tabindex="-1"><%= link_to "Add User", sign_up_path %></li>
+                  <li tabindex="-1"><%= link_to "Delete User", delete_user_path %></li>
+                  <li tabindex="-1"><%= link_to "Logout", log_out_path %></li>
+                </ul>
+              </div>
+          <% else %>
+              Welcome
+          <% end %>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="clear"></div>
+</div>
 </div>
 <div class="clear">&nbsp;</div>
 <div id="content-outer">
