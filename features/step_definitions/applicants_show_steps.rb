@@ -5,6 +5,7 @@ Given /^I am on the "(.*)" page of "(.*)"$/ do |page, collegename|
   fill_in 'password', :with => "abcd"
   click_button 'Login'
   visit path
+  save_and_open_page
 end
 
 When /^I fill in score of a student with "(.*)"$/ do |score|

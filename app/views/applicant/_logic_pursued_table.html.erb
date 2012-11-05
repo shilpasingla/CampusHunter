@@ -1,14 +1,13 @@
-<table id="college" class="display" border="0" width="100%" cellpadding="0" cellspacing="0">
-
+<table id="college" border="0" width="100%" cellpadding="0" cellspacing="0">
   <tr>
-    <th class="table-header-repeat line-left " style="text-align: left;"><a>Name</a></th>
-    <th class="table-header-repeat line-left " style="text-align: left;"><a>RollNo</a></th>
-    <th class="table-header-repeat line-left " style="text-align: left;"><a>Score</a></th>
-    <th class="table-header-repeat line-left " style="text-align: left;"><a>Branch</a></th>
-    <th class="table-header-repeat line-left " style="text-align: left;"><a>Role</a></th>
-    <th class="table-header-repeat line-left " style="text-align: left;"><a>CodePairing</a></th>
-    <th class="table-header-repeat line-left " style="text-align: left;"><a>PairingStatus</a></th>
-    <th class="table-header-repeat line-left " style="text-align: left;"><a>Comment</a></th>
+    <th class="table-header-repeat line-left "><a>Name</a></th>
+    <th class="table-header-repeat line-left "><a>RollNo</a></th>
+    <th class="table-header-repeat line-left "><a>Score</a></th>
+    <th class="table-header-repeat line-left "><a>Branch</a></th>
+    <th class="table-header-repeat line-left "><a>Role</a></th>
+    <th class="table-header-repeat line-left "><a>CodePairing</a></th>
+    <th class="table-header-repeat line-left "><a>PairingStatus</a></th>
+    <th class="table-header-repeat line-left "><a>Comment</a></th>
   </tr>
 
   <% @applicant.each do |app| %>
@@ -18,28 +17,30 @@
         <td><%= app.RollNo %></td>
         <td><%= app.Score %></td>
         <td><%= app.Branch %> </td>
-        <td>
+        <td style="text-align: center;">
           <%= text_field :applicant, :role, :class => "Role", :value => app.Role,
                          :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
         </td>
         <td>
           <%= text_field :applicant, :codePairing, :class => "CodePairing", :value => app.CodePairing,
-                         :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
+                         :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 120px; height: 15px;' %>
         </td>
 
         <td>
           <%= radio_button_tag "#{app.id}", 'pursue', (app.PairingStatus), :value => true,
                                :class => "PairingStatus", :onchange => "autoSave(this)", :style => 'width: 20px;' %>
-          pursue
-          &nbsp; &nbsp; &nbsp; <%= radio_button_tag "#{app.id}", 'pass', !(app.PairingStatus),
-                                                    :value => false, :class => "PairingStatus",
-                                                    :onchange => "autoSave(this)", :style => 'width: 20px;' %>
+          pursue &nbsp;
+          <%= radio_button_tag "#{app.id}", 'pass', !(app.PairingStatus),
+                               :value => false, :class => "PairingStatus",
+                               :onchange => "autoSave(this)", :style => 'width: 20px;' %>
           pass
         </td>
 
         <td>
           <%= text_field :applicant, :comment, :class => "Comment", :value => app.Comment,
-                         :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
+                         :id => "#{app.id}", :onchange => "autoSave(this)" %>
+
+
         </td>
       </tr>
   <% end %>

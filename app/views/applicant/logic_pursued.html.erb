@@ -25,9 +25,15 @@
       <input type="button" value="Shortlist" class="submit-shortList">
     </a>
   </div>
-
   <div style=" float: right;">
-    <%= search_field_tag "search", nil, :placeholder => "search", :college_name => "#{@college.name}", :partial => "logic_pursued_table", :collegename => @college.name, :LogicPursued => "true", :ParingPursued => "false", :FirstTechPursued => "false", :FinalPursued => "false" %>
+    <%= search_field_tag "search", nil, :placeholder => "search",
+                         :college_name => "#{@college.name}",
+                         :partial => "logic_pursued_table",
+                         :collegename => @college.name,
+                         :LogicPursued => "true",
+                         :ParingPursued => "false",
+                         :FirstTechPursued => "false",
+                         :FinalPursued => "false" %>
   </div>
 </div>
 <div class="clear"></div>
@@ -37,7 +43,6 @@
     <th class="topleft"></th>
     <td id="tbl-border-top">&nbsp;</td>
     <th class="topright"></th>
-
   </tr>
   <tr>
     <td id="tbl-border-left"></td>
