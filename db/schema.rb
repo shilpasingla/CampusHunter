@@ -14,34 +14,34 @@
 ActiveRecord::Schema.define(:version => 20121026064300) do
 
   create_table "applicants", :force => true do |t|
-    t.string "Name"
-    t.integer "Score"
-    t.string "Branch"
-    t.string "Role"
-    t.string "CodePairing"
-    t.boolean "PairingStatus", :limit => 255
-    t.string "FirstTech"
-    t.boolean "FirstStatus", :limit => 255
-    t.string "SecondTech"
-    t.boolean "Result", :limit => 255
-    t.string "Comment"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string "college"
-    t.string "RollNo"
-    t.string "Gender"
-    t.string "EmailAdd"
-    t.string "Qualification"
-    t.float "Percentage"
-    t.string "PhoneNo"
+    t.string   "Name"
+    t.integer  "Score"
+    t.string   "Branch"
+    t.string   "Role"
+    t.string   "CodePairing"
+    t.boolean  "PairingStatus", :limit => 255
+    t.string   "FirstTech"
+    t.boolean  "FirstStatus",   :limit => 255
+    t.string   "SecondTech"
+    t.boolean  "Result",        :limit => 255
+    t.string   "Comment"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.string   "college"
+    t.string   "RollNo"
+    t.string   "Gender"
+    t.string   "EmailAdd"
+    t.string   "Qualification"
+    t.float    "Percentage"
+    t.string   "PhoneNo"
   end
 
   create_table "colleges", :force => true do |t|
-    t.string "name"
-    t.integer "numberofapplicant"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer "cutoff"
+    t.string   "name"
+    t.integer  "numberofapplicant"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "cutoff"
   end
 
   create_table "users", :force => true do |t|
