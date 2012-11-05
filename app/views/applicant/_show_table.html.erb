@@ -1,4 +1,3 @@
-
 <table id="college" border="0" width="100%" cellpadding="0" cellspacing="0">
   <tr>
     <th class="table-header-repeat line-left"><a>Name</a></th>
@@ -23,7 +22,7 @@
         <td style="text-align: left;"><%= app.Qualification %></td>
         <td style="text-align: left;"><%= app.Branch %> </td>
         <td style="text-align: center;"><%= app.Percentage %></td>
-        <td style="text-align: center;">
+        <td style="text-align: center; padding: 5px;">
           <%= text_field :applicant, :score, :class => "Score", :value => app.Score, :id => "#{app.id}",
                          :onchange => "autoSave(this)", :maxlength => '2', :style => 'width: 80px; height: 15px;' %>
         </td>

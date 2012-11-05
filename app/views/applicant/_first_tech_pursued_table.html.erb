@@ -1,43 +1,63 @@
-
-<table id="college"  class="display" border="0" width="100%" cellpadding="0" cellspacing="0">
+<table id="college" border="0" width="100%" cellpadding="0" cellspacing="0">
   <tr>
-    <th  class="table-header-repeat line-left " style="text-align: left;"><a>Name</a></th>
-    <th  class="table-header-repeat line-left " style="text-align: left;"><a>RollNo</a></th>
-    <th  class="table-header-repeat line-left " style="text-align: left;"><a>Score</a></th>
-    <th  class="table-header-repeat line-left " style="text-align: left;"><a>Branch</a></th>
-    <th  class="table-header-repeat line-left " style="text-align: left;"><a>Role</a></th>
-    <th class="table-header-repeat line-left " style="text-align: left;"><a>CodePairing</a></th>
-    <th class="table-header-repeat line-left " style="text-align: left;"><a>FirstTech</a></th>
-    <th  class="table-header-repeat line-left " style="text-align: left;"><a>SecondTech</a></th>
-    <th  class="table-header-repeat line-left " style="text-align: left;"><a>Result</a></th>
-    <th  class="table-header-repeat line-left " style="text-align: left;"><a>Comment</a></th>
+    <th class="table-header-repeat line-left "><a>Name</a></th>
+    <th class="table-header-repeat line-left "><a>RollNo</a></th>
+    <th class="table-header-repeat line-left "><a>Score</a></th>
+    <th class="table-header-repeat line-left "><a>Branch</a></th>
+    <th class="table-header-repeat line-left "><a>Role</a></th>
+    <th class="table-header-repeat line-left "><a>CodePairing</a></th>
+    <th class="table-header-repeat line-left "><a>FirstTech</a></th>
+    <th class="table-header-repeat line-left "><a>SecondTech</a></th>
+    <th class="table-header-repeat line-left "><a>Result</a></th>
+    <th class="table-header-repeat line-left "><a>Comment</a></th>
   </tr>
 
 
-  <% @applicant.each do |app|  %>
+  <% @applicant.each do |app| %>
 
       <tr>
         <td><%= app.Name %></td>
         <td><%= app.RollNo %></td>
         <td><%= app.Score %></td>
         <td><%= app.Branch %> </td>
-        <td><%= text_field :applicant ,:role, :class => "Role",:value => app.Role, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-        <td>
-          <%= text_field :applicant, :codePairing, :class => "CodePairing", :value => app.CodePairing,
-                         :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %>
+        <td style="text-align: center; padding: 5px;">
+          <%= text_field :applicant, :role, :class => "Role", :value => app.Role,
+                         :id => "#{app.id}",
+                         :onchange => "autoSave(this)",
+                         :style => 'width: 75px; height: 15px;' %>
         </td>
-        <td><%= text_field :applicant, :firstTech, :class => "FirstTech", :value => app.FirstTech, :id => "#{app.id}",
-                           :onchange => "autoSave(this)" %></td>
-        <td><%= text_field :applicant ,:secondTech, :class => "SecondTech",:value => app.SecondTech, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
-        <td><%= radio_button_tag "#{app.id}",'pursue', (app.Result),:value => true,:class => "Result", :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %> pursue
-          <br><%= radio_button_tag "#{app.id}",'pass',!(app.Result) , :value => false,:class => "Result",:onchange => "autoSave(this)",:style => 'width: 80px; height: 15px;'%> pass</td>
-
-        <td><%= text_field :applicant ,:comment, :class => "Comment",:value => app.Comment, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+        <td style="text-align: center; padding: 5px;">
+          <%= text_field :applicant, :codePairing, :class => "CodePairing", :value => app.CodePairing,
+                         :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 90px; height: 15px;' %>
+        </td>
+        <td style="text-align: center; padding: 5px;">
+          <%= text_field :applicant, :firstTech, :class => "FirstTech", :value => app.FirstTech, :id => "#{app.id}",
+                         :onchange => "autoSave(this)", :style => 'width: 90px; height: 15px;' %>
+        </td>
+        <td style="text-align: center; padding: 5px;">
+          <%= text_field :applicant, :secondTech, :class => "SecondTech", :value => app.SecondTech,
+                         :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 90px; height: 15px;' %>
+        </td>
+        <td style="text-align: center; padding: 5px;">
+          <%= radio_button_tag "#{app.id}", 'pursue', (app.Result), :value => true,
+                               :class => "Result",
+                               :onchange => "autoSave(this)",
+                               :style => 'width: 15px;' %>
+          pursue
+          &nbsp;
+          <%= radio_button_tag "#{app.id}", 'pass', !(app.Result), :value => false,
+                               :class => "Result",
+                               :onchange => "autoSave(this)",
+                               :style => 'width: 15px;' %>
+          pass
+        </td>
+        <td style="text-align: center; padding: 5px;">
+          <%= text_area :applicant, :comment, :class => "Comment",
+                        :value => app.Comment,
+                        :id => "#{app.id}", :onchange => "autoSave(this)", :rows => 2, :cols => 30 %></td>
 
       </tr>
 
   <% end %>
-
-
 </table>
-            <%= paginate @applicant %>
+<%= paginate @applicant %>
