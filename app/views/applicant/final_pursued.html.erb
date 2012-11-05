@@ -2,32 +2,25 @@
     CampusHunter - First Tech Pursues
 <% end %>
 
-<% content_for :scripts do %>
-    <%= javascript_include_tag "jquery.selectbox-0.5" %>
-    <%= javascript_include_tag "applicant" %>
-<% end %>
-
-<% content_for :styles do %>
-    <%= stylesheet_link_tag "pro_dropline_ie" %>
-    <%= stylesheet_link_tag "pro_dropline" %>
-<% end %>
-
 <div id="page-heading" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+  <h1>Final Pursues</h1>
+  <br/><br/>
 
+  <div style="float: left; padding-bottom: 5px;">
+    <a href="/applicant/download/<%= "#{@college.name}" %>.csv">
+      <input type="button" value="Download csv" class="submit-shortList">
+    </a>
 
-<h1>Final Pursues</h1>
-      <br>
-
-
-
-        <p style="display: inline-block; font-size: 15px;">
-          <%= link_to "Download csv", url = "/applicant/download/#{@college.name}.csv" ,:id => "addNewCollege", :style => "color: #4b4b4b;"%>
-        &nbsp;&nbsp; &nbsp;&nbsp;
-  </p>
-  <div style=" float: right;padding-bottom: 0px;">
-    <%= search_field_tag "search" , nil,:placeholder => "search",:collegename => @college.name ,:partial => "final_pursued_table",:LogicPursued => "false",:ParingPursued=>"false" ,:FirstTechPursued =>"false",:FinalPursued =>"true"%>
-    </div>
-
+  </div>
+  <div style=" float: right;">
+    <%= search_field_tag "search", nil, :placeholder => "search",
+                         :collegename => @college.name,
+                         :partial => "final_pursued_table",
+                         :LogicPursued => "false",
+                         :ParingPursued => "false",
+                         :FirstTechPursued => "false",
+                         :FinalPursued => "true" %>
+  </div>
 
 </div>
 <div class="clear"></div>
