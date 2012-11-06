@@ -5,14 +5,18 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development, :test do
-  gem 'sqlite3' , :require => 'sqlite3'
+gem 'pg'
+
+group :development do
+
+end
+group :test do
+
   gem "rspec-rails", "~> 2.8"
 end
 gem 'heroku'
 
 group :production do
-  gem 'pg'
 end
 
 group :test do
@@ -37,7 +41,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 
-  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 end
 
 gem 'jquery-ui-rails'
