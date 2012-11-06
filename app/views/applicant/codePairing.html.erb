@@ -14,6 +14,10 @@
           <input type="button" value="Download csv" class="submit-shortList">
         </a>
         &nbsp; &nbsp;
+        <a href="/applicant/download_for_college/<%= "#{@college.name}" %>.csv">
+          <input type="button" value="CSV For College" class="submit-shortList">
+        </a>
+        &nbsp; &nbsp;
         <%= submit_tag("Next Round", :class => "submit-shortList") %>
       </div>
       <% end %>

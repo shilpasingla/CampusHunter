@@ -40,6 +40,13 @@ class ApplicantController < ApplicationController
     end
   end
 
+  def download_for_college
+    respond_to do |format|
+      cutoff = College.find_by_name(params[:collegename]).cutoff
+      format.csv {send_data Applicants.to_csv(params[:collegename], cutoff,"for college")}
+    end
+  end
+
   def auto_save
     params[:applicant]
     Applicants.update( params[:id],:"#{params[:attribute]}" => "#{params[:score]}" )
