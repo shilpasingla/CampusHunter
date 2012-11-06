@@ -78,72 +78,73 @@
 </div>
 <div class="clear">&nbsp;</div>
 
-<div class="nav-outer-repeat">
-  <!--  start nav-outer -->
-  <div class="nav-outer">
+<% if !@college.nil? %>
+    <div class="nav-outer-repeat">
+      <!--  start nav-outer -->
+      <div class="nav-outer">
 
-    <!--  start nav -->
-    <div class="nav">
+        <!--  start nav -->
+        <div class="nav">
 
         <span class="select">
-        <a href="#nogo">
+
+        <a href="/applicant/show/<%= "#{@college.name}" %>">
           <b>
             Applicant Details
           </b>
         </a>
         </span>
 
-        <div class="nav-divider">&nbsp;</div>
+          <div class="nav-divider">&nbsp;</div>
 
         <span class="select">
-        <a href="#nogo">
+        <a href="/applicant/codePairing/<%= "#{@college.name}" %>">
           <b>
             Code Pairing
           </b>
         </a>
         </span>
 
-        <div class="nav-divider">&nbsp;</div>
+          <div class="nav-divider">&nbsp;</div>
 
         <span class="select">
-        <a href="#nogo">
+        <a href="/applicant/firstTech/<%= "#{@college.name}" %>">
           <b>
             First Technical
           </b>
         </a>
         </span>
 
-        <div class="nav-divider">&nbsp;</div>
+          <div class="nav-divider">&nbsp;</div>
 
         <span class="select">
-        <a href="#nogo">
+        <a href="/applicant/secondTech/<%= "#{@college.name}" %>">
           <b>
             Second Technical
           </b>
         </a>
         </span>
 
-        <div class="nav-divider">&nbsp;</div>
+          <div class="nav-divider">&nbsp;</div>
 
         <span class="select">
-        <a href="#nogo">
+        <a href="/applicant/final_pursued/<%= "#{@college.name}" %>">
           <b>
             Final Pursues
           </b>
         </a>
         </span>
 
-        <div class="clear"></div>
+          <div class="clear"></div>
+        </div>
+        <!--  start nav -->
 
+      </div>
       <div class="clear"></div>
+      <!--  start nav-outer -->
     </div>
-    <!--  start nav -->
-
-  </div>
-  <div class="clear"></div>
-  <!--  start nav-outer -->
-</div>
-<div class="clear"></div>
+    <div class="clear"></div>
+<% end %>
 <div id="content-outer">
   <div id="content">
     <%= yield %>

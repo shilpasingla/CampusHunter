@@ -30,7 +30,9 @@ class ApplicantController < ApplicationController
 
   def show
     @college = College.find_by_name(params[:collegename])
+    if !@college.nil?
       @applicant = Kaminari.paginate_array(@college.codePairing(@college.cutoff)).page(params[:page]).per(20)
+    end
   end
 
   def download
