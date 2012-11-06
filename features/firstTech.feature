@@ -13,7 +13,7 @@ Feature: List of pairing pursues
   Scenario: Click Shortlist Button on Pairing Pursued Page
     Given I am on the "/applicant/firstTech/" page of "sample_college"
     When Check the pursue box of a student
-    And Click "Shortlist" button
+    And Click "Next Round" button
     Then I should be directed to the "Second Technical" page
     And Should contain "2"
 
@@ -27,6 +27,6 @@ Feature: List of pairing pursues
   Scenario: Click Shortlist Button on Fist Tech Pursued Page
     Given I am on the "/applicant/secondTech/" page of "sample_college"
     When Check the pursue box of a student
-    And Click "Shortlist" button
+    And Click "Next Round" button
     Then I should be directed to the "Final Pursues" page
     And Should contain "2"

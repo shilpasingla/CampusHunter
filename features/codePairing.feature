@@ -14,6 +14,6 @@ Then I should get the updated radio button
 Scenario: Click Shortlist Button on Logic Pursued Page
 Given I am on the "/applicant/codePairing/" page of "sample_college"
 When Check the pursue box of a student
-And Click "Shortlist" button
+And Click "Next Round" button
 Then I should be directed to the "First Technical" page
 And Should contain "2"
