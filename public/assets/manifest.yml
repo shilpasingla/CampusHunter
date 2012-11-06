@@ -107,9 +107,7 @@ table/table_icon_5.gif: table/table_icon_5.gif
 table/table_sort_arrow.gif: table/table_sort_arrow.gif
 applicant.js: applicant.js
 application.js: application.js
-jquery-latest.js: jquery-latest.js
 jquery.selectbox-0.5.js: jquery.selectbox-0.5.js
-jquery.tablesorter.js: jquery.tablesorter.js
 applicant.css: applicant.css
 application.css: application.css
 datePicker.css: datePicker.css
