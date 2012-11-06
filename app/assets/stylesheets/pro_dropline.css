@@ -9,7 +9,7 @@ way to fit your requirements.
 =================================================================== */
 
 .nav	{
-	background: #4f4f4f url(/assets/shared/nav/pro_line_0.gif) repeat-x;
+	/*background: #4f4f4f url(/assets/shared/nav/pro_line_0.gif) repeat-x;*/
 	font-family:Tahoma;
 	font-size: 14px;
 	height: 29px;
@@ -38,7 +38,7 @@ way to fit your requirements.
 	padding: 0;
 	}
 .nav .select a	{
-	background: url(/assets/shared/nav/pro_line_0.gif);
+	/*background: url(/assets/shared/nav/pro_line_0.gif);*/
 	color: #fff;
 	display: block;
 	float: left;
@@ -104,7 +104,7 @@ way to fit your requirements.
 	}
 .nav .select :hover .select_sub, 
 .nav .current .show	{
-	background: url(/assets/shared/nav/back_0.gif);
+	/*background: url(/assets/shared/nav/back_0.gif);*/
 	 
 	display: block;
 	left: 0;
