@@ -7,4 +7,303 @@
  *
  * http://docs.jquery.com/UI/Position
  */
-(function(e,t){e.ui=e.ui||{};var n=/left|center|right/,r=/top|center|bottom/,i="center",s={},o=e.fn.position,u=e.fn.offset;e.fn.position=function(t){if(!t||!t.of)return o.apply(this,arguments);t=e.extend({},t);var u=e(t.of),a=u[0],f=(t.collision||"flip").split(" "),l=t.offset?t.offset.split(" "):[0,0],c,h,p;return a.nodeType===9?(c=u.width(),h=u.height(),p={top:0,left:0}):a.setTimeout?(c=u.width(),h=u.height(),p={top:u.scrollTop(),left:u.scrollLeft()}):a.preventDefault?(t.at="left top",c=h=0,p={top:t.of.pageY,left:t.of.pageX}):(c=u.outerWidth(),h=u.outerHeight(),p=u.offset()),e.each(["my","at"],function(){var e=(t[this]||"").split(" ");e.length===1&&(e=n.test(e[0])?e.concat([i]):r.test(e[0])?[i].concat(e):[i,i]),e[0]=n.test(e[0])?e[0]:i,e[1]=r.test(e[1])?e[1]:i,t[this]=e}),f.length===1&&(f[1]=f[0]),l[0]=parseInt(l[0],10)||0,l.length===1&&(l[1]=l[0]),l[1]=parseInt(l[1],10)||0,t.at[0]==="right"?p.left+=c:t.at[0]===i&&(p.left+=c/2),t.at[1]==="bottom"?p.top+=h:t.at[1]===i&&(p.top+=h/2),p.left+=l[0],p.top+=l[1],this.each(function(){var n=e(this),r=n.outerWidth(),o=n.outerHeight(),u=parseInt(e.curCSS(this,"marginLeft",!0))||0,a=parseInt(e.curCSS(this,"marginTop",!0))||0,d=r+u+(parseInt(e.curCSS(this,"marginRight",!0))||0),v=o+a+(parseInt(e.curCSS(this,"marginBottom",!0))||0),m=e.extend({},p),g;t.my[0]==="right"?m.left-=r:t.my[0]===i&&(m.left-=r/2),t.my[1]==="bottom"?m.top-=o:t.my[1]===i&&(m.top-=o/2),s.fractions||(m.left=Math.round(m.left),m.top=Math.round(m.top)),g={left:m.left-u,top:m.top-a},e.each(["left","top"],function(n,i){e.ui.position[f[n]]&&e.ui.position[f[n]][i](m,{targetWidth:c,targetHeight:h,elemWidth:r,elemHeight:o,collisionPosition:g,collisionWidth:d,collisionHeight:v,offset:l,my:t.my,at:t.at})}),e.fn.bgiframe&&n.bgiframe(),n.offset(e.extend(m,{using:t.using}))})},e.ui.position={fit:{left:function(t,n){var r=e(window),i=n.collisionPosition.left+n.collisionWidth-r.width()-r.scrollLeft();t.left=i>0?t.left-i:Math.max(t.left-n.collisionPosition.left,t.left)},top:function(t,n){var r=e(window),i=n.collisionPosition.top+n.collisionHeight-r.height()-r.scrollTop();t.top=i>0?t.top-i:Math.max(t.top-n.collisionPosition.top,t.top)}},flip:{left:function(t,n){if(n.at[0]===i)return;var r=e(window),s=n.collisionPosition.left+n.collisionWidth-r.width()-r.scrollLeft(),o=n.my[0]==="left"?-n.elemWidth:n.my[0]==="right"?n.elemWidth:0,u=n.at[0]==="left"?n.targetWidth:-n.targetWidth,a=-2*n.offset[0];t.left+=n.collisionPosition.left<0?o+u+a:s>0?o+u+a:0},top:function(t,n){if(n.at[1]===i)return;var r=e(window),s=n.collisionPosition.top+n.collisionHeight-r.height()-r.scrollTop(),o=n.my[1]==="top"?-n.elemHeight:n.my[1]==="bottom"?n.elemHeight:0,u=n.at[1]==="top"?n.targetHeight:-n.targetHeight,a=-2*n.offset[1];t.top+=n.collisionPosition.top<0?o+u+a:s>0?o+u+a:0}}},e.offset.setOffset||(e.offset.setOffset=function(t,n){/static/.test(e.curCSS(t,"position"))&&(t.style.position="relative");var r=e(t),i=r.offset(),s=parseInt(e.curCSS(t,"top",!0),10)||0,o=parseInt(e.curCSS(t,"left",!0),10)||0,u={top:n.top-i.top+s,left:n.left-i.left+o};"using"in n?n.using.call(t,u):r.css(u)},e.fn.offset=function(t){var n=this[0];return!n||!n.ownerDocument?null:t?e.isFunction(t)?this.each(function(n){e(this).offset(t.call(this,n,e(this).offset()))}):this.each(function(){e.offset.setOffset(this,t)}):u.call(this)}),e.curCSS||(e.curCSS=e.css),function(){var t=document.getElementsByTagName("body")[0],n=document.createElement("div"),r,i,o,u,a;r=document.createElement(t?"div":"body"),o={visibility:"hidden",width:0,height:0,border:0,margin:0,background:"none"},t&&e.extend(o,{position:"absolute",left:"-1000px",top:"-1000px"});for(var f in o)r.style[f]=o[f];r.appendChild(n),i=t||document.documentElement,i.insertBefore(r,i.firstChild),n.style.cssText="position: absolute; left: 10.7432222px; top: 10.432325px; height: 30px; width: 201px;",u=e(n).offset(function(e,t){return t}).offset(),r.innerHTML="",i.removeChild(r),a=u.top+u.left+(t?2e3:0),s.fractions=a>21&&a<22}()})(jQuery);
+
+(function( $, undefined ) {
+
+$.ui = $.ui || {};
+
+var horizontalPositions = /left|center|right/,
+	verticalPositions = /top|center|bottom/,
+	center = "center",
+	support = {},
+	_position = $.fn.position,
+	_offset = $.fn.offset;
+
+$.fn.position = function( options ) {
+	if ( !options || !options.of ) {
+		return _position.apply( this, arguments );
+	}
+
+	// make a copy, we don't want to modify arguments
+	options = $.extend( {}, options );
+
+	var target = $( options.of ),
+		targetElem = target[0],
+		collision = ( options.collision || "flip" ).split( " " ),
+		offset = options.offset ? options.offset.split( " " ) : [ 0, 0 ],
+		targetWidth,
+		targetHeight,
+		basePosition;
+
+	if ( targetElem.nodeType === 9 ) {
+		targetWidth = target.width();
+		targetHeight = target.height();
+		basePosition = { top: 0, left: 0 };
+	// TODO: use $.isWindow() in 1.9
+	} else if ( targetElem.setTimeout ) {
+		targetWidth = target.width();
+		targetHeight = target.height();
+		basePosition = { top: target.scrollTop(), left: target.scrollLeft() };
+	} else if ( targetElem.preventDefault ) {
+		// force left top to allow flipping
+		options.at = "left top";
+		targetWidth = targetHeight = 0;
+		basePosition = { top: options.of.pageY, left: options.of.pageX };
+	} else {
+		targetWidth = target.outerWidth();
+		targetHeight = target.outerHeight();
+		basePosition = target.offset();
+	}
+
+	// force my and at to have valid horizontal and veritcal positions
+	// if a value is missing or invalid, it will be converted to center 
+	$.each( [ "my", "at" ], function() {
+		var pos = ( options[this] || "" ).split( " " );
+		if ( pos.length === 1) {
+			pos = horizontalPositions.test( pos[0] ) ?
+				pos.concat( [center] ) :
+				verticalPositions.test( pos[0] ) ?
+					[ center ].concat( pos ) :
+					[ center, center ];
+		}
+		pos[ 0 ] = horizontalPositions.test( pos[0] ) ? pos[ 0 ] : center;
+		pos[ 1 ] = verticalPositions.test( pos[1] ) ? pos[ 1 ] : center;
+		options[ this ] = pos;
+	});
+
+	// normalize collision option
+	if ( collision.length === 1 ) {
+		collision[ 1 ] = collision[ 0 ];
+	}
+
+	// normalize offset option
+	offset[ 0 ] = parseInt( offset[0], 10 ) || 0;
+	if ( offset.length === 1 ) {
+		offset[ 1 ] = offset[ 0 ];
+	}
+	offset[ 1 ] = parseInt( offset[1], 10 ) || 0;
+
+	if ( options.at[0] === "right" ) {
+		basePosition.left += targetWidth;
+	} else if ( options.at[0] === center ) {
+		basePosition.left += targetWidth / 2;
+	}
+
+	if ( options.at[1] === "bottom" ) {
+		basePosition.top += targetHeight;
+	} else if ( options.at[1] === center ) {
+		basePosition.top += targetHeight / 2;
+	}
+
+	basePosition.left += offset[ 0 ];
+	basePosition.top += offset[ 1 ];
+
+	return this.each(function() {
+		var elem = $( this ),
+			elemWidth = elem.outerWidth(),
+			elemHeight = elem.outerHeight(),
+			marginLeft = parseInt( $.curCSS( this, "marginLeft", true ) ) || 0,
+			marginTop = parseInt( $.curCSS( this, "marginTop", true ) ) || 0,
+			collisionWidth = elemWidth + marginLeft +
+				( parseInt( $.curCSS( this, "marginRight", true ) ) || 0 ),
+			collisionHeight = elemHeight + marginTop +
+				( parseInt( $.curCSS( this, "marginBottom", true ) ) || 0 ),
+			position = $.extend( {}, basePosition ),
+			collisionPosition;
+
+		if ( options.my[0] === "right" ) {
+			position.left -= elemWidth;
+		} else if ( options.my[0] === center ) {
+			position.left -= elemWidth / 2;
+		}
+
+		if ( options.my[1] === "bottom" ) {
+			position.top -= elemHeight;
+		} else if ( options.my[1] === center ) {
+			position.top -= elemHeight / 2;
+		}
+
+		// prevent fractions if jQuery version doesn't support them (see #5280)
+		if ( !support.fractions ) {
+			position.left = Math.round( position.left );
+			position.top = Math.round( position.top );
+		}
+
+		collisionPosition = {
+			left: position.left - marginLeft,
+			top: position.top - marginTop
+		};
+
+		$.each( [ "left", "top" ], function( i, dir ) {
+			if ( $.ui.position[ collision[i] ] ) {
+				$.ui.position[ collision[i] ][ dir ]( position, {
+					targetWidth: targetWidth,
+					targetHeight: targetHeight,
+					elemWidth: elemWidth,
+					elemHeight: elemHeight,
+					collisionPosition: collisionPosition,
+					collisionWidth: collisionWidth,
+					collisionHeight: collisionHeight,
+					offset: offset,
+					my: options.my,
+					at: options.at
+				});
+			}
+		});
+
+		if ( $.fn.bgiframe ) {
+			elem.bgiframe();
+		}
+		elem.offset( $.extend( position, { using: options.using } ) );
+	});
+};
+
+$.ui.position = {
+	fit: {
+		left: function( position, data ) {
+			var win = $( window ),
+				over = data.collisionPosition.left + data.collisionWidth - win.width() - win.scrollLeft();
+			position.left = over > 0 ? position.left - over : Math.max( position.left - data.collisionPosition.left, position.left );
+		},
+		top: function( position, data ) {
+			var win = $( window ),
+				over = data.collisionPosition.top + data.collisionHeight - win.height() - win.scrollTop();
+			position.top = over > 0 ? position.top - over : Math.max( position.top - data.collisionPosition.top, position.top );
+		}
+	},
+
+	flip: {
+		left: function( position, data ) {
+			if ( data.at[0] === center ) {
+				return;
+			}
+			var win = $( window ),
+				over = data.collisionPosition.left + data.collisionWidth - win.width() - win.scrollLeft(),
+				myOffset = data.my[ 0 ] === "left" ?
+					-data.elemWidth :
+					data.my[ 0 ] === "right" ?
+						data.elemWidth :
+						0,
+				atOffset = data.at[ 0 ] === "left" ?
+					data.targetWidth :
+					-data.targetWidth,
+				offset = -2 * data.offset[ 0 ];
+			position.left += data.collisionPosition.left < 0 ?
+				myOffset + atOffset + offset :
+				over > 0 ?
+					myOffset + atOffset + offset :
+					0;
+		},
+		top: function( position, data ) {
+			if ( data.at[1] === center ) {
+				return;
+			}
+			var win = $( window ),
+				over = data.collisionPosition.top + data.collisionHeight - win.height() - win.scrollTop(),
+				myOffset = data.my[ 1 ] === "top" ?
+					-data.elemHeight :
+					data.my[ 1 ] === "bottom" ?
+						data.elemHeight :
+						0,
+				atOffset = data.at[ 1 ] === "top" ?
+					data.targetHeight :
+					-data.targetHeight,
+				offset = -2 * data.offset[ 1 ];
+			position.top += data.collisionPosition.top < 0 ?
+				myOffset + atOffset + offset :
+				over > 0 ?
+					myOffset + atOffset + offset :
+					0;
+		}
+	}
+};
+
+// offset setter from jQuery 1.4
+if ( !$.offset.setOffset ) {
+	$.offset.setOffset = function( elem, options ) {
+		// set position first, in-case top/left are set even on static elem
+		if ( /static/.test( $.curCSS( elem, "position" ) ) ) {
+			elem.style.position = "relative";
+		}
+		var curElem   = $( elem ),
+			curOffset = curElem.offset(),
+			curTop    = parseInt( $.curCSS( elem, "top",  true ), 10 ) || 0,
+			curLeft   = parseInt( $.curCSS( elem, "left", true ), 10)  || 0,
+			props     = {
+				top:  (options.top  - curOffset.top)  + curTop,
+				left: (options.left - curOffset.left) + curLeft
+			};
+		
+		if ( 'using' in options ) {
+			options.using.call( elem, props );
+		} else {
+			curElem.css( props );
+		}
+	};
+
+	$.fn.offset = function( options ) {
+		var elem = this[ 0 ];
+		if ( !elem || !elem.ownerDocument ) { return null; }
+		if ( options ) {
+			if ( $.isFunction( options ) ) {
+				return this.each(function( i ) {
+					$( this ).offset( options.call( this, i, $( this ).offset() ) );
+				});
+			}
+			return this.each(function() {
+				$.offset.setOffset( this, options );
+			});
+		}
+		return _offset.call( this );
+	};
+}
+
+// jQuery <1.4.3 uses curCSS, in 1.4.3 - 1.7.2 curCSS = css, 1.8+ only has css
+if ( !$.curCSS ) {
+	$.curCSS = $.css;
+}
+
+// fraction support test (older versions of jQuery don't support fractions)
+(function () {
+	var body = document.getElementsByTagName( "body" )[ 0 ], 
+		div = document.createElement( "div" ),
+		testElement, testElementParent, testElementStyle, offset, offsetTotal;
+
+	//Create a "fake body" for testing based on method used in jQuery.support
+	testElement = document.createElement( body ? "div" : "body" );
+	testElementStyle = {
+		visibility: "hidden",
+		width: 0,
+		height: 0,
+		border: 0,
+		margin: 0,
+		background: "none"
+	};
+	if ( body ) {
+		$.extend( testElementStyle, {
+			position: "absolute",
+			left: "-1000px",
+			top: "-1000px"
+		});
+	}
+	for ( var i in testElementStyle ) {
+		testElement.style[ i ] = testElementStyle[ i ];
+	}
+	testElement.appendChild( div );
+	testElementParent = body || document.documentElement;
+	testElementParent.insertBefore( testElement, testElementParent.firstChild );
+
+	div.style.cssText = "position: absolute; left: 10.7432222px; top: 10.432325px; height: 30px; width: 201px;";
+
+	offset = $( div ).offset( function( _, offset ) {
+		return offset;
+	}).offset();
+
+	testElement.innerHTML = "";
+	testElementParent.removeChild( testElement );
+
+	offsetTotal = offset.top + offset.left + ( body ? 2000 : 0 );
+	support.fractions = offsetTotal > 21 && offsetTotal < 22;
+})();
+
+}( jQuery ));

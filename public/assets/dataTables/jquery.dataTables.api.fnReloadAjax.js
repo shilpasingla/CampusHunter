@@ -1,1 +1,45 @@
-$.fn.dataTableExt.oApi.fnReloadAjax=function(e,t,n,r){typeof t!="undefined"&&t!=null&&(e.sAjaxSource=t),this.oApi._fnProcessingDisplay(e,!0);var i=this,s=e._iDisplayStart,o=[];this.oApi._fnServerParams(e,o),e.fnServerData(e.sAjaxSource,o,function(t){i.oApi._fnClearTable(e);var o=e.sAjaxDataProp!==""?i.oApi._fnGetObjectDataFn(e.sAjaxDataProp)(t):t;for(var u=0;u<o.length;u++)i.oApi._fnAddData(e,o[u]);e.aiDisplay=e.aiDisplayMaster.slice(),i.fnDraw(),typeof r!="undefined"&&r===!0&&(e._iDisplayStart=s,i.fnDraw(!1)),i.oApi._fnProcessingDisplay(e,!1),typeof n=="function"&&n!=null&&n(e)},e)};
+$.fn.dataTableExt.oApi.fnReloadAjax = function ( oSettings, sNewSource, fnCallback, bStandingRedraw )
+{
+    if ( typeof sNewSource != 'undefined' && sNewSource != null )
+    {
+        oSettings.sAjaxSource = sNewSource;
+    }
+    this.oApi._fnProcessingDisplay( oSettings, true );
+    var that = this;
+    var iStart = oSettings._iDisplayStart;
+    var aData = [];
+
+    this.oApi._fnServerParams( oSettings, aData );
+
+    oSettings.fnServerData( oSettings.sAjaxSource, aData, function(json) {
+        /* Clear the old information from the table */
+        that.oApi._fnClearTable( oSettings );
+
+        /* Got the data - add it to the table */
+        var aData =  (oSettings.sAjaxDataProp !== "") ?
+            that.oApi._fnGetObjectDataFn( oSettings.sAjaxDataProp )( json ) : json;
+
+        for ( var i=0 ; i<aData.length ; i++ )
+        {
+            that.oApi._fnAddData( oSettings, aData[i] );
+        }
+
+        oSettings.aiDisplay = oSettings.aiDisplayMaster.slice();
+        that.fnDraw();
+
+        if ( typeof bStandingRedraw != 'undefined' && bStandingRedraw === true )
+        {
+            oSettings._iDisplayStart = iStart;
+            that.fnDraw( false );
+        }
+
+        that.oApi._fnProcessingDisplay( oSettings, false );
+
+        /* Callback user function - for event handlers etc */
+        if ( typeof fnCallback == 'function' && fnCallback != null )
+        {
+            fnCallback( oSettings );
+        }
+    }, oSettings );
+}
+;

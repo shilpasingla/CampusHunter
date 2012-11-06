@@ -1,1 +1,4 @@
-td,th{border:1px solid black}
+/* line 4, ../../app/assets/stylesheets/applicant.css.scss */
+td, th {
+  border: 1px solid black;
+}
