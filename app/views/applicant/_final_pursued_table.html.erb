@@ -24,18 +24,10 @@
                          :onchange => "autoSave(this)",
                          :style => 'width: 75px; height: 15px;' %>
         </td>
-        <td style="text-align: center; padding: 5px;">
-          <%= text_field :applicant, :codePairing, :class => "CodePairing", :value => app.CodePairing,
-                         :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 90px; height: 15px;' %>
-        </td>
-        <td style="text-align: center; padding: 5px;">
-          <%= text_field :applicant, :firstTech, :class => "FirstTech", :value => app.FirstTech, :id => "#{app.id}",
-                         :onchange => "autoSave(this)", :style => 'width: 90px; height: 15px;' %>
-        </td>
-        <td style="text-align: center; padding: 5px;">
-          <%= text_field :applicant, :secondTech, :class => "SecondTech", :value => app.SecondTech,
-                         :id => "#{app.id}", :onchange => "autoSave(this)", :style => 'width: 90px; height: 15px;' %>
-        </td>
+        <td><%= app.CodePairing %> </td>
+        <td><%= app.FirstTech %> </td>
+        <td><%= app.SecondTech %> </td>
+
         <td style="text-align: center; padding: 5px;">
           <%= text_area :applicant, :comment, :class => "Comment", :value => app.Comment,
                         :id => "#{app.id}", :onchange => "autoSave(this)", :rows => 2, :cols => 40 %>
