@@ -9,11 +9,30 @@
                 function () {
                     $('#listOfColleges').mouseover(function () {
                         $(this).css("color", "#b0c4de");
-
                     });
 
                     $('#listOfColleges').mouseout(function () {
                         $(this).css("color", "#4b4b4b");
+                    });
+
+                    $('#Create').click(function () {
+                        var isError = false;
+                        var errorString = '<html><body><ul>';
+
+                        if ($('#name').val() == '') {
+                            isError = true;
+                            errorString += '<li>Please enter college name.</li>';
+                        }
+
+                        if ($('#import').val() == '') {
+                            isError = true;
+                            errorString += '<li>Please select a csv file.</li>';
+                        }
+                        errorString += "</ul></body></html>";
+                        if (isError) {
+                            $('#errorContainer').html(errorString);
+                            return false;
+                        }
                     });
                 })
 
@@ -30,15 +49,15 @@
             else return true;
         }
     </script>
-
- <% end %>
+<% end %>
 
 <form action="/college/create" id="college" name="college" method="post" enctype="multipart/form-data">
   <div id="login-holder">
     <div id="logo-login">
       <div id="loginbox">
         <div id="login-inner">
-          <div id="errorContainer" style="text-decoration-color: #ff0000; padding-bottom: 20px; color: #ff0000;">
+          <div id="errorContainer" style="text-decoration-color: maroon; padding-bottom: 20px; color: maroon;">
+            <label id="errorLabel"/>
             <%= @message %>
           </div>
           <p>College name
@@ -46,10 +65,10 @@
           <br>
           <br>
           <input id="import" type="file" name="import" onchange="checkfile(this)">
-          <br><br><br>
+          <br/><br/><br/>
 
           <div style="text-align: center;">
-            <input type="submit" class="submit-login" value="Create" style="float: left;">
+            <input type="submit" id="Create" class="submit-login" value="Create" style="float: left;">
 
             <a href="/college/show">
               <input type="button" value="Cancel" class="submit-login" style="float: left; padding-top: 0px; "> </a>
