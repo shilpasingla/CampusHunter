@@ -3,8 +3,8 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
 
 before_script:
-  - rake db:migrate
   - psql -c 'create database CampusHunter_test;' -U postgres
+  - rake db:migrate
 
 language: ruby
 rvm:
