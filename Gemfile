@@ -12,18 +12,15 @@ group :development do
 end
 group :test do
 
+  gem "factory_girl_rails" , "~> 4.0"
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
   gem "rspec-rails", "~> 2.8"
 end
 gem 'heroku'
 
 group :production do
-end
-
-group :test do
-  gem "factory_girl_rails" , "~> 4.0"
-  gem 'cucumber-rails'
-  gem 'capybara'
-  gem 'database_cleaner'
 end
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
