@@ -5,6 +5,7 @@ before_install:
 before_script:
   - psql -c 'create database CampusHunter_test;' -U postgres
   #- rake db:migrate --trace
+  -rake db:test:load
 
 
 language: ruby
@@ -13,5 +14,5 @@ rvm:
   # uncomment this line if your project needs to run something other than `rake`:
 
 script:
-  -rake db:test:load
-  - bundle exec rake  --trace
+
+  - rake test  --trace
