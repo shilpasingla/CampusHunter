@@ -4,7 +4,6 @@ before_install:
 
 before_script:
   - psql -c 'create database CampusHunter_test;' -U postgres
-  #- rake db:migrate --trace
   - rake db:test:load
 
 
@@ -15,4 +14,4 @@ rvm:
 
 script:
 
-  - rake test  --trace
+  - rake cucumber --trace
