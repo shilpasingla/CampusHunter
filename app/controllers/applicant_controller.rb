@@ -32,6 +32,7 @@ class ApplicantController < ApplicationController
     @college = College.find_by_name(params[:collegename])
     if !@college.nil?
       @applicant = Kaminari.paginate_array(@college.codePairing(@college.cutoff)).page(params[:page]).per(20)
+
     end
   end
 
@@ -65,17 +66,18 @@ class ApplicantController < ApplicationController
     @college = College.find_by_name(params[:collegename])
     if params[:Final_Pursued]=="true"
       @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "college" like ? AND "Result" = ? ',"%#{params[:search_name]}%","#{params[:collegename]}",true)).page(params[:page]).per(20)
-      else if params[:First_Tech_Pursued] == "true"
-        @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "college" like ? AND "FirstStatus" = ? ',"%#{params[:search_name]}%","#{params[:collegename]}",true)).page(params[:page]).per(20)
-          else if params[:Pairing_Pursued] == "true"
-            @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "college" like ? AND "PairingStatus" = ? ',"%#{params[:search_name]}%","#{params[:collegename]}",true)).page(params[:page]).per(20)
-            else if  params[:Logic_Pursued] =="true"
-              @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "college" like ? AND "Score" >= ?' ,"%#{params[:search_name]}%","#{params[:collegename]}","#{@college.cutoff}")).page(params[:page]).per(20)
-          else
-            @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "college" like ?',"%#{params[:search_name]}%","#{params[:collegename]}")).page(params[:page]).per(20)
-          end
-        end
-      end
+      else
+        params[:First_Tech_Pursued] == "true" ?
+            @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "college" like ? AND "FirstStatus" = ? ', "%#{params[:search_name]}%", "#{params[:collegename]}", true)).page(params[:page]).per(20) :
+            if params[:Pairing_Pursued] == "true"
+              @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "college" like ? AND "PairingStatus" = ? ', "%#{params[:search_name]}%", "#{params[:collegename]}", true)).page(params[:page]).per(20)
+            else
+              if  params[:Logic_Pursued] =="true"
+                @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "college" like ? AND "Score" >= ?', "%#{params[:search_name]}%", "#{params[:collegename]}", "#{@college.cutoff}")).page(params[:page]).per(20)
+              else
+                @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "college" like ?', "%#{params[:search_name]}%", "#{params[:collegename]}")).page(params[:page]).per(20)
+              end
+            end
     end
 
     render "show.js.erb"

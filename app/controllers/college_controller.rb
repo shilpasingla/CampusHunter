@@ -13,12 +13,12 @@ class CollegeController < ApplicationController
     if College.where(:name => params[:name]).count == 0
       load_csv_to_database params[:import], params[:name]
       @college = College.new(:name => params[:name],
-                             :numberofapplicant => Applicants.where(:college => params[:name]).count)
+                             :numberofapplicant => Applicants.where(:college => params[:name]).count,:cutoff => 0)
       @college.save
       redirect_to "/applicant/show/#{params[:name]}"
     else
       @message = "College name already exists"
-      render "college/new"
+      render :action =>  "new", :layout => "sessions"
     end
   end
 

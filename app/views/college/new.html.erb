@@ -23,7 +23,6 @@
                             isError = true;
                             errorString += '<li>Please enter college name.</li>';
                         }
-
                         if ($('#import').val() == '') {
                             isError = true;
                             errorString += '<li>Please select a csv file.</li>';
@@ -36,7 +35,7 @@
                     });
                 })
 
-        function checkfile(sender) {
+        function checkFile(sender) {
             var validExts = new Array(".csv");
             var fileExt = sender.value;
             fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
@@ -57,14 +56,13 @@
       <div id="loginbox">
         <div id="login-inner">
           <div id="errorContainer" style="text-decoration-color: maroon; padding-bottom: 20px; color: maroon;">
-            <label id="errorLabel"/>
             <%= @message %>
           </div>
           <p>College name
             <input type="text" name="name" id="name" style="width: 100px; height: 15px;"></p>
           <br>
           <br>
-          <input id="import" type="file" name="import" onchange="checkfile(this)">
+          <input id="import" type="file" name="import" onchange="checkFile(this)">
           <br/><br/><br/>
 
           <div style="text-align: center;">

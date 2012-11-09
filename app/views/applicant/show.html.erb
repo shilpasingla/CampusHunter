@@ -2,25 +2,59 @@
     CampusHunter - Applicant's Details
 <% end %>
 
+<% content_for :scripts do %>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css"/>
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+    <script type="text/javascript" language="JavaScript">
+
+        $(function () {
+
+            $("#slider-range-max").slider({
+
+                range:"max",
+                min:0,
+                max:12,
+                value:<%= @college.cutoff %>,
+                slide:function (event, ui) {
+                    $("#cutoff").val(ui.value);
+                    $.get("/applicant/show_selected", {cutoff:ui.value, college_name:$('#collegename').val(),
+                        partial:$('#search').attr("partial") }, null, "script");
+                }
+            });
+            $("#cutoff").val(<%= @college.cutoff %>);
+        });
+
+    </script>
+<% end %>
+
 <div id="page-heading">
   <h1>Applicant's Details </h1>
   <br/> <br/>
   <%= form_tag({:action => 'codePairing'}, {:method => 'get'}) do %>
       <%= hidden_field_tag :collegename, params[:collegename] %>
+      <%= hidden_field_tag :round, "CodePairing" %>
       <div style="float: left; padding-bottom: 5px;">
-        CUTOFF: &nbsp;
-        <%= hidden_field_tag :round, "CodePairing" %>
-        <%= text_field_tag(:cutoff, nil, :partial => "show_table",
-                           :style => 'width: 100px; height: 15px; margin-bottom: 0px;  ') %>
-        &nbsp; &nbsp;
-        <%= submit_tag("Save & Proceed", :class => "submit-shortList") %>
+        <table>
+          <tr>
+            <td>CUTOFF: &nbsp; </td>
+            <td>
+              <div id="slider-range-max" style="width: 200px; height: 12px; margin-bottom: 0px;"></div>
+
+            </td>
+            <td>   &nbsp;&nbsp;
+              <input type="text" id="cutoff" name="cutoff" style="border: 0; color: #b0c4de; font-weight: bold; font-size: 13px; width: 20px;"/>
+            </td>
+            <td> &nbsp;&nbsp; &nbsp;&nbsp;<%= submit_tag("Save & Proceed", :class => "submit-shortList") %></td>
+          </tr>
+        </table>
+
       </div>
 
       <div style=" float: right;">
         <%= search_field_tag "search", nil, :placeholder => "search",
                              :partial => "show_table", :collegename => @college.name %>
       </div>
-
   <% end %>
 </div>
 
