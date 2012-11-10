@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-   end
+  end
 
   def create
     @user = User.new(params[:user])
@@ -19,10 +19,12 @@ class UsersController < ApplicationController
   def del
     @user = User.find_by_email(params[:email])
     if @user.nil?
-      redirect_to "/college/new", :notice => "No such user exists!"
+
+      @message = "User doesn't exist!"
     elsif @user.destroy
-      redirect_to "/college/new", :notice => "User Deleted!"
+      @message = "User deleted successfully!"
     end
+    render :action => "destroy"
   end
 
   def destroy

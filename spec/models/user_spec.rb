@@ -35,13 +35,13 @@ describe "validations" do
   end
 
   it "should not create a new instance of a user given password length not within 4 and 20" do
-    user = User.new(@user_attr.merge(:password => "abc",:password_confirmation => "abc"))
+    user = User.new(@user_attr.merge(:password => "abc", :password_confirmation => "abc"))
     user.should_not be_valid
   end
 
   it "should authenticate a valid user" do
     User.create!(@user_attr)
-    user = User.authenticate(@user_attr[:email],@user_attr[:password])
+    user = User.authenticate(@user_attr[:email], @user_attr[:password])
     user.should_not be_nil
   end
 

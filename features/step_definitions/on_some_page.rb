@@ -1,5 +1,5 @@
 Given /^I am on the "(.*)" page$/ do |page|
-  if(page != "log_in")
+  if (page != "log_in")
     visit "/sessions/new"
     fill_in 'email', :with => "test_user"
     fill_in 'password', :with => "abcd"

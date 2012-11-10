@@ -6,43 +6,67 @@
 <% content_for :scripts do %>
     <script type="text/javascript">
 
-        function changeId() {
-            $('#loginbox').attr('id', 'signup');
-        }
+        $(Document).ready(function () {
+            $('#Delete').click(function () {
+                if ($('.login-inp').val() == '') {
+                    $('#errorContainer').text('Please enter email.');
+                    return false;
+                }
+            });
+        });
     </script>
 <% end %>
 
+<form action="/users/del" id="users" name="users" method="post" enctype="multipart/form-data">
+  <div id="login-holder">
+    <div id="logo-login">
+      <img style="width: 156px; height: 40px;" src="/assets/shared/logo.png" alt="Logo"/>
+    </div>
+    <div class="clear"></div>
+    <div id="loginbox">
+      <div id="login-inner">
+        <table style="width: 100%;">
+          <tr>
+            <td colspan="3">
+              <div id="errorContainer" style="text-decoration-color: maroon; padding-bottom: 20px; color: maroon;">
+                <%= @message %>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="email">Email</label>
+            </td>
+            <td></td>
+            <td><input type="text" name="email" id="email" class="login-inp">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3"><br/><br/></td>
 
-<body id="login-bg">
-<%= form_for :user, :url => {:action => :del} do |f| %>
-    <div id="login-holder">
-      <div id="logo-login">
-        <a href="">
-          <img style="width: 156px; height: 40px;" src="/assets/shared/logo.png" alt="Logo"/>
-        </a>
-      </div>
-      <div class="clear"></div>
-      <div id="loginbox">
-        <div id="login-inner" style="width: 400px;">
+          </tr>
+          <tr style="text-align: center;">
+            <td colspan="3" style="text-align: center;">
+              <input type="submit" id="Delete" class="submit-login" value="Delete" style="float: left;">
+              &nbsp; &nbsp; &nbsp;
+              <a href="/college/show">
+                <input type="button" value="Cancel" class="submit-login" style="float: left; padding-top: 0px; ">
+              </a>
+            </td>
+          </tr>
+        </table>
 
-          <table border="0" cellpadding="0">
-            <tr>
-              <th><%= f.label :email %></th>
-              <td>
-                <%= text_field :email, params[:email], :class => "login-inp" %>
-              </td>
-            </tr>
-            <tr>
-              <th></th>
-              <td>
-                <%= f.submit "Delete", :label => 'Delete', :class => "submit-login" %>
-              </td>
-            </tr>
-          </table>
+        <br>
+        <br>
+        <br/><br/><br/>
+
+        <div style="text-align: center;">
+
         </div>
       </div>
     </div>
-<% end %>
+
+</form>
 
 
 

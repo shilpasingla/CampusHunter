@@ -3,9 +3,9 @@ require 'csv'
 module CollegeHelper
 
   private
-  def load_csv_to_database(file_name,college_name)
+  def load_csv_to_database(file_name, college_name)
 
-    CSV.new( file_name.tempfile, :headers => true, :col_sep=> "," ).each do |row|
+    CSV.new(file_name.tempfile, :headers => true, :col_sep => ",").each do |row|
       Applicants.create!(
           :Name => row[0],
           :RollNo => row[1],
@@ -17,8 +17,8 @@ module CollegeHelper
           :Percentage => row[7],
           :Score => "",
           :CodePairing => "",
-          :PairingStatus =>"",
-          :SecondTech =>"",
+          :PairingStatus => "",
+          :SecondTech => "",
           :FirstTech => "",
           :Role => "",
           :FirstStatus => "",
