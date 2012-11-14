@@ -33,7 +33,7 @@
   <br/> <br/>
   <%= form_tag({:action => 'codePairing'}, {:method => 'get'}) do %>
       <%= hidden_field_tag :collegename, params[:collegename] %>
-      <%= hidden_field_tag :round, "CodePairing" %>
+      <%= hidden_field_tag :round, params[:round]%>
       <div style="float: left; padding-bottom: 5px;">
         <table>
           <tr>
