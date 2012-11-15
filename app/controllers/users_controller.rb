@@ -11,11 +11,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       @message = "User Added Successfully!"
-      render "new"
-      #, :notice => "User Added!"
-    else
-      render "new"
     end
+    render "new"
   end
 
   def del
