@@ -24,7 +24,7 @@ describe CollegeController do
   it "should redirect to list of mentioned college" do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
-    CollegeController.any_instance.stub(:load_csv_to_database).with("something", "AIT")
+    CollegeController.any_instance.stub(:load_college_to_database).with("something", "AIT")
     post :create, {:import => "something", :name => "AIT"}
     response.should redirect_to("/applicant/show/AIT")
   end

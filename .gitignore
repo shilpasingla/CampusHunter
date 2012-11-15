@@ -9,3 +9,5 @@ log/
 .project
 .settings
 .settings/
+
+db/schema.rb

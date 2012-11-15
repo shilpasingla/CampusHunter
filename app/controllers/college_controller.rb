@@ -10,16 +10,24 @@ class CollegeController < ApplicationController
 
   def create
 
-    if College.where(:name => params[:name]).count == 0
-      load_csv_to_database params[:import], params[:name]
-      @college = College.new(:name => params[:name],
-                             :numberofapplicant => Applicants.where(:college => params[:name]).count, :cutoff => 0)
-      @college.save
-      redirect_to "/applicant/show/#{params[:name]}"
-    else
-      @message = "College name already exists"
-      render :action => "new", :layout => "sessions"
+    if (params[:CampusType] == "College")
+      if College.where(:name => params[:name]).count == 0
+        @college = College.new(:name => params[:name], :numberofapplicant => 0, :cutoff => 0)
+        @college.save
+        load_college_to_database params[:import], params[:name]
+        @college.update_attribute(:numberofapplicant, Applicants.where(:collegeId => @college.id).count)
+        redirect_to "/applicant/show/#{params[:name]}"
+      else
+        @message = "College name already exists"
+        render :action => "new", :layout => "sessions"
+      end
+    elsif (params[:CampusType] == "Pool")
+      if College.where(:poolName => params[:name]).count == 0
+        load_pool_to_database params[:import], params[:name]
+      end
+
     end
+
   end
 
   def show
