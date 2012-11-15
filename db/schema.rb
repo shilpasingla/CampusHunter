@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20121115095558) do
     t.string   "Comment"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.string   "college"
+    t.integer  "collegeId"
     t.string   "RollNo"
     t.string   "Gender"
     t.string   "EmailAdd"
