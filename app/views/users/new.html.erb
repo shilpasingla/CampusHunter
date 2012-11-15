@@ -25,6 +25,9 @@
             <tr>
               <td colspan="2">
                 <div id="message-red">
+                  <div id="errorContainer" style="text-decoration-color: maroon; color: maroon;">
+                    <%= @message %>
+                  </div>
                   <% if @user.errors.any? %>
                       <%= javascript_tag "changeId();" %>
                       <table border="0" width="100%" cellpadding="0" cellspacing="0">
@@ -69,6 +72,10 @@
               <th></th>
               <td>
                 <%= f.submit "Add", :label => 'Add', :class => "submit-login" %>
+                &nbsp;&nbsp;&nbsp;
+                <a href="/college/show">
+                  <input type="button" value="Cancel" class="submit-login" style="padding-top: 0px; ">
+                </a>
               </td>
             </tr>
           </table>

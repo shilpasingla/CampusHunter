@@ -10,7 +10,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to "/college/new", :notice => "User Added!"
+      @message = "User Added Successfully!"
+      render "new"
+      #, :notice => "User Added!"
     else
       render "new"
     end
