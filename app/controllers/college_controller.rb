@@ -11,7 +11,6 @@ class CollegeController < ApplicationController
   def create
 
     if (params[:CampusType] == "College")
-
       if College.where(:name => params[:name]).count == 0
         @college = College.new(:name => params[:name], :numberofapplicant => 0, :cutoff => 0)
         @college.save
@@ -25,6 +24,7 @@ class CollegeController < ApplicationController
 
     elsif (params[:CampusType] == "Pool")
       if College.where(:poolName => params[:name]).count == 0
+        Pool.create!(:name => params[:name], :numberofapplicant => 0, :cutoff => 0)
         load_pool_to_database params[:import], params[:name]
         redirect_to "/applicant/show/#{params[:name]}"
       else

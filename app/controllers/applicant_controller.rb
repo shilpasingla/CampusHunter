@@ -29,11 +29,17 @@ class ApplicantController < ApplicationController
   end
 
   def show
-    @college = College.find_by_name(params[:collegename])
-    if !@college.nil?
-      @applicant = Kaminari.paginate_array(@college.codePairing(@college.cutoff)).page(params[:page]).per(20)
 
+    @college = College.find_by_name(params[:collegename])
+    if(@college.nil?)
+      @college = College.find_all_by_poolName(params[:collegename])
     end
+    if @college != []
+      @college.each do |college|
+      @applicant = Kaminari.paginate_array(college.codePairing(college.cutoff)).page(params[:page]).per(20)
+        end
+    end
+
   end
 
   def download
