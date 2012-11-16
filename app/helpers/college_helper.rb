@@ -41,4 +41,3 @@ module CollegeHelper
     end
   end
   end
-end
