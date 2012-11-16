@@ -7,32 +7,68 @@ class ApplicantController < ApplicationController
 
   def secondTech
     @college = College.find_by_name(params[:collegename])
-    pool = false
+    @applicant = []
     if(@college.nil?)
-      @college = Pool.find_by_name(params[:collegename])
-      pool = true
+      @college = College.find_all_by_poolName(params[:collegename])
+      poolname = Pool.find_by_name(params[:collegename])
+      if @college != []
+        @college.each do |college|
+          @applicants_per_college = college.firstTech_pursues()
+          @applicants_per_college.each do |applicant|
+            @applicant << applicant
+          end
+        end
+        @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
+        @college = poolname
+      end
+    else
+      @applicant = Kaminari.paginate_array(@college.firstTech_pursues()).page(params[:page]).per(20)
     end
-    @applicant = Kaminari.paginate_array(@college.firstTech_pursues(pool)).page(params[:page]).per(20)
+    return @applicant
   end
 
   def final_pursued
     @college = College.find_by_name(params[:collegename])
-    pool = false
+    @applicant = []
     if(@college.nil?)
-      @college = Pool.find_by_name(params[:collegename])
-      pool = true
+      @college = College.find_all_by_poolName(params[:collegename])
+      poolname = Pool.find_by_name(params[:collegename])
+      if @college != []
+        @college.each do |college|
+          @applicants_per_college = college.final_pursues()
+          @applicants_per_college.each do |applicant|
+            @applicant << applicant
+          end
+        end
+        @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
+        @college = poolname
+      end
+    else
+      @applicant = Kaminari.paginate_array(@college.final_pursues()).page(params[:page]).per(20)
     end
-    @applicant = Kaminari.paginate_array(@college.final_pursues(pool)).page(params[:page]).per(20)
+    return @applicant
   end
 
   def firstTech
     @college = College.find_by_name(params[:collegename])
-    pool = false
+    @applicant = []
     if(@college.nil?)
-      @college = Pool.find_by_name(params[:collegename])
-      pool = true
+      @college = College.find_all_by_poolName(params[:collegename])
+      poolname = Pool.find_by_name(params[:collegename])
+      if @college != []
+        @college.each do |college|
+          @applicants_per_college = college.pairing_pursues()
+          @applicants_per_college.each do |applicant|
+            @applicant << applicant
+          end
+        end
+        @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
+        @college = poolname
+      end
+    else
+      @applicant = Kaminari.paginate_array(@college.pairing_pursues()).page(params[:page]).per(20)
     end
-    @applicant = Kaminari.paginate_array(@college.pairing_pursues(pool)).page(params[:page]).per(20)
+    return @applicant
   end
 
   def codePairing
