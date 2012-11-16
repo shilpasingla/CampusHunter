@@ -31,8 +31,7 @@ module CollegeHelper
       else
       colleges.each do |college|
         if(college.poolName == pool_name)
-          require "pry"
-          binding.pry
+
           @col = college
         else
           @col = College.create!(:name => collegename, :poolName => pool_name, :numberofapplicant => 0, :cutoff => 0)
