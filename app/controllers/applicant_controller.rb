@@ -7,17 +7,17 @@ class ApplicantController < ApplicationController
 
   def secondTech
     @college = College.find_by_name(params[:collegename])
-    @applicant = Kaminari.paginate_array(@college.secondTech()).page(params[:page]).per(20)
+    @applicant = Kaminari.paginate_array(@college.firstTech_pursues()).page(params[:page]).per(20)
   end
 
   def final_pursued
     @college = College.find_by_name(params[:collegename])
-    @applicant = Kaminari.paginate_array(@college.final_pursued()).page(params[:page]).per(20)
+    @applicant = Kaminari.paginate_array(@college.final_pursues()).page(params[:page]).per(20)
   end
 
   def firstTech
     @college = College.find_by_name(params[:collegename])
-    @applicant = Kaminari.paginate_array(@college.firstTech()).page(params[:page]).per(20)
+    @applicant = Kaminari.paginate_array(@college.pairing_pursues()).page(params[:page]).per(20)
   end
 
   def codePairing
@@ -25,20 +25,31 @@ class ApplicantController < ApplicationController
     if !params[:cutoff].blank?
       @college.update_column(:cutoff, params[:cutoff])
     end
-    @applicant = Kaminari.paginate_array(@college.codePairing(@college.cutoff)).page(params[:page]).per(20)
+    @applicant = Kaminari.paginate_array(@college.logic_pursues(@college.cutoff)).page(params[:page]).per(20)
   end
 
   def show
 
     @college = College.find_by_name(params[:collegename])
+    @applicant = []
     if(@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
+      pool = Pool.find_by_name(params[:collegename])
+      applicants_in_pool = 0
     end
     if @college != []
       @college.each do |college|
-      @applicant = Kaminari.paginate_array(college.codePairing(college.cutoff)).page(params[:page]).per(20)
+        applicants_in_pool = applicants_in_pool + Applicants.where(:collegeId => college.id).count
+        college.update_attribute(:numberofapplicant, Applicants.where(:collegeId => college.id).count)
+      @applicants_per_college = college.logic_pursues(college.cutoff)
+        @applicants_per_college.each do |applicant|
+          @applicant << applicant
         end
-    end
+      @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
+      end
+      end
+      @college = pool
+      pool.update_attribute(:numberofapplicant, applicants_in_pool)
 
   end
 
@@ -64,7 +75,7 @@ class ApplicantController < ApplicationController
 
   def show_selected
     @college = College.find_by_name(params[:college_name])
-    @applicant = Kaminari.paginate_array(@college.codePairing(params[:cutoff])).page(params[:page]).per(20)
+    @applicant = Kaminari.paginate_array(@college.logic_pursues(params[:cutoff])).page(params[:page]).per(20)
     render 'show.js.erb'
   end
 

@@ -25,7 +25,7 @@
         </td>
         <td><%= app.CodePairing %> </td>
         <td style="text-align: center; padding: 5px;">
-          <%= text_field :applicant, :firstTech, :class => "FirstTech", :value => app.FirstTech, :id => "#{app.id}",
+          <%= text_field :applicant, :pairing_pursues, :class => "FirstTech", :value => app.FirstTech, :id => "#{app.id}",
                          :onchange => "autoSave(this)", :style => 'width: 80px; height: 15px;' %></td>
         <td style="text-align: center; padding: 5px;">
           <%= radio_button_tag "#{app.id}", 'pursue', (app.FirstStatus), :value => true,

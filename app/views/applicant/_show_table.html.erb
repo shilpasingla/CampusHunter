@@ -12,7 +12,8 @@
   </tr>
 
   <% @applicant.each do |app| %>
-
+       <%# require "pry" %>
+      <%# binding.pry %>
       <tr>
         <td><%= app.Name %></td>
         <td style="text-align: center;"><%= app.RollNo %></td>
@@ -32,5 +33,5 @@
 
 </table>
 
-<%= paginate @applicant %>
+<% paginate @applicant %>
 
