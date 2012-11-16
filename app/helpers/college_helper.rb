@@ -24,8 +24,6 @@ module CollegeHelper
       if (@college == [])
         @college = College.create!(:name => collegename, :poolName => pool_name, :numberofapplicant => 0, :cutoff => 0)
       end
-      require "pry"
-      binding.pry
       app = Applicants.create!(hash)
       app.update_attribute(:collegeId, @college.id)
     end

@@ -39,7 +39,7 @@ Then /^I should be redirected to the "(.*)" page/ do |page|
 end
 
 Then /^It should direct me to the new college form/ do
-  page.should have_content("College name")
+  page.should have_content("Create")
 end
 
 Then /^I should be redirected to the applicants of "(.*)" page$/ do |collegename|
