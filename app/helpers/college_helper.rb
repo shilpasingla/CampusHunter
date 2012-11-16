@@ -20,18 +20,21 @@ module CollegeHelper
 
   private
   def load_pool_to_database(file_name, pool_name)
+    @col = []
     CSV.new(file_name.tempfile, :headers => true).each do |row|
       hash = row.to_hash
       collegename = hash["college"]
       hash.delete("college")
-      @col = []
       colleges = College.find_all_by_name(collegename)
+      if(colleges.nil?)
+        @col = College.create!(:name => collegename, :poolName => pool_name, :numberofapplicant => 0, :cutoff => 0)
+      end
       colleges.each do |college|
         if(college.poolName == pool_name)
           @col = college
+        else
+          @col = College.create!(:name => collegename, :poolName => pool_name, :numberofapplicant => 0, :cutoff => 0)
         end
-      if (@col == [])
-        @col = College.create!(:name => collegename, :poolName => pool_name, :numberofapplicant => 0, :cutoff => 0)
       end
       app = Applicants.create!(hash)
       app.update_attribute(:collegeId, @col.id)
