@@ -25,19 +25,10 @@ module CollegeHelper
       hash = row.to_hash
       collegename = hash["college"]
       hash.delete("college")
-      colleges = College.find_all_by_name(collegename)
-      if(colleges == [])
+      @col = College.where(:name => collegename, :poolName => pool_name)
+      if(@col == [])
         @col = College.create!(:name => collegename, :poolName => pool_name, :numberofapplicant => 0, :cutoff => 0)
-      else
-      colleges.each do |college|
-        if(college.poolName == pool_name)
-
-          @col = college
-        else
-          @col = College.create!(:name => collegename, :poolName => pool_name, :numberofapplicant => 0, :cutoff => 0)
         end
-      end
-      end
       app = Applicants.create!(hash)
       app.update_attribute(:collegeId, @col.id)
     end
