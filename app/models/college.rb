@@ -5,19 +5,19 @@ class College < ActiveRecord::Base
   #validates :name, :uniqueness => true
 
   def codePairing(cutoff)
-    @pur = []
+    @col = []
     if !cutoff.blank?
       cutoff = cutoff.to_i
       @app = Applicants.find_all_by_collegeId(self.id)
       @app.each do |n|
         if n.Score.to_i >= cutoff
-          @pur << n
+          @col << n
         end
       end
     else
-      @pur = Applicants.find_all_by_collegeId(self.id)
+      @col = Applicants.find_all_by_collegeId(self.id)
     end
-    return @pur
+    return @col
   end
 
   def secondTech()

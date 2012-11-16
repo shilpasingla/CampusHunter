@@ -24,10 +24,12 @@ class CollegeController < ApplicationController
     elsif (params[:CampusType] == "Pool")
       if College.where(:poolName => params[:name]).count == 0
         load_pool_to_database params[:import], params[:name]
+        redirect_to "/applicant/show/#{params[:name]}"
+      else
+        @message = "Pool name already exists"
+        render :action => "new", :layout => "sessions"
       end
-
     end
-
   end
 
   def show
