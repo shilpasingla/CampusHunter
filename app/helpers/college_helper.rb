@@ -30,7 +30,13 @@ module CollegeHelper
         @col = College.create!(:name => collegename, :poolName => pool_name, :numberofapplicant => 0, :cutoff => 0)
         end
       app = Applicants.create!(hash)
-      app.update_attribute(:collegeId, @col.id)
+      colleges = College.find_all_by_name(collegename)
+      colleges.each do |college|
+        if(college.poolName == pool_name)
+          app.update_attribute(:collegeId, college.id)
+      end
     end
   end
   end
+end
+
