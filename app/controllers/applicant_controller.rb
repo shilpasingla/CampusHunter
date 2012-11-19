@@ -176,6 +176,7 @@ end
       end
 
     else
+      @college.update_attribute(:cutoff, params[:cutoff])
       @applicant = Kaminari.paginate_array(@college.logic_pursues(@college.cutoff)).page(params[:page]).per(20)
     end
     render 'show.js.erb'
@@ -194,7 +195,7 @@ end
             if  params[:Logic_Pursued] =="true"
               @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "collegeId" = ? AND "Score" >= ?', "%#{params[:search_name]}%", "#{@college.id}", "#{@college.cutoff}")).page(params[:page]).per(20)
             else
-              @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "collegeId" = ?', "%#{params[:search_name]}%", "#{@college.id}")).page(params[:page]).per(20)
+              @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "collegeId" = ?', "#{params[:search_name]}%", "#{@college.id}")).page(params[:page]).per(20)
             end
           end
     end
