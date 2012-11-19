@@ -174,17 +174,19 @@ end
       if @college != []
         @college.each do |college|
           college.update_attribute(:numberofapplicant, Applicants.where(:collegeId => college.id).count)
-          @applicants_per_college = college.logic_pursues(college.cutoff)
+          @applicants_per_college = college.logic_pursues(params[:cutoff])
 
           @applicants_per_college.each do |applicant|
             @applicant << applicant
           end
 
           @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
+
+
         end
         @college = pool
+
         @pool = true
-        pool.update_attribute(:numberofapplicant, applicants_in_pool)
       end
 
     else
