@@ -9,6 +9,9 @@
     <th>Specification</th>
     <th>Percentage</th>
     <th>Score</th>
+    <% if @pool == true %>
+        <th class="table-header-repeat line-left"><a>College</a></th>
+    <% end %>
   </tr>
   </thead>
 
@@ -24,6 +27,9 @@
         <td><%= app.Branch %> </td>
         <td><%= app.Percentage %></td>
         <td><%= text_field :applicant, :score, :value => app.Score, :id => "#{app.id}", :onchange => "autoSave(this)" %></td>
+        <% if @pool == true %>
+            <td style="text-align: left;"><%= College.find_by_id(app.collegeId).name %> </td>
+        <% end %>
       </tr>
 
   <% end %>

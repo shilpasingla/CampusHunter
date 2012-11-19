@@ -9,6 +9,9 @@
     <th class="table-header-repeat line-left "><a>FirstTech</a></th>
     <th class="table-header-repeat line-left "><a>FirstStatus</a></th>
     <th class="table-header-repeat line-left "><a>Comment</a></th>
+    <% if @pool == true %>
+        <th class="table-header-repeat line-left"><a>College</a></th>
+    <% end %>
   </tr>
 
 
@@ -42,6 +45,9 @@
           <%# text_area :applicant, :comment, :class => "Comment", :value => app.Comment, :id => "#{app.id}",
                         :onchange => "autoSave(this)", :rows => 2, :cols => 40 %>
         </td>
+        <% if @pool == true %>
+            <td style="text-align: left;"><%= College.find_by_id(app.collegeId).name %> </td>
+        <% end %>
       </tr>
   <% end %>
 </table>
