@@ -141,9 +141,15 @@ end
 
   def download
     respond_to do |format|
+
+      if !(College.find_by_name(params[:collegename])).nil?
       cutoff = College.find_by_name(params[:collegename]).cutoff
       format.csv { send_data Applicants.to_csv(params[:collegename], cutoff, params[:round]) }
-    end
+      else
+        cutoff = Pool.find_by_name(params[:collegename]).cutoff
+        format.csv { send_data Applicants.to_csv_for_pool(params[:collegename], cutoff, params[:round]) }
+      end
+      end
   end
 
   def download_for_college

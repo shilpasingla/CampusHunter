@@ -8,7 +8,8 @@ class Applicants < ActiveRecord::Base
   validates :Score, :numericality => {:less_than_or_equal_to => 12, :greater_than_or_equal_to => 0}, :allow_blank => true, :allow_nil => true
 
   def self.to_csv(college_name, cutoff, round)
-    @college = College.find_by_name(college_name)
+      @college = College.find_by_name(college_name)
+
     CSV.generate do |csv|
       if (round == "CodePairing")
         csv << %W[Name RollNo Score Branch Role CodePairing PairingStatus Comment]
@@ -39,4 +40,41 @@ class Applicants < ActiveRecord::Base
     end
   end
 
+
+
+  def self.to_csv_for_pool(college_name, cutoff, round)
+    @colleges = College.find_all_by_poolName(college_name)
+
+    CSV.generate do |csv|
+      if (round == "CodePairing")
+        csv << %W[Name RollNo Score Branch Role CodePairing PairingStatus Comment College]
+        @colleges.each do |college|
+        college.logic_pursues(cutoff).each do |applicant|
+          csv << applicant.attributes.values_at(column_names[1], column_names[12], column_names[2], column_names[3], column_names[4], column_names[5], column_names[19], column_names[8], College.find_by_id(applicant.collegeId).name)
+        end
+        end
+      elsif (round == "FirstTech")
+        csv << %W[Name RollNo Score Branch Role CodePairing FirstTech FirstStatus Comment College]
+        @colleges.each do |college|
+        college.pairing_pursues().each do |applicant|
+          csv << applicant.attributes.values_at(column_names[1], column_names[12], column_names[2], column_names[3], column_names[4], column_names[5], column_names[7], column_names[18], column_names[8], College.find_by_id(applicant.collegeId).name)
+        end
+        end
+      elsif (round == "SecondTech")
+        csv << %W[Name RollNo Score Branch Role CodePairing FirstTech SecondTech Result Comment College]
+        @colleges.each do |college|
+        college.firstTech_pursues().each do |applicant|
+          csv << applicant.attributes.values_at(column_names[1], column_names[12], column_names[2], column_names[3], column_names[4], column_names[5], column_names[7], column_names[9], column_names[20], column_names[8], College.find_by_id(applicant.collegeId).name)
+        end
+        end
+      elsif (round == "Final")
+        csv << column_names
+        @colleges.each do |college|
+        college.logic_pursues(cutoff).each do |applicant|
+          csv << applicant.attributes.values_at(*column_names)
+        end
+        end
+    end
+  end
+  end
 end
