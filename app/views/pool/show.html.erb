@@ -9,7 +9,7 @@
 <% end %>
 
 <div id="page-heading">
-  <h1>Listing pools
+  <h1>List of Pools
 
     <div style="float: right;">
       <h2>
@@ -47,7 +47,10 @@
                 <td><%= pool.numberOfApplicants %></td>
                 <td><%= pool.cutoff %></td>
                 <td><%= link_to "", url="/pool/delete/#{pool.id }", :class => "icon-2 info-tooltip",
-                                :confirm => "Are you sure you want to delete #{pool.name}",:id => "remove" %></td>
+                                :confirm => "Are you sure you want to delete #{pool.name}",:id => "remove" %> &nbsp; &nbsp;
+                  <%= link_to "List of colleges", url="/college/show/#{pool.name }",
+                              :id => "listOfColleges" %>
+                </td>
               </tr>
           <% end %>
         </table>

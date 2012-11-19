@@ -22,10 +22,14 @@ class CollegeController < ApplicationController
   end
 
   def show
+    if !params[:name].nil?
+    @colleges = Kaminari.paginate_array(College.find_all_by_poolName(params[:name])).page(params[:page]).per(10)
+    else
     @colleges = Kaminari.paginate_array(College.all).page(params[:page]).per(10)
     respond_to do |format|
       format.html { render 'college/show' }
       format.json { render json: @colleges }
+    end
     end
   end
 

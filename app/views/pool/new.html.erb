@@ -1,0 +1,77 @@
+<% content_for :title do %>
+    CampusHunter - Add New Pool
+<% end %>
+
+<% content_for :scripts do %>
+
+    <script type="text/javascript" language="javascript">
+        $(document).ready(
+                function () {
+                    $('#listOfColleges').mouseover(function () {
+                        $(this).css("color", "#b0c4de");
+                    });
+
+                    $('#listOfColleges').mouseout(function () {
+                        $(this).css("color", "#4b4b4b");
+                    });
+
+                    $('#Create').click(function () {
+                        var isError = false;
+                        var errorString = '<html><body><ul>';
+
+                        if ($('#name').val() == '') {
+                            isError = true;
+                            errorString += '<li>Please enter pool name.</li>';
+                        }
+                        if ($('#import').val() == '') {
+                            isError = true;
+                            errorString += '<li>Please select a csv file.</li>';
+                        }
+                        errorString += "</ul></body></html>";
+                        if (isError) {
+                            $('#errorContainer').html(errorString);
+                            return false;
+                        }
+                    });
+                })
+
+        function checkFile(sender) {
+            var validExts = new Array(".csv");
+            var fileExt = sender.value;
+            fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+            if (validExts.indexOf(fileExt) < 0) {
+                alert("Invalid file selected, only" +
+                        validExts.toString() + " files are accepted");
+                sender.value = '';
+                return false;
+            }
+            else return true;
+        }
+    </script>
+<% end %>
+
+<form action="/pool/create" id="pool" name="pool" method="post" enctype="multipart/form-data">
+  <div id="login-holder">
+    <div id="logo-login">
+      <div id="loginbox">
+        <div id="login-inner">
+          <div id="errorContainer" style="text-decoration-color: maroon; padding-bottom: 20px; color: maroon;">
+            <%= @message %>
+          </div>
+          <p> Name
+            <input type="text" name="name" id="name" style="width: 100px; height: 15px;"></p>
+          <br>
+          <input id="import" type="file" name="import" onchange="checkFile(this)">
+          <br/><br/><br/>
+
+          <div style="text-align: center;">
+            <input type="submit" id="Create" class="submit-login" value="Create" style="float: left;">
+
+            <a href="/pool/show">
+              <input type="button" value="Cancel" class="submit-login" style="float: left; padding-top: 0px; "> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
