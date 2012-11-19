@@ -3,12 +3,6 @@
 <% end %>
 
 
-<% content_for :scripts do %>
-    <%= javascript_include_tag "jquery.selectbox-0.5" %>
-
-
-<% end %>
-
 <% content_for :styles do %>
     <%= stylesheet_link_tag "pro_dropline_ie" %>
     <%= stylesheet_link_tag "pro_dropline" %>
@@ -53,7 +47,7 @@
                 <td><%= college.numberofapplicant %></td>
                 <td><%= college.cutoff %></td>
                 <td><%= link_to "", url="/college/delete/#{college.id }", :class => "icon-2 info-tooltip",
-                                :confirm => "Are you sure you want to delete #{college.name}?", :id => "remove" %></td>
+                                :confirm => "Are you sure you want to delete #{college.name}",:id => "remove" %></td>
               </tr>
           <% end %>
         </table>
