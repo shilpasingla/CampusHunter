@@ -43,9 +43,8 @@ class CollegeController < ApplicationController
   end
 
   def delete
-    @college = College.find_by_name(params[:collegename])
-    Applicants.delete_all(:collegeId => @college.id)
-    College.delete_all(:name => params[:collegename])
+    Applicants.delete_all(:collegeId => params[:id])
+    College.delete_all(:id => params[:id])
     redirect_to '/college/show'
   end
 end
