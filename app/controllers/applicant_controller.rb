@@ -21,6 +21,7 @@ end
           end
         end
         @college = pool
+        @pool = true
         @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
         return @applicant
       end
@@ -44,6 +45,7 @@ end
           end
         end
         @college = pool
+        @pool = true
         @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
         return @applicant
       end
@@ -67,6 +69,7 @@ end
           end
         end
         @college = pool
+        @pool = true
         @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
         return @applicant
       end
@@ -94,6 +97,7 @@ end
         end
       end
       @college = pool
+      @pool = true
       @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
       return @applicant
       end
@@ -124,6 +128,7 @@ end
           end
         end
         @college = pool
+        @pool = true
         pool.update_attribute(:numberOfApplicants, applicants_in_pool)
         @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
         return @applicant
@@ -172,6 +177,7 @@ end
           @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
         end
         @college = pool
+        @pool = true
         pool.update_attribute(:numberofapplicant, applicants_in_pool)
       end
 
