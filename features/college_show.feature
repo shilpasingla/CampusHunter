@@ -6,6 +6,7 @@ Feature: List of Colleges
 
   Scenario: View candidates of a particular college
     Given I am on the "home" page
+    When I click on "List of Colleges"
     When I click on "Add New College"
     Then It should direct me to the new college form
 
@@ -28,11 +29,13 @@ Feature: List of Colleges
 
   Scenario: Remove an existing college
     Given I am on the "home" page
+    When I click on "List of Colleges"
     When I click on "remove"
     Then I should be redirected to the "home" page
     And "sample_college" should not be present
 
   Scenario: List of Applicants in a college
     Given I am on the "home" page
+    When I click on "List of Colleges"
     When I click on "sample_college"
     Then I should be redirected to the applicants of "sample_college" page
