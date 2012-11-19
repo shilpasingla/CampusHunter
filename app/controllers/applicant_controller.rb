@@ -10,7 +10,7 @@ class ApplicantController < ApplicationController
     @applicant = []
     if(@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
-      poolname = Pool.find_by_name(params[:collegename])
+      pool = Pool.find_by_name(params[:collegename])
       if @college != []
         @college.each do |college|
           @applicants_per_college = college.firstTech_pursues()
@@ -18,13 +18,14 @@ class ApplicantController < ApplicationController
             @applicant << applicant
           end
         end
+        @college = pool
         @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
-        @college = poolname
+        return @applicant
       end
     else
       @applicant = Kaminari.paginate_array(@college.firstTech_pursues()).page(params[:page]).per(20)
+      return @applicant
     end
-    return @applicant
   end
 
   def final_pursued
@@ -32,7 +33,7 @@ class ApplicantController < ApplicationController
     @applicant = []
     if(@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
-      poolname = Pool.find_by_name(params[:collegename])
+      pool = Pool.find_by_name(params[:collegename])
       if @college != []
         @college.each do |college|
           @applicants_per_college = college.final_pursues()
@@ -40,13 +41,14 @@ class ApplicantController < ApplicationController
             @applicant << applicant
           end
         end
+        @college = pool
         @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
-        @college = poolname
+        return @applicant
       end
     else
       @applicant = Kaminari.paginate_array(@college.final_pursues()).page(params[:page]).per(20)
+      return @applicant
     end
-    return @applicant
   end
 
   def firstTech
@@ -54,7 +56,7 @@ class ApplicantController < ApplicationController
     @applicant = []
     if(@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
-      poolname = Pool.find_by_name(params[:collegename])
+      pool = Pool.find_by_name(params[:collegename])
       if @college != []
         @college.each do |college|
           @applicants_per_college = college.pairing_pursues()
@@ -62,13 +64,14 @@ class ApplicantController < ApplicationController
             @applicant << applicant
           end
         end
+        @college = pool
         @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
-        @college = poolname
+        return @applicant
       end
     else
       @applicant = Kaminari.paginate_array(@college.pairing_pursues()).page(params[:page]).per(20)
+      return @applicant
     end
-    return @applicant
   end
 
   def codePairing
@@ -76,27 +79,29 @@ class ApplicantController < ApplicationController
     @college = College.find_by_name(params[:collegename])
     if(@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
-      poolname = []
+      pool = []
       if !params[:cutoff].blank?
-        poolname = Pool.find_by_name(params[:collegename])
-        poolname.update_column(:cutoff, params[:cutoff])
+        pool = Pool.find_by_name(params[:collegename])
+        pool.update_column(:cutoff, params[:cutoff])
       end
       @college.each do |college|
-          college.update_column(:cutoff, poolname.cutoff)
+          college.update_column(:cutoff, pool.cutoff)
         @applicants_per_college = college.logic_pursues(college.cutoff)
         @applicants_per_college.each do |app|
           @applicant << app
         end
       end
-      @college = poolname
+      @college = pool
       @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
-    else
+      return @applicant
+      end
+    if(!@college.nil?)
       if !params[:cutoff].blank?
         @college.update_column(:cutoff, params[:cutoff])
-        @applicant = Kaminari.paginate_array(@college.logic_pursues(@college.cutoff)).page(params[:page]).per(20)
       end
+        @applicant = Kaminari.paginate_array(@college.logic_pursues(@college.cutoff)).page(params[:page]).per(20)
+        return @applicant
     end
-    return @applicant
   end
 
   def show
@@ -104,7 +109,7 @@ class ApplicantController < ApplicationController
     @applicant = []
     if(@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
-      poolname = Pool.find_by_name(params[:collegename])
+      pool = Pool.find_by_name(params[:collegename])
       applicants_in_pool = 0
       if @college != []
         @college.each do |college|
@@ -116,14 +121,15 @@ class ApplicantController < ApplicationController
             @applicant << applicant
           end
         end
+        @college = pool
+        pool.update_attribute(:numberofapplicant, applicants_in_pool)
         @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
-        @college = poolname
-        poolname.update_attribute(:numberofapplicant, applicants_in_pool)
+        return @applicant
       end
     else
       @applicant = Kaminari.paginate_array(@college.logic_pursues(@college.cutoff)).page(params[:page]).per(20)
+      return @applicant
     end
-    return @applicant
   end
 
   def download
@@ -151,7 +157,7 @@ class ApplicantController < ApplicationController
     @applicant = []
     if(@college.nil?)
       @college = College.find_all_by_poolName(params[:college_name])
-      poolname = Pool.find_by_name(params[:college_name])
+      pool = Pool.find_by_name(params[:college_name])
       if @college != []
         @college.each do |college|
           college.update_attribute(:numberofapplicant, Applicants.where(:collegeId => college.id).count)
@@ -163,8 +169,8 @@ class ApplicantController < ApplicationController
 
           @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
         end
-        @college = poolname
-        poolname.update_attribute(:numberofapplicant, applicants_in_pool)
+        @college = pool
+        pool.update_attribute(:numberofapplicant, applicants_in_pool)
       end
 
     else
