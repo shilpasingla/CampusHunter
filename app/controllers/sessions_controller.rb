@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to "/college/show_all"
+      redirect_to root_path
     else
 
       @message = "Invalid email or password"
