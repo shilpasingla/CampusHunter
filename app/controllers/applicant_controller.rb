@@ -3,7 +3,9 @@ require 'csv'
 class ApplicantController < ApplicationController
 
   before_filter :require_login
+def home
 
+end
 
   def secondTech
     @college = College.find_by_name(params[:collegename])
@@ -122,7 +124,7 @@ class ApplicantController < ApplicationController
           end
         end
         @college = pool
-        pool.update_attribute(:numberofapplicant, applicants_in_pool)
+        pool.update_attribute(:numberOfApplicants, applicants_in_pool)
         @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
         return @applicant
       end

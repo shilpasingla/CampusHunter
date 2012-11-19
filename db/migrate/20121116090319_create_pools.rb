@@ -3,8 +3,8 @@ class CreatePools < ActiveRecord::Migration
     create_table :pools do |t|
       t.string :name
       t.integer :cutoff
-      t.integer :numberofapplicant
-
+      t.integer :numberOfColleges
+      t.integer :numberOfApplicants
       t.timestamps
     end
   end

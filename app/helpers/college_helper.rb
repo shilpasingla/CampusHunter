@@ -4,7 +4,6 @@ module CollegeHelper
 
   private
   def load_college_to_database(file_name, college_name)
-    #college = College.where(:name => college_name, :poolName => nil)
     @col = []
     colleges = College.find_all_by_name(college_name)
     colleges.each do |college|

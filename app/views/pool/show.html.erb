@@ -1,0 +1,66 @@
+<% content_for :title do %>
+    CampusHunter - List of Pools
+<% end %>
+
+
+<% content_for :styles do %>
+    <%= stylesheet_link_tag "pro_dropline_ie" %>
+    <%= stylesheet_link_tag "pro_dropline" %>
+<% end %>
+
+<div id="page-heading">
+  <h1>Listing pools
+
+    <div style="float: right;">
+      <h2>
+        <%= link_to "Add New Pool", new_pool_path, :id => "addNewPool", :style => "color: #4b4b4b;" %>
+      </h2>
+    </div>
+  </h1>
+</div>
+
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
+  <tr>
+
+    <th class="topleft"></th>
+    <td id="tbl-border-top">&nbsp;</td>
+    <th class="topright"></th>
+
+  </tr>
+  <tr>
+    <td id="tbl-border-left"></td>
+    <td>
+      <div id="content-table-inner">
+        <table id="college" border="0" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <th class="table-header-repeat line-left"><a>Name</a></th>
+            <th class="table-header-repeat line-left"><a>Number Of Colleges</a></th>
+            <th class="table-header-repeat line-left"><a>Number Of Applicants</a></th>
+            <th class="table-header-repeat line-left"><a>Cutoff</a></th>
+            <th class="table-header-options line-left"><a>Options</a></th>
+          </tr>
+
+          <% @pools.each do |pool| %>
+              <tr>
+                <td><%= link_to pool.name, url="/applicant/show/#{pool.name}" %></td>
+                <td><%= pool.numberOfColleges %></td>
+                <td><%= pool.numberOfApplicants %></td>
+                <td><%= pool.cutoff %></td>
+                <td><%= link_to "", url="/pool/delete/#{pool.id }", :class => "icon-2 info-tooltip",
+                                :confirm => "Are you sure you want to delete #{pool.name}",:id => "remove" %></td>
+              </tr>
+          <% end %>
+        </table>
+      </div>
+      <%= paginate @pools %>
+      <div class="clear"></div>
+      </div>
+    </td>
+    <td id="tbl-border-right"></td>
+  </tr>
+  <tr>
+    <th class="sized bottomleft"></th>
+    <td id="tbl-border-bottom">&nbsp;</td>
+    <th class="sized bottomright"></th>
+  </tr>
+</table>

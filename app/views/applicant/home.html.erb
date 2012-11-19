@@ -1,0 +1,21 @@
+<% content_for :title do %>
+    CampusHunter
+<% end %>
+
+
+<% content_for :styles do %>
+    <%= stylesheet_link_tag "pro_dropline_ie" %>
+    <%= stylesheet_link_tag "pro_dropline" %>
+<% end %>
+
+<div id="page-heading">
+
+    <div style="float: right;">
+      <h1>
+        <%= link_to "List of Colleges", "/college/show", :id => "collegeList", :style => "color: #4b4b4b;" %>
+      </h1>
+      <h1>
+        <%= link_to "List of Pools", "/pool/show", :id => "poolList", :style => "color: #4b4b4b;" %>
+      </h1>
+    </div>
+</div>

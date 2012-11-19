@@ -1,6 +1,6 @@
 CampusHunter::Application.routes.draw do
 
-  root :to => "college#show"
+  root :to => "applicant#home"
   resources :sessions
   resources :users
 
@@ -17,8 +17,15 @@ CampusHunter::Application.routes.draw do
     end
   end
 
+  resources :pool do
+    collection do
+      get 'delete'
+    end
+  end
+
   resources :applicant do
     collection do
+      get 'home'
       get 'codePairing'
       get 'firstTech'
       post 'firstTech'
@@ -45,8 +52,12 @@ CampusHunter::Application.routes.draw do
   match "applicant/download_for_college/:collegename/" => 'Applicant#download_for_college'
   match "applicant/show/:collegename" => 'Applicant#show'
   match "applicant/show/:collegename/:cutoff" => 'Applicant#show'
+  match "college/show" => 'College#show'
   match "college/create" => 'College#create'
   match "college/delete/:id" => 'College#delete'
+  match "pool/create" => 'Pool#create'
+  match "pool/delete/:id" => 'Pool#delete'
+  match "pool/show" => 'Pool#show'
 
   #get "college/new"
   #get "college/add_user"
