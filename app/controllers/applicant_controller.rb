@@ -100,7 +100,6 @@ class ApplicantController < ApplicationController
   end
 
   def show
-
     @college = College.find_by_name(params[:collegename])
     @applicant = []
     if(@college.nil?)
@@ -150,10 +149,8 @@ class ApplicantController < ApplicationController
   def show_selected
     @college = College.find_by_name(params[:college_name])
     @applicant = []
-    pool = false
     if(@college.nil?)
       @college = College.find_all_by_poolName(params[:college_name])
-      pool = true
       poolname = Pool.find_by_name(params[:college_name])
       if @college != []
         @college.each do |college|
