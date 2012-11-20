@@ -57,7 +57,7 @@ CampusHunter::Application.routes.draw do
   match "college/create" => 'College#create'
   match "college/delete/:id" => 'College#delete'
   match "pool/create" => 'Pool#create'
-  match "pool/delete/:id" => 'Pool#delete'
+  match "pool/delete/:name" => 'Pool#delete'
   match "pool/show" => 'Pool#show'
 
   #get "college/new"

@@ -27,12 +27,12 @@ class PoolController < ApplicationController
   end
 
   def delete
-    @colleges= College.find_all_by_poolName(:poolName => params[:poolName])
+    @colleges= College.find_all_by_poolName(params[:name])
     @colleges.each do |college|
       Applicants.delete_all(:collegeId => college.id)
-      College.delete(:id => college.id)
+      College.delete_all(:id => college.id)
     end
-    Pool.delete(:name => params[:poolName])
+    Pool.delete_all(:name => params[:name])
     redirect_to '/pool/show'
   end
 end
