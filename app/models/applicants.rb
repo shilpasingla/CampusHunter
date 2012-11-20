@@ -8,7 +8,7 @@ class Applicants < ActiveRecord::Base
   validates :Score, :numericality => {:less_than_or_equal_to => 12, :greater_than_or_equal_to => 0}, :allow_blank => true, :allow_nil => true
 
   def self.to_csv(college_name, cutoff, round)
-    @college = College.find_by_name(college_name)
+    @college = College.find_by_id(college_name)
 
     CSV.generate do |csv|
       if (round == "CodePairing")
@@ -24,12 +24,12 @@ class Applicants < ActiveRecord::Base
       elsif (round == "SecondTech")
         csv << %W[Name RollNo Score Branch Role CodePairing FirstTech SecondTech Result Comment]
         @college.firstTech_pursues().each do |applicant|
-          csv << [applicant.Name, applicant.RollNo, applicant.Score, applicant.Branch, applicant.Role, applicant.CodePairing, applicant.FirstTech, applicant.SecondTech, applicant.Result, applicant.Comment, college.name]
+          csv << [applicant.Name, applicant.RollNo, applicant.Score, applicant.Branch, applicant.Role, applicant.CodePairing, applicant.FirstTech, applicant.SecondTech, applicant.Result, applicant.Comment]
         end
       elsif (round == "Final")
         csv << %W[Name RollNo Gender EmailAdd PhoneNo Score Branch Role CodePairing FirstTech SecondTech Comment College]
-        @college.logic_pursues(cutoff).each do |applicant|
-          csv << [applicant.Name, applicant.RollNo, applicant.Gender, applicant.EmailAdd, applicant.PhoneNo, applicant.Score, applicant.Branch, applicant.Role, applicant.CodePairing, applicant.FirstTech, applicant.SecondTech, applicant.Comment, college.name]
+        @college.final_pursues().each do |applicant|
+          csv << [applicant.Name, applicant.RollNo, applicant.Gender, applicant.EmailAdd, applicant.PhoneNo, applicant.Score, applicant.Branch, applicant.Role, applicant.CodePairing, applicant.FirstTech, applicant.SecondTech, applicant.Comment]
         end
       else
         csv << %W[Name RollNo]
@@ -70,7 +70,7 @@ class Applicants < ActiveRecord::Base
       elsif (round == "Final")
         csv << %W[Name RollNo Gender EmailAdd PhoneNo Score Branch Role CodePairing FirstTech SecondTech Comment College]
         @colleges.each do |college|
-          college.logic_pursues(cutoff).each do |applicant|
+          college.final_pursues().each do |applicant|
             csv << [applicant.Name, applicant.RollNo, applicant.Gender, applicant.EmailAdd, applicant.PhoneNo, applicant.Score, applicant.Branch, applicant.Role, applicant.CodePairing, applicant.FirstTech, applicant.SecondTech, applicant.Comment, college.name]
           end
         end
