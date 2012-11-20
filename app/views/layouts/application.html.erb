@@ -86,92 +86,108 @@
         <!--  start nav -->
         <div class="nav">
 
-        <span class="select">
+
         <% if @pool == true %>
-        <a href="/applicant/show/<%= "#{@college.name}" %>">
+              <span class="select">
+              <a href="/applicant/show/<%= "#{@college.name}" %>">
           <b>
             Applicant Details
           </b>
         </a>
+              </span>
           <% else %>
+                    <span class="select">
         <a href="/applicant/show/<%= "#{@college.id}" %>">
-          <% end %>
           <b>
             Applicant Details
           </b>
         </a>
         </span>
+          <% end %>
 
           <div class="nav-divider">&nbsp;</div>
 
-        <span class="select">
+
           <% if @pool == true %>
-        <a href="/applicant/codePairing/<%= "#{@college.name}" %>">
+              <span class="select">
+              <a href="/applicant/codePairing/<%= "#{@college.name}" %>">
           <b>
             Code Pairing
           </b>
         </a>
+                  </span>
           <% else %>
+              <span class="select">
         <a href="/applicant/codePairing/<%= "#{@college.id}" %>">
-          <% end %>
           <b>
             Code Pairing
           </b>
           </a>
         </span>
+          <% end %>
 
           <div class="nav-divider">&nbsp;</div>
 
-        <span class="select">
+
           <% if @pool == true %>
-        <a href="/applicant/firstTech/<%= "#{@college.name}" %>">
+              <span class="select">
+              <a href="/applicant/firstTech/<%= "#{@college.name}" %>">
           <b>
             First Technical
           </b>
         </a>
+                  </span>
           <% else %>
+              <span class="select">
         <a href="/applicant/firstTech/<%= "#{@college.id}" %>">
-          <% end %>
           <b>
             First Technical
           </b>
           </a>
         </span>
+          <% end %>
 
           <div class="nav-divider">&nbsp;</div>
 
-        <span class="select">
+
           <% if @pool == true %>
-        <a href="/applicant/secondTech/<%= "#{@college.name}" %>">
+              <span class="select">
+              <a href="/applicant/secondTech/<%= "#{@college.name}" %>">
           <b>
             Second Technical
           </b>
         </a>
+                  </span>
           <% else %>
+              <span class="select">
         <a href="/applicant/secondTech/<%= "#{@college.id}" %>">
-          <% end %>
+
           <b>
             Second Technical
           </b>
           </a>
         </span>
-          <div class="nav-divider">&nbsp;</div>
+          <% end %>
+              <div class="nav-divider">&nbsp;</div>
 
-        <span class="select">
+
           <% if @pool == true %>
-        <a href="/applicant/final_pursued/<%= "#{@college.name}" %>">
+              <span class="select">
+              <a href="/applicant/final_pursued/<%= "#{@college.name}" %>">
           <b>
             Final Pursues
           </b>
         </a>
+                  </span>
               <% else %>
+              <span class="select">
           <a href="/applicant/final_pursued/<%= "#{@college.id}" %>">
             <b>
               Final Pursues
             </b>
           </a>
-              <% end %>
         </span>
+          <% end %>
 
           <div class="clear"></div>
         </div>
