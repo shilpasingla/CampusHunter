@@ -6,6 +6,16 @@
 <% content_for :styles do %>
     <%= stylesheet_link_tag "pro_dropline_ie" %>
     <%= stylesheet_link_tag "pro_dropline" %>
+    <style type="text/css">
+        a.listOfColleges {
+            background: url(/assets/table/listOfColleges.jpg) no-repeat;
+            display: block;
+            float: left;
+            height: 24px;
+            margin: 0 10px 0 0;
+            width: 24px;
+        }
+    </style>
 <% end %>
 
 <div id="page-heading">
@@ -46,11 +56,12 @@
                 <td><%= pool.numberOfColleges %></td>
                 <td><%= pool.numberOfApplicants %></td>
                 <td><%= pool.cutoff %></td>
-                <td><%= link_to "", url="/pool/delete/#{pool.id }", :class => "icon-2 info-tooltip",
-                                :confirm => "Are you sure you want to delete #{pool.name}",:id => "remove" %> &nbsp; &nbsp;
-                  <%= link_to "List of colleges", url="/college/show/#{pool.name }",
+                <td>&nbsp; &nbsp; <%= link_to "", url="/pool/delete/#{pool.id }", :class => "icon-2 info-tooltip",
+                                              :confirm => "Are you sure you want to delete #{pool.name}", :id => "remove" %> &nbsp; &nbsp;
+                  <%= link_to "", url="/college/show/#{pool.name }", :class => "listOfColleges info-tooltip",
                               :id => "listOfColleges" %>
                 </td>
+
               </tr>
           <% end %>
         </table>
