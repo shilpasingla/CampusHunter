@@ -48,7 +48,8 @@ Then /^I should be redirected to the applicants of "(.*)" page$/ do |collegename
 end
 
 Given /^I am on the "(.*)" page of "(.*)"$/ do |page, collegename|
-  path = page + collegename
+  id = (College.find_by_name(collegename)).id
+  path = page + id.to_s
   visit "/sessions/new"
   fill_in 'email', :with => "test_user"
   fill_in 'password', :with => "abcd"
@@ -57,5 +58,5 @@ Given /^I am on the "(.*)" page of "(.*)"$/ do |page, collegename|
 end
 
 When /^Reload the page$/ do
-  visit "/applicant/show/sample_college"
+  visit "/applicant/show/1"
 end
