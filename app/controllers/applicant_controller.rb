@@ -3,14 +3,15 @@ require 'csv'
 class ApplicantController < ApplicationController
 
   before_filter :require_login
-def home
 
-end
+  def home
+
+  end
 
   def secondTech
     @college = College.find_by_name(params[:collegename])
     @applicant = []
-    if(@college.nil?)
+    if (@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
       pool = Pool.find_by_name(params[:collegename])
       if @college != []
@@ -34,7 +35,7 @@ end
   def final_pursued
     @college = College.find_by_name(params[:collegename])
     @applicant = []
-    if(@college.nil?)
+    if (@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
       pool = Pool.find_by_name(params[:collegename])
       if @college != []
@@ -58,7 +59,7 @@ end
   def firstTech
     @college = College.find_by_name(params[:collegename])
     @applicant = []
-    if(@college.nil?)
+    if (@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
       pool = Pool.find_by_name(params[:collegename])
       if @college != []
@@ -82,7 +83,7 @@ end
   def codePairing
     @applicant = []
     @college = College.find_by_name(params[:collegename])
-    if(@college.nil?)
+    if (@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
       pool = []
       if !params[:cutoff].blank?
@@ -90,7 +91,7 @@ end
         pool.update_column(:cutoff, params[:cutoff])
       end
       @college.each do |college|
-          college.update_column(:cutoff, pool.cutoff)
+        college.update_column(:cutoff, pool.cutoff)
         @applicants_per_college = college.logic_pursues(college.cutoff)
         @applicants_per_college.each do |app|
           @applicant << app
@@ -100,20 +101,20 @@ end
       @pool = true
       @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
       return @applicant
-      end
-    if(!@college.nil?)
+    end
+    if (!@college.nil?)
       if !params[:cutoff].blank?
         @college.update_column(:cutoff, params[:cutoff])
       end
-        @applicant = Kaminari.paginate_array(@college.logic_pursues(@college.cutoff)).page(params[:page]).per(20)
-        return @applicant
+      @applicant = Kaminari.paginate_array(@college.logic_pursues(@college.cutoff)).page(params[:page]).per(20)
+      return @applicant
     end
   end
 
   def show
     @college = College.find_by_name(params[:collegename])
     @applicant = []
-    if(@college.nil?)
+    if (@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
       pool = Pool.find_by_name(params[:collegename])
       if @college != []
@@ -169,7 +170,7 @@ end
   def show_selected
     @college = College.find_by_name(params[:college_name])
     @applicant = []
-    if(@college.nil?)
+    if (@college.nil?)
       @college = College.find_all_by_poolName(params[:college_name])
       pool = Pool.find_by_name(params[:college_name])
       if @college != []
@@ -202,22 +203,23 @@ end
     if @college.nil?
       @college = College.find_all_by_poolName(params[:collegename])
     end
-    @college.each do |college|
-    if params[:Final_Pursued]=="true"
-      @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "collegeId" = ? AND "Result" = ? ', "%#{params[:search_name]}%", "#{college.id}", true)).page(params[:page]).per(20)
-    else
-      params[:First_Tech_Pursued] == "true" ?
-          @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "collegeId" = ? AND "FirstStatus" = ? ', "%#{params[:search_name]}%", "#{college.id}", true)).page(params[:page]).per(20) :
-          if params[:Pairing_Pursued] == "true"
-            @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "collegeId" = ? AND "PairingStatus" = ? ', "%#{params[:search_name]}%", "#{college.id}", true)).page(params[:page]).per(20)
-          else
-            if  params[:Logic_Pursued] =="true"
-              @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "collegeId" = ? AND "Score" >= ?', "%#{params[:search_name]}%", "#{college.id}", "#{college.cutoff}")).page(params[:page]).per(20)
+
+    Array(@college).each do |college|
+      if params[:Final_Pursued]=="true"
+        @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "collegeId" = ? AND "Result" = ? ', "%#{params[:search_name]}%", "#{college.id}", true)).page(params[:page]).per(20)
+      else
+        params[:First_Tech_Pursued] == "true" ?
+            @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "collegeId" = ? AND "FirstStatus" = ? ', "%#{params[:search_name]}%", "#{college.id}", true)).page(params[:page]).per(20) :
+            if params[:Pairing_Pursued] == "true"
+              @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "collegeId" = ? AND "PairingStatus" = ? ', "%#{params[:search_name]}%", "#{college.id}", true)).page(params[:page]).per(20)
             else
-              @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "collegeId" = ?', "#{params[:search_name]}%", "#{college.id}")).page(params[:page]).per(20)
+              if  params[:Logic_Pursued] =="true"
+                @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "collegeId" = ? AND "Score" >= ?', "%#{params[:search_name]}%", "#{college.id}", "#{college.cutoff}")).page(params[:page]).per(20)
+              else
+                @applicant =Kaminari.paginate_array(Applicants.where('"Name" like ? AND "collegeId" = ?', "#{params[:search_name]}%", "#{college.id}")).page(params[:page]).per(20)
+              end
             end
-          end
-    end
+      end
     end
     render "show.js.erb"
   end
