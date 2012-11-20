@@ -56,7 +56,7 @@
                 <td><%= pool.numberOfColleges %></td>
                 <td><%= pool.numberOfApplicants %></td>
                 <td><%= pool.cutoff %></td>
-                <td>&nbsp; &nbsp; <%= link_to "", url="/pool/delete/#{pool.id }", :class => "icon-2 info-tooltip",
+                <td>&nbsp; &nbsp; <%= link_to "", url="/pool/delete/#{pool.name }", :class => "icon-2 info-tooltip",
                                               :confirm => "Are you sure you want to delete #{pool.name}", :id => "remove" %> &nbsp; &nbsp;
                   <%= link_to "", url="/college/show/#{pool.name }", :class => "listOfColleges info-tooltip",
                               :id => "listOfColleges" %>

@@ -24,18 +24,23 @@ module CollegeHelper
     @col = []
     CSV.new(file_name.tempfile, :headers => true).each do |row|
       hash = row.to_hash
-      collegename = hash["college"]
+      collegeName = hash["college"]
       hash.delete("college")
-      colleges = College.find_all_by_name(collegename)
-      colleges.each do |college|
-        if(college.poolName == pool_name)
-          @col = college
-        end
-      end
-      if(@col == [])
+      colleges = College.find_all_by_name(collegeName)
+      if(colleges == [])
+        @col = College.create!(:name => collegeName, :poolName => pool_name, :numberofapplicant => 0, :cutoff => 0)
         numberOfColleges = numberOfColleges + 1
-        @col = College.create!(:name => collegename, :poolName => pool_name, :numberofapplicant => 0, :cutoff => 0)
-        end
+      else
+        colleges.each do |college|
+            if(college.poolName == pool_name)
+              @col = college
+            else
+              @col = College.create!(:name => collegeName, :poolName => pool_name, :numberofapplicant => 0, :cutoff => 0)
+              numberOfColleges = numberOfColleges + 1
+            end
+
+          end
+      end
       app = Applicants.create!(hash)
       numberOfApplicants = numberOfApplicants +1
           app.update_attribute(:collegeId, @col.id)
