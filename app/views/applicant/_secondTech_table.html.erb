@@ -49,9 +49,10 @@
           pass
         </td>
         <td style="text-align: center; padding: 5px;">
-          <%# text_area :applicant, :comment, :class => "Comment",
+          <%= text_area :applicant, :comment, :class => "Comment",
                         :value => app.Comment,
-                        :id => "#{app.id}", :onchange => "autoSave(this)", :rows => 2, :cols => 30 %></td>
+                        :id => "#{app.id}", :onchange => "autoSave(this)", :rows => 2, :cols => 30 %>
+        </td>
         <% if @pool == true %>
             <td style="text-align: left;"><%= College.find_by_id(app.collegeId).name %> </td>
         <% end %>
