@@ -39,7 +39,7 @@ CampusHunter::Application.routes.draw do
       get 'show'
       post 'show'
       get 'download'
-      get 'download_for_college'
+      get 'download_for_campus'
       get 'show_selected'
       get 'search'
     end
@@ -49,7 +49,7 @@ CampusHunter::Application.routes.draw do
   match "applicant/secondTech/:collegename" => 'Applicant#secondTech'
   match "applicant/final_pursued/:collegename" => 'Applicant#final_pursued'
   match "applicant/download/:round/:collegename/" => 'Applicant#download'
-  match "applicant/download_for_college/:collegename/" => 'Applicant#download_for_college'
+  match "applicant/download_for_campus/:collegename/" => 'Applicant#download_for_campus'
   match "applicant/show/:collegename" => 'Applicant#show'
   match "applicant/show/:collegename/:cutoff" => 'Applicant#show'
   match "college/show" => 'College#show'

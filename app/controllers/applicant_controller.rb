@@ -139,20 +139,25 @@ end
   def download
     respond_to do |format|
 
-      if !(College.find_by_name(params[:collegename])).nil?
-      cutoff = College.find_by_name(params[:collegename]).cutoff
-      format.csv { send_data Applicants.to_csv(params[:collegename], cutoff, params[:round]) }
+      if !(College.find_by_name(params[:campusname])).nil?
+        cutoff = College.find_by_name(params[:campusname]).cutoff
+        format.csv { send_data Applicants.to_csv(params[:campusname], cutoff, params[:round]) }
       else
-        cutoff = Pool.find_by_name(params[:collegename]).cutoff
-        format.csv { send_data Applicants.to_csv_for_pool(params[:collegename], cutoff, params[:round]) }
+        cutoff = Pool.find_by_name(params[:campusname]).cutoff
+        format.csv { send_data Applicants.to_csv_for_pool(params[:campusname], cutoff, params[:round]) }
       end
-      end
+    end
   end
 
-  def download_for_college
+  def download_for_campus
     respond_to do |format|
-      cutoff = College.find_by_name(params[:collegename]).cutoff
-      format.csv { send_data Applicants.to_csv(params[:collegename], cutoff, "for college") }
+      if !(College.find_by_name(params[:campusname])).nil?
+        cutoff = College.find_by_name(params[:campusname]).cutoff
+        format.csv { send_data Applicants.to_csv(params[:campusname], cutoff, "for_campus") }
+      else
+        cutoff = Pool.find_by_name(params[:campusname]).cutoff
+        format.csv { send_data Applicants.to_csv_for_pool(params[:campusname], cutoff, "for_campus") }
+      end
     end
   end
 
