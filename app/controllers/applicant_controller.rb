@@ -168,7 +168,7 @@ class ApplicantController < ApplicationController
   end
 
   def show_selected
-    @college = College.find_by_name(params[:college_name])
+    @college = College.find_by_id(params[:college_name])
     @applicant = []
     if (@college.nil?)
       @college = College.find_all_by_poolName(params[:college_name])
@@ -199,7 +199,7 @@ class ApplicantController < ApplicationController
   end
 
   def search
-    @college = College.find_by_name(params[:collegename])
+    @college = College.find_by_id(params[:collegename])
     if @college.nil?
       @college = College.find_all_by_poolName(params[:collegename])
       if !@college.nil?
