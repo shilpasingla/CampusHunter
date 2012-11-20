@@ -14,7 +14,7 @@ class CollegeController < ApplicationController
         @college.save
         load_college_to_database params[:import], params[:name]
         @college.update_attribute(:numberofapplicant, Applicants.where(:collegeId => @college.id).count)
-        redirect_to "/applicant/show/#{@college.id}"
+        redirect_to "/applicant/show/#{@college.id  }"
       else
         @message = "College name already exists"
         render :action => "new", :layout => "sessions"

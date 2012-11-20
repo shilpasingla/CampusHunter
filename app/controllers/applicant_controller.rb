@@ -9,7 +9,7 @@ class ApplicantController < ApplicationController
   end
 
   def secondTech
-    @college = College.find_by_name(params[:collegename])
+    @college = College.find_by_id(params[:collegename])
     @applicant = []
     if (@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
@@ -33,7 +33,7 @@ class ApplicantController < ApplicationController
   end
 
   def final_pursued
-    @college = College.find_by_name(params[:collegename])
+    @college = College.find_by_id(params[:collegename])
     @applicant = []
     if (@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
@@ -57,7 +57,7 @@ class ApplicantController < ApplicationController
   end
 
   def firstTech
-    @college = College.find_by_name(params[:collegename])
+    @college = College.find_by_id(params[:collegename])
     @applicant = []
     if (@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
@@ -82,7 +82,7 @@ class ApplicantController < ApplicationController
 
   def codePairing
     @applicant = []
-    @college = College.find_by_name(params[:collegename])
+    @college = College.find_by_id(params[:collegename])
     if (@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
       pool = []
@@ -112,7 +112,7 @@ class ApplicantController < ApplicationController
   end
 
   def show
-    @college = College.find_by_name(params[:collegename])
+    @college = College.find_by_id(params[:collegename])
     @applicant = []
     if (@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
@@ -139,7 +139,7 @@ class ApplicantController < ApplicationController
 
   def download
     respond_to do |format|
-      if !(College.find_by_name(params[:collegename])).nil?
+      if !(College.find_by_id(params[:collegename])).nil?
         cutoff = College.find_by_name(params[:collegename]).cutoff
         format.csv { send_data Applicants.to_csv(params[:collegename], cutoff, params[:round]) }
       else
@@ -151,7 +151,7 @@ class ApplicantController < ApplicationController
 
   def download_for_campus
     respond_to do |format|
-      if !(College.find_by_name(params[:collegename])).nil?
+      if !(College.find_by_id(params[:collegename])).nil?
         cutoff = College.find_by_name(params[:collegename]).cutoff
         format.csv { send_data Applicants.to_csv(params[:collegename], cutoff, "for_campus") }
       else
