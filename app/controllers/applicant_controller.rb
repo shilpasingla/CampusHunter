@@ -116,10 +116,8 @@ end
     if(@college.nil?)
       @college = College.find_all_by_poolName(params[:collegename])
       pool = Pool.find_by_name(params[:collegename])
-      applicants_in_pool = 0
       if @college != []
         @college.each do |college|
-          applicants_in_pool = applicants_in_pool + Applicants.where(:collegeId => college.id).count
           college.update_attribute(:numberofapplicant, Applicants.where(:collegeId => college.id).count)
           @applicants_per_college = college.logic_pursues(college.cutoff)
 
@@ -129,7 +127,6 @@ end
         end
         @college = pool
         @pool = true
-        pool.update_attribute(:numberOfApplicants, applicants_in_pool)
         @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
         return @applicant
       end
