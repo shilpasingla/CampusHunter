@@ -14,7 +14,7 @@
           <input type="button" value="Download csv" class="submit-shortList">
         </a>
             <% else %>
-            <a href="/applicant/download/<%= "SecondTech" %>/<%= "#{@college.id}" %>.csv">
+            <a href="/applicant/download/<%= "SecondTech" %>/<%= "#{@college.id}" %>/<%= "#{@college.name}" %>.csv">
               <input type="button" value="Download csv" class="submit-shortList">
             </a>
             <% end %>
