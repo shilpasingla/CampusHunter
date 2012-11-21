@@ -139,9 +139,9 @@ class ApplicantController < ApplicationController
 
   def download
     respond_to do |format|
-      if !(College.find_by_id(params[:collegename])).nil?
-        cutoff = College.find_by_id(params[:collegename]).cutoff
-        format.csv { send_data Applicants.to_csv(params[:collegename], cutoff, params[:round]) }
+      if !(College.find_by_id(params[:collegeId])).nil?
+        cutoff = College.find_by_id(params[:collegeId]).cutoff
+        format.csv { send_data Applicants.to_csv(params[:collegeId], cutoff, params[:round]) }
       else
         cutoff = Pool.find_by_name(params[:collegename]).cutoff
         format.csv { send_data Applicants.to_csv_for_pool(params[:collegename], cutoff, params[:round]) }
@@ -151,9 +151,9 @@ class ApplicantController < ApplicationController
 
   def download_for_campus
     respond_to do |format|
-      if !(College.find_by_id(params[:collegename])).nil?
-        cutoff = College.find_by_id(params[:collegename]).cutoff
-        format.csv { send_data Applicants.to_csv(params[:collegename], cutoff, "for_campus") }
+      if !(College.find_by_id(params[:collegeId])).nil?
+        cutoff = College.find_by_id(params[:collegeId]).cutoff
+        format.csv { send_data Applicants.to_csv(params[:collegeId], cutoff, "for_campus") }
       else
         cutoff = Pool.find_by_name(params[:collegename]).cutoff
         format.csv { send_data Applicants.to_csv_for_pool(params[:collegename], cutoff, "for_campus") }
