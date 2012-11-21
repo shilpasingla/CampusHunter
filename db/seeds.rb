@@ -23,3 +23,4 @@ Applicants.create!(:Name => 'Tarun Singh', :RollNo => '100806124', :collegeId =>
 Applicants.create!(:Name => 'Malvika Mittal', :RollNo => '100806125', :collegeId => 1, :Comment => "abc")
 Applicants.create!(:Name => 'Priyanka', :RollNo => '100806126', :collegeId => 1, :Comment => "abc")
 Applicants.create!(:Name => 'Vikrant Kapila', :RollNo => '100806127', :collegeId => 1, :Comment => "abc")
+Pool.create!(:name => 'sample_pool',:cutoff => 0,:numberOfColleges => 0,:numberOfApplicants => 0)

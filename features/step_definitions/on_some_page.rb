@@ -42,6 +42,11 @@ Then /^It should direct me to the new college form/ do
   page.should have_content("Create")
 end
 
+Then /^It should direct me to the new pool form/ do
+  page.should have_content("Create")
+end
+
+
 Then /^I should be redirected to the applicants of "(.*)" page$/ do |collegename|
   path = "/applicant/show/"+collegename
   get path
