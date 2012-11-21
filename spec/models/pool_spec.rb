@@ -15,4 +15,14 @@ describe "validations" do
     pool.should_not be_valid
   end
 
+  it "should not create a new instance of a pool given numberOfApplicants is not numerical" do
+    pool = Pool.new(@pool_attr.merge(:numberOfApplicants => "wrongNo"))
+    pool.should_not be_valid
+  end
+
+  it "should not create a new instance of a pool given numberOfColleges is not numerical" do
+    pool = Pool.new(@pool_attr.merge(:numberOfColleges => "wrongNo"))
+    pool.should_not be_valid
+  end
+
 end
