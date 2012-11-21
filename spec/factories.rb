@@ -7,6 +7,15 @@ FactoryGirl.define do
 
   end
 
+  factory :Pool do
+    name "Sample_Pool"
+    numberOfApplicants 50
+    cutoff 6
+    numberOfColleges 4
+
+  end
+
+
   factory :User do
     email "test_user"
     password "abcd"
