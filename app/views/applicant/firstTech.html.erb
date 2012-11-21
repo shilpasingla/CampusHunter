@@ -10,7 +10,7 @@
       <div style="float: left; padding-bottom: 5px;">
         <%= hidden_field_tag :collegename, params[:collegename] %>
         <% if @pool == true %>
-        <a href="/applicant/download/<%= "FirstTech" %>/<%= "#{@college.name}" %>.csv">
+        <a href="/applicant/download/<%= "FirstTech" %>/<%= "#{@college.name}" %>/<%= "#{@college.name}" %>.csv">
           <input type="button" value="Download csv" class="submit-shortList">
         </a>
             <% else %>
