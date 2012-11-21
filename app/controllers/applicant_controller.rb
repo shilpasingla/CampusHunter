@@ -23,11 +23,12 @@ class ApplicantController < ApplicationController
         end
         @college = pool
         @pool = true
-        @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
+        @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
         return @applicant
       end
     else
-      @applicant = Kaminari.paginate_array(@college.firstTech_pursues()).page(params[:page]).per(20)
+      @applicant = @college.firstTech_pursues()
+      @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
       return @applicant
     end
   end
@@ -47,11 +48,12 @@ class ApplicantController < ApplicationController
         end
         @college = pool
         @pool = true
-        @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
+        @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
         return @applicant
       end
     else
-      @applicant = Kaminari.paginate_array(@college.final_pursues()).page(params[:page]).per(20)
+      @applicant = @college.final_pursues()
+      @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
       return @applicant
     end
   end
@@ -71,11 +73,12 @@ class ApplicantController < ApplicationController
         end
         @college = pool
         @pool = true
-        @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
+        @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
         return @applicant
       end
     else
-      @applicant = Kaminari.paginate_array(@college.pairing_pursues()).page(params[:page]).per(20)
+      @applicant = @college.pairing_pursues()
+      @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
       return @applicant
     end
   end
@@ -99,14 +102,15 @@ class ApplicantController < ApplicationController
       end
       @college = pool
       @pool = true
-      @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
+      @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
       return @applicant
     end
     if (!@college.nil?)
       if !params[:cutoff].blank?
         @college.update_column(:cutoff, params[:cutoff])
       end
-      @applicant = Kaminari.paginate_array(@college.logic_pursues(@college.cutoff)).page(params[:page]).per(20)
+      @applicant = @college.logic_pursues(@college.cutoff)
+      @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
       return @applicant
     end
   end
@@ -128,11 +132,12 @@ class ApplicantController < ApplicationController
         end
         @college = pool
         @pool = true
-        @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
+        @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
         return @applicant
       end
     else
-      @applicant = Kaminari.paginate_array(@college.logic_pursues(@college.cutoff)).page(params[:page]).per(20)
+      @applicant = @college.logic_pursues(@college.cutoff)
+      @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
       return @applicant
     end
   end
@@ -182,7 +187,7 @@ class ApplicantController < ApplicationController
             @applicant << applicant
           end
 
-          @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
+          @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
 
 
         end
@@ -193,7 +198,8 @@ class ApplicantController < ApplicationController
 
     else
       @college.update_attribute(:cutoff, params[:cutoff])
-      @applicant = Kaminari.paginate_array(@college.logic_pursues(@college.cutoff)).page(params[:page]).per(20)
+      @applicant = @college.logic_pursues(@college.cutoff)
+      @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
     end
     render 'show.js.erb'
   end
