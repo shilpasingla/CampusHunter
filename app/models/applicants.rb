@@ -32,9 +32,9 @@ class Applicants < ActiveRecord::Base
           csv << [applicant.Name, applicant.RollNo, applicant.Gender, applicant.EmailAdd, applicant.PhoneNo, applicant.Score, applicant.Branch, applicant.Role, applicant.CodePairing, applicant.FirstTech, applicant.SecondTech, applicant.Comment]
         end
       else
-        csv << %W[Name RollNo]
+        csv << %W[Name RollNo EmailAdd]
         @college.logic_pursues(cutoff).each do |applicant|
-          csv << [applicant.Name, applicant.RollNo]
+          csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd]
         end
       end
     end
@@ -75,10 +75,10 @@ class Applicants < ActiveRecord::Base
           end
         end
       else
-        csv << %W[Name RollNo College]
+        csv << %W[Name RollNo EmailAdd College]
         @colleges.each do |college|
           college.logic_pursues(cutoff).each do |applicant|
-            csv << [applicant.Name, applicant.RollNo, college.name]
+            csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd, college.name]
           end
         end
       end
