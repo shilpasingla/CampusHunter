@@ -20,7 +20,7 @@
         <% end %>
         &nbsp; &nbsp;
         <% if @pool == true %>
-        <a href="/applicant/download_for_campus/<%= "#{@college.name}" %>.csv">
+        <a href="/applicant/download_for_campus/<%= "#{@college.name}" %>/<%= "#{@college.name}" %>.csv">
           <input type="button" value="CSV For Campus" class="submit-shortList">
         </a>
             <% else %>
