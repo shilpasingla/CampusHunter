@@ -21,7 +21,7 @@ describe SessionsController do
     user = User.new
     User.should_receive(:authenticate).with("email", "password").and_return(user)
     post :create, {:email => "email", :password => "password"}
-    response.should redirect_to("/college/show_all")
+    response.should redirect_to(root_path)
   end
 
   it "should delete the given user" do

@@ -21,7 +21,7 @@ describe ApplicantController do
   it "should download csv sheet for a college" do
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     #Applicants.stub(:to_csv).with("thapar",3).as_null_object
-    get :download, {:format => :csv, :collegename => "thapar"}
+    get :download, {:format => :csv, :collegename => "thapar", :collegeId => 1}
     assert_response :success
 
   end
@@ -46,7 +46,7 @@ describe ApplicantController do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     College.stub(:pairing_pursues)
-    get :pairing_pursues, {:collegename => "thapar"}
+    get :firstTech, {:collegename => "thapar"}
     assert_response :success
   end
 
@@ -54,15 +54,15 @@ describe ApplicantController do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     College.stub(:firstTech_pursues)
-    get :pairing_pursues, {:collegename => "thapar"}
+    get :secondTech, {:collegename => "thapar"}
     assert_response :success
   end
 
   it "should render list of selected applicants from second technical" do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
-    College.stub(:second_tech_pursued)
-    get :pairing_pursues, {:collegename => "thapar"}
+    College.stub(:final_pursues)
+    get :final_pursued, {:collegename => "thapar"}
     assert_response :success
   end
 

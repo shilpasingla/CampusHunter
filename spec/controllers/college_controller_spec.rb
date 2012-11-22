@@ -17,7 +17,7 @@ describe CollegeController do
 
   it "should redirect to new college page if no file is specified for import" do
     ApplicationController.any_instance.stub(:require_login).and_return(true)
-    post :create
+    post :create, {:name => "AIT"}
     response.should render_template('college/new')
   end
 
@@ -26,7 +26,8 @@ describe CollegeController do
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     CollegeController.any_instance.stub(:load_college_to_database).with("something", "AIT")
     post :create, {:import => "something", :name => "AIT"}
-    response.should redirect_to("/applicant/show/AIT")
+    colId = College.find_by_name("AIT").id
+    response.should redirect_to("/applicant/show/#{colId}")
   end
 
   it "should redirect to list of colleges page" do
