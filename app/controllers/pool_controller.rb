@@ -1,6 +1,6 @@
 class PoolController < ApplicationController
   before_filter :require_login
-  include CollegeHelper
+  include PoolHelper
   #helper_method :load_csv_to_database
 
   def new
@@ -10,7 +10,10 @@ class PoolController < ApplicationController
   def create
     if College.where(:poolName => params[:name]).count == 0
       Pool.create!(:name => params[:name], :numberOfColleges => 0, :numberOfApplicants => 0, :cutoff => 0)
-      load_pool_to_database params[:import], params[:name]
+      if (load_pool_to_database params[:import], params[:name]) == false
+        @message = "Please check your csv. RollNo or Name is missing"
+        render :action => "new", :layout => "sessions"
+      else
       colleges = College.find_all_by_poolName(params[:name])
       totalApplicants = 0
       colleges.each do |college|
@@ -20,6 +23,7 @@ class PoolController < ApplicationController
       end
       (Pool.find_by_name(params[:name])).update_attributes(:numberOfColleges => colleges.count, :numberOfApplicants => totalApplicants)
       redirect_to "/applicant/show/#{params[:name]}"
+      end
     else
       @message = "Pool name already exists"
       render :action => "new", :layout => "sessions"
