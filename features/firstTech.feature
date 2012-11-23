@@ -29,4 +29,4 @@ Feature: List of pairing pursues
     When Check the pursue box of a student
     And Click "Next Round" button
     Then I should be directed to the "Final Pursues" page
-    And Should contain "2"
+#    And Should contain "2"
