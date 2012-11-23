@@ -29,8 +29,11 @@
 <% end %>
 
 <div id="page-heading">
-  <h1>Applicant's Details </h1>
+ <h1> <%= params[:cutoff] %> </h1>
+  <br/>
+  <h2>Applicant's Details </h2>
   <br/> <br/>
+
   <%= form_tag({:action => 'codePairing'}, {:method => 'get'}) do %>
       <%= hidden_field_tag :collegename, params[:collegename] %>
       <%= hidden_field_tag :round, params[:round]%>
