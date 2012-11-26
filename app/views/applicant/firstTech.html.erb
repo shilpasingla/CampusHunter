@@ -19,6 +19,16 @@
             </a>
             <% end %>
         &nbsp; &nbsp;
+        <% if @pool == true %>
+            <a href="/applicant/download_for_campus/<%= "FirstTech" %>/<%= "#{@college.name}" %>/<%= "#{@college.name}" %>.csv">
+              <input type="button" value="CSV For Campus" class="submit-shortList">
+            </a>
+        <% else %>
+            <a href="/applicant/download_for_campus/<%= "FirstTech" %>/<%= "#{@college.id}" %>/<%= "#{@college.name}" %>.csv">
+              <input type="button" value="CSV For Campus" class="submit-shortList">
+            </a>
+        <% end %>
+        &nbsp; &nbsp;
         <%= submit_tag("Next Round", :class => "submit-shortList") %>
       </div>
   <% end %>

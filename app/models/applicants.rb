@@ -31,15 +31,37 @@ class Applicants < ActiveRecord::Base
         @college.final_pursues().each do |applicant|
           csv << [applicant.Name, applicant.RollNo, applicant.Gender, applicant.EmailAdd, applicant.PhoneNo, applicant.Score, applicant.Branch, applicant.Role, applicant.CodePairing, applicant.FirstTech, applicant.SecondTech, applicant.Comment]
         end
-      else
-        csv << %W[Name RollNo EmailAdd]
-        @college.logic_pursues(cutoff).each do |applicant|
-          csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd]
-        end
       end
     end
   end
 
+  def self.to_csv_for_campus(college_id, cutoff, round)
+    @college = College.find_by_id(college_id)
+
+    CSV.generate do |csv|
+      if (round == "CodePairing")
+        csv << %W[Name RollNo EmailAdd]
+        @college.logic_pursues(cutoff).each do |applicant|
+          csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd]
+        end
+      elsif (round == "FirstTech")
+        csv << %W[Name RollNo EmailAdd]
+        @college.pairing_pursues().each do |applicant|
+          csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd]
+        end
+      elsif (round == "SecondTech")
+        csv << %W[Name RollNo EmailAdd]
+        @college.firstTech_pursues().each do |applicant|
+          csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd]
+        end
+      elsif (round == "Final")
+        csv << %W[Name RollNo EmailAdd]
+        @college.final_pursues().each do |applicant|
+          csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd]
+        end
+        end
+      end
+    end
 
 
   def self.to_csv_for_pool(college_name, cutoff, round)
@@ -78,6 +100,42 @@ class Applicants < ActiveRecord::Base
         csv << %W[Name RollNo EmailAdd College]
         @colleges.each do |college|
           college.logic_pursues(cutoff).each do |applicant|
+            csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd, college.name]
+          end
+        end
+      end
+    end
+  end
+
+  def self.to_csv_for_pool_campus(college_name, cutoff, round)
+    @colleges = College.find_all_by_poolName(college_name)
+
+    CSV.generate do |csv|
+      if (round == "CodePairing")
+        csv << %W[Name RollNo EmailAdd College]
+        @colleges.each do |college|
+          college.logic_pursues(cutoff).each do |applicant|
+            csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd, college.name]
+          end
+        end
+      elsif (round == "FirstTech")
+        csv << %W[Name RollNo EmailAdd College]
+        @colleges.each do |college|
+          college.pairing_pursues().each do |applicant|
+            csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd, college.name]
+          end
+        end
+      elsif (round == "SecondTech")
+        csv << %W[Name RollNo EmailAdd College]
+        @colleges.each do |college|
+          college.firstTech_pursues().each do |applicant|
+            csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd, college.name]
+          end
+        end
+      elsif (round == "Final")
+        csv << %W[Name RollNo EmailAdd College]
+        @colleges.each do |college|
+          college.final_pursues().each do |applicant|
             csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd, college.name]
           end
         end

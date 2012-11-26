@@ -158,10 +158,10 @@ class ApplicantController < ApplicationController
     respond_to do |format|
       if !(College.find_by_id(params[:collegeId])).nil?
         cutoff = College.find_by_id(params[:collegeId]).cutoff
-        format.csv { send_data Applicants.to_csv(params[:collegeId], cutoff, "for_campus") }
+        format.csv { send_data Applicants.to_csv_for_campus(params[:collegeId], cutoff, params[:round]) }
       else
         cutoff = Pool.find_by_name(params[:collegename]).cutoff
-        format.csv { send_data Applicants.to_csv_for_pool(params[:collegename], cutoff, "for_campus") }
+        format.csv { send_data Applicants.to_csv_for_pool_campus(params[:collegename], cutoff, params[:round]) }
       end
     end
   end
