@@ -12,11 +12,6 @@
   <h1>List of Colleges
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <%= params[:name] %>
-    <div style="float: right;">
-      <h2>
-        <%= link_to "Add New College", new_college_path, :id => "addNewCollege", :style => "color: #4b4b4b;" %>
-      </h2>
-    </div>
   </h1>
 </div>
 
@@ -37,6 +32,7 @@
             <th class="table-header-repeat line-left"><a>Name</a></th>
             <th class="table-header-repeat line-left"><a>Number Of Applicants</a></th>
             <th class="table-header-repeat line-left"><a>Cutoff</a></th>
+            <th class="table-header-repeat line-left"><a>Year</a></th>
             <th class="table-header-options line-left"><a>Options</a></th>
           </tr>
 
@@ -45,6 +41,7 @@
                 <td><%= link_to college.name, url="/applicant/show/#{college.id}/#{college.name}" %></td>
                 <td><%= college.numberofapplicant %></td>
                 <td><%= college.cutoff %></td>
+                <td><%= college.pool.year %></td>
                 <td><%= link_to "Delete", url="/college/delete/#{college.id }",
                                 :confirm => "Are you sure you want to delete #{college.name}",:id => "remove" %></td>
               </tr>

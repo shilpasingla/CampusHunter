@@ -1,7 +1,8 @@
 class College < ActiveRecord::Base
-  attr_accessible :numberofapplicant, :name, :cutoff, :poolName
+  attr_accessible :numberofapplicant, :name, :cutoff, :poolId
   validates :numberofapplicant, :numericality => {:only_integer => true}
   validates :name, :presence => true
+  belongs_to :pool, :foreign_key => :poolId
 
   def logic_pursues(cutoff)
     @col = []

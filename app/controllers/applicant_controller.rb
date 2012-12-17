@@ -12,7 +12,7 @@ class ApplicantController < ApplicationController
     @college = College.find_by_id(params[:collegename])
     @applicant = []
     if (@college.nil?)
-      @college = College.find_all_by_poolName(params[:collegename])
+      @college = Pool.find_by_name(params[:collegename]).colleges
       pool = Pool.find_by_name(params[:collegename])
       if @college != []
         @college.each do |college|
@@ -37,7 +37,7 @@ class ApplicantController < ApplicationController
     @college = College.find_by_id(params[:collegename])
     @applicant = []
     if (@college.nil?)
-      @college = College.find_all_by_poolName(params[:collegename])
+      @college = Pool.find_by_name(params[:collegename]).colleges
       pool = Pool.find_by_name(params[:collegename])
       if @college != []
         @college.each do |college|
@@ -62,7 +62,7 @@ class ApplicantController < ApplicationController
     @college = College.find_by_id(params[:collegename])
     @applicant = []
     if (@college.nil?)
-      @college = College.find_all_by_poolName(params[:collegename])
+      @college = Pool.find_by_name(params[:collegename]).colleges
       pool = Pool.find_by_name(params[:collegename])
       if @college != []
         @college.each do |college|
@@ -87,7 +87,7 @@ class ApplicantController < ApplicationController
     @applicant = []
     @college = College.find_by_id(params[:collegename])
     if (@college.nil?)
-      @college = College.find_all_by_poolName(params[:collegename])
+      @college = Pool.find_by_name(params[:collegename]).colleges
       pool = []
       pool = Pool.find_by_name(params[:collegename])
       if !params[:cutoff].blank?
@@ -119,7 +119,7 @@ class ApplicantController < ApplicationController
     @college = College.find_by_id(params[:collegename])
     @applicant = []
     if (@college.nil?)
-      @college = College.find_all_by_poolName(params[:collegename])
+      @college = Pool.find_by_name(params[:collegename]).colleges
       pool = Pool.find_by_name(params[:collegename])
       if @college != []
         @college.each do |college|
@@ -176,7 +176,7 @@ class ApplicantController < ApplicationController
     @college = College.find_by_id(params[:college_name])
     @applicant = []
     if (@college.nil?)
-      @college = College.find_all_by_poolName(params[:college_name])
+      @college = Pool.find_by_name(params[:collegename]).colleges
       pool = Pool.find_by_name(params[:college_name])
       if @college != []
         @college.each do |college|
@@ -209,7 +209,7 @@ class ApplicantController < ApplicationController
     @applicant1 = []
     @applicant = []
     if @college.nil?
-      @college = College.find_all_by_poolName(params[:collegename])
+      @college = Pool.find_by_name(params[:collegename]).colleges
       if !@college.nil?
         @college.each do |college|
           @applicant1 << Applicants.where('LOWER("Name") like ? AND "collegeId" = ?', "#{params[:search_name].downcase}%", "#{college.id}").page(params[:page]).per(20)

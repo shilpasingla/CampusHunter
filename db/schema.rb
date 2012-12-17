@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121217073637) do
+ActiveRecord::Schema.define(:version => 20121217105930) do
 
   create_table "applicants", :force => true do |t|
     t.string   "Name"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20121217073637) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.integer  "cutoff"
-    t.string   "poolName"
+    t.integer  "poolId"
   end
 
   create_table "pools", :force => true do |t|
