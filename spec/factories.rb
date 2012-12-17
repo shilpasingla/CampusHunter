@@ -12,7 +12,7 @@ FactoryGirl.define do
     numberOfApplicants 50
     cutoff 6
     numberOfColleges 4
-
+    year 2012
   end
 
 

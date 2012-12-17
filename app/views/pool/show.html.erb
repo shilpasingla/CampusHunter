@@ -46,6 +46,7 @@
             <th class="table-header-repeat line-left"><a>Name</a></th>
             <th class="table-header-repeat line-left"><a>Number Of Colleges</a></th>
             <th class="table-header-repeat line-left"><a>Number Of Applicants</a></th>
+            <th class="table-header-repeat line-left"><a>Year</a></th>
             <th class="table-header-repeat line-left"><a>Cutoff</a></th>
             <th class="table-header-options line-left"><a>Options</a></th>
           </tr>
@@ -55,6 +56,7 @@
                 <td><%= link_to pool.name, url="/applicant/show/#{pool.name}" %></td>
                 <td><%= pool.numberOfColleges %></td>
                 <td><%= pool.numberOfApplicants %></td>
+                <td><%= pool.year %></td>
                 <td><%= pool.cutoff %></td>
                 <td>&nbsp; &nbsp; <%= link_to "Delete", url="/pool/delete/#{pool.name }",
                                               :confirm => "Are you sure you want to delete #{pool.name}", :id => "remove" %> &nbsp; | &nbsp;
