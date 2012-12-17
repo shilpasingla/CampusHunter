@@ -35,7 +35,6 @@ FactoryGirl.define do
     Role "dev"
     Score 12
     SecondTech "ashu"
-    college "Thapar"
     RollNo 1
     Gender "f"
     EmailAdd "a@b.com"
