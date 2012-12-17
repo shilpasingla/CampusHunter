@@ -9,26 +9,26 @@ class CollegeController < ApplicationController
   end
 
   def create
-      if College.where(:name => params[:name], :poolName => nil).count == 0
-        @college = College.new(:name => params[:name], :numberofapplicant => 0, :cutoff => 0)
-        @college.save
-        if (load_college_to_database params[:import], params[:name]) == false
-          @message = "Please check your csv. RollNo or Name is missing"
-          render :action => "new", :layout => "sessions"
-        else
-          @college.update_attribute(:numberofapplicant, Applicants.where(:collegeId => @college.id).count)
-          redirect_to "/applicant/show/#{@college.id  }"
-        end
-      else
-        @message = "College name already exists"
+    if College.where(:name => params[:name], :poolName => nil).count == 0
+      @college = College.new(:name => params[:name], :numberofapplicant => 0, :cutoff => 0)
+      @college.save
+      if !(load_college_to_database params[:import], params[:name])
+        @message = "Please check your csv. RollNo or Name is missing"
         render :action => "new", :layout => "sessions"
+      else
+        @college.update_attribute(:numberofapplicant, Applicants.where(:collegeId => @college.id).count)
+        redirect_to "/applicant/show/#{@college.id  }"
       end
+    else
+      @message = "College name already exists"
+      render :action => "new", :layout => "sessions"
+    end
   end
 
   def show
     @colleges = []
-    if !params[:name].nil?
-    @colleges = Kaminari.paginate_array(College.find_all_by_poolName(params[:name])).page(params[:page]).per(100)
+    if params[:name].present?
+      @colleges = Kaminari.paginate_array(College.find_all_by_poolName(params[:name])).page(params[:page]).per(100)
     else
       colleges = College.all
       colleges.each do |college|
@@ -36,11 +36,11 @@ class CollegeController < ApplicationController
           @colleges << college
         end
       end
-    @colleges = Kaminari.paginate_array(@colleges).page(params[:page]).per(100)
-    respond_to do |format|
-      format.html { render 'college/show' }
-      format.json { render json: @colleges }
-    end
+      @colleges = Kaminari.paginate_array(@colleges).page(params[:page]).per(100)
+      respond_to do |format|
+        format.html { render 'college/show' }
+        format.json { render json: @colleges }
+      end
     end
   end
 

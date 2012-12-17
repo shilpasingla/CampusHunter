@@ -8,17 +8,17 @@ module CollegeHelper
     colleges = College.find_all_by_name(college_name)
     colleges.each do |college|
       if(college.poolName == nil)
-       @col = college
+        @col = college
       end
     end
-  CSV.new(file_name.tempfile, :headers => true).each do |row|
-    hash = row.to_hash
-    if(hash["RollNo"].nil? || hash["Name"].nil?)
-      return false
-    end
-    app = Applicants.create!(hash)
-        app.update_attribute(:collegeId, @col.id)
+    return false if file_name.nil?
+    CSV.new(file_name.tempfile, :headers => true).each do |row|
+      hash = row.to_hash
+      if(hash["RollNo"].nil? || hash["Name"].nil?)
+        return false
       end
+      app = Applicants.create!(hash)
+      app.update_attribute(:collegeId, @col.id)
+    end
   end
-
 end
