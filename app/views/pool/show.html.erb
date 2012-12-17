@@ -1,5 +1,5 @@
 <% content_for :title do %>
-    CampusHunter - List of Pools
+    CampusHunter - List of Campuses
 <% end %>
 
 
@@ -19,11 +19,11 @@
 <% end %>
 
 <div id="page-heading">
-  <h1>List of Pools
+  <h1>List of Campuses
 
     <div style="float: right;">
       <h2>
-        <%= link_to "Add New Pool", new_pool_path, :id => "addNewPool", :style => "color: #4b4b4b;" %>
+        <%= link_to "Add New Campus", new_pool_path, :id => "addNewPool", :style => "color: #4b4b4b;" %>
       </h2>
     </div>
   </h1>
@@ -53,7 +53,7 @@
 
           <% @pools.each do |pool| %>
               <tr>
-                <td><%= link_to pool.name, url="/applicant/show/#{pool.name}" %></td>
+                <td><%= link_to pool.name, url="/applicant/show/#{pool.name}/#{pool.name}" %></td>
                 <td><%= pool.numberOfColleges %></td>
                 <td><%= pool.numberOfApplicants %></td>
                 <td><%= pool.year %></td>

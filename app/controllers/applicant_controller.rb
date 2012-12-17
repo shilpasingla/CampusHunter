@@ -176,7 +176,7 @@ class ApplicantController < ApplicationController
     @college = College.find_by_id(params[:college_name])
     @applicant = []
     if (@college.nil?)
-      @college = Pool.find_by_name(params[:collegename]).colleges
+      @college = Pool.find_by_name(params[:college_name]).colleges
       pool = Pool.find_by_name(params[:college_name])
       if @college != []
         @college.each do |college|
