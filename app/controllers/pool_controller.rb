@@ -8,22 +8,23 @@ class PoolController < ApplicationController
   end
 
   def create
-    if params[:append_to_pool] || Pool.find_all_by_name(params[:name]).count == 0
-      if Pool.find_all_by_name(params[:name]).count == 0
-        Pool.create!(:name => params[:name], :numberOfColleges => 0, :numberOfApplicants => 0, :cutoff => 0)
+    pool = Pool.find_by_name_and_year(params[:name], params[:year])
+    if params[:append_to_pool] || pool.nil?
+      if pool.nil?
+        pool = Pool.create!(:name => params[:name], :numberOfColleges => 0, :numberOfApplicants => 0, :cutoff => 0, :year => params[:year])
       end
-      @message = load_pool_to_database params[:import], params[:name]
+      @message = load_pool_to_database params[:import], params[:name], params[:year]
       if(@message.present?)
         render :action => "new", :layout => "sessions"
       else
-      colleges = Pool.find_by_name(params[:name]).colleges
+      colleges = pool.colleges
       totalApplicants = 0
       colleges.each do |college|
         numberOfApplicants = Applicants.find_all_by_collegeId(college.id).count
         college.update_attribute(:numberofapplicant, numberOfApplicants)
         totalApplicants +=numberOfApplicants
       end
-      (Pool.find_by_name(params[:name])).update_attributes(:numberOfColleges => colleges.count, :numberOfApplicants => totalApplicants)
+      pool.update_attributes(:numberOfColleges => colleges.count, :numberOfApplicants => totalApplicants)
       redirect_to "/applicant/show/#{params[:name]}/#{params[:name]}"
       end
     else
