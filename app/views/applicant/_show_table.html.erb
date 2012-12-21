@@ -6,7 +6,7 @@
     <th class="table-header-repeat line-left"><a>EmailAdd</a></th>
     <th class="table-header-repeat line-left"><a>Phone Number</a></th>
     <th class="table-header-repeat line-left"><a>Qualification</a></th>
-    <th class="table-header-repeat line-left"><a>Specialization</a></th>
+    <th class="table-header-repeat line-left"><a>Branch</a></th>
     <th class="table-header-repeat line-left"><a>Percentage</a></th>
     <th class="table-header-repeat line-left"><a>Score</a></th>
     <% if @pool == true %>
@@ -36,6 +36,6 @@
   <% end %>
 
 </table>
-
+<% if(@applicant.present?) %>
 <%= paginate @applicant %>
-
+<% end %>

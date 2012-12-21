@@ -8,10 +8,12 @@ class PoolController < ApplicationController
   end
 
   def create
-    if Pool.find_by_name(params[:name]).count == 0
-      Pool.create!(:name => params[:name], :numberOfColleges => 0, :numberOfApplicants => 0, :cutoff => 0)
+    if params[:append_to_pool] || Pool.find_all_by_name(params[:name]).count == 0
+      if Pool.find_all_by_name(params[:name]).count == 0
+        Pool.create!(:name => params[:name], :numberOfColleges => 0, :numberOfApplicants => 0, :cutoff => 0)
+      end
       if (load_pool_to_database params[:import], params[:name]) == false
-        @message = "Please check your csv. RollNo or Name is missing"
+        @message = "Please check your csv. RollNo or Name is missing at row number #{@count}"
         render :action => "new", :layout => "sessions"
       else
       colleges = Pool.find_by_name(params[:name]).colleges
@@ -22,7 +24,7 @@ class PoolController < ApplicationController
         totalApplicants +=numberOfApplicants
       end
       (Pool.find_by_name(params[:name])).update_attributes(:numberOfColleges => colleges.count, :numberOfApplicants => totalApplicants)
-      redirect_to "/applicant/show/#{params[:name]}"
+      redirect_to "/applicant/show/#{params[:name]}/#{params[:name]}"
       end
     else
       @message = "Pool name already exists"

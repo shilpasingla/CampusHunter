@@ -119,6 +119,7 @@ class ApplicantController < ApplicationController
     @college = College.find_by_id(params[:collegename])
     @applicant = []
     if (@college.nil?)
+      @pool = true
       @college = Pool.find_by_name(params[:collegename]).colleges
       pool = Pool.find_by_name(params[:collegename])
       if @college != []
@@ -131,10 +132,10 @@ class ApplicantController < ApplicationController
           end
         end
         @college = pool
-        @pool = true
         @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
         return @applicant
       end
+      @college = College.new(:cutoff => 0,:name => params[:collegename])
     else
       @applicant = @college.logic_pursues(@college.cutoff)
       @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)

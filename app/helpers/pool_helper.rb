@@ -6,8 +6,11 @@ module PoolHelper
   def load_pool_to_database(file_name, pool_name)
     @col = []
     pool = Pool.find_by_name(pool_name)
+    roll_no = ""
+    @count = 2
     CSV.new(file_name.tempfile, :headers => true).each do |row|
       hash = row.to_hash
+      roll_no = hash["RollNo"]
       if(hash["RollNo"].nil? || hash["Name"].nil?)
         return false
       end
@@ -24,6 +27,7 @@ module PoolHelper
           app.update_attribute(:collegeId, college.id)
         end
       end
-    end
+      @count = @count + 1
+    end rescue p "Error loading row for RollNo : #{roll_no}, Row number : #{@count}"
   end
 end
