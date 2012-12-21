@@ -44,10 +44,10 @@ CampusHunter::Application.routes.draw do
       get 'search'
     end
   end
-  match "applicant/codePairing/:collegename" => 'Applicant#codePairing'
-  match "applicant/firstTech/:collegename" => 'Applicant#firstTech'
-  match "applicant/secondTech/:collegename" => 'Applicant#secondTech'
-  match "applicant/final_pursued/:collegename" => 'Applicant#final_pursued'
+  match "applicant/codePairing/:type/:id" => 'Applicant#codePairing'
+  match "applicant/firstTech/:type/:id" => 'Applicant#firstTech'
+  match "applicant/secondTech/:type/:id" => 'Applicant#secondTech'
+  match "applicant/final_pursued/:type/:id" => 'Applicant#final_pursued'
   match "applicant/download/:round/:collegeId/:collegename" => 'Applicant#download'
   match "applicant/download_for_campus/:round/:collegeId/:collegename" => 'Applicant#download_for_campus'
   match "applicant/show/:collegeId" => 'Applicant#show'

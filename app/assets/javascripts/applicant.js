@@ -1,11 +1,17 @@
 $(document).ready(function () {
-
     $('#search').keyup(function () {
-        $.get("/applicant/search", {search_name:$(this).val(), collegename:$('#search').attr("collegename"), partial:$('#search').attr("partial"), Logic_Pursued:$('#search').attr("LogicPursued"), Pairing_Pursued:$('#search').attr("ParingPursued"), First_Tech_Pursued:$('#search').attr("FirstTechPursued"), Final_Pursued:$('#search').attr("FinalPursued")}, null, "script");
+        var my_values =  {search_name:$(this).val(),
+            poolname:$('#search').attr("poolname"),
+            collegeId:$('#search').attr("collegeId"),
+            year:$('#search').attr("year"),
+            partial:$('#search').attr("partial"),
+            Logic_Pursued:$('#search').attr("LogicPursued"),
+            Pairing_Pursued:$('#search').attr("ParingPursued"),
+            First_Tech_Pursued:$('#search').attr("FirstTechPursued"),
+            Final_Pursued:$('#search').attr("FinalPursued")};
+        $.get("/applicant/search",my_values , null, "script");
         return false;
     });
-
-
 });
 
 

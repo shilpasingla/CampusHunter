@@ -17,12 +17,12 @@
                 value:<%= @college.cutoff %>,
                 slide:function (event, ui) {
                     $("#cutoff").val(ui.value);
-                    if($('#college_id').length ) {
-                        $.get("/applicant/show_selected", {cutoff:ui.value, collegeId:$('#college_id').val(),
+                    if(!<%=@pool.present? && @pool%> ) {
+                        $.get("/applicant/show_selected", {cutoff:ui.value, collegeId:'<%= params[:collegeId]%>',
                             partial:$('#search').attr("partial") }, null, "script");
                     }
                     else {
-                       $.get("/applicant/show_selected", {cutoff:ui.value, poolname:$('#poolname').val(),
+                       $.get("/applicant/show_selected", {cutoff:ui.value, poolname:'<%= params[:poolname] %>', year: '<%=params[:year]%>',
                            partial:$('#search').attr("partial") }, null, "script");
                     }
                 }
@@ -40,11 +40,6 @@
   <br/> <br/>
 
   <%= form_tag({:action => 'codePairing'}, {:method => 'get'}) do %>
-      <%= if @pool
-            hidden_field_tag :poolname, params[:poolname]
-          else
-            hidden_field_tag :college_id, params[:collegeId]
-          end  %>
       <%= hidden_field_tag :round, params[:round]%>
       <div style="float: left; padding-bottom: 5px;">
         <table>
@@ -64,8 +59,14 @@
       </div>
 
       <div style=" float: right;">
-        <%= search_field_tag "search", nil, :placeholder => "search",
-                             :partial => "show_table", :collegename => @college.name %>
+        <%= if @pool.present?
+              search_field_tag "search", nil, :placeholder => "search",
+                             :partial => "show_table", :poolname => @college.name , :year => @college.year
+            else
+              search_field_tag "search", nil, :placeholder => "search",
+                               :partial => "show_table", :collegeId => @college.id
+            end
+        %>
       </div>
   <% end %>
 </div>
