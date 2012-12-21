@@ -65,7 +65,7 @@ class Applicants < ActiveRecord::Base
 
 
   def self.to_csv_for_pool(college_name, cutoff, round)
-    @colleges = College.find_all_by_poolName(college_name)
+    @colleges = Pool.find_all_by_poolName(college_name).colleges
 
     CSV.generate do |csv|
       if (round == "CodePairing")
