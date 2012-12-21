@@ -17,8 +17,14 @@
                 value:<%= @college.cutoff %>,
                 slide:function (event, ui) {
                     $("#cutoff").val(ui.value);
-                    $.get("/applicant/show_selected", {cutoff:ui.value, college_name:$('#collegename').val(),
-                        partial:$('#search').attr("partial") }, null, "script");
+                    if($('#college_id').length ) {
+                        $.get("/applicant/show_selected", {cutoff:ui.value, collegeId:$('#college_id').val(),
+                            partial:$('#search').attr("partial") }, null, "script");
+                    }
+                    else {
+                       $.get("/applicant/show_selected", {cutoff:ui.value, poolname:$('#poolname').val(),
+                           partial:$('#search').attr("partial") }, null, "script");
+                    }
                 }
             });
             $("#cutoff").val(<%= @college.cutoff %>);
@@ -28,13 +34,17 @@
 <% end %>
 
 <div id="page-heading">
- <h1> <%= params[:cutoff] %> </h1>
+  <h1> <%= params[:collegeId].nil? ? params[:poolname] : @college.name %> </h1>
   <br/>
   <h2>Applicant's Details </h2>
   <br/> <br/>
 
   <%= form_tag({:action => 'codePairing'}, {:method => 'get'}) do %>
-      <%= hidden_field_tag :collegename, params[:collegename] %>
+      <%= if @pool
+            hidden_field_tag :poolname, params[:poolname]
+          else
+            hidden_field_tag :college_id, params[:collegeId]
+          end  %>
       <%= hidden_field_tag :round, params[:round]%>
       <div style="float: left; padding-bottom: 5px;">
         <table>

@@ -53,7 +53,7 @@
 
           <% @pools.each do |pool| %>
               <tr>
-                <td><%= link_to pool.name, url="/applicant/show/#{pool.name}/#{pool.name}" %></td>
+                <td><%= link_to pool.name, url="/applicant/show/#{pool.name}/#{pool.year}" %></td>
                 <td><%= pool.numberOfColleges %></td>
                 <td><%= pool.numberOfApplicants %></td>
                 <td><%= pool.year %></td>
