@@ -7,12 +7,18 @@ module PoolHelper
     @col = []
     pool = Pool.find_by_name(pool_name)
     roll_no = ""
-    @count = 2
+    count = 2
     CSV.new(file_name.tempfile, :headers => true).each do |row|
       hash = row.to_hash
       roll_no = hash["RollNo"]
-      if(hash["RollNo"].nil? || hash["Name"].nil?)
-        return false
+      if count == 2
+        header_errors = %w(RollNo Name Gender college PhoneNo EmailAdd Qualification Branch Percentage) - hash.keys
+        if(header_errors.count > 0)
+          return "Please check your csv. for missing/corrupt HEADERS : #{header_errors}"
+        end
+      end
+      if roll_no.nil? || hash['Name'].nil?
+        return "Please check your csv. for missing RollNo or Name : at row number #{count}"
       end
       collegename = hash["college"]
       hash.delete("college")
@@ -28,6 +34,6 @@ module PoolHelper
         end
       end
       @count = @count + 1
-    end rescue p "Error loading row for RollNo : #{roll_no}, Row number : #{@count}"
+    end rescue return "Error loading row for RollNo : #{roll_no}, Row number : #{count}"
   end
 end
