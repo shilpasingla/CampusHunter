@@ -23,6 +23,10 @@
                             isError = true;
                             errorString += '<li>Please enter pool name.</li>';
                         }
+                        if ($('#year').val() == '') {
+                            isError = true;
+                            errorString += '<li>Please enter year.</li>';
+                        }
                         if ($('#import').val() == '') {
                             isError = true;
                             errorString += '<li>Please select a csv file.</li>';
