@@ -7,7 +7,7 @@ module CollegeHelper
     @col = []
     colleges = College.find_all_by_name(college_name)
     colleges.each do |college|
-      if(college.poolName == nil)
+      if(college.poolId == nil)
         @col = college
       end
     end

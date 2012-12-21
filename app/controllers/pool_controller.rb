@@ -8,13 +8,13 @@ class PoolController < ApplicationController
   end
 
   def create
-    if Pool.find_by_poolName(params[:name]).count == 0
+    if Pool.find_by_name(params[:name]).count == 0
       Pool.create!(:name => params[:name], :numberOfColleges => 0, :numberOfApplicants => 0, :cutoff => 0)
       if (load_pool_to_database params[:import], params[:name]) == false
         @message = "Please check your csv. RollNo or Name is missing"
         render :action => "new", :layout => "sessions"
       else
-      colleges = Pool.find_by_poolName(params[:name]).colleges
+      colleges = Pool.find_by_name(params[:name]).colleges
       totalApplicants = 0
       colleges.each do |college|
         numberOfApplicants = Applicants.find_all_by_collegeId(college.id).count
@@ -39,7 +39,7 @@ class PoolController < ApplicationController
   end
 
   def delete
-    @colleges= Pool.find_by_poolName(params[:name]).colleges
+    @colleges= Pool.find_by_name(params[:name]).colleges
     @colleges.each do |college|
       Applicants.delete_all(:collegeId => college.id)
       College.delete_all(:id => college.id)
