@@ -39,7 +39,7 @@
   <h2>Applicant's Details </h2>
   <br/> <br/>
 
-  <%= form_tag({:action => 'codePairing'}, {:method => 'get'}) do %>
+  <%= form_tag({:action => 'codePairing', :id => @college.id, :type => (@pool.present? && @pool ? 'pool' : 'college')}, {:method => 'post'}) do %>
       <%= hidden_field_tag :round, params[:round]%>
       <div style="float: left; padding-bottom: 5px;">
         <table>

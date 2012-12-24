@@ -6,9 +6,8 @@
   <h1>Code Pairing Round</h1>
   <br/> <br/>
 
-  <%= form_tag({:action => 'firstTech'}, {:method => 'get'}) do %>
+  <%= form_tag({:action => 'firstTech', :id=>params[:id], :type=> params[:type]}, {:method => 'post'}) do %>
       <div style="float: left; padding-bottom: 5px;">
-        <%= hidden_field_tag :collegename, params[:collegename] %>
         <% if @pool == true %>
         <a href="/applicant/download/<%= "CodePairing" %>/<%= "#{@college.name}" %>/<%= "#{@college.name}" %>.csv">
           <input type="button" value="Download csv" class="submit-shortList">

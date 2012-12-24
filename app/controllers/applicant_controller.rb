@@ -9,11 +9,11 @@ class ApplicantController < ApplicationController
   end
 
   def secondTech
-    @college = College.find_by_id(params[:collegename])
+    @college = College.find_by_id(params[:id])
     @applicant = []
-    if (@college.nil?)
-      @college = Pool.find_by_name(params[:collegename]).colleges
-      pool = Pool.find_by_name(params[:collegename])
+    if (params[:type] == "pool")
+      pool = Pool.find_by_id(params[:id])
+      @college = pool.colleges
       if @college != []
         @college.each do |college|
           @applicants_per_college = college.firstTech_pursues()
@@ -34,11 +34,11 @@ class ApplicantController < ApplicationController
   end
 
   def final_pursued
-    @college = College.find_by_id(params[:collegename])
+    @college = College.find_by_id(params[:id])
     @applicant = []
-    if (@college.nil?)
-      @college = Pool.find_by_name(params[:collegename]).colleges
-      pool = Pool.find_by_name(params[:collegename])
+    if (params[:type] == "pool")
+      pool = Pool.find_by_id(params[:id])
+      @college = pool.colleges
       if @college != []
         @college.each do |college|
           @applicants_per_college = college.final_pursues()
@@ -59,11 +59,11 @@ class ApplicantController < ApplicationController
   end
 
   def firstTech
-    @college = College.find_by_id(params[:collegename])
+    @college = College.find_by_id(params[:id])
     @applicant = []
-    if (@college.nil?)
-      @college = Pool.find_by_name(params[:collegename]).colleges
-      pool = Pool.find_by_name(params[:collegename])
+    if (params[:type] == "pool")
+      pool = Pool.find_by_id(params[:id])
+      @college = pool.colleges
       if @college != []
         @college.each do |college|
           @applicants_per_college = college.pairing_pursues()
