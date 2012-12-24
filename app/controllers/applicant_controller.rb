@@ -204,33 +204,29 @@ class ApplicantController < ApplicationController
   end
 
   def search
-    @college = College.find_by_id(params[:collegeId])
+    @college = []
     @applicant = []
-    if @college.nil?
+    college = College.find_by_id(params[:collegeId])
+    if college.nil?
       @college = Pool.find_by_name_and_year(params[:poolname], params[:year]).colleges
-      if @college.present?
-        @applicant = Applicants.where('LOWER("Name") like ? AND "collegeId" in (?)', params[:search_name].downcase, @college.collect(&:id))
-      end
-      @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
     else
-      Array(@college).each do |college|
-        if params[:Final_Pursued]=="true"
-          @applicant =Kaminari.paginate_array(Applicants.where('LOWER("Name") like ? AND "collegeId" = ? AND "Result" = ? ', "%#{params[:search_name].downcase}%", "#{college.id}", true)).page(params[:page]).per(20)
-        else
-          params[:First_Tech_Pursued] == "true" ?
-              @applicant =Kaminari.paginate_array(Applicants.where('LOWER("Name") like ? AND "collegeId" = ? AND "FirstStatus" = ? ', "%#{params[:search_name].downcase}%", "#{college.id}", true)).page(params[:page]).per(20) :
-              if params[:Pairing_Pursued] == "true"
-                @applicant =Kaminari.paginate_array(Applicants.where('LOWER("Name") like ? AND "collegeId" = ? AND "PairingStatus" = ? ', "%#{params[:search_name].downcase}%", "#{college.id}", true)).page(params[:page]).per(20)
-              else
-                if  params[:Logic_Pursued] =="true"
-                  @applicant =Kaminari.paginate_array(Applicants.where('LOWER("Name") like ? AND "collegeId" = ? AND "Score" >= ?', "%#{params[:search_name].downcase}%", "#{college.id}", "#{college.cutoff}")).page(params[:page]).per(20)
-                else
-                  @applicant =Kaminari.paginate_array(Applicants.where('LOWER("Name") like ? AND "collegeId" = ?', "#{params[:search_name].downcase}%", "#{college.id}")).page(params[:page]).per(20)
-                end
-              end
-        end
+      @college << college
+    end
+    Array(@college).each do |college|
+      where_clause = Applicants.where('LOWER("Name") like ? AND "collegeId" = ?',"%#{params[:search_name].downcase}%",college.id)
+      if params[:Final_Pursued]=="true"
+        @applicant = @applicant + where_clause.where('"Result" = ?',true).all
+      elsif params[:First_Tech_Pursued] == "true"
+        @applicant = @applicant + where_clause.where('"FirstStatus" = ? ', true).all
+      elsif params[:Pairing_Pursued] == "true"
+        @applicant = @applicant + where_clause.where('"PairingStatus" = ? ', true).all
+      elsif params[:Logic_Pursued] =="true"
+        @applicant = @applicant + where_clause.where('"Score" >= ?', college.cutoff).all
+      else
+        @applicant = @applicant + where_clause.all
       end
     end
+    @applicant = Kaminari.paginate_array(@applicant).page(params[:page]).per(20)
     render "show.js.erb"
   end
 end

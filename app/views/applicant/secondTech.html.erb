@@ -33,13 +33,23 @@
   <% end %>
 
   <div style=" float: right;">
-    <%= search_field_tag "search", nil, :placeholder => "search",
-                         :partial => "secondTech_table",
-                         :LogicPursued => "false",
-                         :ParingPursued => "false",
-                         :collegename => @college.name,
-                         :FirstTechPursued => "true",
-                         :FinalPursued => "false" %>
+    <%= if @pool.present?
+          search_field_tag "search", nil, :placeholder => "search",
+                           :partial => "secondTech_table", :poolname => @college.name , :year => @college.year,
+                           :LogicPursued => "false",
+                           :ParingPursued => "false",
+                           :FirstTechPursued => "true",
+                           :FinalPursued => "false"
+        else
+          search_field_tag "search", nil, :placeholder => "search",
+                           :partial => "secondTech_table", :collegeId => @college.id,
+                           :LogicPursued => "false",
+                           :ParingPursued => "false",
+                           :FirstTechPursued => "true",
+                           :FinalPursued => "false"
+
+        end
+    %>
   </div>
 </div>
 <div class="clear"></div>
