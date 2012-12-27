@@ -15,11 +15,11 @@ module PoolHelper
         if count == 2
           header_errors = %w(RollNo Name Gender college PhoneNo EmailAdd Qualification Branch Percentage) - hash.keys
           if(header_errors.count > 0)
-            return "Please check your csv. for missing/corrupt HEADERS : #{header_errors}"
+            @message ="Please check your csv. for missing/corrupt HEADERS : #{header_errors}"
           end
         end
         if roll_no.nil? || hash['Name'].nil?
-          return "Please check your csv. for missing RollNo or Name : at row number #{count}"
+          @message ="Please check your csv. for missing RollNo or Name : at row number #{count}"
         end
         collegename = hash["college"]
         hash.delete("college")
@@ -31,7 +31,8 @@ module PoolHelper
         app.update_attribute(:collegeId, @col.id)
         count = count + 1
       rescue Exception => e 
-        return "Error loading row for RollNo : #{roll_no}, Row number : #{count}, error message : #{e.message}"
+        @message = "Error loading row for RollNo : #{roll_no}, Row number : #{count}, error message : #{e.message}"
+        raise e
       end
     end
   end

@@ -10,22 +10,24 @@ class PoolController < ApplicationController
   def create
     pool = Pool.find_by_name_and_year(params[:name], params[:year])
     if params[:append_to_pool] || pool.nil?
-      if pool.nil?
-        pool = Pool.create!(:name => params[:name], :numberOfColleges => 0, :numberOfApplicants => 0, :cutoff => 0, :year => params[:year])
-      end
-      @message = load_pool_to_database params[:import], params[:name], params[:year]
-      if(@message.present?)
+      begin
+        ActiveRecord::Base.transaction do
+          if pool.nil?
+            pool = Pool.create!(:name => params[:name], :numberOfColleges => 0, :numberOfApplicants => 0, :cutoff => 0, :year => params[:year])
+          end
+          load_pool_to_database params[:import], params[:name], params[:year]
+          colleges = pool.colleges
+          totalApplicants = 0
+          colleges.each do |college|
+            numberOfApplicants = Applicants.find_all_by_collegeId(college.id).count
+            college.update_attribute(:numberofapplicant, numberOfApplicants)
+            totalApplicants +=numberOfApplicants
+          end
+          pool.update_attributes(:numberOfColleges => colleges.count, :numberOfApplicants => totalApplicants)
+          redirect_to "/applicant/show/#{params[:name]}/#{params[:year]}"
+        end
+      rescue Exception => e
         render :action => "new", :layout => "sessions"
-      else
-      colleges = pool.colleges
-      totalApplicants = 0
-      colleges.each do |college|
-        numberOfApplicants = Applicants.find_all_by_collegeId(college.id).count
-        college.update_attribute(:numberofapplicant, numberOfApplicants)
-        totalApplicants +=numberOfApplicants
-      end
-      pool.update_attributes(:numberOfColleges => colleges.count, :numberOfApplicants => totalApplicants)
-      redirect_to "/applicant/show/#{params[:name]}/#{params[:year]}"
       end
     else
       @message = "Pool name already exists"
