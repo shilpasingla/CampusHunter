@@ -213,7 +213,7 @@ class ApplicantController < ApplicationController
       @college << college
     end
     Array(@college).each do |college|
-      where_clause = Applicants.where('LOWER("Name") like ? AND "collegeId" = ?',"%#{params[:search_name].downcase}%",college.id)
+      where_clause = Applicants.where("LOWER(\"Name\") || ' ' || LOWER(\"EmailAdd\") || ' ' || LOWER(\"RollNo\") || ' ' || LOWER(\"PhoneNo\") like ? AND \"collegeId\" = ?","%#{params[:search_name].downcase}%",college.id)
       if params[:Final_Pursued]=="true"
         @applicant = @applicant + where_clause.where('"Result" = ?',true).all
       elsif params[:First_Tech_Pursued] == "true"
