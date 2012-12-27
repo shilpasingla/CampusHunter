@@ -18,187 +18,172 @@
   <%= yield :styles %>
 
   <script type="text/javascript">
-      $(document).ready(
-              function () {
+  $(document).ready(
+    function () {
 
-                  $('.styledText').mouseover(function () {
-                      $('#menuDiv').css("visibility", "visible");
-                      $(this).css("color", "#b0c4de");
-                  });
+      $('.styledText').mouseover(function () {
+        $('#menuDiv').css("visibility", "visible");
+        $(this).css("color", "#b0c4de");
+      });
 
-                  $('.styledText').mouseout(function () {
-                      $('#menuDiv').css("visibility", "hidden");
-                      $(this).css('color', '#ffffff');
-                  });
+      $('.styledText').mouseout(function () {
+        $('#menuDiv').css("visibility", "hidden");
+        $(this).css('color', '#ffffff');
+      });
 
-                  $('#addNewCollege').mouseover(function () {
-                      $(this).css("color", "#b0c4de");
-                  });
+      $('#addNewCollege').mouseover(function () {
+        $(this).css("color", "#b0c4de");
+      });
 
-                  $('#addNewCollege').mouseout(function () {
-                      $(this).css("color", "#4b4b4b");
-                  });
-              }
-      )
+      $('#addNewCollege').mouseout(function () {
+        $(this).css("color", "#4b4b4b");
+      });
+    }
+    )
   </script>
 </head>
 
 <body>
-<div id="page-top-outer">
-  <div id="page-top">
-    <div id="logo">
-      <a href="/applicant/home">
-        <img style="width: 156px; height: 40px;" src="/assets/shared/logo.png" alt="Logo"/>
-      </a>
+  <div id="page-top-outer">
+    <div id="page-top">
+      <div id="logo">
+        <a href="/applicant/home">
+          <img style="width: 156px; height: 40px;" src="/assets/shared/logo.png" alt="Logo"/>
+        </a>
+      </div>
     </div>
+    <div id="top-search">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="styledText">
+            <% if current_user %>
+            <%= current_user.email %>
+            <div id="menuDiv" style="visibility: hidden;" class="menuItems">
+              <ul>
+                <li tabindex="-1"><%= link_to "Add User", sign_up_path %></li>
+                <li tabindex="-1"><%= link_to "Delete User", delete_user_path %></li>
+                <li tabindex="-1"><%= link_to "Logout", log_out_path %></li>
+              </ul>
+            </div>
+            <% else %>
+            Welcome
+            <% end %>
+          </td>
+          <td>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="clear"></div>
   </div>
-  <div id="top-search">
-    <table border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td class="styledText">
-          <% if current_user %>
-              <%= current_user.email %>
-              <div id="menuDiv" style="visibility: hidden;" class="menuItems">
-                <ul>
-                  <li tabindex="-1"><%= link_to "Add User", sign_up_path %></li>
-                  <li tabindex="-1"><%= link_to "Delete User", delete_user_path %></li>
-                  <li tabindex="-1"><%= link_to "Logout", log_out_path %></li>
-                </ul>
-              </div>
-          <% else %>
-              Welcome
-          <% end %>
-        </td>
-        <td>
-        </td>
-      </tr>
-    </table>
-  </div>
-  <div class="clear"></div>
-</div>
 </div>
 <div class="clear">&nbsp;</div>
 
 <% if !@college.nil? %>
-    <div class="nav-outer-repeat">
-      <!--  start nav-outer -->
-      <div class="nav-outer">
+<div class="nav-outer-repeat">
+  <!--  start nav-outer -->
+  <div class="nav-outer">
 
-        <!--  start nav -->
-        <div class="nav">
+    <!--  start nav -->
+    <div class="nav">
 
-
+      <span class=<%= request.url.include?("/applicant/show/") ? "current" : "select"%>>
         <% if @pool == true %>
-              <span class="select">
-              <a href="/applicant/show/<%= "#{@college.name}" %>/<%= "#{@college.year}" %>">
+
+        <a href="/applicant/show/<%= "#{@college.name}" %>/<%= "#{@college.year}" %>">
           <b>
             Applicant Details
           </b>
         </a>
-              </span>
-          <% else %>
-                    <span class="select">
+        <% else %>
         <a href="/applicant/show/<%= "#{@college.id}" %>">
           <b>
             Applicant Details
           </b>
         </a>
-        </span>
-          <% end %>
+        <% end %>
+      </span>
+      <div class="nav-divider">&nbsp;</div>
 
-          <div class="nav-divider">&nbsp;</div>
-
-
-          <% if @pool == true %>
-              <span class="select">
-              <a href="/applicant/codePairing/pool/<%= "#{@college.id}" %>">
+      <span class=<%= request.url.include?("/applicant/codePairing/") ? "current" : "select"%>>
+        <% if @pool == true %>
+        <a href="/applicant/codePairing/pool/<%= "#{@college.id}" %>">
           <b>
             Code Pairing
           </b>
         </a>
-                  </span>
-          <% else %>
-              <span class="select">
+        <% else %>
         <a href="/applicant/codePairing/college/<%= "#{@college.id}" %>">
           <b>
             Code Pairing
           </b>
-          </a>
-        </span>
-          <% end %>
+        </a>
+        <% end %>
+      </span>
 
-          <div class="nav-divider">&nbsp;</div>
+      <div class="nav-divider">&nbsp;</div>
 
-
-          <% if @pool == true %>
-              <span class="select">
-              <a href="/applicant/firstTech/pool/<%= "#{@college.id}" %>">
+      <span class=<%= request.url.include?("/applicant/firstTech/") ? "current" : "select"%>>
+        <% if @pool == true %>
+        <a href="/applicant/firstTech/pool/<%= "#{@college.id}" %>">
           <b>
             First Technical
           </b>
         </a>
-                  </span>
-          <% else %>
-              <span class="select">
+        <% else %>
         <a href="/applicant/firstTech/college/<%= "#{@college.id}" %>">
           <b>
             First Technical
           </b>
-          </a>
-        </span>
-          <% end %>
+        </a>
+        <% end %>
+      </span>
 
-          <div class="nav-divider">&nbsp;</div>
+      <div class="nav-divider">&nbsp;</div>
 
-
-          <% if @pool == true %>
-              <span class="select">
-              <a href="/applicant/secondTech/pool/<%= "#{@college.id}" %>">
+      <span class=<%= request.url.include?("/applicant/secondTech/") ? "current" : "select"%>>
+        <% if @pool == true %>
+        <a href="/applicant/secondTech/pool/<%= "#{@college.id}" %>">
           <b>
             Second Technical
           </b>
         </a>
-                  </span>
-          <% else %>
-              <span class="select">
+        <% else %>
         <a href="/applicant/secondTech/college/<%= "#{@college.id}" %>">
 
           <b>
             Second Technical
           </b>
-          </a>
-        </span>
-          <% end %>
-              <div class="nav-divider">&nbsp;</div>
+        </a>
+        <% end %>
+      </span>
+      <div class="nav-divider">&nbsp;</div>
 
-
-          <% if @pool == true %>
-              <span class="select">
-              <a href="/applicant/final_pursued/pool/<%= "#{@college.id}" %>">
+      <span class=<%= request.url.include?("/applicant/final_pursued/") ? "current" : "select"%>>
+      <% if @pool == true %>
+        <a href="/applicant/final_pursued/pool/<%= "#{@college.id}" %>">
           <b>
             Final Pursues
           </b>
         </a>
-                  </span>
-              <% else %>
-              <span class="select">
-          <a href="/applicant/final_pursued/college/    <%= "#{@college.id}" %>">
-            <b>
-              Final Pursues
-            </b>
-          </a>
-        </span>
-          <% end %>
+      <% else %>
+        <a href="/applicant/final_pursued/college/    <%= "#{@college.id}" %>">
+          <b>
+            Final Pursues
+          </b>
+        </a>
+      <% end %>
+      </span>
 
-          <div class="clear"></div>
-        </div>
-        <!--  start nav -->
-
-      </div>
       <div class="clear"></div>
-      <!--  start nav-outer -->
     </div>
-    <div class="clear"></div>
+    <!--  start nav -->
+
+  </div>
+  <div class="clear"></div>
+  <!--  start nav-outer -->
+</div>
+<div class="clear"></div>
 <% end %>
 <div id="content-outer">
   <div id="content">
