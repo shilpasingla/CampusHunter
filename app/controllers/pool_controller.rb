@@ -25,7 +25,7 @@ class PoolController < ApplicationController
         totalApplicants +=numberOfApplicants
       end
       pool.update_attributes(:numberOfColleges => colleges.count, :numberOfApplicants => totalApplicants)
-      redirect_to "/applicant/show/#{params[:name]}/#{params[:name]}"
+      redirect_to "/applicant/show/#{params[:name]}/#{params[:year]}"
       end
     else
       @message = "Pool name already exists"
