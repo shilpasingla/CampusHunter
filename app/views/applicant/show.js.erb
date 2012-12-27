@@ -1,1 +1,9 @@
 $("#applicants").html("<%= escape_javascript(render("#{params[:partial]}")) %>");
+
+$("#nav").find("a").each(function (index,element) {
+	var href = element.href;
+	element.href = '#';
+	$(element).click(function() {
+		$.get(href,null,function(result) {eval(result);});
+	});
+});
