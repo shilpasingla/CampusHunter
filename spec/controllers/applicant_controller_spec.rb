@@ -5,14 +5,14 @@ describe ApplicantController do
 
   before(:each) do
     @college_attr = FactoryGirl.attributes_for(:college)
-    College.create!(@college_attr.merge(:name => "thapar"))
+    @college = College.create!(@college_attr.merge(:name => "thapar"))
   end
 
   it "should get list of applicants for a given college" do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     #Applicants.stub(:search).with("thapar")
-    get :show, { :collegename => "thapar", :cutoff => 9 }
+    get :show, { :collegeId => @college.id }
     assert_response :success
 
   end
@@ -37,17 +37,14 @@ describe ApplicantController do
 
   it "should render list of selected applicants from logic test" do
     ApplicationController.any_instance.stub(:require_login).and_return(true)
-    College.stub(:find_by_name).with("AIT").and_return(College.new)
-    College.stub(:logic_pursues).with("AIT").and_return(true)
-    get :show_selected, { :cutoff => 3, :college_name => "AIT" }
+    get :show_selected, { :cutoff => 3, :collegeId => @college.id }
     assert_response :success
   end
 
   it "should render list of selected applicants from code pairing" do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
-    College.stub(:pairing_pursues)
-    get :firstTech, { :collegename => "thapar" }
+    get :firstTech, { :id => @college.id }
     assert_response :success
   end
 
@@ -55,15 +52,14 @@ describe ApplicantController do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     College.stub(:firstTech_pursues)
-    get :secondTech, { :collegename => "thapar" }
+    get :secondTech, { :id => @college.id }
     assert_response :success
   end
 
   it "should render list of selected applicants from second technical" do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
-    College.stub(:final_pursues)
-    get :final_pursued, { :collegename => "thapar" }
+    get :final_pursued, { :id => @college.id }
     assert_response :success
   end
 
