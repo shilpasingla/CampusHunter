@@ -21,7 +21,7 @@ describe ApplicantController do
   it "should download csv sheet for a college" do
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     #Applicants.stub(:to_csv).with("thapar",3).as_null_object
-    create :Pool, :name => 'thapar'
+    create :pool, :name => 'thapar'
     get :download, { :format => :csv, :collegename => "thapar", :collegeId => 1 }
     assert_response :success
 
