@@ -4,7 +4,6 @@ class CollegeController < ApplicationController
   #helper_method :load_csv_to_database
 
   def new
-
     render :layout => "sessions"
   end
 
