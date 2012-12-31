@@ -1,28 +1,6 @@
 class CollegeController < ApplicationController
   before_filter :require_login
   include CollegeHelper
-  #helper_method :load_csv_to_database
-
-  def new
-    render :layout => "sessions"
-  end
-
-  # def create
-  #   if College.where(:name => params[:name], :poolName => nil).count == 0
-  #     @college = College.new(:name => params[:name], :numberofapplicant => 0, :cutoff => 0)
-  #     @college.save
-  #     if !(load_college_to_database params[:import], params[:name])
-  #       @message = "Please check your csv. RollNo or Name is missing"
-  #       render :action => "new", :layout => "sessions"
-  #     else
-  #       @college.update_attribute(:numberofapplicant, Applicants.where(:collegeId => @college.id).count)
-  #       redirect_to "/applicant/show/#{@college.id  }"
-  #     end
-  #   else
-  #     @message = "College name already exists"
-  #     render :action => "new", :layout => "sessions"
-  #   end
-  # end
 
   def show
     @colleges = []
