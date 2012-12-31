@@ -55,7 +55,7 @@ end
 Given /^I am on the "(.*)" page of "(.*)"$/ do |page, collegename|
   id = (College.find_by_name(collegename)).id
   path = page + id.to_s
-  visit "/sessions/new"
+  visit log_in_path
   fill_in 'email', :with => "test_user"
   fill_in 'password', :with => "abcd"
   click_button 'Login'
