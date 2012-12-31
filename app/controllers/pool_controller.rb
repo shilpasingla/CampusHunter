@@ -16,7 +16,7 @@ class PoolController < ApplicationController
             pool = Pool.create!(:name => params[:name], :numberOfColleges => 0, :numberOfApplicants => 0, :cutoff => 0, :year => params[:year])
           end
           load_pool_to_database params[:import], params[:name], params[:year]
-          colleges = pool.colleges
+          colleges        = pool.colleges
           totalApplicants = 0
           colleges.each do |college|
             numberOfApplicants = Applicants.find_all_by_collegeId(college.id).count

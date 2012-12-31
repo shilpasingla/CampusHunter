@@ -9,10 +9,10 @@ class ApplicantController < ApplicationController
   end
 
   def secondTech
-    @college = College.find_by_id(params[:id])
+    @college   = College.find_by_id(params[:id])
     @applicant = []
     if (params[:type] == "pool")
-      pool = Pool.find_by_id(params[:id])
+      pool     = Pool.find_by_id(params[:id])
       @college = pool.colleges
       if @college != []
         @college.each do |college|
@@ -21,8 +21,8 @@ class ApplicantController < ApplicationController
             @applicant << applicant
           end
         end
-        @college = pool
-        @pool = true
+        @college   = pool
+        @pool      = true
         @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
         return @applicant
       end
@@ -34,10 +34,10 @@ class ApplicantController < ApplicationController
   end
 
   def final_pursued
-    @college = College.find_by_id(params[:id])
+    @college   = College.find_by_id(params[:id])
     @applicant = []
     if (params[:type] == "pool")
-      pool = Pool.find_by_id(params[:id])
+      pool     = Pool.find_by_id(params[:id])
       @college = pool.colleges
       if @college != []
         @college.each do |college|
@@ -46,8 +46,8 @@ class ApplicantController < ApplicationController
             @applicant << applicant
           end
         end
-        @college = pool
-        @pool = true
+        @college   = pool
+        @pool      = true
         @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
         return @applicant
       end
@@ -59,10 +59,10 @@ class ApplicantController < ApplicationController
   end
 
   def firstTech
-    @college = College.find_by_id(params[:id])
+    @college   = College.find_by_id(params[:id])
     @applicant = []
     if (params[:type] == "pool")
-      pool = Pool.find_by_id(params[:id])
+      pool     = Pool.find_by_id(params[:id])
       @college = pool.colleges
       if @college != []
         @college.each do |college|
@@ -71,8 +71,8 @@ class ApplicantController < ApplicationController
             @applicant << applicant
           end
         end
-        @college = pool
-        @pool = true
+        @college   = pool
+        @pool      = true
         @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
         return @applicant
       end
@@ -86,7 +86,7 @@ class ApplicantController < ApplicationController
   def codePairing
     @applicant = []
     if (params[:type] == "pool")
-      pool = Pool.find_by_id(params[:id])
+      pool     = Pool.find_by_id(params[:id])
       @college = pool.colleges
       if !params[:cutoff].blank?
         pool.update_column(:cutoff, params[:cutoff])
@@ -98,8 +98,8 @@ class ApplicantController < ApplicationController
           @applicant << app
         end
       end
-      @college = pool
-      @pool = true
+      @college   = pool
+      @pool      = true
       @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
       return @applicant
     else
@@ -114,11 +114,11 @@ class ApplicantController < ApplicationController
   end
 
   def show
-    @college = College.find_by_id(params[:collegeId])
+    @college   = College.find_by_id(params[:collegeId])
     @applicant = []
     if (@college.nil?)
-      @pool = true
-      pool = Pool.find_by_name_and_year(params[:poolname],params[:year])
+      @pool    = true
+      pool     = Pool.find_by_name_and_year(params[:poolname], params[:year])
       @college = pool.colleges
       if @college != []
         @college.each do |college|
@@ -129,11 +129,11 @@ class ApplicantController < ApplicationController
             @applicant << applicant
           end
         end
-        @college = pool
+        @college   = pool
         @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
         return @applicant
       end
-      @college = College.new(:cutoff => 0,:name => params[:poolname])
+      @college = College.new(:cutoff => 0, :name => params[:poolname])
     else
       @applicant = @college.logic_pursues(@college.cutoff)
       @applicant = Kaminari.paginate_array(@applicant.sort).page(params[:page]).per(20)
@@ -172,10 +172,10 @@ class ApplicantController < ApplicationController
   end
 
   def show_selected
-    @college = College.find_by_id(params[:collegeId])
+    @college   = College.find_by_id(params[:collegeId])
     @applicant = []
     if (@college.nil?)
-      pool = Pool.find_by_name_and_year(params[:poolname], params[:year])
+      pool     = Pool.find_by_name_and_year(params[:poolname], params[:year])
       @college = pool.colleges
       if @college != []
         @college.each do |college|
@@ -204,18 +204,18 @@ class ApplicantController < ApplicationController
   end
 
   def search
-    @college = []
+    @college   = []
     @applicant = []
-    college = College.find_by_id(params[:collegeId])
+    college    = College.find_by_id(params[:collegeId])
     if college.nil?
       @college = Pool.find_by_name_and_year(params[:poolname], params[:year]).colleges
     else
       @college << college
     end
     Array(@college).each do |college|
-      where_clause = Applicants.order("\"id\"").where("concat(LOWER(\"Name\"),' ',LOWER(\"EmailAdd\"),' ',LOWER(\"RollNo\"),' ',LOWER(\"PhoneNo\")) like ? AND \"collegeId\" = ?","%#{params[:search_name].downcase}%",college.id)
+      where_clause = Applicants.order("\"id\"").where("concat(LOWER(\"Name\"),' ',LOWER(\"EmailAdd\"),' ',LOWER(\"RollNo\"),' ',LOWER(\"PhoneNo\")) like ? AND \"collegeId\" = ?", "%#{params[:search_name].downcase}%", college.id)
       if params[:Final_Pursued]=="true"
-        @applicant = @applicant + where_clause.where('"Result" = ?',true).all
+        @applicant = @applicant + where_clause.where('"Result" = ?', true).all
       elsif params[:First_Tech_Pursued] == "true"
         @applicant = @applicant + where_clause.where('"FirstStatus" = ? ', true).all
       elsif params[:Pairing_Pursued] == "true"

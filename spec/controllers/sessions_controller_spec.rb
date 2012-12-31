@@ -12,7 +12,7 @@ describe SessionsController do
 
   it "should re-render new template on failed save" do
     User.should_receive(:authenticate).with("email", "password").and_return(nil)
-    post 'create', {:email => "email", :password => "password"}
+    post 'create', { :email => "email", :password => "password" }
     response.should render_template('new')
   end
 
@@ -20,7 +20,7 @@ describe SessionsController do
   it "should redirect to show colleges page after valid authentication of a user" do
     user = User.new
     User.should_receive(:authenticate).with("email", "password").and_return(user)
-    post :create, {:email => "email", :password => "password"}
+    post :create, { :email => "email", :password => "password" }
     response.should redirect_to(root_path)
   end
 

@@ -5,8 +5,8 @@ require "factory_girl"
 describe "validations" do
 
   before(:each) do
-    @pool_attr = FactoryGirl.attributes_for(:Pool)
-    @college_attr = FactoryGirl.attributes_for(:College)
+    @pool_attr       = FactoryGirl.attributes_for(:Pool)
+    @college_attr    = FactoryGirl.attributes_for(:College)
     @applicants_attr = FactoryGirl.attributes_for(:Applicants)
   end
 

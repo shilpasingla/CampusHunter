@@ -5,7 +5,7 @@ require "factory_girl"
 describe "validations" do
 
   before(:each) do
-    @college_attr = FactoryGirl.attributes_for(:College)
+    @college_attr    = FactoryGirl.attributes_for(:College)
     @applicants_attr = FactoryGirl.attributes_for(:Applicants)
   end
 

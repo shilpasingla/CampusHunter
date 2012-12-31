@@ -5,7 +5,7 @@ class Applicants < ActiveRecord::Base
   attr_accessible :PhoneNo, :RollNo, :Gender, :EmailAdd, :Qualification, :Percentage, :Branch, :CodePairing, :Comment, :FirstStatus, :FirstTech, :Name, :PairingStatus, :Result, :Role, :Score, :SecondTech, :collegeId
 
   validates :Name, :presence => true
-  validates :Score, :numericality => {:less_than_or_equal_to => 12, :greater_than_or_equal_to => 0}, :allow_blank => true, :allow_nil => true
+  validates :Score, :numericality => { :less_than_or_equal_to => 12, :greater_than_or_equal_to => 0 }, :allow_blank => true, :allow_nil => true
 
   def self.to_csv(college_id, cutoff, round)
     @college = College.find_by_id(college_id)
@@ -59,9 +59,9 @@ class Applicants < ActiveRecord::Base
         @college.final_pursues().each do |applicant|
           csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd]
         end
-        end
       end
     end
+  end
 
 
   def self.to_csv_for_pool(college_name, cutoff, round)

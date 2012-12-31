@@ -30,7 +30,7 @@ describe UsersController do
   it "should notify when trying to delete a non-existent user" do
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     User.should_receive(:find_by_email).with("email").and_return(nil)
-    delete :del, {:email => "email"}
+    delete :del, { :email => "email" }
     assigns(:message).should == "User doesn't exist!"
   end
 
@@ -38,7 +38,7 @@ describe UsersController do
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     user = User.new
     User.should_receive(:find_by_email).with("email").and_return(user)
-    delete :del, {:email => "email"}
+    delete :del, { :email => "email" }
     assigns(:message).should == 'User deleted successfully!'
   end
 

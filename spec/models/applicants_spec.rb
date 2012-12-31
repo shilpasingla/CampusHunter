@@ -6,7 +6,7 @@ describe "validations" do
 
   before(:each) do
     @applicants_attr = FactoryGirl.attributes_for(:Applicants)
-    @college_attr = FactoryGirl.attributes_for(:College)
+    @college_attr    = FactoryGirl.attributes_for(:College)
   end
 
   it "should create a new instance of an Applicant given valid attributes" do
@@ -25,7 +25,7 @@ describe "validations" do
 
   it "should return list of applicants for a college" do
     College.stub(:update_column).with(:cutoff, 0)
-    clg = College.create!(@college_attr.merge(:name => "iit"))
+    clg   = College.create!(@college_attr.merge(:name => "iit"))
     Smith = Applicants.create!(@applicants_attr.merge(:Name => "Smith", :collegeId => clg.id, :Score => 0))
     Arnav = Applicants.create!(@applicants_attr.merge(:Name => "Arnav", :collegeId => clg.id, :Score => 0))
 

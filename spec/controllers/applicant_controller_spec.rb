@@ -12,7 +12,7 @@ describe ApplicantController do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     #Applicants.stub(:search).with("thapar")
-    get :show, {:collegename => "thapar", :cutoff => 9}
+    get :show, { :collegename => "thapar", :cutoff => 9 }
     assert_response :success
 
   end
@@ -22,7 +22,7 @@ describe ApplicantController do
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     #Applicants.stub(:to_csv).with("thapar",3).as_null_object
     create :Pool, :name => 'thapar'
-    get :download, {:format => :csv, :collegename => "thapar", :collegeId => 1}
+    get :download, { :format => :csv, :collegename => "thapar", :collegeId => 1 }
     assert_response :success
 
   end
@@ -31,7 +31,7 @@ describe ApplicantController do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     Applicants.stub(:update).with("2", :Score => "2").and_return(true)
-    post :auto_save, {:id => 2, :score => 2, :attribute => "Score"}
+    post :auto_save, { :id => 2, :score => 2, :attribute => "Score" }
     assert_response :success
   end
 
@@ -39,7 +39,7 @@ describe ApplicantController do
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     College.stub(:find_by_name).with("AIT").and_return(College.new)
     College.stub(:logic_pursues).with("AIT").and_return(true)
-    get :show_selected, {:cutoff => 3, :college_name => "AIT"}
+    get :show_selected, { :cutoff => 3, :college_name => "AIT" }
     assert_response :success
   end
 
@@ -47,7 +47,7 @@ describe ApplicantController do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     College.stub(:pairing_pursues)
-    get :firstTech, {:collegename => "thapar"}
+    get :firstTech, { :collegename => "thapar" }
     assert_response :success
   end
 
@@ -55,7 +55,7 @@ describe ApplicantController do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     College.stub(:firstTech_pursues)
-    get :secondTech, {:collegename => "thapar"}
+    get :secondTech, { :collegename => "thapar" }
     assert_response :success
   end
 
@@ -63,7 +63,7 @@ describe ApplicantController do
 
     ApplicationController.any_instance.stub(:require_login).and_return(true)
     College.stub(:final_pursues)
-    get :final_pursued, {:collegename => "thapar"}
+    get :final_pursued, { :collegename => "thapar" }
     assert_response :success
   end
 
