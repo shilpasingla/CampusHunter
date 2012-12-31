@@ -11,3 +11,4 @@ log/
 .settings/
 config/database.yml
 db/schema.rb
+coverage/

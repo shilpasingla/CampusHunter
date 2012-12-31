@@ -8,7 +8,7 @@ gem 'rails', '3.2.8'
 gem 'pg'
 
 group :development do
-
+gem 'sqlite3', '= 1.3.6'
 end
 group :test do
 
@@ -17,6 +17,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem "rspec-rails", "~> 2.8"
+  gem 'simplecov'
 end
 gem 'heroku'
 
