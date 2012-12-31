@@ -3,7 +3,7 @@ require "factory_girl"
 
 describe PoolController do
   before(:each) do
-    @pool_attr = FactoryGirl.attributes_for(:Pool)
+    @pool_attr = FactoryGirl.attributes_for(:pool)
   end
 
   it "should direct to a login page when not logged in" do

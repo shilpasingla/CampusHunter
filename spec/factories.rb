@@ -1,13 +1,13 @@
 FactoryGirl.define do
 
-  factory :College do
+  factory :college do
     name "Thapar"
     numberofapplicant 5
     cutoff 3
-
+    association :pool
   end
 
-  factory :Pool do
+  factory :pool do
     name "Sample_Pool"
     numberOfApplicants 50
     cutoff 6
@@ -16,14 +16,14 @@ FactoryGirl.define do
   end
 
 
-  factory :User do
+  factory :user do
     email "test_user"
     password "abcd"
     password_confirmation "abcd"
 
   end
 
-  factory :Applicants do
+  factory :applicants do
     Branch "cse"
     CodePairing "rashi"
     Comment "good"

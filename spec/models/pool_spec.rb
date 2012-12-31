@@ -5,9 +5,9 @@ require "factory_girl"
 describe "validations" do
 
   before(:each) do
-    @pool_attr       = FactoryGirl.attributes_for(:Pool)
-    @college_attr    = FactoryGirl.attributes_for(:College)
-    @applicants_attr = FactoryGirl.attributes_for(:Applicants)
+    @pool_attr       = FactoryGirl.attributes_for(:pool)
+    @college_attr    = FactoryGirl.attributes_for(:college)
+    @applicants_attr = FactoryGirl.attributes_for(:applicants)
   end
 
   it "should not create a new instance of a pool given empty pool name" do

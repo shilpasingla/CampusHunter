@@ -4,7 +4,7 @@ require "factory_girl"
 describe CollegeController do
 
   before(:each) do
-    @college_attr = FactoryGirl.attributes_for(:College)
+    @college_attr = FactoryGirl.attributes_for(:college)
   end
 
   it "should redirect to login page when not logged in" do

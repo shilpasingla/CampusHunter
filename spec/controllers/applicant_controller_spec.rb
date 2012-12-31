@@ -4,7 +4,7 @@ describe ApplicantController do
 
 
   before(:each) do
-    @college_attr = FactoryGirl.attributes_for(:College)
+    @college_attr = FactoryGirl.attributes_for(:college)
     College.create!(@college_attr.merge(:name => "thapar"))
   end
 

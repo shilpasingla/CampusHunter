@@ -5,8 +5,8 @@ require "factory_girl"
 describe "validations" do
 
   before(:each) do
-    @applicants_attr = FactoryGirl.attributes_for(:Applicants)
-    @college_attr    = FactoryGirl.attributes_for(:College)
+    @applicants_attr = FactoryGirl.attributes_for(:applicants)
+    @college_attr    = FactoryGirl.attributes_for(:college)
   end
 
   it "should create a new instance of an Applicant given valid attributes" do

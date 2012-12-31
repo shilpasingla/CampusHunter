@@ -5,7 +5,7 @@ require "factory_girl"
 describe "validations" do
 
   before(:each) do
-    @user_attr = FactoryGirl.attributes_for(:User)
+    @user_attr = FactoryGirl.attributes_for(:user)
   end
 
   it "should create a new instance of a user given valid attributes" do
