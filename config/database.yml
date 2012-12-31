@@ -1,0 +1,32 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: CampusHunter_development
+  pool: 5
+  timeout: 5000
+  host: localhost
+  port: 5432
+
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  database: CampusHunter_test
+  pool: 5
+  timeout: 5000
+  host: localhost
+  port: 5432
+
+
+production:
+  adapter: postgresql
+  database: d6bo7qt5usmd29
+  pool: 5
+  timeout: 5000
+  username: cfvvwmevwfvwho
+  password: 6kQ61NH76lAsJyErPLyqXUWLqU
+  host: ec2-54-243-187-19.compute-1.amazonaws.com
+  port: 5432
+
+cucumber:
+  <<: *test
