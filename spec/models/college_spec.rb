@@ -30,17 +30,17 @@ describe "validations" do
 
   it "should give list of pursued applicants from pairing round" do
     college = College.new(@college_attr)
-    college.pairing_pursues().should == [Applicants.create!(@applicants_attr)]
+    college.pairing_pursues.should == [Applicants.create!(@applicants_attr)]
   end
 
   it "should give list of pursued applicants from first tech round" do
     college = College.new(@college_attr)
-    college.firstTech_pursues().should == [Applicants.create!(@applicants_attr)]
+    college.firstTech_pursues.should == [Applicants.create!(@applicants_attr)]
   end
 
   it "should give list of pursued applicants from second tech round" do
     college = College.new(@college_attr)
-    college.final_pursues().should == [Applicants.create!(@applicants_attr)]
+    college.final_pursues.should == [Applicants.create!(@applicants_attr)]
   end
 
 end

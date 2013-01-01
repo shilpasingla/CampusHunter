@@ -1,7 +1,6 @@
 require "spec_helper"
 require "factory_girl"
 
-
 describe "validations" do
 
   before(:each) do
@@ -47,7 +46,7 @@ describe "validations" do
 
   it "should create a new instance of a user given valid attributes" do
     user = User.new(@user_attr)
-    user.encrypt_password()
+    user.encrypt_password
     user.password.should_not == "abcd"
   end
 
