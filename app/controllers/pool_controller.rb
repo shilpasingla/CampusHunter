@@ -17,13 +17,13 @@ class PoolController < ApplicationController
           end
           load_pool_to_database params[:import], params[:name], params[:year]
           colleges        = pool.colleges
-          totalApplicants = 0
+          total_applicants = 0
           colleges.each do |college|
-            numberOfApplicants = Applicants.find_all_by_collegeId(college.id).count
-            college.update_attribute(:numberofapplicant, numberOfApplicants)
-            totalApplicants +=numberOfApplicants
+            number_of_applicants = Applicants.find_all_by_collegeId(college.id).count
+            college.update_attribute(:numberofapplicant, number_of_applicants)
+            total_applicants +=number_of_applicants
           end
-          pool.update_attributes(:numberOfColleges => colleges.count, :numberOfApplicants => totalApplicants)
+          pool.update_attributes(:numberOfColleges => colleges.count, :numberOfApplicants => total_applicants)
           redirect_to "/applicant/show/#{params[:name]}/#{params[:year]}"
         end
       rescue Exception => e
