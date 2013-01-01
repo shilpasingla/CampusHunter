@@ -12,3 +12,4 @@ log/
 db/schema.rb
 coverage/
 config/database.yml
+spec/reports/
