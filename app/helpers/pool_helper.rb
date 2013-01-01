@@ -14,7 +14,7 @@ module PoolHelper
         roll_no = hash["RollNo"]
         if count == 2
           header_errors = %w(RollNo Name Gender college PhoneNo EmailAdd Qualification Branch Percentage) - hash.keys
-          if (header_errors.count > 0)
+          if header_errors.count > 0
             @message ="Please check your csv. for missing/corrupt HEADERS : #{header_errors}"
           end
         end
@@ -24,7 +24,7 @@ module PoolHelper
         collegename = hash["college"]
         hash.delete("college")
         @col = College.find_by_name_and_poolId(collegename, pool.id)
-        if (@col.nil?)
+        if @col.nil?
           @col = College.create!(:name => collegename, :poolId => pool.id, :numberofapplicant => 0, :cutoff => 0)
         end
         app = Applicants.create!(hash)
