@@ -11,22 +11,22 @@ class Applicants < ActiveRecord::Base
     @college = College.find_by_id(college_id)
 
     CSV.generate do |csv|
-      if (round == "CodePairing")
+      if round == "CodePairing"
         csv << %W[Name RollNo Score Branch Role CodePairing PairingStatus Comment]
         @college.logic_pursues(cutoff).each do |applicant|
           csv << [applicant.Name, applicant.RollNo, applicant.Score, applicant.Branch, applicant.Role, applicant.CodePairing, applicant.PairingStatus, applicant.Comment]
         end
-      elsif (round == "FirstTech")
+      elsif round == "FirstTech"
         csv << %W[Name RollNo Score Branch Role CodePairing FirstTech FirstStatus Comment]
         @college.pairing_pursues().each do |applicant|
           csv << [applicant.Name, applicant.RollNo, applicant.Score, applicant.Branch, applicant.Role, applicant.CodePairing, applicant.FirstTech, applicant.FirstStatus, applicant.Comment]
         end
-      elsif (round == "SecondTech")
+      elsif round == "SecondTech"
         csv << %W[Name RollNo Score Branch Role CodePairing FirstTech SecondTech Result Comment]
         @college.firstTech_pursues().each do |applicant|
           csv << [applicant.Name, applicant.RollNo, applicant.Score, applicant.Branch, applicant.Role, applicant.CodePairing, applicant.FirstTech, applicant.SecondTech, applicant.Result, applicant.Comment]
         end
-      elsif (round == "Final")
+      elsif round == "Final"
         csv << %W[Name RollNo Gender EmailAdd PhoneNo Score Branch Role CodePairing FirstTech SecondTech Comment]
         @college.final_pursues().each do |applicant|
           csv << [applicant.Name, applicant.RollNo, applicant.Gender, applicant.EmailAdd, applicant.PhoneNo, applicant.Score, applicant.Branch, applicant.Role, applicant.CodePairing, applicant.FirstTech, applicant.SecondTech, applicant.Comment]
@@ -39,22 +39,22 @@ class Applicants < ActiveRecord::Base
     @college = College.find_by_id(college_id)
 
     CSV.generate do |csv|
-      if (round == "CodePairing")
+      if round == "CodePairing"
         csv << %W[Name RollNo EmailAdd]
         @college.logic_pursues(cutoff).each do |applicant|
           csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd]
         end
-      elsif (round == "FirstTech")
+      elsif round == "FirstTech"
         csv << %W[Name RollNo EmailAdd]
         @college.pairing_pursues().each do |applicant|
           csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd]
         end
-      elsif (round == "SecondTech")
+      elsif round == "SecondTech"
         csv << %W[Name RollNo EmailAdd]
         @college.firstTech_pursues().each do |applicant|
           csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd]
         end
-      elsif (round == "Final")
+      elsif round == "Final"
         csv << %W[Name RollNo EmailAdd]
         @college.final_pursues().each do |applicant|
           csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd]
@@ -68,28 +68,28 @@ class Applicants < ActiveRecord::Base
     @colleges = Pool.find_by_name(college_name).colleges
 
     CSV.generate do |csv|
-      if (round == "CodePairing")
+      if round == "CodePairing"
         csv << %W[Name RollNo Score Branch Role CodePairing PairingStatus Comment College]
         @colleges.each do |college|
           college.logic_pursues(cutoff).each do |applicant|
             csv << [applicant.Name, applicant.RollNo, applicant.Score, applicant.Branch, applicant.Role, applicant.CodePairing, applicant.PairingStatus, applicant.Comment, college.name]
           end
         end
-      elsif (round == "FirstTech")
+      elsif round == "FirstTech"
         csv << %W[Name RollNo Score Branch Role CodePairing FirstTech FirstStatus Comment College]
         @colleges.each do |college|
           college.pairing_pursues().each do |applicant|
             csv << [applicant.Name, applicant.RollNo, applicant.Score, applicant.Branch, applicant.Role, applicant.CodePairing, applicant.FirstTech, applicant.FirstStatus, applicant.Comment, college.name]
           end
         end
-      elsif (round == "SecondTech")
+      elsif round == "SecondTech"
         csv << %W[Name RollNo Score Branch Role CodePairing FirstTech SecondTech Result Comment College]
         @colleges.each do |college|
           college.firstTech_pursues().each do |applicant|
             csv << [applicant.Name, applicant.RollNo, applicant.Score, applicant.Branch, applicant.Role, applicant.CodePairing, applicant.FirstTech, applicant.SecondTech, applicant.Result, applicant.Comment, college.name]
           end
         end
-      elsif (round == "Final")
+      elsif round == "Final"
         csv << %W[Name RollNo Gender EmailAdd PhoneNo Score Branch Role CodePairing FirstTech SecondTech Comment College]
         @colleges.each do |college|
           college.final_pursues().each do |applicant|
@@ -111,28 +111,28 @@ class Applicants < ActiveRecord::Base
     @colleges = Pool.find_by_name(college_name).colleges
 
     CSV.generate do |csv|
-      if (round == "CodePairing")
+      if round == "CodePairing"
         csv << %W[Name RollNo EmailAdd College]
         @colleges.each do |college|
           college.logic_pursues(cutoff).each do |applicant|
             csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd, college.name]
           end
         end
-      elsif (round == "FirstTech")
+      elsif round == "FirstTech"
         csv << %W[Name RollNo EmailAdd College]
         @colleges.each do |college|
           college.pairing_pursues().each do |applicant|
             csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd, college.name]
           end
         end
-      elsif (round == "SecondTech")
+      elsif round == "SecondTech"
         csv << %W[Name RollNo EmailAdd College]
         @colleges.each do |college|
           college.firstTech_pursues().each do |applicant|
             csv << [applicant.Name, applicant.RollNo, applicant.EmailAdd, college.name]
           end
         end
-      elsif (round == "Final")
+      elsif round == "Final"
         csv << %W[Name RollNo EmailAdd College]
         @colleges.each do |college|
           college.final_pursues().each do |applicant|
