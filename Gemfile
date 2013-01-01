@@ -8,7 +8,9 @@ gem 'rails', '3.2.8'
 gem 'pg'
 
 group :development do
-gem 'sqlite3', '= 1.3.6'
+  gem 'sqlite3', '= 1.3.6'
+  gem 'fuubar'
+  gem 'rspec_junit_formatter'
 end
 group :test do
 
