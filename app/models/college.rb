@@ -6,7 +6,7 @@ class College < ActiveRecord::Base
 
   def logic_pursues(cutoff)
     @col = []
-    if !cutoff.blank?
+    unless cutoff.blank?
       cutoff = cutoff.to_i
       @app   = Applicants.find_all_by_collegeId(self.id)
       @app.each do |n|
@@ -17,7 +17,7 @@ class College < ActiveRecord::Base
     else
       @col = Applicants.find_all_by_collegeId(self.id)
     end
-    return @col
+    @col
   end
 
   def firstTech_pursues()
